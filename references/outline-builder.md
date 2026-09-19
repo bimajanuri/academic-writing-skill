@@ -5,13 +5,16 @@ Panduan menyusun kerangka paper dari Literature Matrix dan Gap Analysis.
 ## 1. Dari Gap ke Research Question
 
 1. Ambil gap terkuat dari `gap_analysis.md` (minimum 1 gap High significance).
-2. Rumuskan RQ dalam bentuk:
+2. Sejalan dengan Langkah 2.7, rumuskan kontribusi lewat `references/novelty-framing.md` + `templates/contribution_statement.md` — kontribusi di sini menentukan posisi research question.
+2. **Jika framework RQ dipilih** (`framework_selection.md` §1), rumuskan RQ dengan mengisi elemen framework tersebut — lihat `references/research-frameworks.md` §1 (contoh PICO: P=populasi → I=intervensi → C=komparasi → O=outcome). Validasi dengan FINER sebelum dikunci.
+3. Rumuskan RQ dalam bentuk:
    - Deskriptif: "Bagaimana ...?"
    - Hubungan: "Apakah X berhubungan dengan/berpengaruh terhadap Y?"
    - Kausal: "Bagaimana X memengaruhi Y di konteks Z?"
-3. Batasi 1–3 RQ. Untuk setiap RQ tentukan:
+4. Batasi 1–3 RQ. Untuk setiap RQ tentukan:
    - Teori/kerangka utama (dari kolom Theory Used di matrix — pilih yang paling sering dipakai atau yang paling tepat)
    - Desain (empiris/teoritis/review)
+   - Item reporting checklist yang relevan (jika framework pelaporan dipilih — supaya RQ ditulis dengan elemen yang bisa dilaporkan)
 
 Output: `research_question.md` berisi:
 ```yaml
@@ -49,7 +52,7 @@ Template utama ada di `templates/paper_outline.md`. Minimal:
    2.1 Latar belakang & masalah
    2.2 Gap dan urgensi
    2.3 Research question & tujuan
-   2.4 Kontribusi (numbered, claim-first)
+   2.4 Kontribusi (numbered, claim-first — feed langsung dari `contribution_statement.md`)
    2.5 Struktur paper
 3. Tinjauan/Literature Review (20–25%)
    3.1 Teori dasar
@@ -131,6 +134,7 @@ File output:
 paper_outline.md      — outline + alokasi kata + topic sentences
 research_question.md  — RQ + hipotesis + teori + design
 style_profile.md      — profil gaya jurnal target (jika ada)
+contribution_statement.md — novelty + kontribusi + peta bukti (Langkah 2.7, Modul A)
 ```
 
 Quality Gate 2 (dari SKILL.md):

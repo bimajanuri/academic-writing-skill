@@ -74,6 +74,13 @@ Jika pengguna minta, sisipkan kolom tambahan:
 - Relevance score: 8–10 → masuk analisis utama; 7 → pelengkap; <7 → buang.
 - Ini mempermudah Gap Analysis di Tahap 1 Langkah 1.4.
 
+## 3b. Koneksi ke Gap Matrix (Modul E)
+
+Matrix adalah input utama untuk `templates/gap_matrix.md` dan `references/research-gap-mapping.md` di Langkah 1.4:
+- Urutkan baris matrix oldest → newest sebagai dasar **literature mapping**.
+- Petakan setiap baris ke **jenis gap** yang bisa dirangkum darinya (teoretis/metodologis/kontekstual/inkonsistensi) di kolom tambahan `Gap Potential`.
+- Kolom **Theory Used**, **Method**, **Novelty/Contribution**, dan **Future Studies** menjadi bukti bagi klaim gap (min. 3 sitasi per gap).
+
 ## 4. Anti-Hallucination untuk Matrix
 
 1. Field yang tidak tersedia → tulis *"—"*, **jangan** mengarang keberadaan data.
@@ -96,4 +103,4 @@ Simpan sebagai file:
 literature_matrix.md  — tabel matrix final siap dipakai Tahap 2 dan 3
 ```
 
-Gunakan konten field Novelty/Contribution & Future Studies sebagai dasar Gap Analysis (Tahap 1 Langkah 1.4).
+Gunakan konten field Novelty/Contribution & Future Studies sebagai dasar Gap Analysis (Tahap 1 Langkah 1.4 — lihat §3b di atas untuk koneksi ke Gap Matrix).

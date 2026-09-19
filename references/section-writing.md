@@ -45,7 +45,7 @@ Urutan move (dari SNL-UCSB & Prof. Peng):
 2. **Problem gap**: keterbatasan struktural pendekatan existing (bukan "belum akurat", tapi "asumsi X gagal saat Y")
 3. **Key abstraction**: konsep bernama yang menangkap insight Anda
 4. **Design intuition**: mengapa pendekatan Anda masuk akal
-5. **Contributions**: numbered, claim-first, bisa-dibuktikan
+5. **Contributions**: numbered, claim-first, bisa-dibuktikan (feed list dari `contribution_statement.md` — Modul A; jangan dikurangi/dilebihkan tanpa alasan)
 6. **Results preview**: angka terbaik di akhir
 - Kalimat terakhir paragraf awal = kalimat klaim (bukan basi).
 - Heading bernama: klaim bukan topik.

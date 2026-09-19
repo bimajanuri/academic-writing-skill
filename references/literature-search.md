@@ -13,12 +13,12 @@ Sebelum mencari, klarifikasi dari pengguna:
 | Rentang tahun | bebas | 5 tahun terakhir |
 | Jumlah target | bebas | 15–40 paper |
 | Bahasa paper | Indonesia / Inggris / semua | Inggris |
-| Sumber | OpenAlex / Semantic Scholar / arXiv / semua | Semua (OpenAlex dulu) |
+| Sumber | OpenAlex / Semantic Scholar / Crossref / DOAJ / PubMed / arXiv / semua | Semua (OpenAlex dulu) |
 | Jenis dokumen | artikel riset / review / semua | Artikel riset + review |
 
-## 2. Sumber Pencarian (Tanpa API Key)
+## 2. Sumber Pencarian (Gratis, Tanpa API Key / Key Opsional)
 
-Prioritas urutan penggunaan:
+Semua sumber di bawah gratis dan setara OpenAlex (tanpa key atau key opsional). Prioritas urutan penggunaan:
 
 1. **OpenAlex API** (gratis, paling lengkap, mencakup Scopus-indexed journals)
    ```
@@ -26,23 +26,43 @@ Prioritas urutan penggunaan:
    ```
    - Tambahkan `mailto:email@example.com` untuk polite pool (rate limit lebih tinggi)
    - Response mencakup `doi`, `authorships`, `publication_date`, `biblio`, `primary_location.source` (nama jurnal, issn)
-2. **Semantic Scholar API** (gratis)
+2. **Crossref API** (gratis, tanpa key) — primer untuk **verifikasi DOI / kelengkapan metadata** dan sumber yakin artikel & jurnal:
+   ```
+   GET https://api.crossref.org/works?query.title=KATA+KUNCI&rows=20&mailto=email@example.com
+   ```
+   - Tambahkan `mailto:` untuk polite pool (rate limit lebih baik)
+   - Resolve DOI: `GET https://api.crossref.org/works/{DOI}` → konfirmasi judul, jurnal `container-title`, `volume`, `page`, `published`
+   - Mencakup Crossref dari semua penerbit besar; response JSON terdiri atas `items` (title, author, container-title, DOI, ISSN, type)
+3. **Semantic Scholar API** (gratis, key opsional → jatah terjamin 1 RPS)
    ```
    GET https://api.semanticscholar.org/graph/v1/paper/search?query=KATA+KUNCI&fields=title,authors,year,externalIds,abstract&limit=20
    ```
-3. **arXiv API** (untuk preprint CS/fisika) — opsional, bertanda UNVERIFIED untuk quartile
+4. **DOAJ API** (gratis, tanpa key, tanpa registrasi) — relevan utk jurnal/artikel **Open Access terkurasi** dan verifikasi status OA jurnal (data CC BY-SA):
+   ```
+   GET https://doaj.org/api/search/articles/KATA+KUNCI%20AND%20bibjson.year:YYYY?page=1&pageSize=20
+   ```
+   - Cari jurnal untuk verifikasi OA: `GET https://doaj.org/api/search/journals/issn:XXXX-XXXX` (cek `bibjson.publisher`, `bibjson.license`, `bibjson.apc.has_apc`)
+5. **PubMed E-utilities API** (gratis, key opsional utk rate tinggi) — khusus biomedik/kesehatan:
+   ```
+   GET https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=KATA+KUNCI&retmode=json
+   GET https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=PMID...&retmode=json
+   ```
+6. **arXiv API** (untuk preprint CS/fisika) — opsional, bertanda UNVERIFIED untuk quartile
    ```
    GET http://export.arxiv.org/api/query?search_query=all:KATA+KUNCI&max_results=20
    ```
 
-Catatan: Jika agent lingkungan memiliki tools web (web search / fetch), gunakan tools tersebut; gunakan API-API di atas sebagai sumber kandidat DOI/refrensi yang kemudian diverifikasi.
+Catatan:
+- Jika agent lingkungan memiliki tools web (web search / fetch), gunakan tools tersebut; gunakan API-API di atas sebagai sumber kandidat DOI/referensi yang kemudian diverifikasi.
+- Crossref dan DOAJ berbasis metadata tervalidasi → prioritaskan untuk **verifikasi**, bukan sekadar menemukan kandidat baru.
+- Jangan berasumsi API gratis utk layanan lain (mis. Consensus, The Lens, Connected Papers bersifat berbayar/terbatas; Google Scholar & Garuda tidak punya API search resmi — akses hanya via web/tools).
 
 ## 3. Strategi Pencarian Multi-Tahap
 
 ### Round 1 — Pencarian Langsung (Literatur Primer)
 1. Ekstrak 3–5 konsep inti dari topik pengguna
 2. Buat 8–15 kombinasi kata kunci (konsep + konsep, konsep + metode, sinonim/disiplin varian)
-3. Cari di OpenAlex / Semantic Scholar untuk setiap kombinasi
+3. Cari di OpenAlex / Semantic Scholar / Crossref / DOAJ / PubMed untuk setiap kombinasi (sesuaikan bidang: PubMed diutamakan utk biomedik, arXiv utk preprint CS/fisika)
 4. Kumpulkan 30–50 kandidat paper
 5. Skor relevansi 0–10; pertahankan yang ≥ 7/10
 
@@ -66,7 +86,7 @@ Catatan: Jika agent lingkungan memiliki tools web (web search / fetch), gunakan 
 ### Verifikasi Quartile
 Untuk setiap jurnal kandidat:
 
-1. Ambil nama jurnal + ISSN dari metadata paper (OpenAlex `primary_location.source`)
+1. Ambil nama jurnal + ISSN dari metadata paper (OpenAlex `primary_location.source`; bila kosong → konfirmasi lewat Crossref `container-title` / `ISSN`, atau DOAJ `bibjson.identifier`)
 2. Tentukan quartile dari salah satu:
    - Fetch halaman scimagojr.com (jika tools web tersedia)
    - Data quartile yang sudah ada di basis pengetahuan — hanya bila yakin (mis. Nature, Cell, IEEE TPAMI, dsb.)
@@ -100,7 +120,7 @@ Dari X kandidat:
 
 ## 5. Anti-Hallucination (Wajib)
 
-1. **Setiap DOI harus diverifikasi** dapat di-resolve. Jika ragu — tandai `UNVERIFIED`.
+1. **Setiap DOI harus diverifikasi** dapat di-resolve. Lebih baik: `GET https://api.crossref.org/works/{DOI}` → cocokkan judul/jurnal/tahun. Jika ragu — tandai `UNVERIFIED`.
 2. Jika sebuah referensi disebut tetapi tidak ada DOI/bukti keberadaannya → **JANGAN** dimasukkan ke matrix. Kosongkan sitasi tersebut dan beri tahu pengguna.
 3. Jangan menebak nama jurnal, volume, halaman, atau tahun.
 4. Jika metadata tidak lengkap, tandai kolom yang kurang dengan *"—"*.

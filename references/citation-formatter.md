@@ -1,6 +1,6 @@
 # Citation Formatter — Format Sitasi & Referensi (Tahap 4)
 
-Panduan memformat in-text citation dan bibliography dalam 5 gaya: **APA 7, IEEE, MLA 9, Chicago (Author-Date & Notes), Vancouver**.
+Panduan memformat in-text citation dan bibliography dalam **6 gaya pilihan**: **APA 7, MLA 9, Turabian, Vancouver, Harvard, Chicago** — plus **IEEE** sebagai opsi tambahan untuk bidang teknik.
 
 Template detail per gaya ada di `templates/citation_templates/`.
 
@@ -11,13 +11,15 @@ Tanyakan kepada pengguna. Rekomendasi berdasarkan bidang:
 | Bidang | Umumnya dipakai |
 |--------|-----------------|
 | Psikologi, Pendidikan, Sosial, Bisnis, Kesehatan | **APA 7** |
-| Teknik, Komputer, Informatika | **IEEE** |
-| Humaniora, Sastra, Bahasa | **MLA** / **Chicago** |
-| Sejarah, Filosofi | **Chicago (Notes)** |
+| Teknik, Komputer, Informatika | **IEEE** (opsi tambahan) |
+| Humaniora, Sastra, Bahasa | **MLA** / **Turabian** / **Chicago** |
+| Sejarah, Filosofi | **Chicago (Notes)** / **Turabian (Notes)** |
+| Tesis/Disertasi/Makalah mahasiswa | **Turabian** |
+| Ekonomi, Manajemen, Sosial (Inggris), Kesehatan | **Harvard** |
 | Kedokteran, Biomedis | **Vancouver** |
 | Jurnal target | Sesuai gaya jurnal (mis. mengikuti template jurnal) |
 
-Jika pengguna tidak tahu → tanya bidang, beri rekomendasi di atas.
+Jika pengguna tidak tahu → tanya bidang, beri rekomendasi di atas. **Gaya juga bisa ditentukan di Tahap 2** (berdasarkan jurnal target) dan diformat penuh di Tahap 4.
 
 ## 2. Data Referensi yang Dibutuhkan
 
@@ -35,10 +37,12 @@ Jika ada field hilang → tulis placeholder `[data tidak tersedia]` dan tandai k
 | Gaya | Kutipan naratif | Kutipan kurung |
 |------|-----------------|----------------|
 | **APA 7** | Rahman (2023) menyatakan ... | (Rahman & Sari, 2023) |
-| **IEEE** | As discussed in [3] ... | ... [3] |
 | **MLA 9** | Rahman argues ... | (Rahman 45) — dengan halaman |
-| **Chicago Author-Date** | Rahman (2023) ... | (Rahman 2023) |
+| **Turabian Author-Date** | Rahman and Sari (2023) ... | (Rahman and Sari 2023, 210) |
 | **Vancouver** | Rahman et al. concluded ...¹ | ... ¹ |
+| **Harvard** | Rahman and Sari (2023) ... | (Rahman and Sari, 2023, p. 210) |
+| **Chicago Author-Date** | Rahman (2023) ... | (Rahman 2023) |
+| **IEEE** | As discussed in [3] ... | ... [3] |
 
 ### Daftar Pustaka (contoh, jurnal)
 
@@ -69,6 +73,18 @@ Bibliografi:
 Rahman, Ahmad, and Dewi Sari. "Pengaruh Media Sosial terhadap Prestasi Akademik Mahasiswa." Jurnal Psikologi Indonesia 12, no. 3 (2023): 210–225.
 ```
 
+**Turabian (Notes-Bibliography):**
+```
+1. Ahmad Rahman and Dewi Sari, "Pengaruh Media Sosial terhadap Prestasi Akademik Mahasiswa," Jurnal Psikologi Indonesia 12, no. 3 (2023): 210–225.
+Bibliografi:
+Rahman, Ahmad, and Dewi Sari. "Pengaruh Media Sosial terhadap Prestasi Akademik Mahasiswa." Jurnal Psikologi Indonesia 12, no. 3 (2023): 210–225.
+```
+
+**Harvard (Cite Them Right):**
+```
+Rahman, A. and Sari, D. (2023) 'Pengaruh media sosial terhadap prestasi akademik mahasiswa', Jurnal Psikologi Indonesia, 12(3), pp. 210–225. doi: 10.xxxx/xxx.
+```
+
 **Vancouver:**
 ```
 1. Rahman A, Sari D. Pengaruh media sosial terhadap prestasi akademik mahasiswa. Jurnal Psikologi Indonesia. 2023;12(3):210–225. doi:10.xxxx/xxx.
@@ -76,8 +92,9 @@ Rahman, Ahmad, and Dewi Sari. "Pengaruh Media Sosial terhadap Prestasi Akademik 
 
 ## 4. Aturan Penulisan Nama (Internasional vs Indonesia)
 
-- **APA/MLA/Chicago**: "NamaAkhir, NamaAwal." → `Rahman, A.` / `Rahman, Ahmad`. Nama yang mengikuti format Barat ditulis `Smith, J.`
+- **APA/MLA/Chicago/Turabian**: "NamaAkhir, NamaAwal." → `Rahman, A.` / `Rahman, Ahmad`. Nama yang mengikuti format Barat ditulis `Smith, J.`
 - **IEEE/Vancouver**: `A. Rahman` / `Rahman A.` (di bibliography Vancouver seluruhnya `Rahman A`).
+- **Harvard**: `Rahman, A.` (nama belakang + inisial) — daftar pustaka urut `Belakang, A.`
 - Untuk nama Indonesia yang penulisnya mencantumkan 2 kata tanpa tanda pisah (mis. "Ahmad Rahman H."), pertahankan suku kata yang MENCANTUMKAN sebagai nama keluarga; jika tidak jelas → tanyakan atau gunakan urutan sesuai paper asli.
 - Hindari salah: jika paper menuliskan "Rahman, Ahmad" → di pertukaran author-date tetap penulis asli.
 
@@ -86,10 +103,12 @@ Rahman, Ahmad, and Dewi Sari. "Pengaruh Media Sosial terhadap Prestasi Akademik 
 | Gaya | Aturan |
 |------|--------|
 | APA 7 | 3+ penulis → in-text `et al.` sejak pertama; di daftar pustaka semua penulis |
-| IEEE | 6+ penulis → `A. Rahman et al.` (daftar pustaka bisa 6 lalu `et al.` sesuai jurnal) |
 | MLA | 3+ penulis → `Rahman et al.` |
+| Turabian | 3+ → in-text `et al.` (Author-Date) / catatan penuh di catatan pertama |
 | Chicago Author-Date | 3+ → `Rahman et al.` |
+| Harvard | 3+ → `Rahman et al.` |
 | Vancouver | 6+ → `Rahman A, Sari D, ... et al.` |
+| IEEE | 6+ penulis → `A. Rahman et al.` (daftar pustaka bisa 6 lalu `et al.` sesuai jurnal) |
 
 ## 6. Validasi Sitasi
 

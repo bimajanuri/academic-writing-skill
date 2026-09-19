@@ -2,6 +2,8 @@
 
 Panduan mendeteksi dan memperbaiki 25 pola tulisan khas-AI lalu merevisi draft akademik. Diadaptasi dari [blader/humanizer](https://github.com/blader/humanizer) (27 pola) dan WikiProject AI Cleanup untuk bahasa Indonesia + Inggris.
 
+Untuk revisi yang dipicu **komentar editor/reviewer** (bukan self-revision), gunakan Modul C: `references/reviewer-response.md` + `templates/response_to_reviewer.md`.
+
 ## Filosofi
 
 Tulisan AI cenderung memilih frasa dengan probabilitas tertinggi yang cocok untuk SEMUA pembaca, sehingga berbunyi generik dan berlapis. Manusia menulis untuk SATU pembaca dan topik spesifik. Setiap pola di bawah adalah satu bentuk pilihan-generik itu.
