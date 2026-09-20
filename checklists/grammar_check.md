@@ -1,38 +1,33 @@
-# Checklist — Grammar Check (ID / EN)
+# Checklist — Grammar Check (English-US, output wajib)
 
-Gunakan di **Tahap 5 (Layer Grammar)** dan sebelum submission. Centang per bagian naskah (Abstract, Intro, Method, Results, Discussion, Conclusion).
+Gunakan di **Tahap 5 (Layer Grammar)** dan sebelum submission. Centang per bagian naskah (Abstract, Intro, Method, Results, Discussion, Conclusion). **Seluruh naskah output harus English-US.**
 
-## Basa — Deteksi & Konsistensi (berlaku untuk semua bahasa)
-- [ ] Bahasa dominan tiap bagian teridentifikasi (Indonesia / English)
-- [ ] Tidak ada pencampuran kaidah bahasa dalam satu kalimat
-- [ ] Istilah teknis konsisten (satu istilah, satu nama — termasuk istilah yang dibiarkan Inggris)
-- [ ] Ejaan konsisten: `-isasi/-isasion` (ID) / US vs UK (EN, dipilih SATU)
+## Register & Konsistensi (English-US)
+- [ ] Register English-US dipastikan di SELURUH naskah (spelling US: `analyze`, `color`, `center`, `modeling`, `behavior`, `organization`)
+- [ ] Tidak ada jejak varian British (analyse, colour, centre, modelling, behaviour, organisation)
+- [ ] Istilah teknis konsisten (satu istilah, satu nama)
+- [ ] Tidak ada campuran kaidah bahasa dalam satu kalimat (konten input ID diterjemahkan penuh ke English)
 
-## Bahasa Indonesia
-- [ ] Kata baku sesuai KBBI (analisis, karier, risiko, praktik, naskah, dsb.)
-- [ ] `di/ke` lokasi dipisah; awalan `di-/ke-` disambung
-- [ ] Partikel `-lah/-kah/-pun` melekat; `pun` (makna "juga") terpisah
-- [ ] Huruf kapital benar: nama orang/tempat/lembaga; **bukan** bulan/jabatan umum
-- [ ] Tidak ada serial comma sebelum "dan" dalam daftar
-- [ ] Desimal titik / ribuan koma: `1.250,5` — konsisten
-- [ ] Kalimat efektif: subjek jelas, tanpa pemborosan kata
-- [ ] PUEBI/EYD diikuti untuk tanda baca & penulisan angka
-
-## English
+## English — Kaidah Wajib
 - [ ] Subject–verb agreement benar (`results show`, `number of ... is`, dsb.)
 - [ ] Articles (a/an/the) benar dan konsisten
 - [ ] Tense sesuai konvensi: present (klaim tetap) / past (pelaporan)
 - [ ] Prepositions benar (`different from`, `similar to`, `based on`, dsb.)
-- [ ] Serial comma sesuai target (MLA/Chicago: wajib)
+- [ ] Serial comma (Oxford comma) dipakai: `X, Y, and Z`
 - [ ] Tidak ada comma splice (dua klausa dipisah koma tanpa konjungsi)
 - [ ] Apostrophe: possessive `study's`; `its` tanpa apostrof; `it's` = it is
-- [ ] Tanda kutip konsisten (double US / single UK)
-- [ ] Spelling register dipilih dan konsisten (US/UK)
+- [ ] Tanda kutip konsisten double quotes US `"..."`
+- [ ] Kapitalisasi judul & proper nouns sesuai gaya (APA/MLA dsb.)
+
+## Akurasi Terjemahan (jika input berupa Bahasa Indonesia)
+- [ ] Makna argumen sumber ID tidak berubah saat diterjemahkan
+- [ ] Hasil terjemahan terdengar seperti English akademik asli, bukan "English terjemahan"
+- [ ] Istilah teknis yang disampaikan pengguna dalam Bahasa Indonesia diterjemahkan ke istilah Inggris yang benar (jangan dipertahankan mentah-mentah bila ada padanan akademik)
 
 ## Umum
 - [ ] Tanda baca: koma/semicolon/kolom dipakai dengan benar
 - [ ] Nama proper, angka, DOI, singkatan tidak terpotong/salah eja
-- [ ] Tool (LanguageTool/Grammarly) dieksekusi bila tersedia, saran diverifikasi manual
+- [ ] Tool (LanguageTool en-US / Hunspell) dieksekusi bila tersedia, saran diverifikasi manual
 - [ ] Tidak ada makna berubah akibat perbaikan tata bahasa
 
 ## Output

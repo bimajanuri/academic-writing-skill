@@ -51,17 +51,17 @@ Untuk mengirim naskah ke jurnal/venue. Jalankan sebagai langkah terakhir.
 - [ ] Cover letter siap (`templates/cover_letter.md`), kontribusi identik dgn `contribution_statement.md`
 - [ ] Persyaratan submit terpenuhi: ORCID, data availability, reporting checklist
 
-## Grammar (ID / EN)
+## Grammar (English-US)
 
 - [ ] `checklists/grammar_check.md` dijalankan pada versi final
-- [ ] Bahasa konsisten (EYD untuk Indonesia; US/UK dipilih satu untuk English)
+- [ ] Register English-US konsisten (US/UK dipilih US; tidak tercampur varian British)
 - [ ] 0 kesalahan tata bahasa yang mengubah makna; sisa item ditandai untuk pengguna
 - [ ] `grammar_report.md` tersimpan
 
 ## Plagiarisme & Similarity
 
 - [ ] `checklists/plagiarism_check.md` dijalankan pada versi final
-- [ ] Tidak ada overlap verbatim tanpa kutip + sitasi (≥ 7 kata EN / ≥ 6 kata ID)
+- [ ] Tidak ada overlap verbatim tanpa kutip + sitasi (≥ 7 kata EN)
 - [ ] Kutipan & parafrase disitasi dengan benar (termasuk halaman bila gaya mensyaratkan)
 - [ ] `plagiarism_report.md` tersimpan; temuan overlap yang signifikan sudah direvisi
 

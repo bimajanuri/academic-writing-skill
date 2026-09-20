@@ -1,6 +1,6 @@
-# Plagiarism Check — Deteksi Plagiarisme & Integritas Sitasi (ID / EN)
+# Plagiarism Check — Deteksi Plagiarisme & Integritas Sitasi (English-US)
 
-Panduan memeriksa plagiarisme sebelum submission (Tahap 6) pada naskah berbahasa Indonesia atau English. Tujuan: memastikan setiap kalimat berasal dari penulis atau dikutip/diparafrase dengan atribusi benar.
+Panduan memeriksa plagiarisme sebelum submission (Tahap 6) pada naskah output berbahasa **English (US)**. Tujuan: memastikan setiap kalimat berasal dari penulis atau dikutip/diparafrase dengan atribusi benar. (Konten input boleh Bahasa Indonesia/English, tetapi naskah final diperiksa sebagai teks English.)
 
 ## 1. Jenis Plagiarisme
 
@@ -18,7 +18,7 @@ Berjalan tanpa tools berbayar. Lakukan berurutan:
 
 ### 2.1 Overlap terhadap korpus (Literature Matrix)
 - Bandingkan kalimat/klausa naskah dengan **teks sumber di Literature Matrix / file paper yang ada**.
-- Deteksi: frasa verbatim ≥ 7 kata berturut-turut (EN) / ≥ 6 kata (ID) yang bukan sitasi → tandai.
+- Deteksi: frasa verbatim ≥ 7 kata berturut-turut (EN) yang bukan sitasi → tandai.
 - Klaim proksimitas: jika naskah "kata-kata persis sumber" tanpa tanda kutip & sitasi → **red flag**.
 
 ### 2.2 Cek kutipan verbatim
@@ -67,7 +67,7 @@ Bila memakai tools (Turnitin/iThenticate/PlagiarismCheck) atau estimasi lokal:
 
 - Parafrase sah = menulis ulang ide dengan kata sendiri **sambil** menyitasi; bukan sinonim-switch.
 - Lapor ke pengguna setiap temuan overlap yang signifikan; jangan diam-diam memperbaiki dan menganggap selesai.
-- Bahasa: prinsip sama untuk ID dan EN — hanya korpus/acuan (KBBI vs Merriam-Webster; jurnal lokal vs internasional) yang berbeda.
+- Bahasa: naskah output adalah English-US; korpus acuan = jurnal internasional. Bila konten input berbahasa Indonesia, pastikan hasil terjemahan bukan salinan terjemahan mentah dari sumber (parafrase tetap wajib).
 
 ## 6. Output
 

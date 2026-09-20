@@ -1,12 +1,12 @@
 ---
 name: academic-writing
 description: |
-  Menghasilkan konten akademik berkualitas tinggi (Bahasa Indonesia / English). Gunakan skill ini saat pengguna meminta: menulis paper atau artikel ilmiah, menyusun literature review, mencari dan mengekstrak referensi akademik, membuat outline/kerangka paper, memilih framework penelitian (PICO, PICo, PEO, PCC, SPIDER, SPICE, ECLIPSe, CIMO, Research Onion, PRISMA/PROSPERO, CONSORT, STROBE, COREQ, ENTREQ, dan lainnya), format sitasi (APA/IEEE/MLA/Turabian/Chicago/Vancouver/Harvard), merevisi dan memoles draft, menghilangkan jejak AI (humanizer), memeriksa tata bahasa/grammar (Bahasa Indonesia sesuai EYD/PUEBI dan English), memeriksa plagiarisme/similarity sebelum submit, konversi format output (Markdown/LaTeX/DOCX), atau menilai kualitas naskah sebelum submit. Trigger phrases: "tulis paper", "bantu riset", "cari referensi", "litang", "jurnal Scopus", "gap analysis", "outline paper", "framework penulisan", "pilih framework", "PICO", "PRISMA", "CONSORT", "STROBE", "reporting checklist", "format sitasi", "revisi draft", "polish", "anti AI", "cek grammar", "grammar check", "EYD", "PUEBI", "cek plagiarisme", "plagiarism check", "similarity", "submit jurnal", "tugas akhir", "skripsi", "tesis", "disertasi", "systematic review". Covers a 6-stage pipeline: Explorasi → Perencanaan → Penulisan → Sitasi → Revisi → Output.
+  Menghasilkan paper/artikel ilmiah akademik berbahasa **English (US)** berkualitas jurnal melalui Modular Multi-Method Engine. Input penelitian dapat diberikan dalam Bahasa Indonesia atau English. Gunakan skill ini saat pengguna meminta: menulis paper atau artikel ilmiah, menyusun literature review, mencari dan mengekstrak referensi akademik, membuat outline/kerangka paper, memilih dan menjalankan framework/mode sintesis literatur (Systematic Review/PRISMA, Scoping Review/PRISMA-ScR/PCC, Meta-Etnografi/eMERGe/Noblit & Hare/Reciprocal Translation, Narrative Review/SANRA, Integrative Review/Whittemore & Knafl, Critical Review), format sitasi (APA/IEEE/MLA/Turabian/Chicago/Vancouver/Harvard), merevisi dan memoles draft, menghilangkan jejak AI (humanizer), memeriksa tata bahasa/grammar English (US), memeriksa plagiarisme/similarity sebelum submit, atau menilai kualitas naskah. Trigger phrases: "tulis paper", "bantu riset", "cari referensi", "litang", "jurnal Scopus", "gap analysis", "outline paper", "framework penulisan", "pilih framework", "mode sintesis", "PCC", "PRISMA", "PRISMA-ScR", "scoping review", "meta-etnografi", "meta-synthesis", "eMERGe", "reciprocal translation", "narrative review", "SANRA", "integrative review", "critical review", "PICO", "CONSORT", "STROBE", "reporting checklist", "format sitasi", "revisi draft", "polish", "anti AI", "cek grammar", "grammar check", "cek plagiarisme", "plagiarism check", "similarity", "submit jurnal", "tugas akhir", "skripsi", "tesis", "disertasi", "systematic review". Pipeline 6 tahap: Explorasi → Perencanaan → Penulisan → Sitasi → Revisi → Output, dengan perutean ke protokol mode & engine sintesis khusus kualitatif.
 ---
 
 # Academic Writing — Penulisan Akademik
 
-Skill ini adalah pipeline end-to-end untuk menghasilkan konten akademik berkualitas tinggi. Berbahasa Indonesia dengan istilah teknis dalam Bahasa Inggris.
+Skill ini adalah **Modular Multi-Method Engine**: pipeline end-to-end untuk menghasilkan paper/artikel ilmiah akademik berkualitas jurnal — **output WAJIB dalam Bahasa Inggris (English-US) bergaya akademik** — yang mendukung banyak metode sintesis literatur (kualitatif & kuantitatif) melalui **router** di awal instruksi. Instruksi kerja untuk agent ditulis dalam Bahasa Indonesia; input penelitian boleh Bahasa Indonesia atau English sesuai kemampuan Gen AI, tetapi **naskah output selalu English-US**.
 
 ## Sumber Metodologi (Attribution)
 
@@ -17,410 +17,348 @@ Pipeline ini diadaptasi dan dikombinasikan dari metodologi terbuka berikut:
 - **journal-adapt** — adaptasi korpus dari jurnal target [WantongC/journal-adapt-writing-skill](https://github.com/WantongC/journal-adapt-writing-skill)
 - **Strategist quality gates** — penilaian reviewer 7 dimensi [lishix520/academic-paper-skills](https://github.com/lishix520/academic-paper-skills)
 - **Literature triage matrix** — ekstraksi metadata terstruktur per paper (17-skill catalog: literature review, research design) [WenyuChiou/ai-research-skills](https://github.com/WenyuChiou/ai-research-skills)
+- **Protokol kualitatif** — eMERGe (France et al., 2019), Noblit & Hare (1988), PRISMA-ScR (Tricco et al., 2018), SANRA (Baethge et al., 2019), Whittemore & Knafl (2005), PCC/JBI Manual.
 
 Gunakan pendekatan di atas sebagai kerangka kerja; jangan menyalin teks dari korpus jurnal target secara verbatim.
 
-## Pipeline 6 Tahap
+> **Urutan invocation mutlak**: setelah membaca SKILL.md, **WAJIB** load `core/system-prompt.md` (instruksi universal), lalu `protocols/<mode>.md` (mode terpilih), lalu `engines/<engine>.md` (jika ditunjuk), lalu gunakan `references/*`, `templates/*`, `checklists/*` sesuai tahap.
+
+---
+
+## METHOD SELECTION ROUTER — Pilih Mode Analisis (Pertama Kali, SEBELUM APA PUN)
+
+Skill ini mendukung **6 mode sintesis literatur**. Sebelum mencari/upload paper apa pun, **WAJIB** tentukan mode via router berikut — ini menentukan aturan, framework, kriteria ekstraksi, engine sintesis, dan checklist akhir yang aktif.
+
+| Mode | Kapan dipakai | RQ Framework | Reporting Checklist | Extraction Matrix | Engine Sintesis |
+|------|---------------|--------------|---------------------|-------------------|-----------------|
+| **SLR** | Systematic review kuantitatif/kualitatif, meta-analisis, bukti efek | PICO / PICOS / PICo / SPIDER | PRISMA 2020 (+PRISMA-S) | 7-field standar (`references/literature-matrix.md`) | — (meta-analisis / narrative synthesis) |
+| **Scoping Review** | Pemetaan luas bukti, konsep, lingkup geografis, tipe metodologi | **PCC** | **PRISMA-ScR** (JBI) | PCC mapping (`references/extraction-scoping.md`) | **Conceptual Mapping** (`engines/conceptual-mapping.md`) |
+| **Meta-Etnografi** | Qualitative meta-synthesis, pengalaman/makna, full theory development | PICo / SPIDER | **eMERGe** + Noblit & Hare 7 langkah | 1st/2nd order constructs (`references/extraction-meta-ethnography.md`) | **Reciprocal Translation** (`engines/reciprocal-translation.md`) |
+| **Narrative Review** | Ulasan naratif, debat akademik, perkembangan gagasan | 5W+1H / CIMO | **SANRA** | Posisi argumen (`references/extraction-narrative.md`) | **Academic Debate** (`engines/academic-debate.md`) |
+| **Integrative Review** | Gabungan data kualitatif + kuantitatif | disesuaikan | **Whittemore & Knafl** | Mixed data (`references/extraction-integrative.md`) | W&K 5-tahap (reduction/display/comparison) |
+| **Critical Review** | Kritik epistemologis/metodologis/bias | 5W+1H | Critical appraisal (CASP/JBI) | Lensa appraisal (`references/extraction-critical.md`) | — (appraisal per studi + sintesis ranking) |
+
+**Navigasi**:
+1. Lihat tabel di atas + detail protokol di `protocols/*.md`.
+2. **DILARANG memulai pencarian literatur (Langkah 1.2) sebelum mode terkunci.** Mode menentukan strategi kata kunci, kriteria inklusi, dan matrix ekstraksi — hasil pencarian akan berbeda per mode.
+3. Jika pengguna belum menyebut mode → **tanyakan** (atau usulkan berdasarkan jenis pertanyaan). Jangan menebak, jangan lanjut pencarian sebelum mode terkunci.
+4. Mode SLR = default bila kuantitatif/klasik; pilih mode kualitatif lain bila pengguna meminta pemetaan/sintesis interpretatif.
+5. Tulis pilihan mode + framework ke `framework_selection.md` (form: `templates/framework_selection.md`) sebagai kontrak.
+
+> **GATE 0 (Method Selection Gate) — WAJIB LULUS SEBELUM PENCARIAN**:
+> - [ ] Mode analisis terkunci (SLR / Scoping / Meta-Etnografi / Narrative / Integrative / Critical)
+> - [ ] Standar pelaporan terpilih (PRISMA 2020 / PRISMA-ScR / eMERGe / SANRA / W&K / appraisal)
+> - [ ] Framework RQ mode dicatat (PCC / PICo / SPIDER / dst.)
+> - [ ] Strategi pencarian diturunkan dari elemen framework mode
+> Pencarian paper/artikel HANYA boleh dimulai setelah keempat item ini terpenuhi. Hasil pencarian harus dikalibrasi ke mode: mis. scoping → target pemetaan luas (bukan efek), meta-etnografi → target studi kualitatif dengan data ekstensif (bukan survei kuantitatif), narrative → target paper posisi/debat.
+
+---
+
+## INISIALISASI — Parameter Wajib Sebelum Memulai
+
+**Urutan eksekusi wajib (tidak boleh dipertukarkan):**
 
 ```text
-TAHAP 1: EXPLORASI      → Search literatur + filter Scopus Quartile + Literature Matrix + Gap Analysis + Research Map
-TAHAP 2: PERENCANAAN    → Research question (dengan framework pilihan) + outline + alokasi kata + reviewer self-assessment
-TAHAP 3: PENULISAN      → Section-by-section sesuai urutan wajib + claim-evidence map
-TAHAP 4: SITASI         → Format sitasi + bibliography + validasi klaim-sitasi + cek DOI
-TAHAP 5: REVISI         → Humanizer (25 pola) + grammar check (ID/EN) + gate mekanis + gate semantik + red-team review
-TAHAP 6: OUTPUT         → Konversi MD/LaTeX/DOCX + grammar final + plagiarism check + pre-submission mechanical checks
+1. METHOD SELECTION (router)   → mode + standar pelaporan + framework RQ      [GATE 0]
+2. PARAMETER INISIALISASI      → topik, bahasa, quartile, rentang tahun,
+                                 kriteria inklusi sesuai mode                 [GATE 0]
+3. STRATEGI PENCARIAN          → kata kunci diturunkan dari framework mode
+4. PENCARIAN LITERATUR         → hanya dimulai setelah 1–3 tuntas
+5. EKSTRAKSI MATRIX            → sesuai template mode
 ```
 
-Setiap tahap memiliki **quality gate** — tidak boleh lanjut sebelum lolos.
+Parameter yang dikonfirmasikan sebelum *pencarian* (bukan hanya sebelum upload paper):
+
+1. **Mode analisis** (dari Method Selection Router): SLR / Scoping / Meta-Etnografi / Narrative / Integrative / Critical Review — **prioritas nomor satu**
+2. **Standar pelaporan** yang dikehendaki (default mengikuti mode): PRISMA 2020 / PRISMA-ScR / eMERGe / SANRA / Whittemore & Knafl / appraisal checklist
+3. **Topik / ide penelitian** & jenis paper
+4. **Bahasa input**: Bahasa Indonesia / English — **PAPER OUTPUT SELALU English-US** (tidak opsional)
+5. **Target Scopus Quartile filter**: Q1–Q4 atau tanpa filter
+6. **Rentang tahun**: default 5 tahun terakhir (bisa diubah)
+7. **Framework RQ terpilih** (default dari router mode) + **kriteria inklusi/eksklusi awal sesuai mode**
+
+> **Kontrak inisialisasi**: simpan hasil ke `framework_selection.md`. **Tanpa mode terkunci, jangan buat query pencarian, jangan panggil API paper, jangan unggah/ekstrak. Tanya pengguna dulu.** Jika pengguna mengunggah paper tanpa menyebut mode → tanyakan mode terlebih dahulu, jangan menebak kriteria ekstraksi.
+
+---
+
+## PIPELINE 6 TAHAP (berlaku untuk semua mode, dengan kaitan ke protokol)
+
+```text
+TAHAP 1: EXPLORASI      → Search literatur + filter Quartile + [Ekstraksi matrix sesuai MODE] + Gap Analysis + Research Map
+TAHAP 2: PERENCANAAN    → Research question (framework mode) + outline + alokasi kata + reviewer self-assessment
+TAHAP 3: PENULISAN      → Section-by-section sesuai urutan wajib + claim-evidence map (+ hasil ENGINE SINTESIS mode)
+TAHAP 4: SITASI         → Format sitasi + bibliography + validasi klaim-sitasi + cek DOI
+TAHAP 5: REVISI         → Humanizer (25 pola) + grammar check EN-US + gate mekanis + gate semantik + red-team review
+TAHAP 6: OUTPUT         → Konversi MD/LaTeX/DOCX + grammar final + plagiarism check + [AUTO-VALIDATION checklist mode] + pre-submission
+```
+
+Setiap tahap memiliki **quality gate** — tidak boleh lanjut sebelum lolos. Detil protokol per mode ada di `protocols/<mode>.md`; detil tahap umum ada di `references/*`.
 
 ---
 
 ## TAHAP 1: EXPLORASI
 
-> Load `references/literature-search.md` untuk detail pencarian.
-> Load `references/literature-matrix.md` untuk detail ekstraksi metadata.
-> Load `references/research-gap-mapping.md` untuk literature mapping & klasifikasi gap (Gap Matrix, anti pseudo-gap).
+> Load `protocols/<mode>.md` untuk kriteria ekstraksi sesuai mode.
+> Load (per mode) `references/extraction-*.md` untuk matrix ekstraksi khusus.
+> Detail pencarian: `references/literature-search.md`; gap mapping: `references/research-gap-mapping.md`.
 
-### Langkah 1.1 — Klarifikasi Topik
-Tanyakan kepada pengguna (minimal):
-1. Topik / ide penelitian
-2. Jenis paper (literature review, research paper, systematic review)
-3. Bahasa output (Indonesia / Inggris / campuran)
-4. Target Scopus Quartile filter (opsional): **Q1, Q2, Q3, Q4, atau tanpa filter**
-5. Rentang tahun (default: 5 tahun terakhir, bisa diubah)
-6. **Framework yang dipilih** (opsional — lihat `references/research-frameworks.md`):
-   - RQ framework (PICO, PICo, PEO, PCC, SPIDER, SPICE, ECLIPSe, CIMO, CoCoPop, 5W+1H, dll.)
-   - Framework prosedur/tahapan riset (Research Onion, Empirical Cycle, Research Process Stages, PRISMA-P, Systematic Review Conduct, 4-Phase Flow)
-   - Reporting & screening checklist (PRISMA 2020, CONSORT, STROBE, COREQ, ENTREQ, STARLITE, dll. + appraisal tools)
-   - Jika pengguna tidak menyebut, usulkan default sesuai jenis paper (§4 `research-frameworks.md`) lalu **minta konfirmasi**
-   - Simpan pilihan ke `framework_selection.md` (form: `templates/framework_selection.md`)
+### Langkah 1.1 — Method Selection + Inisialisasi (WAJIB pertama)
+1. Kunci **mode analisis** lewat Method Selection Router (GATE 0). **Satu-satunya jalan masuk ke Tahap 1.**
+2. Konfirmasikan parameter INISIALISASI (di atas) — topik, bahasa, quartile, tahun, framework RQ, kriteria inklusi awal.
+3. Simpan kontrak ke `framework_selection.md`.
+4. **Baru setelah ini** eksekusi Langkah 1.2.
 
-### Langkah 1.2 — Pencarian Literatur dengan Filter Scopus Quartile
-1. Jika framework RQ sudah dipilih, **turunkan kata kunci dari elemen framework** (mis. P/I/C/O dari PICO) sebagai basis kombinasi kata kunci Round 1 (lihat `references/research-frameworks.md` §1).
-2. Gunakan sumber pencarian (lihat `references/literature-search.md`):
-   - OpenAlex API (gratis, wajib dicoba dulu)
-   - Semantic Scholar API
-   - Crossref API (verifikasi DOI/metadata & fallback pencarian)
-   - DOAJ API (artikel/jurnal Open Access)
-   - PubMed E-utilities (khusus biomedik)
-   - arXiv API (untuk preprint, opsional)
-3. Terapkan filter **Scopus Quartile** jika diminta:
-   - Verifikasi quartile jurnal via Scopus SJR (scimagojr.com) atau metadata API
-   - Hanya paper dari jurnal dengan quartile sesuai yang masuk matrix
-   - Jika tidak ada filter, semua boleh masuk tapi **tag quartile wajib dicantumkan**
-4. Untuk systematic review: terapkan **prosedur screening** sesuai framework (screening 2 reviewer independen, dedup, dan catat jumlah per fase PRISMA flow).
-5. Target volume: 15–40 paper relevan (relevansi skor ≥ 7/10)
+### Langkah 1.2 — Pencarian Literatur Disesuaikan Mode (setelah GATE 0 lolos)
+1. **Turunkan kata kunci dari elemen framework RQ mode** — bukan query generik:
+   - **SLR**: P/I/C/O(S) — PICO/PICOS.
+   - **Scoping**: P, C, C — Population, Concept, Context (PCC).
+   - **Meta-Etnografi**: fenomena minat, setting, pengalaman (PICo/SPIDER).
+   - **Narrative**: topik utama + wilayah debat.
+   - **Integrative**: kombinasi qual & quant pada konsep.
+   - **Critical**: selain topik, tambahkan istilah appraisal/kritik bila relevan.
+2. **Kalibrasi target pencarian ke mode** (hasil harus cocok dengan metode):
+   - Scoping → target paper yang memetakan konsep/konteks/metodologi luas (relevansi konseptual ≥ 7/10), volume boleh lebih besar.
+   - Meta-Etnografi → target **studi kualitatif interpretatif** (kaya data/constructs), BUKAN survei/eksperimen kuantitatif.
+   - Narrative → target paper posisi/klaim/debat, sintesis konseptual.
+   - Integrative → target studi qual + quant pada isu sama.
+   - Critical → target paper yang bisa diappraisal (jelas metode & asumsinya).
+3. Sumber pencarian: OpenAlex API (gratis, wajib coba dulu), Semantic Scholar, Crossref (verifikasi DOI), DOAJ, PubMed E-utilities (biomedik), arXiv (preprint opsional).
+4. Filter Scopus Quartile bila diminta (verifikasi via scimagojr.com); jika tanpa filter, tag quartile wajib.
+5. Untuk systematic review/scoping: terapkan screening 2 reviewer independen, dedup, catat jumlah per fase PRISMA flow.
+6. Target volume: 15–40 paper relevan (relevansi ≥ 7/10); scoping boleh lebih luas.
 
-### Langkah 1.3 — Ekstraksi Literature Matrix
-Untuk setiap paper, ekstrak **7 field wajib** ke tabel:
+### Langkah 1.3 — Extraction Matrix sesuai MODE
+- **SLR**: 7-field standar — `references/literature-matrix.md` + `templates/literature_matrix_template.md`.
+- **Scoping**: PCC mapping — `references/extraction-scoping.md` + `templates/extraction_scoping.md`.
+- **Meta-Etnografi**: 1st/2nd order constructs TERPISAH — `references/extraction-meta-ethnography.md` + `templates/extraction_meta_ethnography.md`.
+- **Narrative**: posisi argumen — `references/extraction-narrative.md` + `templates/extraction_narrative.md`.
+- **Integrative**: data QUAL & QUANT terpisah — `references/extraction-integrative.md` + `templates/extraction_integrative.md`.
+- **Critical**: lensa appraisal (epistemologis/metodologis/bias) — `references/extraction-critical.md` + `templates/extraction_critical.md`.
 
-| No | Authors/Title | Purpose | Method (Variables/Samples) | Theory Used | Novelty/Contribution | Future Studies | DOI/Penerbit & Scopus Quartile |
-|----|--------------|---------|---------------------------|-------------|---------------------|----------------|-------------------------------|
-
-**Sumber ekstraksi**: Abstract, Introduction, Method, Conclusion, dan Future Work dari paper. Jika field kosong di paper, tulis *"—"* (jangan mengarang).
-
-Gunakan template `templates/literature_matrix_template.md`.
+Jika field kosong → tulis *"—"* (jangan mengarang).
 
 ### Langkah 1.4 — Gap Analysis (Gap Matrix)
-Gunakan `references/research-gap-mapping.md` + template `templates/gap_matrix.md`:
-1. **Literature mapping** — urutkan paper matrix dari oldest → newest; petakan klaim-klaim utama pada sumbu topik untuk melihat "district" yang padat vs kosong.
-2. Isi **Gap Matrix** (baris = jenis gap, kolom = status & evidence):
-   - **Theoretical gap** — teori tidak menjelaskan kasus/konteks tertentu
-   - **Methodological gap** — metode/desain/measurement belum dipakai di konteks ini
-   - **Contextual gap** — populasi/lokasi/waktu belum disentuh
-   - **Inconsistency gap** — temuan bertentangan antar studi (controversy)
-   - Status: completed / partial / empty, plus evidence (min. 3 sitasi dari matrix)
-3. **Anti pseudo-gap** — coret gap yang bukan gap sejati: "belum banyak diteliti" (tanpa bukti), gap produk riset (pendekatan/buku, bukan pengetahuan), gap "perlu evaluasi lebih lanjut" tanpa spesifikasi, gap dari klaim tanpa sumber.
-4. Pilih gap terkuat (High significance + feasible + align dengan data yang ada); simpan ke `gap_analysis.md` dalam format: definisi (50–100 kata) + evidence + significance (High/Medium/Low) + feasibility + jenis gap.
+Gunakan `references/research-gap-mapping.md` + `templates/gap_matrix.md`:
+1. Literature mapping (oldest → newest).
+2. Gap Matrix (teoretis/metodologis/kontekstual/inkonsistensi; min. 3 sitasi per gap).
+3. Anti pseudo-gap.
+4. Simpan ke `gap_analysis.md`.
+
+> **Catatan mode kualitatif**: gap untuk scoping/meta-etnografi sering berupa *konseptual* (konsep belum tersintesis/didefinisikan) — pastikan didukung evidence matrix.
 
 ### Langkah 1.5 — Research Positioning Map
-Buat `research_map.md`: ringkasan posisi topik relatif terhadap literatur (dua sumbu publikasi → kuadran):
-- Kuadran 1: banyak diteliti + banyak publikasi → hindari klaim "menyeluruh"
-- Kuadran 2: banyak publikasi tapi kesenjangan konseptual → peluang sintesis/inkonsistensi
-- Kuadran 3: sedikit publikasi tapi ada tanda-tanda interest → peluang kontribusi dini
-- Kuadran 4: hampir tidak tersentuh → verifikasi kembali (cek istilah sinonim yang beda keyword)
-- Tentukan di kuadran mana kontribusi pengguna masuk, dan hubungkan ke Modul B (`references/journal-targeting.md`) untuk mengecek kesesuaian arena jurnal.
+Buat `research_map.md` (4 kuadran) + hubungkan ke Modul B (`references/journal-targeting.md`).
 
-### Output Tahap 1 (wajib disimpan sebagai file)
+### Output Tahap 1
 ```
-literature_matrix.md        — tabel matrix terstruktur
-gap_matrix.md               — gap matrix (4 jenis gap + status + evidence)
-gap_analysis.md             — analisis celah riset + bukti (gap terpilih)
-research_map.md             — peta posisi topik (kuadran)
+literature_matrix.md        — matrix sesuai MODE (7-field / PCC / constructs / posisi / mixed / appraisal)
+gap_matrix.md               — gap matrix
+gap_analysis.md             — analisis gap + bukti
+research_map.md             — peta posisi topik
+framework_selection.md      — kontrak mode + framework
 ```
 
 ### Quality Gate 1
-- [ ] Matrix minimal 10 paper (atau sesuai kesepakatan awal)
-- [ ] Semua 7 field terisi (atau tanda "—" bila tidak ada)
+- [ ] **GATE 0 lolos SEBELUM pencarian**: mode + standar pelaporan + framework RQ terkunci & ter-rekam di `framework_selection.md`
+- [ ] Strategi pencarian diturunkan dari framework mode (bukan query generik)
+- [ ] Hasil pencarian terkalibrasi ke mode (tipe studi sesuai; scoping luas / meta-etnografi kualitatif / dll.)
+- [ ] Matrix diekstraksi sesuai template mode (kolom benar)
 - [ ] Quartile Scopus tercantum
-- [ ] Gap ≥ 3 dengan evidence sitasi; setiap gap punya jenis (teoretis/metodologis/kontekstual/inkonsistensi)
-- [ ] 0 pseudo-gap lolos validasi (cek `references/research-gap-mapping.md` §3)
-- [ ] Posisi pada Research Positioning Map ditentukan
-- [ ] Pengguna setuju untuk lanjut (konfirmasi)
+- [ ] Gap ≥ 3 dengan evidence; 0 pseudo-gap
+- [ ] Pengguna setuju lanjut
 
 ---
 
 ## TAHAP 2: PERENCANAAN
 
-> Load `references/outline-builder.md` untuk detail.
-> Load `references/journal-targeting.md` + `references/novelty-framing.md` untuk Modul B & A.
+> Load `references/outline-builder.md`, `references/journal-targeting.md`, `references/novelty-framing.md`.
 
 ### Langkah 2.1 — Research Question & Hipotesis
-Dari Gap Analysis, rumuskan RQ **menggunakan RQ framework yang dipilih** (`framework_selection.md` §1, detail di `references/research-frameworks.md` §1):
-- Isi setiap elemen framework (mis. P/I/C/O untuk PICO) → gabung jadi RQ terstruktur
-- Research question (1–3 pertanyaan utama)
-- Hipotesis (jika empiris)
-- Teori/kerangka konseptual yang akan digunakan (feed dari kolom Theory Used di matrix)
-- **Validasi FINER** (Feasible, Interesting, Novel, Ethical, Relevant) sebelum RQ dikunci
+Rumuskan RQ dengan framework mode (`protocols/<mode>.md` — contoh: PCC untuk scoping, PICo/SPIDER untuk meta-etnografi). Validasi FINER.
 
-### Langkah 2.2 — Menentukan Jurnal/Platform Target (Journal Targeting, Modul B)
-Strategi lengkap di `references/journal-targeting.md`. Jika pengguna menyebut target jurnal:
-1. **Pilih arena** — cocokkan posisi pada Research Map (Modul E) dengan perimeter publikasi jurnal (jurnal "rumah" vs "tamu")
-2. **Cek kelayakan jurnal** — verifikasi indeks Scopus/WoS/DOAJ, publisher, kebijakan APC, proses review; **tandai risiko predator** (jangan hanya percaya klaim)
-3. **Journal Positioning Blueprint** — minta 5–8 paper dari jurnal tersebut (corpus); ekstrak pola: struktur, framing kontribusi, eksposisi method/results, cakupan discussion → simpan `style_profile.md`
-4. Bandingkan ≥ 2 kandidat di `templates/journal_comparison.md` (fit, prestige, APC, durasi review)
-5. Turunkan **gaya sitasi** dari author guidelines jurnal target → rekam di `style_profile.md` (default jika tidak ada panduan: lihat Langkah 2.6)
-6. Jika tidak ada target: tetap lakukan cek arena minimal 1 kandidat agar paper tidak "submit ke mana saja yang kebetulan"
+### Langkah 2.2 — Journal Targeting (Modul B)
+Strategi `references/journal-targeting.md`. Cocokkan mode dengan arena jurnal (jurnal metodologis/scoping vs sintesis kualitatif).
 
 ### Langkah 2.3 — Penyusunan Outline
-1. Struktur outline mengikuti template `templates/paper_outline.md`
-2. Alokasi proporsi: Intro 15–20% | Isi 60–70% | Kesimpulan 10–15%
-3. Setiap section memiliki klaim utama
-4. Buat **topic sentences** untuk setiap paragraf DULU, verifikasi koherensi argumen, baru lanjut
+Template `templates/paper_outline.md`. Proporsi Intro 15–20% | Isi 60–70% | Kesimpulan 10–15%. Buat topic sentences dulu.
 
-### Langkah 2.4 — Reviewer Self-Assessment (7 Dimensi, 35 poin)
-Nilai outline sebagai reviewer, skor 1–5 per dimensi:
+> **Mode kualitatif**: section "Hasil" berisi hasil **sintesis** (taksonomi/3rd order/debat), bukan roti per-paper.
 
-| Dimensi | Poin |
-|---------|------|
-| Kejelasan argumen | 5 |
-| Kelengkapan argumentasi | 5 |
-| Dukungan literatur | 5 |
-| Kejelasan metodologi | 5 |
-| Ekspresi kebaruan | 5 |
-| Organisasi | 5 |
-| Kesesuaian target | 5 |
-
-**Ambang**: ≥ 28/35 untuk lanjut menulis. Jika kurang, revisi outline.
+### Langkah 2.4 — Reviewer Self-Assessment (7 dimensi, 35 poin)
+Ambang ≥ 28/35. Skor rendah → revisi outline.
 
 ### Langkah 2.5 — Framework Compliance Plan
-Terapkan framework yang dipilih ke outline (dari `framework_selection.md`):
-1. **Prosedur riset** (§2 framework): rantai langkah metodologi yang akan dilaporkan → petakan ke sub-bab Methodology (mis. Research Onion: philosophy→approach→strategy→choices→horizon→techniques).
-2. **Reporting checklist** (§3): ambil item resmi checklist (EQUATOR/prisma-statement.org/dll.), lalu tandai di section mana tiap item akan dipenuhi. Simpan peta ini.
-3. Untuk evidence synthesis: rencanakan artefak **PRISMA flow** + tabel **risk-of-bias** + laporan kelengkapan pencarian (PRISMA-S).
-4. Jika jurnal target mewajibkan checklist, cantumkan nama/versi persisnya di `framework_selection.md`.
+Terapkan framework mode ke outline: prosedur riset + reporting checklist → peta item→section. Untuk evidence synthesis wajib: PRISMA flow, risk-of-bias (atau critical appraisal), deskripsi pencarian lengkap.
 
-### Langkah 2.6 — Pemilihan Gaya Sitasi
-Tentukan GAYA SITASI di tahap perencanaan ini (sebelum menulis), lalu format penuh di Tahap 4:
-1. Pilih dari opsi: **APA 7, MLA 9, Turabian, Vancouver, Harvard, Chicago** (+ **IEEE** untuk bidang teknik)
-2. Jika target jurnal sudah ada → ikuti gaya yang diminta author guidelines (rekam di `style_profile.md`)
-3. Jika belum → rekomendasi bidang (lihat `references/citation-formatter.md` §1) dan **minta konfirmasi pengguna**
-4. Catat pilihan di `framework_selection.md` / `paper_outline.md` agar penguncian gaya konsisten sampai Tahap 4
+### Langkah 2.6 — Gaya Sitasi
+APA 7, MLA 9, Turabian, Vancouver, Harvard, Chicago, atau IEEE. Rekam di `style_profile.md`/`framework_selection.md`.
 
 ### Langkah 2.7 — Novelty & Contribution Framing
-Rumuskan kontribusi paper SECARA TERTULIS di tahap perencanaan (detail di `references/novelty-framing.md`):
-1. Petakan gap terpilih (Tahap 1) → bentuk novelty yang jujur (kombinasi baru / konteks baru / metode baru / temuan baru / reframing)
-2. Tulis **contribution statement** (backbone 1 kalimat + 2–4 bullet claim-first) di `templates/contribution_statement.md`
-3. Pastikan setiap bullet kontribusi punya **bukti yang direncanakan** (peta claim → evidence)
-4. Validasi: bukan incremental patching, tidak overclaim, sesuai scope arena jurnal (Modul B)
-5. Kontribusi ini menjadi sumber section "Kontribusi" intro (ditulis ulang di Tahap 3) dan paragraf cover letter
+`references/novelty-framing.md` + `templates/contribution_statement.md`. Kontribusi mengikuti jenis mode (mis. scoping: peta taksonomi baru; meta-etnografi: 3rd order construct baru).
 
 ### Output Tahap 2
 ```
-paper_outline.md             — outline lengkap + alokasi kata
-research_question.md          — RQ + hipotesis + kerangka teori
-framework_selection.md        — kontrak framework (RQ, prosedur, reporting checklist) + gaya sitasi terpilih
-framework_compliance.md       — peta item checklist → lokasi section + rencana artefak prosedur
-style_profile.md             — profil gaya jurnal target (jika ada)
-contribution_statement.md     — novelty + contribution statement + peta bukti (Modul A)
+paper_outline.md, research_question.md, framework_selection.md, framework_compliance.md, style_profile.md, contribution_statement.md
 ```
 
 ### Quality Gate 2
-- [ ] Outline selesai dengan alokasi kata
-- [ ] RQ dirumuskan sesuai framework pilihan & lolos FINER
-- [ ] Framework compliance plan lengkap (item checklist punya lokasi section)
+- [ ] RQ sesuai framework mode & lolos FINER
 - [ ] Skor reviewer ≥ 28/35
-- [ ] Topic sentences membentuk argumen koheren
-- [ ] Gaya sitasi terpilih (dari Langkah 2.6) direkam & disetujui
-- [ ] Contribution statement valid (0 overclaim, semua bullet punya bukti terencana)
-- [ ] Pengguna setujui outline
+- [ ] Framework compliance lengkap
+- [ ] Gaya sitasi terpilih & disetujui
+- [ ] Contribution statement valid (0 overclaim)
 
 ---
 
 ## TAHAP 3: PENULISAN
 
-> Load `references/section-writing.md` untuk detail per section.
+> Load `references/section-writing.md` + template mode.
 
 ### Urutan Wajib Menulis
+```text
+1. Draft 0 Introduction   (kerangka disposable — framing guardrails)
+2. Literature Review       (feed langsung dari matrix mode)
+3. Methodology             (mengikuti framework prosedur mode)
+4. Results & Discussion    (HASIL SINTESIS dari engine mode)
+5. Conclusion
+6. Final Introduction      (ditulis ULANG)
+7. Abstract                (paling terakhir)
 ```
-1.  Draft 0 Introduction   (kerangka disposable — framing guardrails)
-2.  Literature Review       (feed langsung dari Literature Matrix)
-3.  Methodology
-4.  Results & Discussion
-5.  Conclusion
-6.  Final Introduction      (ditulis ULANG dari nol setelah hasil nyata)
-7.  Abstract                (paling terakhir)
-```
-Introduction ditulis **dua kali** — Draft 0 untuk guardrails, Final setelah semua bukti jelas.
-
-**Metodologi mengikuti framework prosedur terpilih** (`framework_selection.md` §2). Untuk evidence synthesis wajib menampilkan: alur **PRISMA flow**, kriteria eligibilitas dari elemen RQ framework, **tabel risk-of-bias**, dan strategi pencarian lengkap (PRISMA-S).
 
 ### Proses per Section
-1. Tulis topic sentences dulu → baca berurutan → cek alur argumen
-2. Jika koheren, isi full paragraphs (4–6 kalimat per paragraf)
-3. Satu paragraf, satu pesan (pertama kalimat = pesan utama)
-4. Hubungan antar kalimat eksplisit (sebab, kontras, konsekuensi, elaborasi)
-5. Jalankan checklists yang relevan (`checklists/post_draft.md`)
-6. Mapping setiap klaim besar ke evidence
+1. Topic sentences dulu → cek alur argumen → isi full paragraphs (4–6 kalimat).
+2. Satu paragraf, satu pesan.
+3. Jalankan `checklists/post_draft.md`.
+4. Mapping setiap klaim besar ke evidence (claim-evidence map).
 
-### Prinsip Gaya (Non-Negotiable)
-- Mean sentence length: ~21 kata; maksimum 40 kata
-- Aktif voice — tanpa pasif ("We show" bukan "It is shown")
-- Zero hedging untuk hasil ("meningkat 13×" bukan "dapat meningkatkan")
-- Tanpa filler adjective: "novel", "significant", "state-of-the-art", "robust" → ganti angka spesifik atau hapus
-- Named over vague: setiap konsep/mekanisme/metrik punya nama spesifik
-- Headings adalah klaim, bukan topik ("Efek X menurunkan error 13×" bukan "Experimental Results")
-- Interpretasi figur, bukan sekadar rujuk ("Gambar 3 menunjukkan X, mengonfirmasi Y")
+### Prinsip Gaya — lihat `core/system-prompt.md` (Non-Negotiable; berlaku semua mode): sentence ~21 kata, aktif voice, zero hedging, tanpa filler adjective, named over vague, heading sebagai klaim.
 
 ### Claim-Evidence Map
-Setiap klaim besar wajib punya peta:
-```
-Claim: ...
-Evidence: ...
-Status: supported / needs evidence / unsupported
-```
+Untuk mode kualitatif, pastikan rantai bukti: 1st order → 2nd order → 3rd order (meta-etnografi); cluster → bukti (scoping/narrative).
 
 ### Output Tahap 3
 ```
 draft_<section>.md      — draft per section
-claim_evidence_map.md   — peta klaim-evidence seluruh paper
+claim_evidence_map.md   — peta klaim-evidence
+synthesis_<mode>.md     — artefak sintesis engine (jika mode kualitatif)
 ```
 
 ### Quality Gate 3
 - [ ] Semua section ditulis sesuai urutan wajib
-- [ ] Introduction final ditulis ulang (bukan edit Draft 0)
+- [ ] Introduction final ditulis ulang
 - [ ] Abstract terakhir
-- [ ] Claim-evidence map lengkap untuk klaim-klaim besar
-- [ ] Section checklist lolos
+- [ ] Claim-evidence map lengkap
+- [ ] Artefak sintesis mode (engineering output) terintegrasi di Results
 
 ---
 
 ## TAHAP 4: SITASI & REFERENSI
 
-> Load `references/citation-formatter.md` untuk detail.
+> Load `references/citation-formatter.md`.
 
-### Langkah 4.1 — Konfirmasi Gaya Sitasi
-Tanya pengguna: **APA 7, MLA 9, Turabian, Vancouver, Harvard, Chicago** (atau **IEEE** untuk teknik) — atau gaya jurnal target dari `style_profile.md`. Gunakan pilihan di `framework_selection.md` (Langkah 2.6) sebagai default; konfirmasi ulang bila berubah.
+### Langkah 4.1—4.3
+Konfirmasi gaya → format semua sitasi → validasi (klaim→sitasi, sitasi↔bibliography 1:1, DOI aktif).
 
-### Langkah 4.2 — Format Semua Sitasi
-1. In-text citation sesuai gaya
-2. Bibliography/daftar pustaka lengkap
-3. Data dari kolom DOI/Penerbit di Literature Matrix
-
-### Langkah 4.3 — Validasi
-1. Setiap klaim yang membutuhkan rujukan HARUS punya sitasi
-2. Setiap sitasi dalam teks muncul di bibliography (dan sebaliknya)
-3. DOI/URL divalidasi (sebutkan yang tidak aktif)
-4. Cek "et al." dan "&" sesuai gaya
+> **Mode kualitatif**: kutipan langsung 1st order construct dalam narasi sintesis WAJIB diberi indikasi sumber paper + halaman (jika tersedia) — bukan hanya daftar pustaka.
 
 ### Output Tahap 4
 ```
-draft_with_citations.md  — draft dengan sitasi terpasang
-bibliography.md          — daftar pustaka terformat
-citation_validation.md   — laporan validasi
+draft_with_citations.md, bibliography.md, citation_validation.md
 ```
 
 ### Quality Gate 4
-- [ ] Semua klaim-klaim besar bersitasi
-- [ ] In-text ↔ bibliography konsisten 1:1
-- [ ] Gaya sitasi konsisten
-- [ ] DOI tercantum (gunakan dari matrix)
+- [ ] Semua klaim besar bersitasi
+- [ ] In-text ↔ bibliography 1:1
+- [ ] Gaya konsisten
+- [ ] Kutipan 1st order di-trace dengan benar
 
 ---
 
 ## TAHAP 5: REVISI & QUALITY CONTROL
 
-> Load `references/revision-guide.md`, `references/grammar-check.md`, dan `references/quality-gates.md`.
+> Load `references/revision-guide.md`, `references/grammar-check.md`, `references/quality-gates.md`.
 
-### Layer 1 — Humanizer (Anti-Jejak AI)
-Deteksi & perbaiki 25 pola AI writing (ringkasannya di `references/revision-guide.md`):
-- Staging instead of stating (§1–5): not-X-but-Y, one-line closer, sayings, run-up, arguing with no one
-- Rhythm by rule (§6–11) — triads, repeated openings, dashes, stacked qualifiers
-- Inflation & borrowed authority (§12–18)
-- Formatting by rule (§19–21)
-- Leftovers from chat/draft (§22–25)
+### Layer 1 — Humanizer (25 pola)
+Ringkasan di `references/revision-guide.md`. (Berlaku pada naskah English-US output.)
 
-### Layer 2 — Grammar Check (Bahasa Indonesia / English)
-Periksa kebenaran linguistik sesuai bahasa naskah (kanal terpisah dari humanizer — detail di `references/grammar-check.md`):
-- Indonesia: EYD (Permendikbudristek 18/2022), kata baku KBBI, `di/ke` lokasi vs awalan, partikel, kapitalisasi, serial comma (tidak ada), kalimat efektif
-- English: subject–verb agreement, articles, tense, prepositions, serial comma (wajib), comma splice, apostrophe, US/UK konsisten
-- Jalankan tools (LanguageTool/Grammarly) bila tersedia; VERIFIKASI saran secara manual
-- Simpan laporan ke `grammar_report.md`; gunakan `checklists/grammar_check.md`
+### Layer 2 — Grammar Check (English-US; wajib)
+Detail di `references/grammar-check.md`; checklist `checklists/grammar_check.md`. Pemeriksaan menjalani **register English-US** secara penuh (spelling US: `analyze`, `color`, `center`; dll.) — pasca output paper, bukan input.
 
 ### Layer 3 — Gate Mekanis
-Periksa via grep/pola:
-- Em-dash (—) → ganti titik/koma/kolon
-- Kalimat > 40 kata → pecah
-- Passive voice → aktifkan
-- Banned words: "Moreover", "Notably", "leveraging", "delve", "pivotal", dsb.
-- Terminologi drift (konsep yang sama namanya berubah) → konsistenkan
+Em-dash, kalimat >40 kata, passive voice, banned words, terminologi drift.
 
 ### Layer 4 — Gate Semantik
-- Define-before-use
-- Claim-evidence alignment (semua klaim didukung)
-- Coherence & flow (last sentence N → first sentence N+1)
-- Honest positioning (tidak overclaim)
-- Followability pembaca
+Define-before-use, claim-evidence alignment, coherence & flow, honest positioning, followability.
 
-### Layer 5 — Red-Team Review (Reviewer Independent)
-1. Simulasi reviewer yang BELUM pernah membaca teks
-2. Terapkan gate mekanis + semantik ulang dengan lensa fresh-reader
-3. Kembalikan findings berperingkat: **CRITICAL / IMPORTANT / MINOR**
-4. Iterasi sampai tidak ada CRITICAL/IMPORTANT yang tersisa
-5. Klasifikasikan temuan seperti tipe komentar reviewer (Modul C `references/reviewer-response.md` §1) agar draft sudah "tidak rawan" saat direview sungguhan
+### Layer 5 — Red-Team Review
+Simulasi reviewer fresh reader; temuan berperingkat CRITICAL/IMPORTANT/MINOR; iterasi sampai bersih.
 
 ### Output Tahap 5
 ```
-draft_revised.md         — draft final hasil revisi
-humanizer_report.md      — pola ditemukan vs diperbaiki
-grammar_report.md        — hasil grammar check (temuan per kategori bahasa)
-red_team_findings.md     — temuan reviewer
-revision_log.md          — log perubahan
+draft_revised.md, humanizer_report.md, grammar_report.md, red_team_findings.md, revision_log.md
 ```
 
 ### Quality Gate 5
-- [ ] Skor humanizer: 0 critical AI tells tersisa
-- [ ] Grammar (ID/EN): 0 kesalahan kaidah yang mengubah makna; sisa item ditandai untuk pengguna
-- [ ] Gate mekanis: 0 pelanggaran (dengan bukti grep)
-- [ ] Gate semantik: semua klaim supported
-- [ ] Red-team: tidak ada CRITICAL/IMPORTANT tersisa
+- [ ] 0 critical AI tells tersisa
+- [ ] Grammar: 0 kesalahan pengubah makna
+- [ ] Gate mekanis 0 pelanggaran
+- [ ] Semua klaim supported (rantai bukti mode valid)
+- [ ] Red-team tanpa CRITICAL/IMPORTANT
 
 ---
 
-## TAHAP 6: OUTPUT & KONVERSI
+## TAHAP 6: OUTPUT & AUTO-VALIDATION MODE
 
-> Load `references/output-formatter.md` untuk detail.
+> Load `references/output-formatter.md`; `checklists/<mode>.md`; `templates/reporting_checklist.md`.
 
-### Langkah 6.1 — Format Final
-1. Terapkan template format sesuai gaya akademik (IMRaD/Harvard single format)
-2. Ensure heading consistency, numbering, fig/table labels
+### Langkah 6.1—6.2 — Format & Konversi
+MD (default) / LaTeX / DOCX (pandoc).
 
-### Langkah 6.2 — Konversi Format
-- **Markdown** (.md): default output
-- **LaTeX** (.tex): langsung ke template LaTeX dari references
-- **DOCX** (.docx): via pandoc (jika tersedia) atau berikan instruksi
+### Langkah 6.3 — Auto-Validation Checklist MODE (wajib, bukan opsional)
+Jalankan checklist akhir sesuai mode terpilih via `templates/reporting_checklist.md`, simpan ke `reporting_checklist_result.md`:
 
-### Langkah 6.3 — Pre-Submission Mechanical Checks
-- Word/page count vs target
-- Broken references (LaTeX `[?]` atau `??`)
-- Konsistensi istilah & heading
-- Tabel/figur diberi label & dirujuk dalam teks
-- (LaTeX) font embedded, anonimisasi jika double-blind
-- **Grammar final**: jalankan ulang `checklists/grammar_check.md` pada versi final (ID/EN)
-- **Plagiarism & similarity**: jalankan `checklists/plagiarism_check.md` — overlap verbatim, kutipan, parafrase, self-plagiarism (detail `references/plagiarism-check.md`); simpan ke `plagiarism_report.md`
-- **Reporting checklist**: jalankan checklist terpilih dari `framework_selection.md` §3 via `templates/reporting_checklist.md` — setiap item Ya (atau Tidak berlaku), dan tidak boleh ada item "Tidak" tanpa rencana perbaikan
+| Mode | Checklist akhir |
+|------|-----------------|
+| SLR | `checklists/prisma_2020.md` (27 item) |
+| Scoping | `checklists/prisma_scr.md` (22 item) |
+| Meta-Etnografi | `checklists/emerge.md` (19 kriteria) |
+| Narrative | `checklists/sanra.md` (6 item, skor) |
+| Integrative | `checklists/whittemore_knafl.md` (17 kriteria) |
+| Critical | `checklists/critical_review.md` (10 kriteria) |
+
+Setiap item "Tidak"/"Tidak lengkap" WAJIB punya rencana perbaikan sebelum dianggap complete.
+
+### Langkah 6.3b — Pre-Submission Mechanical & Other Checks
+Word count, broken references, konsistensi istilah, label fig/tabel, grammar final, plagiarism (`checklists/plagiarism_check.md` → `plagiarism_report.md`), reporting checklist terpilih.
 
 ### Langkah 6.4 — Final Journal Fit & Cover Letter (Modul B)
-Validasi ulang target sesaat sebelum submit (detail `references/journal-targeting.md`):
-1. **Fit re-check**: posisi paper (mungkin bergeser saat penulisan) vs scope statement jurnal target; jika bergeser jauh, pertimbangkan ganti arena
-2. **Re-verifikasi jurnal**: quartile & indeks dicek ulang hari ini, bukan bulan lalu; pastikan tidak terindikasi predator
-3. **Self-assessment acceptance** (7 dimensi reviewer jurnal tsb): ≥ 28/35 → lanjut; 21–27 → perbaiki elemen lemah; < 21 → turunkan arena
-4. **Cover letter** via `templates/cover_letter.md` — kontribusi mengikuti `contribution_statement.md` final, kutip scope statement resmi jurnal
-5. Konfirmasi dokumen pelengkap: ORCID, data availability, reporting checklist (Modul framework)
+Fit re-check, re-verifikasi jurnal (quartile hari ini, anti-predator), self-assessment ≥ 28/35, cover letter (`templates/cover_letter.md`), dokumen pelengkap (ORCID, data availability).
 
 ### Output Tahap 6
 ```
-<paper_title>.md / .tex / .docx   — file final
-reporting_checklist_result.md      — hasil pemetaan checklist pelaporan (jika framework dipilih)
-plagiarism_report.md               — hasil check plagiarisme (ID/EN)
-grammar_report.md                  — laporan grammar final (jika dijalankan ulang)
-pre_submission_checklist.md        — hasil pengecekan
-journal_comparison.md              — keputusan jurnal final (jika alternatif dibandingkan)
-cover_letter.md                    — cover letter siap kirim (jika diminta)
-revision_summary.md                — ringkasan keseluruhan
+<paper_title>.md / .tex / .docx, reporting_checklist_result.md (auto-validation mode), plagiarism_report.md, grammar_report.md, pre_submission_checklist.md, journal_comparison.md, cover_letter.md, revision_summary.md
 ```
 
 ### Quality Gate 6
-- [ ] Semua gate 1–5 terpenuhi pada versi final
-- [ ] Grammar & plagiarism report final bersih (0 item kritis)
-- [ ] Jurnal target re-verified (quartile/indeks, cek tanggal hari ini)
-- [ ] Self-assessment acceptance ≥ 28/35 untuk jurnal target
-- [ ] Fit dengan scope statement jurnal terkonfirmasi
-- [ ] Pengguna menyetujui versi final & menu submit
+- [ ] Semua gate 1–5 terpenuhi
+- [ ] **Auto-validation checklist mode bersih (0 item kritis)** + hasil tersimpan
+- [ ] Grammar & plagiarism final bersih
+- [ ] Jurnal target re-verified
+- [ ] Self-assessment acceptance ≥ 28/35
+- [ ] Pengguna menyetujui versi final
 
 ---
 
 ## PASCA SUBMISI: REVIEWER RESPONSE & REJECTION HANDLING (Modul C)
 
-> Load `references/reviewer-response.md` saat surat editor tiba; template `templates/response_to_reviewer.md`.
+> Load `references/reviewer-response.md`; template `templates/response_to_reviewer.md`.
 
-1. **Klasifikasi keputusan**: desk reject / minor / major / reject (lihat decision path di referensi)
-2. **Minor revision**: patuhi semua poin; kerjakan; jangan debat poin minor
-3. **Major revision**: pisahkan komentar setuju / patuh sebagian / tolak dengan alasan kuat; prioritas komentar yang menyentuh klaim inti
-4. **Tulis response**: surat ke editor (1 halaman, ringkasan) → point-by-point semua komentar; setiap respons berisi acknowledgment + perubahan (lokasi persis) + bukti
-5. **Rejection**: gunakan decision path — kirim ke jurnal lain yang lebih cocok (Modul B), jangan daur ulang naskah tanpa perubahan substansi
-6. Jika kontribusi berubah selama revisi, **perbarui** `contribution_statement.md` & klaim di naskah agar sinkron
-7. Output: `response_to_reviewer.md`, `revision_log.md`, `decision_log.md`
+1. Klasifikasi keputusan: desk reject / minor / major / reject.
+2. Minor: patuhi semua poin. Major: pisahkan setuju / patuh sebagian / tolak dengan alasan kuat.
+3. Tulis response: surat editor (1 halaman) → point-by-point (acknowledgment + perubahan + bukti).
+4. Rejection: decision path — kirim ke jurnal lain yang lebih cocok (Modul B).
+5. Jika kontribusi berubah → perbarui `contribution_statement.md` & klaim di naskah.
+6. Output: `response_to_reviewer.md`, `revision_log.md`, `decision_log.md`.
 
 ---
 
@@ -430,67 +368,129 @@ Pengguna tidak selalu butuh pipeline penuh. Tangani request langsung:
 
 | Permintaan | Action |
 |-----------|--------|
-| "Pilih/dapatkan framework penelitian" | Load `references/research-frameworks.md`; isi `templates/framework_selection.md`; lalu terapkan ke RQ/outline |
-| "Cari referensi tentang X" | Tahap 1 saja → Literature Matrix |
+| "Pilih/dapatkan metode sintesis" (scoping, meta-etnografi, narrative, integrative) | Method Selection Router → load `protocols/<mode>.md` → kontrak `framework_selection.md` |
+| "Cari referensi tentang X" | Tahap 1 → matrix sesuai mode (default SLR 7-field) |
+| "Buat scoping review tentang X" | Mode Scoping → `protocols/scoping-review.md` + `extraction_scoping.md` + Conceptual Mapping |
+| "Lakukan meta-etnografi atas paper ini" | Mode Meta-Etnografi → `protocols/meta-ethnography.md` + 1st/2nd order + Reciprocal Translation |
+| "Buat narrative review debat X vs Y" | Mode Narrative → `protocols/narrative-review.md` + Academic Debate Engine |
+| "Review integratif kual & kuant" | Mode Integrative → `protocols/integrative-review.md` + Whittemore & Knafl |
+| "Kritisi literatur ini" | Mode Critical → `protocols/critical-review.md` + appraisal lenses |
 | "Buatkan outline paper X" | Tahap 1+2 → Matrix + Outline |
-| "Tulis bagian metodologi" | Load section-writing, draft section tsb |
+| "Tulis bagian metodologi" | Load section-writing + framework prosedur mode |
 | "Format sitasi ini" | Tahap 4 saja |
 | "Polis/revise draft ini" | Tahap 5 saja |
-| "Cek grammar/tata bahasa draft ini" (ID/EN) | Tahap 5 Layer 2 (grammar check) |
-| "Cek plagiarisme/similarity sebelum submit" | Tahap 6 (plagiarism check) |
-| "Pilih/mana jurnal untuk paper ini" | Tahap 2 Langkah 2.2 (Modul B) → `journal_comparison.md`; final di Tahap 6.4 |
-| "Buatkan cover letter" | Tahap 6 Langkah 6.4 → `templates/cover_letter.md` |
-| "Tanggapi komentar reviewer" | Pasca submisi (Modul C) → `references/reviewer-response.md` + `templates/response_to_reviewer.md` |
-| "Naskah saya ditolak, bagaimana?" | Decision path (Modul C) → analisis alasan + re-target jurnal (Modul B) |
+| "Cek grammar/tata bahasa draft ini" | Tahap 5 Layer 2 (English-US) |
+| "Cek plagiarisme/similarity" | Tahap 6 (plagiarism check) |
+| "Pilih/mana jurnal untuk paper ini" | Tahap 2.2 (Modul B) → `journal_comparison.md`; final di Tahap 6.4 |
+| "Buatkan cover letter" | Tahap 6.4 → `templates/cover_letter.md` |
+| "Tanggapi komentar reviewer" | Pasca submisi (Modul C) |
 | "Konversi ke LaTeX/docx" | Tahap 6 saja |
 | "Review draft ini" | Red-team protocol (Tahap 5 Layer 5) |
 | "Plan paper dari nol" | Full pipeline Tahap 1–6 |
 
 Minta konfirmasi pengguna sebelum menjalankan pipeline penuh jika konteks tidak jelas.
 
-## Aturan Penting (Selalu Berlaku)
-
-1. **Jangan mengarang referensi.** Verifikasi setiap paper bahwa benar-benar ada (DOI, penerbit, tahun). Kalau ragu, tandai "UNVERIFIED — cek manual".
-2. **Jangan mengarang data/fakta.** Jika data studi tidak diberikan, tanyakan atau tulis placeholder `[DATA]`.
-3. **Jangan menyalin teks corpus JURNAL verbatim.** Gunakan sebagai model struktur, bukan sumber kalimat (kecuali kutipan langsung yang diindikasikan dengan benar).
-4. **Bahasa**: ikuti preferensi pengguna (Indonesia/Inggris/bilingual). Istilah teknis dibiarkan Inggris.
-5. **Human-in-the-loop** di setiap quality gate — AI mengusulkan, manusia memutuskan.
-6. **Simpan semua artefak** sebagai file Markdown di folder kerja proyek pengguna, jangan hanya di chat.
-7. Gunakan template dari `templates/` dan checklist dari `checklists/` sebagai kontrak output.
-8. **Anti-plagiarisme**: kalimat dari sumber wajib dikutip (tanda kutip + sitasi) atau diparafrase + sitasi; overlap verbatim (≥ 7 kata EN / ≥ 6 kata ID) tidak boleh lolos ke submission. Lapor temuan ke pengguna sebelum memperbaiki.
+---
 
 ## Referensi Internal
 
+### Core & Router
+| File | Gunakan untuk |
+|------|---------------|
+| [core/system-prompt.md](core/system-prompt.md) | Instruksi universal semua mode (gaya, aturan, claim-evidence, auto-validation) — LOAD SELALU |
+
+### Protokol Mode (Method Selection Router)
+| File | Gunakan untuk |
+|------|---------------|
+| [protocols/slr.md](protocols/slr.md) | Mode SLR: PRISMA, PICO/PICOS, 7-field, screening |
+| [protocols/scoping-review.md](protocols/scoping-review.md) | Mode Scoping: PCC, PRISMA-ScR, JBI |
+| [protocols/meta-ethnography.md](protocols/meta-ethnography.md) | Mode Meta-Etnografi: eMERGe, Noblit & Hare 7 langkah |
+| [protocols/narrative-review.md](protocols/narrative-review.md) | Mode Narrative: SANRA |
+| [protocols/integrative-review.md](protocols/integrative-review.md) | Mode Integrative: Whittemore & Knafl 5 tahap |
+| [protocols/critical-review.md](protocols/critical-review.md) | Mode Critical: appraisal lenses |
+
+### Engine Sintesis Kualitatif
+| File | Gunakan untuk |
+|------|---------------|
+| [engines/reciprocal-translation.md](engines/reciprocal-translation.md) | Meta-etnografi: 1st→2nd→3rd order, reciprocal/refutational/line-of-argument |
+| [engines/conceptual-mapping.md](engines/conceptual-mapping.md) | Scoping: taksonomi konsep, distribusi geografis/timeline/metode, research gaps |
+| [engines/academic-debate.md](engines/academic-debate.md) | Narrative: klaster pro/kontra, timeline gagasan, debat terbuka |
+
+### Panduan Tahap Umum (references/)
 | File | Gunakan untuk |
 |------|---------------|
 | [references/literature-search.md](references/literature-search.md) | Pencarian literatur + filter Scopus Quartile |
-| [references/literature-matrix.md](references/literature-matrix.md) | Ekstraksi 7-field metadata per paper |
-| [references/research-gap-mapping.md](references/research-gap-mapping.md) | Literature mapping, Gap Matrix 4 jenis gap, anti pseudo-gap, Research Map |
-| [references/novelty-framing.md](references/novelty-framing.md) | Gap→novelty, 5 bentuk novelty, contribution statement, validasi kontribusi |
-| [references/journal-targeting.md](references/journal-targeting.md) | Arena jurnal, anti-predator, journal fit, self-assessment acceptance, cover letter |
-| [references/reviewer-response.md](references/reviewer-response.md) | Tipe komentar reviewer, minor/major strategy, response structure, rejection decision path |
-| [references/research-frameworks.md](references/research-frameworks.md) | Katalog framework RQ, prosedur riset, dan reporting/screening checklist |
-| [references/outline-builder.md](references/outline-builder.md) | Kerangka, RQ, alokasi kata, reviewer assessment |
+| [references/literature-matrix.md](references/literature-matrix.md) | Matrix 7-field (Mode SLR) |
+| [references/extraction-meta-ethnography.md](references/extraction-meta-ethnography.md) | Ekstraksi constructs 1st/2nd order |
+| [references/extraction-scoping.md](references/extraction-scoping.md) | Ekstraksi PCC mapping |
+| [references/extraction-critical.md](references/extraction-critical.md) | Ekstraksi lensa appraisal |
+| [references/extraction-narrative.md](references/extraction-narrative.md) | Ekstraksi posisi argumen |
+| [references/extraction-integrative.md](references/extraction-integrative.md) | Ekstraksi data qual+quant |
+| [references/research-gap-mapping.md](references/research-gap-mapping.md) | Literature mapping, Gap Matrix, anti pseudo-gap |
+| [references/novelty-framing.md](references/novelty-framing.md) | Gap→novelty, contribution statement |
+| [references/journal-targeting.md](references/journal-targeting.md) | Arena jurnal, anti-predator, cover letter |
+| [references/reviewer-response.md](references/reviewer-response.md) | Reviewer response & rejection path |
+| [references/research-frameworks.md](references/research-frameworks.md) | Katalog framework RQ (PCC, PICo, SPIDER, dll.) |
+| [references/outline-builder.md](references/outline-builder.md) | Outline, alokasi kata, reviewer assessment |
 | [references/section-writing.md](references/section-writing.md) | Panduan menulis per section |
 | [references/citation-formatter.md](references/citation-formatter.md) | Format APA/IEEE/MLA/Turabian/Chicago/Vancouver/Harvard |
 | [references/revision-guide.md](references/revision-guide.md) | Humanizer 25 pola + workflow revisi |
-| [references/grammar-check.md](references/grammar-check.md) | Grammar & mekanika bahasa (Indonesia/EYD & English) |
-| [references/plagiarism-check.md](references/plagiarism-check.md) | Deteksi plagiarisme & integritas sitasi |
+| [references/grammar-check.md](references/grammar-check.md) | Grammar & mekanika English-US (output) + dukungan input ID/EN |
+| [references/plagiarism-check.md](references/plagiarism-check.md) | Deteksi plagiarisme & integritas sitasi (EN utama) |
 | [references/quality-gates.md](references/quality-gates.md) | Gate mekanis + semantik + red-team |
 | [references/output-formatter.md](references/output-formatter.md) | Konversi MD/LaTeX/DOCX |
-| [templates/paper_outline.md](templates/paper_outline.md) | Template kerangka paper |
-| [templates/literature_matrix_template.md](templates/literature_matrix_template.md) | Template tabel literature matrix |
-| [templates/gap_matrix.md](templates/gap_matrix.md) | Template Gap Matrix (4 jenis gap + status + evidence) |
-| [templates/contribution_statement.md](templates/contribution_statement.md) | Template novelty + contribution statement + peta bukti |
-| [templates/cover_letter.md](templates/cover_letter.md) | Template cover letter submisi jurnal |
-| [templates/journal_comparison.md](templates/journal_comparison.md) | Template perbandingan jurnal kandidat |
-| [templates/response_to_reviewer.md](templates/response_to_reviewer.md) | Template surat editor + point-by-point response |
-| [templates/framework_selection.md](templates/framework_selection.md) | Form pilihan framework (RQ, prosedur, reporting) |
-| [templates/reporting_checklist.md](templates/reporting_checklist.md) | Template pemetaan item reporting checklist |
+
+### Templates
+| File | Gunakan untuk |
+|------|---------------|
+| [templates/paper_outline.md](templates/paper_outline.md) | Kerangka paper |
+| [templates/literature_matrix_template.md](templates/literature_matrix_template.md) | Matrix 7-field (SLR) |
+| [templates/extraction_meta_ethnography.md](templates/extraction_meta_ethnography.md) | Matrix constructs (meta-etnografi) |
+| [templates/extraction_scoping.md](templates/extraction_scoping.md) | Matrix PCC (scoping) |
+| [templates/extraction_critical.md](templates/extraction_critical.md) | Matrix appraisal (critical) |
+| [templates/extraction_narrative.md](templates/extraction_narrative.md) | Matrix posisi (narrative) |
+| [templates/extraction_integrative.md](templates/extraction_integrative.md) | Matrix campuran (integrative) |
+| [templates/gap_matrix.md](templates/gap_matrix.md) | Gap Matrix 4 jenis gap |
+| [templates/contribution_statement.md](templates/contribution_statement.md) | Novelty + contribution statement |
+| [templates/cover_letter.md](templates/cover_letter.md) | Cover letter submisi |
+| [templates/journal_comparison.md](templates/journal_comparison.md) | Perbandingan jurnal kandidat |
+| [templates/response_to_reviewer.md](templates/response_to_reviewer.md) | Surat editor + point-by-point |
+| [templates/framework_selection.md](templates/framework_selection.md) | Form pilihan mode/framework |
+| [templates/reporting_checklist.md](templates/reporting_checklist.md) | Pemetaan item reporting checklist |
 | [templates/section_templates/*](templates/section_templates/) | Template per section |
 | [templates/citation_templates/*](templates/citation_templates/) | Template sitasi per gaya |
-| [checklists/*](checklists/) | Checklist kualitas |
+
+### Checklists (Auto-Validation)
+| File | Gunakan untuk |
+|------|---------------|
+| [checklists/prisma_2020.md](checklists/prisma_2020.md) | SLR — 27 item |
+| [checklists/prisma_scr.md](checklists/prisma_scr.md) | Scoping — 22 item |
+| [checklists/emerge.md](checklists/emerge.md) | Meta-Etnografi — 19 kriteria |
+| [checklists/sanra.md](checklists/sanra.md) | Narrative — 6 item berskor |
+| [checklists/whittemore_knafl.md](checklists/whittemore_knafl.md) | Integrative — 17 kriteria |
+| [checklists/critical_review.md](checklists/critical_review.md) | Critical — 10 kriteria |
+| [checklists/grammar_check.md](checklists/grammar_check.md) | Grammar English-US (output) |
+| [checklists/plagiarism_check.md](checklists/plagiarism_check.md) | Anti-plagiarisme (EN utama) |
+| [checklists/*](checklists/) | Checklist kualitas lain |
+
+### Lainnya
+| File | Gunakan untuk |
+|------|---------------|
 | [scripts/convert.sh](scripts/convert.sh) | Konversi format |
+
+---
+
+## Aturan Penting (Selalu Berlaku)
+
+1. **Jangan mengarang referensi.** Verifikasi setiap paper benar-benar ada (DOI, penerbit, tahun). Ragu → "UNVERIFIED — cek manual".
+2. **Jangan mengarang data/fakta/temuan.** Jika tidak diberikan, tanyakan atau tulis placeholder `[DATA]`.
+3. **Jangan menyalin teks corpus JURNAL verbatim.**
+4. **Bahasa**: **output paper WAJIB English-US bergaya akademik**; input penelitian boleh Bahasa Indonesia/English (terjemahkan konten input dengan benar tanpa mengubah makna).
+5. **Human-in-the-loop** di setiap quality gate.
+6. **Simpan semua artefak** sebagai file Markdown di folder kerja proyek.
+7. Gunakan template & checklist sebagai kontrak output.
+8. **Anti-plagiarisme**: overlap verbatim (≥7 kata EN) tidak boleh lolos.
+9. **Mode harus terkunci sebelum ekstraksi** — jangan mencampur kriteria ekstraksi antar mode.
 
 ## Platform Note
 

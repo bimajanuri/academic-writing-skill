@@ -6,6 +6,8 @@ Katalog framework yang dapat dipilih pengguna untuk mengikat cara paper diformul
 2. **Framework Prosedur & Tahapan Riset**
 3. **Framework Pelaporan & Screening (Reporting Checklist)**
 
+> **Modular Multi-Method Engine**: untuk review kualitatif, framework pelaporan/ekstraksi disatukan dalam protokol mode (`protocols/scoping-review.md` → PRISMA-ScR + PCC; `protocols/meta-ethnography.md` → eMERGe + Noblit & Hare; `protocols/narrative-review.md` → SANRA; `protocols/integrative-review.md` → Whittemore & Knafl; `protocols/critical-review.md` → appraisal lenses). Lihat Method Selection Router di SKILL.md.
+
 > Prinsip: framework adalah **kontrak yang mengikat** — begitu dipilih, RQ, pencarian, struktur metodologi, dan checklist akhir mengikutinya. Framework tidak wajib; jika pengguna tidak peduli, agent mengusulkan default sesuai jenis paper (lihat §4).
 
 ---

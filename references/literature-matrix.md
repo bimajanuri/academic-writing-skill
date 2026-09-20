@@ -2,6 +2,13 @@
 
 Panduan menyusun tabel literature matrix terstruktur dari paper yang lolos pencarian.
 
+> **Modular Multi-Method Engine**: matrix 7-field di file ini adalah standar untuk **Mode SLR**. Untuk mode kualitatif, gunakan modul ekstraksi khusus (lihat router di SKILL.md):
+> - Scoping Review → `extraction-scoping.md` (PCC mapping)
+> - Meta-Etnografi → `extraction-meta-ethnography.md` (1st/2nd order constructs)
+> - Narrative Review → `extraction-narrative.md` (posisi argumen)
+> - Integrative Review → `extraction-integrative.md` (data qual + quant)
+> - Critical Review → `extraction-critical.md` (lensa appraisal)
+
 ## Struktur Kolom (7 Field Wajib + Nomor)
 
 Setiap paper menghasilkan **satu baris** dengan kolom berikut:

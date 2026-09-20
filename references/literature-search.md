@@ -12,7 +12,7 @@ Sebelum mencari, klarifikasi dari pengguna:
 | Filter Scopus Quartile | Q1 / Q2 / Q3 / Q4 / tanpa filter | Tanpa filter (tapi tetap tag quartile) |
 | Rentang tahun | bebas | 5 tahun terakhir |
 | Jumlah target | bebas | 15–40 paper |
-| Bahasa paper | Indonesia / Inggris / semua | Inggris |
+| Bahasa paper | Inggris/English (untuk output English-US; paper ID hanya sebagai konteks/grey lit tambahan) | Inggris |
 | Sumber | OpenAlex / Semantic Scholar / Crossref / DOAJ / PubMed / arXiv / semua | Semua (OpenAlex dulu) |
 | Jenis dokumen | artikel riset / review / semua | Artikel riset + review |
 

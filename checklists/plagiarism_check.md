@@ -1,12 +1,12 @@
-# Checklist — Plagiarism Check (ID / EN)
+# Checklist — Plagiarism Check (English-US, output wajib)
 
-Gunakan di **Tahap 6 (pre-submission)**. Satu checklist per area naskah yang berisiko tinggi (Introduction/Lit Review, Discussion).
+Gunakan di **Tahap 6 (pre-submission)**. Satu checklist per area naskah yang berisiko tinggi (Introduction/Lit Review, Discussion). Naskah output adalah English-US; area overlap deteksi berlaku untuk teks English.
 
 ## Overlap & Kutipan
-- [ ] Tidak ada frasa verbatim ≥ 7 kata (EN) / ≥ 6 kata (ID) dari sumber tanpa tanda kutip + sitasi
+- [ ] Tidak ada frasa verbatim ≥ 7 kata (EN) dari sumber tanpa tanda kutip + sitasi
 - [ ] Setiap kutipan langsung dalam tanda kutip (atau blok kutipan sesuai gaya) + halaman bila gaya mensyaratkan
 - [ ] Isi kutipan terverifikasi benar-benar ada di sumber asli (bukan karangan)
-- [ ] Kutipan panjang (≥ 40 kata EN / ≥ 2 baris ID) memakai format blok sesuai gaya
+- [ ] Kutipan panjang (≥ 40 kata EN) memakai format blok sesuai gaya
 
 ## Parafrase
 - [ ] Setiap parafrase disertai sitasi ke sumber asli

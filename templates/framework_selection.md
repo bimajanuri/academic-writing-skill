@@ -6,7 +6,7 @@ Isi form ini di **Langkah 1.1–1.2** (klarifikasi), lalu disimpan sebagai `fram
 # Metadata
 paper_title: ""
 jenis_paper: ""          # research paper / systematic review / scoping review / literature review / studi kasus / ...
-bahasa: ""               # Indonesia / English / bilingual
+bahasa: "English (US)"   # output wajib English-US; input boleh Indonesia / English
 target_jurnal: ""        # opsional (cek Instructions for Authors utk kewajiban checklist)
 gaya_sitasi: ""          # APA 7 / MLA 9 / Turabian / Vancouver / Harvard / Chicago / IEEE (Langkah 2.6)
 ```

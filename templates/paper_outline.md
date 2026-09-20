@@ -11,7 +11,7 @@ Salin dan isi template ini dari Tahap 2 (Perencanaan). Ganti semua `[..]` sesuai
 - **Target jurnal / venue**: [nama, atau "—"]
 - **Total target kata**: [mis. 7.500]
 - **Gaya sitasi**: [APA / IEEE / MLA / Chicago / Vancouver / gaya jurnal]
-- **Bahasa**: [Indonesia / Inggris / bilingual]
+- **Bahasa**: English (US) — output wajib; input boleh Indonesia/English
 
 ---
 
