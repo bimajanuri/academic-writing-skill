@@ -1,35 +1,35 @@
 # Extraction Module — Critical Review (Appraisal Lenses)
 
-Panduan ekstraksi untuk Mode Critical Review. Berfokus pada **asumsi epistemologis, batasan metodologis, dan bias perspektif** — bukan sekadar ringkasan temuan.
+Extraction guide for the Critical Review Mode. Focuses on **epistemological assumptions, methodological limitations, and perspective bias** — not merely a summary of findings.
 
-## Konsep Kunci
+## Key Concepts
 
-Critical review menilai *kelayakan ilmiah* sekaligus mengungkap *posisi* studi. Extraction menangkap tiga lensa:
+A critical review assesses *scientific soundness* while also revealing the *position* of the study. Extraction captures three lenses:
 
-| Lensa | Pertanyaan pemandu |
+| Lens | Guiding question |
 |-------|--------------------|
-| **Epistemologis** | Paradigma apa? Realisme/positivis vs interpretif vs kritis? Asumsi apa tentang pengetahuan yang dipegang? |
-| **Metodologis** | Sampling, desain, instrumen, validitas/trustworthiness — di mana titik lemahnya? |
-| **Otto/perspektif** | Posisi penulis, funding/conflict of interest, lensa teoretis — apa yang bias/tertutup? |
+| **Epistemological** | What paradigm? Realist/positivist vs interpretivist vs critical? What assumptions about knowledge are held? |
+| **Methodological** | Sampling, design, instruments, validity/trustworthiness — where are the weak points? |
+| **Ontological/perspective** | The author's position, funding/conflict of interest, theoretical lens — what is biased/hidden? |
 
-## Kolom Ekstraksi
+## Extraction Columns
 
-| No | Authors/Year/Jurnal/Q | Paradigma/asumsi epistemologis | Kekuatan desain | Batasan metodologis | Bias/posisi penulis | Rating confidence (High/Med/Low) + alasan | Ref kunci |
+| No | Authors/Year/Journal/Q | Paradigm/epistemological assumptions | Design strengths | Methodological limitations | Author bias/position | Confidence rating (High/Med/Low) + reason | Key ref |
 |----|------------------------|--------------------------------|-----------------|---------------------|----------------------|------------------------------------------|-----------|
 
-## Aturan Ekstraksi
+## Extraction Rules
 
-1. Tulis asumsi epistemologis berdasarkan bukti teks (mis. bahasa penulis tentang "truth", "generalizability") — jangan tebak.
-2. Batasan dikutip dari limitation section + identifikasi Anda bila didukung bukti.
-3. Rating confidence per studi di level temuan utama (bukan studi keseluruhan).
-4. Konflik kepentingan & funding diambil dari metadata (bila ada).
+1. Write epistemological assumptions based on evidence in the text (e.g. the author's language about "truth", "generalizability") — do not guess.
+2. Limitations are cited from the limitations section + your own identification when supported by evidence.
+3. Rate confidence per study at the level of the main finding (not the study as a whole).
+4. Conflicts of interest and funding are taken from metadata (when available).
 
 ## Anti-Hallucination
 
-- Kritik harus berdasar teks, bukan preferensi epistemologis Anda sendiri.
-- Jika paradigma tidak eksplisit → tulis "tidak dinyatakan, diinferens dari X" (inferensi ditandai).
-- Jangan mengarang funding/CoI bila tidak dicantumkan.
+- Critique must be grounded in the text, not your own epistemological preferences.
+- If the paradigm is not explicit → write "not stated, inferred from X" (inference clearly marked).
+- Do not fabricate funding/CoI when it is not disclosed.
 
 ## Template
 
-Gunakan `templates/extraction_critical.md` untuk output matrix.
+Use `templates/extraction_critical.md` for the output matrix.

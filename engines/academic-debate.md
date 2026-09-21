@@ -1,52 +1,52 @@
 # Engine — Academic Debate (Narrative Review)
 
-Engine sintesis untuk Mode Narrative Review. Mengelompokkan posisi penulis (pro/kontra) dan memetakan **perkembangan gagasan lintas waktu** untuk membangun narasi debat akademik.
+Synthesis engine for Narrative Review Mode. Groups author positions (pro/con) and maps the **development of ideas across time** to build an academic debate narrative.
 
-> Cocok untuk pertanyaan kontroversial/multi-interpretasi yang tidak memerlukan sintesis statistik.
+> Suitable for controversial/multi-interpretation questions that do not require statistical synthesis.
 
-## Kapan Dipakai
+## When Used
 
-Hanya di Mode Narrative Review (`protocols/narrative-review.md`), setelah matrix posisi argumen siap.
+Only in Narrative Review Mode (`protocols/narrative-review.md`), once the argument position matrix is ready.
 
-## Alur Kerja Engine
+## Engine Workflow
 
 ### Input
-- `literature_matrix.md` (mode narrative — kolom Posisi/Argument)
+- `literature_matrix.md` (narrative mode — Position/Argument columns)
 
-### Langkah
+### Steps
 
-1. **Identifikasi pertanyaan debat inti** — satu atau beberapa klaim yang dipertentangkan.
-2. **Klaster posisi**:
-   - **Pro** — penulis yang mendukung/memperkuat
-   - **Kontra** — penulis yang menolak/mengontraskan
-   - **Netral/kompleks** — penulis dengan posisi bersyarat atau multi-dimensi
-3. **Buat timeline gagasan** — urutkan kontribusi per tahun: siapa meletakkan dasar, siapa memperluas, siapa menantang, siapa mensintesis.
-4. **Identifikasi perdebatan terbuka** — area pro/kontra yang belum terselesaikan.
-5. **Susun narasi debat** — alur: histogram gagasan (asal-usul) → perkembangan → kontestasi → resolusi/sintetis (atau open question).
+1. **Identify the core debate question** — one or more contested claims.
+2. **Cluster the positions**:
+   - **Pro** — authors who support/strengthen
+   - **Con** — authors who reject/contrast
+   - **Neutral/complex** — authors with conditional or multi-dimensional positions
+3. **Build the idea timeline** — order contributions by year: who laid the foundation, who expanded, who challenged, who synthesized.
+4. **Identify open debates** — unresolved pro/con areas.
+5. **Compose the debate narrative** — flow: idea history (origin) → development → contestation → resolution/synthesis (or open question).
 
-### Aturan Ketat
+### Strict Rules
 
-- Posisi disimbolkan dari **klaim eksplisit penulis**, bukan tebakan.
-- Timeline harus berbasis tanggal jurnal (bukan tahun penulisan).
-- Jangan bingung "kritik metodologis" dengan "kontra substansi".
-- Konsensus vs heterogenitas diidentifikasi dengan bukti (berapa paper pro/kontra).
+- Positions are inferred from the **authors' explicit claims**, not guesses.
+- The timeline must be based on journal dates (not the year of writing).
+- Do not confuse "methodological criticism" with "substantive opposition".
+- Consensus vs heterogeneity identified with evidence (how many papers pro/con).
 
 ### Output
 ```text
-debate_map.md        — klaster pro/kontra/netral + argumen kunci per cluster
-debate_timeline.md   — kronologi gagasan (tabel/bagan)
-open_debates.md      — pertanyaan debat yang belum terselesaikan
+debate_map.md        — pro/con/neutral clusters + key arguments per cluster
+debate_timeline.md   — chronology of ideas (table/chart)
+open_debates.md      — unresolved debate questions
 ```
 
 ## Prompt Template
 
 ```text
-Dari literature_matrix.md (mode narrative), bangun peta debat akademik.
-1. Tentukan klaim inti yang diperdebatkan.
-2. Kelompokkan paper ke pro/kontra/netral berdasar klaim eksplisit.
-3. Susun timeline: dasar → ekspansi → tantangan → resolusi.
-4. Beri jumlah dukungan per klaster.
-5. Hasilkan debate_map.md + debate_timeline.md.
+From literature_matrix.md (narrative mode), build an academic debate map.
+1. Determine the core disputed claim(s).
+2. Group the papers into pro/con/neutral based on explicit claims.
+3. Build the timeline: foundation → expansion → challenge → resolution.
+4. Report the supporting counts per cluster.
+5. Produce debate_map.md + debate_timeline.md.
 ```
 
-[Jangan rutin "menyelesaikan" debat yang memang masoh terbuka — laporkan status apa adanya.]
+[Do not routinely "resolve" debates that are still genuinely open — report their status as it is.]

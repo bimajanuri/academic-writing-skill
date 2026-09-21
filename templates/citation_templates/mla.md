@@ -1,54 +1,54 @@
-# Template Sitasi — MLA 9th Edition
+# Citation Template — MLA 9th Edition
 
-Umum dipakai: Humaniora, Sastra, Bahasa, Budaya.
+Commonly used in: Humanities, Literature, Language, Culture.
 
 ## In-Text Citation
 
-| Situasi | Format | Contoh |
-|---------|--------|--------|
-| Naratif | `Nama (halaman)` atau `Nama` | Menurut Rahman, ... (45). |
-| Kurung | `(Nama halaman)` | (Rahman 45). |
-| Tanpa halaman (web) | `(Nama)` | (Rahman). |
-| Dua penulis | `Nama and Nama` | (Rahman and Sari 45). |
-| 3+ penulis | `Nama et al.` | (Rahman et al. 45). |
+| Situation | Format | Example |
+|-----------|--------|---------|
+| Narrative | `Name (page)` or `Name` | According to Rahman, ... (45). |
+| Parenthetical | `(Name page)` | (Rahman 45). |
+| No page (web) | `(Name)` | (Rahman). |
+| Two authors | `Name and Name` | (Rahman and Sari 45). |
+| 3+ authors | `Name et al.` | (Rahman et al. 45). |
 
 ## Bibliography (Works Cited)
 
 ```
-Penulis Belakang, Nama Depan, dan Nama Depan Penulis2. "Judul Artikel." Nama Jurnal, vol. 12, no. 3, 2023, pp. 210–225.
+Last Name, First Name, and First Name Author2. "Article Title." Journal Name, vol. 12, no. 3, 2023, pp. 210–225.
 ```
 
-- Diurutkan alfabetis; judul italic untuk buku/jurnal/film; judul artikel dalam tanda kutip.
+- Arranged alphabetically; italicize book/journal/film titles; put article titles in quotation marks.
 
-### Contoh — Jurnal:
+### Example — Journal:
 ```
-Rahman, Ahmad, and Dewi Sari. "Pengaruh Media Sosial terhadap Prestasi Akademik Mahasiswa." Jurnal Psikologi Indonesia, vol. 12, no. 3, 2023, pp. 210–225.
-```
-
-### Buku:
-```
-Rahman, Ahmad. Psikologi Remaja. Rajagrafindo Persada, 2008.
+Rahman, Ahmad, and Dewi Sari. "The Influence of Social Media on Students' Academic Performance." Indonesian Journal of Psychology, vol. 12, no. 3, 2023, pp. 210–225.
 ```
 
-### Bab dalam Kumpulan:
+### Book:
 ```
-Rahman, Ahmad. "Judul Bab." Judul Buku, diedit oleh Dewi Sari, Penerbit, 2008, hlm. 210–225.
+Rahman, Ahmad. Adolescent Psychology. Rajagrafindo Persada, 2008.
+```
+
+### Chapter in a Collection:
+```
+Rahman, Ahmad. "Chapter Title." Book Title, edited by Dewi Sari, Publisher, 2008, pp. 210–225.
 ```
 
 ### Web:
 ```
-Rahman, Ahmad. "Judul Halaman." Nama Situs, Penerbit atau N/A, Tanggal, https://url. Diunduh tanggal [dd/MM/yyyy].
+Rahman, Ahmad. "Page Title." Site Name, Publisher or N/A, Date, https://url. Accessed date [MM/DD/YYYY].
 ```
 
-## Aturan Tambahan
-- Semua penulis disebut pada entri pertama bibliography (et al. hanya di in-text).
-- Tanggal akses opsional; sertakan jika berguna (untuk konten yang berubah).
-- Jangan menulis "and others" — gunakan `et al.` persis.
-- Container-style: "[Container 1]", lalu "[Container 2]" (jurnal → database).
+## Additional Rules
+- List all authors in the first entry of the Works Cited (et al. is only used in-text).
+- Access date is optional; include it when useful (for changing content).
+- Do not write "and others" — use `et al.` exactly.
+- Container-style: "[Container 1]", then "[Container 2]" (journal → database).
 
 ## Checklist
-- [ ] Nama LaTeX-style di daftar pustaka: Belakang, Depan
-- [ ] Alfabetis
-- [ ] Italic untuk judul container (jurnal/buku); kutip untuk judul kerja (artikel)
-- [ ] Halaman selalu dicantumkan di in-text
-- [ ] Volume & nomor: `vol. 12, no. 3`
+- [ ] Names in reference list, Last, First format
+- [ ] Alphabetical
+- [ ] Italics for container titles (journal/book); quotation marks for work titles (article)
+- [ ] Page numbers always included in-text
+- [ ] Volume & issue: `vol. 12, no. 3`

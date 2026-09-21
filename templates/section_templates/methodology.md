@@ -1,53 +1,53 @@
-# Template Methodology
+# Methodology Template
 
-Salin dan isi agar **reproducible**: orang lain bisa mengulang berdasarkan teks ini.
+Copy and fill in so it is **reproducible**: others can replicate based on this text.
 
 ---
 
-## Metodologi
+## Methodology
 
-### 4.1 Desain Penelitian
-- Jenis desain: [eksperimen / survei / studi kasus / kualitatif / mixed-method / longitudinal / systematic review / lain]
-- Alasan: [mengapa desain ini tepat untuk RQ]
+### 4.1 Research Design
+- Design type: [experiment / survey / case study / qualitative / mixed-method / longitudinal / systematic review / other]
+- Rationale: [why this design fits the RQ]
 
-### 4.2 Variabel dan Pengukuran
-| Variabel | Jenis | Definisi Operasional | Pengukuran/Skala |
+### 4.2 Variables and Measurement
+| Variable | Type | Operational Definition | Measurement/Scale |
 |----------|-------|----------------------|------------------|
-| [IV: ...] | independen | [...] | [...] |
-| [DV: ...] | dependen | [...] | [...] |
+| [IV: ...] | independent | [...] | [...] |
+| [DV: ...] | dependent | [...] | [...] |
 | [Moderator/Mediator] | [...] | [...] | [...] |
 
-### 4.3 Populasi dan Sampel
-- Populasi: [...]
-- Teknik sampling: [acak / purposive / convenience / stratified ...]
-- Ukuran sampel: n = [...]
-- Karakteristik: [umur, kriteria inklusi/eksklusi, target]
+### 4.3 Population and Sample
+- Population: [...]
+- Sampling technique: [random / purposive / convenience / stratified ...]
+- Sample size: n = [...]
+- Characteristics: [age, inclusion/exclusion criteria, target]
 
-### 4.4 Instrumen
-- Alat ukur: [kuesioner / wawancara / skala / perangkat]
-- Skala: [Likert 1–5, dsb.]
-- Validitas: [hasil uji validitas, r ...]
-- Reliabilitas: [Cronbach's alpha = ... ]
+### 4.4 Instruments
+- Measuring tool: [questionnaire / interview / scale / device]
+- Scale: [Likert 1–5, etc.]
+- Validity: [validity test results, r ...]
+- Reliability: [Cronbach's alpha = ... ]
 
-### 4.5 Prosedur
-1. [...] (tahapan pengumpulan data)
+### 4.5 Procedure
+1. [...] (data collection stages)
 
-### 4.6 Analisis Data
-- Metode statistik: [deskriptif, uji asumsi, uji hipotesis: regresi/SEM/ANOVA]
-- Software: [SPSS versi x / JASP / AMOS / R versi y ...]
-- Ambang signifikansi: [α = .05, dsb.]
-- Kode/script: [lokasi / lampiran]
+### 4.6 Data Analysis
+- Statistical methods: [descriptive, assumption tests, hypothesis tests: regression/SEM/ANOVA]
+- Software: [SPSS version x / JASP / AMOS / R version y ...]
+- Significance threshold: [α = .05, etc.]
+- Code/script: [location / appendix]
 
-### 4.7 Etika *(jika relevan: manusia, hewan, data)*
-- Informed consent, persetujuan etik, anonimitas, dsb.
+### 4.7 Ethics *(if relevant: humans, animals, data)*
+- Informed consent, ethical approval, anonymity, etc.
 
 ---
 
 ## Checklist
-- [ ] Reproducible: pembaca bisa mengulang langkah
-- [ ] Setiap variabel terdefinisi operasional
-- [ ] Sampel + teknik sampling jelas (dengan n)
-- [ ] Instrumen lengkap (validitas & reliabilitas)
-- [ ] Analisis data eksplisit (metode + software + ambang)
-- [ ] Semua pilihan mengapa (X karena Y), bukan sekadar "kami pakai X"
-- [ ] Tidak membuat-buat angka — tambahkan label `[DATA]` bila belum tersedia
+- [ ] Reproducible: readers can repeat the steps
+- [ ] Every variable has an operational definition
+- [ ] Sample + sampling technique clear (with n)
+- [ ] Instruments complete (validity & reliability)
+- [ ] Data analysis explicit (method + software + threshold)
+- [ ] Every choice has a why (X because Y), not just "we used X"
+- [ ] No fabricated numbers — add a `[DATA]` label when data are not yet available

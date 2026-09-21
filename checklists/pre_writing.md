@@ -1,44 +1,44 @@
-# Checklist — Sebelum Menulis (Tahap 1–2)
+# Checklist — Before Writing (Stages 1–2)
 
-Gunakan sebelum mulai menulis prosa. Semua item harus ✓ sebelum melangkah ke penulisan.
+Use before starting to write prose. All items must be ✓ before moving on to writing.
 
-## Defining & Fokus
+## Defining & Focus
 
-- [ ] Framework dipilih & disimpan di `framework_selection.md` (RQ framework, prosedur riset, reporting checklist) — atau dikonfirmasi tanpa framework
-- [ ] Research question (RQ) dirumuskan sesuai framework pilihan, jelas, dan menjawab gap
-- [ ] Publikasi target ditentukan (jurnal/venue)
-- [ ] Gaya sitasi ditentukan (APA/MLA/Turabian/Vancouver/Harvard/Chicago/IEEE — Langkah 2.6) & direkam di `style_profile.md`/`framework_selection.md`
-- [ ] Scope dan kontribusi didefinisikan (apa bedanya dari yang sudah ada)
-- [ ] Contribution statement selesai (Langkah 2.7): bentuk novelty jujur, semua bullet punya bukti terencana, 0 overclaim (`templates/contribution_statement.md`)
+- [ ] Framework selected & saved in `framework_selection.md` (RQ framework, research procedure, reporting checklist) — or confirmed as working without a framework
+- [ ] Research question (RQ) formulated per the chosen framework, clear, and addressing the gap
+- [ ] Target publication determined (journal/venue)
+- [ ] Citation style determined (APA/MLA/Turabian/Vancouver/Harvard/Chicago/IEEE — Step 2.6) & recorded in `style_profile.md`/`framework_selection.md`
+- [ ] Scope and contribution defined (how it differs from what already exists)
+- [ ] Contribution statement complete (Step 2.7): honest form of novelty, every bullet has planned evidence, 0 overclaims (`templates/contribution_statement.md`)
 
 ## Literature Review
 
-- [ ] Pencarian di ≥ 1 database (OpenAlex/Semantic Scholar/Crossref/DOAJ/PubMed/arXiv)
-- [ ] Kata kunci pencarian diturunkan dari elemen RQ framework (jika dipilih)
-- [ ] Filter Scopus Quartile diterapkan (Q1–Q4); non-Scopus diberi label `[non-Scopus]`
-- [ ] Literature matrix 7 field lengkap untuk semua paper
-- [ ] Gap Matrix terisi: ≥ 3 gap dengan jenis (teoretis/metodologis/kontekstual/inkonsistensi), status, dan evidence ≥ 3 sitasi
-- [ ] Validasi anti pseudo-gap dijalankan (0 pseudo-gap lolos)
-- [ ] Gap Analysis selesai (gap terkuat dipilih + definisi, evidence, significance, feasibility)
-- [ ] Research Positioning Map selesai (kuadran posisi kontribusi ditentukan)
-- [ ] Semua klaim/sitasi terverifikasi (bukan karangan)
-- [ ] Research map / teori utama diidentifikasi
+- [ ] Search in ≥ 1 database (OpenAlex/Semantic Scholar/Crossref/DOAJ/PubMed/arXiv)
+- [ ] Search keywords derived from RQ framework elements (if one is chosen)
+- [ ] Scopus Quartile filter applied (Q1–Q4); non-Scopus sources labeled `[non-Scopus]`
+- [ ] Literature matrix 7 fields complete for all papers
+- [ ] Gap Matrix filled: ≥ 3 gaps with type (theoretical/methodological/contextual/inconsistency), status, and ≥ 3 supporting citations
+- [ ] Anti pseudo-gap validation run (0 pseudo-gaps passed)
+- [ ] Gap Analysis complete (strongest gap selected + definition, evidence, significance, feasibility)
+- [ ] Research Positioning Map complete (quadrant of contribution position determined)
+- [ ] All claims/citations verified (not fabricated)
+- [ ] Research map / key theories identified
 
 ## Outline
 
-- [ ] Outline IMRaD dibangun (lihat template paper_outline.md)
-- [ ] Alokasi kata sesuai target per section
-- [ ] Topic sentence per paragraf ditulis (kontrak paragraf)
-- [ ] Alokasi figur/tabel direncanakan
-- [ ] Framework compliance plan dibuat (item reporting checklist → lokasi section; artefak prosedur seperti PRISMA flow/RoB bila evidence synthesis)
+- [ ] IMRaD outline built (see paper_outline.md template)
+- [ ] Word allocation per section matches target
+- [ ] Topic sentence written per paragraph (paragraph contract)
+- [ ] Figure/table allocation planned
+- [ ] Framework compliance plan created (reporting checklist item → section location; procedure artifacts such as PRISMA flow/RoB for evidence synthesis)
 
-## Data & Bahan
+## Data & Materials
 
-- [ ] Semua data/instrumen/kode tersedia
-- [ ] Angka statistik yang akan dilaporkan sudah tersedia (atau ditandai `[DATA]`)
-- [ ] Template section yang dibutuhkan disalin untuk diisi
+- [ ] All data/instruments/code available
+- [ ] Statistics to be reported already available (or marked `[DATA]`)
+- [ ] Required section templates copied for filling in
 
-## Persetujuan Pengguna
+## User Approval
 
-- [ ] Konfirmasi interpretasi dan fokus dengan pengguna (human-in-the-loop gate)
-- [ ] Target panjang & bahasa final disepakati
+- [ ] Interpretation and focus confirmed with the user (human-in-the-loop gate)
+- [ ] Target length & final language agreed upon

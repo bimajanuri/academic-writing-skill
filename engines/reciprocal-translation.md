@@ -1,56 +1,56 @@
-# Engine — Reciprocal Translation (Meta-Etnografi)
+# Engine — Reciprocal Translation (Meta-Ethnography)
 
-Engine inti untuk Mode Meta-Etnografi. Mengubah temuan-temuan studi kualitatif primer menjadi **3rd Order Constructs** melalui proses *reciprocal translation* ala Noblit & Hare.
+Core engine for Meta-Ethnography Mode. Transforms primary qualitative study findings into **3rd Order Constructs** through the *reciprocal translation* process à la Noblit & Hare.
 
-> Built di atas konsep: 1st order (kutipan partisipan) → 2nd order (interpretasi penulis) → 3rd order (interpretasi baru sang sintesis).
+> Built on the concept: 1st order (participant quotations) → 2nd order (author interpretation) → 3rd order (new interpretation by the synthesist).
 
-## Kapan Dipakai
+## When Used
 
-Hanya di Mode Meta-Etnografi (`protocols/meta-ethnography.md`), setelah matrix constructs (1st/2nd order) siap dan sebelum menulis hasil.
+Only in Meta-Ethnography Mode (`protocols/meta-ethnography.md`), once the constructs matrix (1st/2nd order) is ready and before writing the results.
 
-## Alur Kerja Engine
+## Engine Workflow
 
 ### Input
-- `constructs_1st_2nd.md` — daftar 1st & 2nd order constructs per study
-- `literature_matrix.md` (mode meta-etnografi)
+- `constructs_1st_2nd.md` — list of 1st & 2nd order constructs per study
+- `literature_matrix.md` (meta-ethnography mode)
 
-### Langkah
+### Steps
 
-1. **Pilih studi pertama sebagai "conceptual baseline"** — studi yang paling kaya konsep.
-2. **Terjemahkan studi kedua ke dalam konsep studi pertama** — cari pemetaan konsep yang sepadan:
-   - Konsep A pada studi 1 ≈ konsep B pada studi 2 (makna sama, label beda) → **masukkan**.
-   - Konsep yang MPUNYA makna berbeda / kontradiktif → **tandai refutational**.
-   - Konsep yang saling melengkapi → **tandai line-of-argument**.
-3. **Ulangi berpasangan** ke semua studi (translation berurutan, seperti rantai).
-4. **Sintesis terjemahan** — gabungkan hasil terjemahan untuk menghasilkan 3rd order constructs baru; jika beragam arah → bina **line-of-argument**.
-5. **Tulis narasi sintesis** — jelaskan bagaimana 3rd order lahir dari 1st & 2nd order (jejak/keterlacakan wajib).
+1. **Select the first study as the "conceptual baseline"** — the study richest in concepts.
+2. **Translate the second study into the concepts of the first study** — look for equivalent concept mappings:
+   - Concept A in study 1 ≈ Concept B in study 2 (same meaning, different labels) → **include**.
+   - Concepts that have a DIFFERENT / contradictory meaning → **mark as refutational**.
+   - Concepts that complement each other → **mark as line-of-argument**.
+3. **Repeat pairwise** across all studies (sequential translation, like a chain).
+4. **Synthesise the translations** — combine translation results to produce new 3rd order constructs; if the directions diverge → build a **line-of-argument**.
+5. **Write the synthesis narrative** — explain how the 3rd order constructs arose from the 1st & 2nd order constructs (traceability is mandatory).
 
-### Aturan Ketat (Tidak Boleh Dilanggar)
+### Strict Rules (Must Not Be Violated)
 
-- JANGAN pernah mempresentasikan 1st order constructs dari studi primer sebagai hasil sintesis.
-- JANGAN menggabungkan dua konsep dengan makna berbeda hanya karena "similar words" — verifikasi konteks.
-- 3rd order construct hanya boleh diklaim jika bisa ditelusuri kembali ke minimal 2 studi.
-- Transparansi label: sertakan tabel pemetaan konsep antar studi.
+- NEVER present 1st order constructs from primary studies as the synthesis results.
+- NEVER merge two concepts with different meanings solely because of "similar words" — verify the context.
+- A 3rd order construct may only be claimed if it can be traced back to at least 2 studies.
+- Label transparency: include a concept-mapping table across studies.
 
 ### Output
 ```text
-synthesis_translation.md   — hasil translation + 3rd order constructs
-line_of_argument.md        — narasi line-of-argument (jika relevan)
-translation_matrix.md      — tabel pemetaan konsep antar studi (opsional)
+synthesis_translation.md   — translation results + 3rd order constructs
+line_of_argument.md        — line-of-argument narrative (if relevant)
+translation_matrix.md      — concept-mapping table across studies (optional)
 ```
 
-## Prompt Template (instruksi kerja untuk agent)
+## Prompt Template (work instructions for the agent)
 
 ```text
-Kamu akan melakukan Reciprocal Translation untuk sintesis meta-etnografi.
-Gunakan constructs_1st_2nd.md. Langkah:
-1. Tentukan paper baseline (paling kaya konsep).
-2. Untuk setiap paper berurutan, terjemahkan 2nd order construct-nya ke
-   dalam konsep baseline: tandai sebagai reciprocal / refutational /
+You will perform Reciprocal Translation for a meta-ethnography synthesis.
+Use constructs_1st_2nd.md. Steps:
+1. Determine the baseline paper (richest in concepts).
+2. For each subsequent paper in order, translate its 2nd order constructs into
+   the baseline concepts: mark them as reciprocal / refutational /
    line-of-argument.
-3. Gabungkan hasil terjemahan menjadi 3rd order constructs baru.
-4. Tulis narasi yang menunjukkan hubungan antar studi secara eksplisit.
-5. Sertakan tabel pemetaan konsep (Paper X → Paper Y).
+3. Combine the translation results into new 3rd order constructs.
+4. Write a narrative that shows the relationships between studies explicitly.
+5. Include a concept-mapping table (Paper X → Paper Y).
 ```
 
-[Jangan lanjut sebelum baseline & semua terjemahan tervalidasi konsisten.]
+[Do not proceed before the baseline & all translations are validated as consistent.]

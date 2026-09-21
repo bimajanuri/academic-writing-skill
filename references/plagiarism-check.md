@@ -1,78 +1,79 @@
-# Plagiarism Check — Deteksi Plagiarisme & Integritas Sitasi (English-US)
+# Plagiarism Check — Plagiarism Detection & Citation Integrity (English-US)
 
-Panduan memeriksa plagiarisme sebelum submission (Tahap 6) pada naskah output berbahasa **English (US)**. Tujuan: memastikan setiap kalimat berasal dari penulis atau dikutip/diparafrase dengan atribusi benar. (Konten input boleh Bahasa Indonesia/English, tetapi naskah final diperiksa sebagai teks English.)
+Guide to checking plagiarism before submission (Stage 6) on manuscripts output in **English (US)**. Goal: ensure every sentence originates from the author or is quoted/paraphrased with proper attribution. (Input content may be in Bahasa Indonesia/English, but the final manuscript is checked as English text.)
 
-## 1. Jenis Plagiarisme
+## 1. Types of Plagiarism
 
-| Jenis | Deskripsi | Tanda |
+| Type | Description | Sign |
 |-------|-----------|-------|
-| **Copy-paste (direct)** | Menyalin kalimat/paragraf verbatim tanpa kutip | Blok kata berbunyi tidak seperti gaya penulis di sekitarnya |
-| **Mosaic / patchwork** | Menyusun ulang kata-kata sumber tanpa memparafrase sungguhan | Struktur kalimat tetap ikut sumber, hanya kata diganti sinonim |
-| **Paraphrase tanpa atribusi** | Parafrase sah tetapi tidak menyebut sumber | Klaim spesifik/data/angka tanpa sitasi |
-| **Self-plagiarism** | Mengirim ulang bagian paper/tugas sendiri yang sudah dipublikasi (kecuali diizinkan) | Kalimat identik dengan karya penulis sendiri |
-| **Citation laundering / salah sitasi** | Mengutip sumber yang tidak pernah dibaca (sitasi sekunder tanpa verifikasi) | Sumber di daftar pustaka tidak sesuai klaim |
+| **Copy-paste (direct)** | Copying sentences/paragraphs verbatim without quotation | Word blocks that do not sound like the author's surrounding style |
+| **Mosaic / patchwork** | Rearranging source words without genuine paraphrasing | Sentence structure still follows the source; only words are replaced with synonyms |
+| **Paraphrase without attribution** | Legitimate paraphrase but with no source named | Specific claims/data/numbers without citations |
+| **Self-plagiarism** | Re-submitting parts of one's own previously published paper/assignment (unless permitted) | Sentences identical to the author's own work |
+| **Citation laundering / miscitation** | Citing a source never read (secondary citations without verification) | Sources in the reference list that do not match the claim |
 
-## 2. Workflow — Verifikasi Lokal (dapat dikerjakan agent)
+## 2. Workflow — Local Verification (can be done by the agent)
 
-Berjalan tanpa tools berbayar. Lakukan berurutan:
+Runs without paid tools. Perform in order:
 
-### 2.1 Overlap terhadap korpus (Literature Matrix)
-- Bandingkan kalimat/klausa naskah dengan **teks sumber di Literature Matrix / file paper yang ada**.
-- Deteksi: frasa verbatim ≥ 7 kata berturut-turut (EN) yang bukan sitasi → tandai.
-- Klaim proksimitas: jika naskah "kata-kata persis sumber" tanpa tanda kutip & sitasi → **red flag**.
+### 2.1 Overlap against the corpus (Literature Matrix)
+- Compare the manuscript's sentences/clauses with the **source texts in the Literature Matrix / available paper files**.
+- Detection: verbatim phrases of ≥ 7 consecutive words (EN) that are not citations → flag.
+- Proximity claim: if the manuscript has "verbatim source wording" without quotation marks & citation → **red flag**.
 
-### 2.2 Cek kutipan verbatim
-- Setiap kutipan langsung (quoted) harus **dalam tanda kutip** + halaman (jika gaya mensyaratkan).
-- Kutipan panjang: aturan blok/indent sesuai gaya.
-- Verifikasi kutipan benar-benar ada di sumber (jangan mengarang isi kutipan) — anti-hallucination.
+### 2.2 Check verbatim quotations
+- Every direct quotation must be **in quotation marks** + page (if the style requires it).
+- Long quotations: block/indent rules per style.
+- Verify the quotation actually exists in the source (do not invent quote content) — anti-hallucination.
 
-### 2.3 Uji kadar parafrase
-Untuk parafrase yang baik:
-1. Ada sitasi ke sumber asli.
-2. Struktur kalimat **bukan** salinan berurutan dari sumber (cek urutan klausa).
-3. Tidak sekadar mengganti sinonim tanpa mengubah struktur.
-4. Makna tetap akurat — parafrase tidak boleh mengubah klaim.
+### 2.3 Paraphrase quality test
 
-Beri nilai parafrase tiap paragraf: `padanan tepat (quotation)` / `parafrase baik` / `parafrase tipis (risiko)` / `salinan`.
+For good paraphrase:
+1. There is a citation to the original source.
+2. The sentence structure is **not** a sequential copy of the source (check the clause order).
+3. It is not merely swapping synonyms without changing the structure.
+4. The meaning stays accurate — paraphrase must not change the claim.
+
+Rate each paragraph's paraphrase: `exact match (quotation)` / `good paraphrase` / `thin paraphrase (risk)` / `copy`.
 
 ### 2.4 Self-plagiarism
-- Cek kalimat yang identik dengan publikasi/paper penulis sebelumnya (jika tersedia).
-- Sektor konteks Indonesia: tesis pada platform dapat diserahkan dengan izin; tetap laporkan batasnya dan beri tahu pengguna.
+- Check for sentences identical to the author's previous publications/papers (if available).
+- Indonesian context: theses on platforms may be submitted with permission; still report the limits and inform the user.
 
-### 2.5 Verifikasi sumber jaringan (opsional, bila ada akses)
-- Cari frasa verbatim khas (mis. 8–10 kata) ke mesin pencari untuk mendeteksi sumber tak dikenal.
-- Jangan mengandalkan hasil pencarian sebagai bukti final; gunakan sebagai sinyal untuk pengecekan manual.
+### 2.5 Network source verification (optional, if access is available)
+- Search typical verbatim phrases (e.g., 8–10 words) in a search engine to detect unknown sources.
+- Do not rely on the search results as final proof; use them as signals for manual checking.
 
-## 3. Skor Kesamaan (Similarity)
+## 3. Similarity Score
 
-Bila memakai tools (Turnitin/iThenticate/PlagiarismCheck) atau estimasi lokal:
+When using tools (Turnitin/iThenticate/PlagiarismCheck) or local estimates:
 
-| Band | Interpretasi |
+| Band | Interpretation |
 |------|--------------|
-| 0–10% | Wajar bila dari kutipan pendek & daftar pustaka; tetap cek kalimat sumber (bukan template). |
-| 10–20% | Periksa sumber berulang; parafrase ulang bagian yang overlap tanpa kutip. |
-| >20% | Wajib direvisi: sitasi/kutip/parafrase seluruh area overlap sebelum submit. |
+| 0–10% | Reasonable when from short quotations & the reference list; still check the source sentences (not templates). |
+| 10–20% | Check recurring sources; re-paraphrase overlapping passages without quotes. |
+| >20% | Must be revised: cite/quote/paraphrase all overlapping areas before submission. |
 
-> Similarity tool bukan penilai bahasa/tata bahasa; dan bukan pengganti verifikasi salah sitasi. Score rendah ≠ bebas plagiat.
+> A similarity tool is neither a language/grammar judge nor a substitute for miscitation verification. A low score ≠ free of plagiarism.
 
-## 4. Rules (Anti-Plagiarism — selalu berlaku)
+## 4. Rules (Anti-Plagiarism — always in effect)
 
-1. **Jangan** menyalin kalimat dari sumber tanpa tanda kutip + sitasi.
-2. **Jangan** memparafrase tanpa sitasi (APA/MLA/Chicago/Harvard/Vancouver — lihat `references/citation-formatter.md`).
-3. **Jangan** mengarang atau mempercantik kutipan.
-4. **Jangan** menerima teks "hasil AI" yang menyalin sumber; kerahasiaan akademik tetap berlaku.
-5. Setiap data/angka/klaim spesifik punya sumber di Literature Matrix — kalau tidak → tandai `[DATA]`/`UNVERIFIED`.
+1. **Do not** copy sentences from sources without quotation marks + citations.
+2. **Do not** paraphrase without citation (APA/MLA/Chicago/Harvard/Vancouver — see `references/citation-formatter.md`).
+3. **Do not** invent or embellish quotations.
+4. **Do not** accept "AI output" text that copies sources; academic integrity still applies.
+5. Every specific data point/number/claim has a source in the Literature Matrix — if not → mark `[DATA]`/`UNVERIFIED`.
 
-## 5. Integritas & Etika
+## 5. Integrity & Ethics
 
-- Parafrase sah = menulis ulang ide dengan kata sendiri **sambil** menyitasi; bukan sinonim-switch.
-- Lapor ke pengguna setiap temuan overlap yang signifikan; jangan diam-diam memperbaiki dan menganggap selesai.
-- Bahasa: naskah output adalah English-US; korpus acuan = jurnal internasional. Bila konten input berbahasa Indonesia, pastikan hasil terjemahan bukan salinan terjemahan mentah dari sumber (parafrase tetap wajib).
+- Legitimate paraphrase = rewriting the idea in your own words **while** citing; not synonym-switching.
+- Report significant overlap findings to the user; do not silently fix them and consider it done.
+- Language: the output manuscript is English-US; the reference corpus is international journals. Input content may be in Bahasa Indonesia/English; if the input is in Bahasa Indonesia, ensure the translated output is not a raw verbatim copy of a source — paraphrase remains mandatory.
 
 ## 6. Output
 
 ```
-plagiarism_report.md   — daftar area overlap (lokasi, sumber, jenis plagiat, keputusan: kutip/parafrase/sitasi/hapus)
+plagiarism_report.md   — list of overlapping areas (location, source, plagiarism type, decision: quote/paraphrase/cite/delete)
 ```
 
-Gunakan `checklists/plagiarism_check.md` untuk pelacakan per bagian.
+Use `checklists/plagiarism_check.md` for per-section tracking.

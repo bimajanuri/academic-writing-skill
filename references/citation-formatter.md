@@ -1,142 +1,142 @@
-# Citation Formatter — Format Sitasi & Referensi (Tahap 4)
+# Citation Formatter — Citation & Reference Formatting (Stage 4)
 
-Panduan memformat in-text citation dan bibliography dalam **6 gaya pilihan**: **APA 7, MLA 9, Turabian, Vancouver, Harvard, Chicago** — plus **IEEE** sebagai opsi tambahan untuk bidang teknik.
+Guide to formatting in-text citations and bibliographies in **6 chosen styles**: **APA 7, MLA 9, Turabian, Vancouver, Harvard, Chicago** — plus **IEEE** as an additional option for engineering fields.
 
-Template detail per gaya ada di `templates/citation_templates/`.
+Detailed per-style templates are in `templates/citation_templates/`.
 
-## 1. Pilih Gaya
+## 1. Choose a Style
 
-Tanyakan kepada pengguna. Rekomendasi berdasarkan bidang:
+Ask the user. Recommendations by field:
 
-| Bidang | Umumnya dipakai |
+| Field | Typically Used |
 |--------|-----------------|
-| Psikologi, Pendidikan, Sosial, Bisnis, Kesehatan | **APA 7** |
-| Teknik, Komputer, Informatika | **IEEE** (opsi tambahan) |
-| Humaniora, Sastra, Bahasa | **MLA** / **Turabian** / **Chicago** |
-| Sejarah, Filosofi | **Chicago (Notes)** / **Turabian (Notes)** |
-| Tesis/Disertasi/Makalah mahasiswa | **Turabian** |
-| Ekonomi, Manajemen, Sosial (Inggris), Kesehatan | **Harvard** |
-| Kedokteran, Biomedis | **Vancouver** |
-| Jurnal target | Sesuai gaya jurnal (mis. mengikuti template jurnal) |
+| Psychology, Education, Social, Business, Health | **APA 7** |
+| Engineering, Computer, Informatics | **IEEE** (additional option) |
+| Humanities, Literature, Language | **MLA** / **Turabian** / **Chicago** |
+| History, Philosophy | **Chicago (Notes)** / **Turabian (Notes)** |
+| Theses/Dissertations/Student papers | **Turabian** |
+| Economics, Management, Social (British English), Health | **Harvard** |
+| Medicine, Biomedicine | **Vancouver** |
+| Target journal | The journal's style (e.g., following the journal template) |
 
-Jika pengguna tidak tahu → tanya bidang, beri rekomendasi di atas. **Gaya juga bisa ditentukan di Tahap 2** (berdasarkan jurnal target) dan diformat penuh di Tahap 4.
+If the user does not know → ask for the field and give the recommendation above. **The style can also be decided in Stage 2** (based on the target journal) and fully formatted in Stage 4.
 
-## 2. Data Referensi yang Dibutuhkan
+## 2. Required Reference Data
 
-Untuk satu paper, idealnya punya (dari Literature Matrix):
-- DOI, Judul, Penulis (semua jika < jumlah maks; `et al.` sesuai gaya)
-- Jurnal/venue, Tahun, Volume, Nomor, Halaman, Penerbit, Kota
-- Untuk web: URL + tanggal akses (khusus APA/MLA/Chicago)
+For one paper, ideally have (from the Literature Matrix):
+- DOI, Title, Authors (all if fewer than the maximum; `et al.` per style)
+- Journal/venue, Year, Volume, Issue, Pages, Publisher, City
+- For web: URL + access date (specifically APA/MLA/Chicago)
 
-Jika ada field hilang → tulis placeholder `[data tidak tersedia]` dan tandai ke pengguna, JANGAN mengarang.
+If a field is missing → write the placeholder `[data not available]` and flag it to the user, DO NOT invent it.
 
 ## 3. Quick Format Reference
 
 ### In-Text Citation
 
-| Gaya | Kutipan naratif | Kutipan kurung |
+| Style | Narrative citation | Parenthetical citation |
 |------|-----------------|----------------|
-| **APA 7** | Rahman (2023) menyatakan ... | (Rahman & Sari, 2023) |
-| **MLA 9** | Rahman argues ... | (Rahman 45) — dengan halaman |
+| **APA 7** | Rahman (2023) states ... | (Rahman & Sari, 2023) |
+| **MLA 9** | Rahman argues ... | (Rahman 45) — with page |
 | **Turabian Author-Date** | Rahman and Sari (2023) ... | (Rahman and Sari 2023, 210) |
 | **Vancouver** | Rahman et al. concluded ...¹ | ... ¹ |
 | **Harvard** | Rahman and Sari (2023) ... | (Rahman and Sari, 2023, p. 210) |
 | **Chicago Author-Date** | Rahman (2023) ... | (Rahman 2023) |
 | **IEEE** | As discussed in [3] ... | ... [3] |
 
-### Daftar Pustaka (contoh, jurnal)
+### References (examples, journal article)
 
 **APA 7:**
 ```
-Rahman, A., & Sari, D. (2023). Pengaruh media sosial terhadap prestasi akademik mahasiswa. Jurnal Psikologi Indonesia, 12(3), 210–225. https://doi.org/10.xxxx/xxx
+Rahman, A., & Sari, D. (2023). The influence of social media on students' academic performance. Jurnal Psikologi Indonesia, 12(3), 210–225. https://doi.org/10.xxxx/xxx
 ```
 
 **IEEE:**
 ```
-[1] A. Rahman and D. Sari, "Pengaruh media sosial terhadap prestasi akademik mahasiswa," Jurnal Psikologi Indonesia, vol. 12, no. 3, pp. 210–225, 2023, doi: 10.xxxx/xxx.
+[1] A. Rahman and D. Sari, "The influence of social media on students' academic performance," Jurnal Psikologi Indonesia, vol. 12, no. 3, pp. 210–225, 2023, doi: 10.xxxx/xxx.
 ```
 
 **MLA 9:**
 ```
-Rahman, Ahmad, and Dewi Sari. "Pengaruh Media Sosial terhadap Prestasi Akademik Mahasiswa." Jurnal Psikologi Indonesia, vol. 12, no. 3, 2023, pp. 210–225.
+Rahman, Ahmad, and Dewi Sari. "The Influence of Social Media on Students' Academic Performance." Jurnal Psikologi Indonesia, vol. 12, no. 3, 2023, pp. 210–225.
 ```
 
 **Chicago Author-Date:**
 ```
-Rahman, Ahmad, and Dewi Sari. 2023. "Pengaruh Media Sosial terhadap Prestasi Akademik Mahasiswa." Jurnal Psikologi Indonesia 12 (3): 210–225. https://doi.org/10.xxxx/xxx.
+Rahman, Ahmad, and Dewi Sari. 2023. "The Influence of Social Media on Students' Academic Performance." Jurnal Psikologi Indonesia 12 (3): 210–225. https://doi.org/10.xxxx/xxx.
 ```
 
 **Chicago Notes:**
 ```
-1. Ahmad Rahman and Dewi Sari, "Pengaruh Media Sosial terhadap Prestasi Akademik Mahasiswa," Jurnal Psikologi Indonesia 12, no. 3 (2023): 210–225.
-Bibliografi:
-Rahman, Ahmad, and Dewi Sari. "Pengaruh Media Sosial terhadap Prestasi Akademik Mahasiswa." Jurnal Psikologi Indonesia 12, no. 3 (2023): 210–225.
+1. Ahmad Rahman and Dewi Sari, "The Influence of Social Media on Students' Academic Performance," Jurnal Psikologi Indonesia 12, no. 3 (2023): 210–225.
+Bibliography:
+Rahman, Ahmad, and Dewi Sari. "The Influence of Social Media on Students' Academic Performance." Jurnal Psikologi Indonesia 12, no. 3 (2023): 210–225.
 ```
 
 **Turabian (Notes-Bibliography):**
 ```
-1. Ahmad Rahman and Dewi Sari, "Pengaruh Media Sosial terhadap Prestasi Akademik Mahasiswa," Jurnal Psikologi Indonesia 12, no. 3 (2023): 210–225.
-Bibliografi:
-Rahman, Ahmad, and Dewi Sari. "Pengaruh Media Sosial terhadap Prestasi Akademik Mahasiswa." Jurnal Psikologi Indonesia 12, no. 3 (2023): 210–225.
+1. Ahmad Rahman and Dewi Sari, "The Influence of Social Media on Students' Academic Performance," Jurnal Psikologi Indonesia 12, no. 3 (2023): 210–225.
+Bibliography:
+Rahman, Ahmad, and Dewi Sari. "The Influence of Social Media on Students' Academic Performance." Jurnal Psikologi Indonesia 12, no. 3 (2023): 210–225.
 ```
 
 **Harvard (Cite Them Right):**
 ```
-Rahman, A. and Sari, D. (2023) 'Pengaruh media sosial terhadap prestasi akademik mahasiswa', Jurnal Psikologi Indonesia, 12(3), pp. 210–225. doi: 10.xxxx/xxx.
+Rahman, A. and Sari, D. (2023) 'The influence of social media on students' academic performance', Jurnal Psikologi Indonesia, 12(3), pp. 210–225. doi: 10.xxxx/xxx.
 ```
 
 **Vancouver:**
 ```
-1. Rahman A, Sari D. Pengaruh media sosial terhadap prestasi akademik mahasiswa. Jurnal Psikologi Indonesia. 2023;12(3):210–225. doi:10.xxxx/xxx.
+1. Rahman A, Sari D. The influence of social media on students' academic performance. Jurnal Psikologi Indonesia. 2023;12(3):210–225. doi:10.xxxx/xxx.
 ```
 
-## 4. Aturan Penulisan Nama (Internasional vs Indonesia)
+## 4. Name Formatting Rules (International vs Indonesian)
 
-- **APA/MLA/Chicago/Turabian**: "NamaAkhir, NamaAwal." → `Rahman, A.` / `Rahman, Ahmad`. Nama yang mengikuti format Barat ditulis `Smith, J.`
-- **IEEE/Vancouver**: `A. Rahman` / `Rahman A.` (di bibliography Vancouver seluruhnya `Rahman A`).
-- **Harvard**: `Rahman, A.` (nama belakang + inisial) — daftar pustaka urut `Belakang, A.`
-- Untuk nama Indonesia yang penulisnya mencantumkan 2 kata tanpa tanda pisah (mis. "Ahmad Rahman H."), pertahankan suku kata yang MENCANTUMKAN sebagai nama keluarga; jika tidak jelas → tanyakan atau gunakan urutan sesuai paper asli.
-- Hindari salah: jika paper menuliskan "Rahman, Ahmad" → di pertukaran author-date tetap penulis asli.
+- **APA/MLA/Chicago/Turabian**: "Lastname, Firstname." → `Rahman, A.` / `Rahman, Ahmad`. Names following the Western format are written `Smith, J.`
+- **IEEE/Vancouver**: `A. Rahman` / `Rahman A.` (in the Vancouver bibliography, entirely `Rahman A`).
+- **Harvard**: `Rahman, A.` (last name + initials) — the reference list is ordered `Last, A.`
+- For Indonesian names where the authors list two words without a hyphen (e.g., "Ahmad Rahman H."), retain the syllable CAPITALIZED by the author as the family name; if unclear → ask, or use the order given in the original paper.
+- Avoid mistakes: if the paper writes "Rahman, Ahmad" → keep the original author in the author-date interchange.
 
-## 5. Pemuatan `et al.` / "dan kawan-kawan"
+## 5. Using `et al.` / "and colleagues"
 
-| Gaya | Aturan |
+| Style | Rule |
 |------|--------|
-| APA 7 | 3+ penulis → in-text `et al.` sejak pertama; di daftar pustaka semua penulis |
-| MLA | 3+ penulis → `Rahman et al.` |
-| Turabian | 3+ → in-text `et al.` (Author-Date) / catatan penuh di catatan pertama |
+| APA 7 | 3+ authors → in-text `et al.` from the first mention; in the reference list, all authors |
+| MLA | 3+ authors → `Rahman et al.` |
+| Turabian | 3+ → in-text `et al.` (Author-Date) / full note in the first note |
 | Chicago Author-Date | 3+ → `Rahman et al.` |
 | Harvard | 3+ → `Rahman et al.` |
 | Vancouver | 6+ → `Rahman A, Sari D, ... et al.` |
-| IEEE | 6+ penulis → `A. Rahman et al.` (daftar pustaka bisa 6 lalu `et al.` sesuai jurnal) |
+| IEEE | 6+ authors → `A. Rahman et al.` (the reference list may list 6 then `et al.` per the journal) |
 
-## 6. Validasi Sitasi
+## 6. Citation Validation
 
-Wajib di jalankan setelah memformat:
+Mandatory after formatting:
 
-1. **Setiap klaim yang butuh rujukan punya sitasi** — scan paragraf klaim tanpa sitasi.
-2. **In-text ↔ bibliography konsisten** — cek 1:1 (daftar satu arah).
-3. **Gaya konsisten** — tidak campur APA dan IEEE.
-4. **Format DOI/URL**:
-   - DOI: `https://doi.org/<doi>` (bentuk yang disarankan APA)
-   - Pastikan tidak ada spasi/cetak miring tak perlu
-5. **"et al." & "&"**: sesuai gaya masing-masing (APA mulai kalimat pakai "dan", dalam kurung pakai "&"; IEEE pakai "and").
-6. **Tahun konsisten** — tahun publikasi vs tahun akses web.
+1. **Every claim needing a reference has a citation** — scan claim paragraphs without citations.
+2. **In-text ↔ bibliography consistent** — check 1:1 (in one direction).
+3. **Style consistent** — do not mix APA and IEEE.
+4. **DOI/URL format**:
+   - DOI: `https://doi.org/<doi>` (the APA-recommended form)
+   - Ensure there are no unnecessary spaces/italics
+5. **"et al." & "&"**: per each style (APA uses "and" at the start of a sentence, "&" in parentheses; IEEE uses "and").
+6. **Year consistent** — publication year vs. web access year.
 
-## 7. Deteksi Referensi Palsu (Anti-Hallucination)
+## 7. Fake Reference Detection (Anti-Hallucination)
 
-1. Semua referensi harus berasal dari Literature Matrix yang sudah diverifikasi.
-2. Jangan pernah membuat referensi agar sitasi terlihat lengkap.
-3. Jika pengguna mengetik judul/klaim dan tidak ada di matrix → cek ke sumber (OpenAlex/Semantic Scholar) atau tandai `UNVERIFIED` dan tanyakan pengguna.
+1. All references must come from the verified Literature Matrix.
+2. Never create references to make citations look complete.
+3. If the user types a title/claim not in the matrix → check the source (OpenAlex/Semantic Scholar) or mark `UNVERIFIED` and ask the user.
 
-## 8. Support Zotero / BibTeX (Opsional)
+## 8. Zotero / BibTeX Support (Optional)
 
-- Jika pengguna menggunakan Zotero: instruksi ekspor bibliografi di format target dari Zotero, lalu verifikasi formatnya.
-- Jika memakai LaTeX: berikan blok BibTeX dari DOI:
+- If the user uses Zotero: instruct exporting the bibliography in the target format from Zotero, then verify the format.
+- If using LaTeX: provide a BibTeX block from the DOI:
   ```
-  @article{rahman2023pengaruh,
+  @article{rahman2023influence,
     author  = {Rahman, Ahmad and Sari, Dewi},
-    title   = {Pengaruh media sosial terhadap prestasi akademik ...},
+    title   = {The influence of social media on students' academic ...},
     journal = {Jurnal Psikologi Indonesia},
     year    = {2023},
     volume  = {12},
@@ -145,12 +145,12 @@ Wajib di jalankan setelah memformat:
     doi     = {10.xxxx/xxx}
   }
   ```
-- Format otomatis bisa via `doi2bib.org` atau `citation-js` bila tersedia.
+- Automatic formatting can be done via `doi2bib.org` or `citation-js` when available.
 
-## 9. Output Tahap 4
+## 9. Stage 4 Output
 
 ```
-draft_with_citations.md  — draft dengan in-text citation
-bibliography.md          — daftar pustaka terformat per gaya
-citation_validation.md   — hasil validasi (checklist + temuan)
+draft_with_citations.md  — draft with in-text citations
+bibliography.md          — formatted reference list per style
+citation_validation.md   — validation results (checklist + findings)
 ```

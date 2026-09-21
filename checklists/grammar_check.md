@@ -1,35 +1,35 @@
-# Checklist — Grammar Check (English-US, output wajib)
+# Checklist — Grammar Check (English-US, mandatory output)
 
-Gunakan di **Tahap 5 (Layer Grammar)** dan sebelum submission. Centang per bagian naskah (Abstract, Intro, Method, Results, Discussion, Conclusion). **Seluruh naskah output harus English-US.**
+Use at **Stage 5 (Grammar layer)** and before submission. Check each part of the manuscript (Abstract, Intro, Method, Results, Discussion, Conclusion). **The entire manuscript output must be English-US.**
 
-## Register & Konsistensi (English-US)
-- [ ] Register English-US dipastikan di SELURUH naskah (spelling US: `analyze`, `color`, `center`, `modeling`, `behavior`, `organization`)
-- [ ] Tidak ada jejak varian British (analyse, colour, centre, modelling, behaviour, organisation)
-- [ ] Istilah teknis konsisten (satu istilah, satu nama)
-- [ ] Tidak ada campuran kaidah bahasa dalam satu kalimat (konten input ID diterjemahkan penuh ke English)
+## Register & Consistency (English-US)
+- [ ] English-US register ensured across the ENTIRE manuscript (US spelling: `analyze`, `color`, `center`, `modeling`, `behavior`, `organization`)
+- [ ] No traces of British variants (analyse, colour, centre, modelling, behaviour, organisation)
+- [ ] Technical terms consistent (one term, one name)
+- [ ] No mixing of language rules within a single sentence (Indonesian input content fully translated to English)
 
-## English — Kaidah Wajib
-- [ ] Subject–verb agreement benar (`results show`, `number of ... is`, dsb.)
-- [ ] Articles (a/an/the) benar dan konsisten
-- [ ] Tense sesuai konvensi: present (klaim tetap) / past (pelaporan)
-- [ ] Prepositions benar (`different from`, `similar to`, `based on`, dsb.)
-- [ ] Serial comma (Oxford comma) dipakai: `X, Y, and Z`
-- [ ] Tidak ada comma splice (dua klausa dipisah koma tanpa konjungsi)
-- [ ] Apostrophe: possessive `study's`; `its` tanpa apostrof; `it's` = it is
-- [ ] Tanda kutip konsisten double quotes US `"..."`
-- [ ] Kapitalisasi judul & proper nouns sesuai gaya (APA/MLA dsb.)
+## English — Mandatory Rules
+- [ ] Subject–verb agreement correct (`results show`, `number of ... is`, etc.)
+- [ ] Articles (a/an/the) correct and consistent
+- [ ] Tense follows convention: present (enduring claims) / past (reporting)
+- [ ] Prepositions correct (`different from`, `similar to`, `based on`, etc.)
+- [ ] Serial comma (Oxford comma) used: `X, Y, and Z`
+- [ ] No comma splices (two clauses separated by a comma without a conjunction)
+- [ ] Apostrophe: possessive `study's`; `its` without apostrophe; `it's` = it is
+- [ ] Quotation marks consistently US double quotes `"..."`
+- [ ] Title & proper noun capitalization follows style (APA/MLA etc.)
 
-## Akurasi Terjemahan (jika input berupa Bahasa Indonesia)
-- [ ] Makna argumen sumber ID tidak berubah saat diterjemahkan
-- [ ] Hasil terjemahan terdengar seperti English akademik asli, bukan "English terjemahan"
-- [ ] Istilah teknis yang disampaikan pengguna dalam Bahasa Indonesia diterjemahkan ke istilah Inggris yang benar (jangan dipertahankan mentah-mentah bila ada padanan akademik)
+## Translation Accuracy (if input is in Indonesian)
+- [ ] The meaning of the source ID argument is preserved when translated
+- [ ] The translated result reads like authentic academic English, not "translated English"
+- [ ] Technical terms provided by the user in Indonesian translated into the correct English terms (not kept verbatim when an academic equivalent exists)
 
-## Umum
-- [ ] Tanda baca: koma/semicolon/kolom dipakai dengan benar
-- [ ] Nama proper, angka, DOI, singkatan tidak terpotong/salah eja
-- [ ] Tool (LanguageTool en-US / Hunspell) dieksekusi bila tersedia, saran diverifikasi manual
-- [ ] Tidak ada makna berubah akibat perbaikan tata bahasa
+## General
+- [ ] Punctuation: commas/semicolons/colons used correctly
+- [ ] Proper nouns, numbers, DOIs, abbreviations not truncated/misspelled
+- [ ] Tool (LanguageTool en-US / Hunspell) run when available; suggestions verified manually
+- [ ] No meaning altered as a result of grammar fixes
 
 ## Output
-- [ ] `grammar_report.md` dibuat (temuan + lokasi + saran + perbaikan)
-- [ ] Item yang masih ragu ditandai untuk pengguna (human-in-the-loop)
+- [ ] `grammar_report.md` created (findings + location + suggestions + fixes)
+- [ ] Items still uncertain flagged for the user (human-in-the-loop)

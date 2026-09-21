@@ -1,34 +1,34 @@
-# Template Literature Matrix
+# Literature Matrix Template
 
-Salin tabel ini untuk output Tahap 1. **7 field wajib** per baris. Isi `—` bila data tidak tersedia di paper. Quartile: Q1–Q4 (Scopus/SJR) atau `non-Scopus` / `Q? [UNVERIFIED]`.
+Copy this table for the Stage 1 output. **7 mandatory fields** per row. Fill in `—` when data is not available in the paper. Quartile: Q1–Q4 (Scopus/SJR) or `non-Scopus` / `Q? [UNVERIFIED]`.
 
-## Metadata Pencarian
+## Search Metadata
 
-- **Topik**: [topik penelitian]
-- **Filter Scopus Quartile**: [Q1 / Q2 / Q3 / Q4 / Tanpa filter]
-- **Rentang tahun**: [YYYY–YYYY]
-- **Tanggal pencarian**: [tanggal]
-- **Sumber**: [OpenAlex / Semantic Scholar / kombinasi]
+- **Topic**: [research topic]
+- **Scopus Quartile filter**: [Q1 / Q2 / Q3 / Q4 / No filter]
+- **Year range**: [YYYY–YYYY]
+- **Search date**: [date]
+- **Source**: [OpenAlex / Semantic Scholar / combination]
 
-## Tabel Matrix
+## Matrix Table
 
-| No | Authors/Title | Purpose | Method (Variables/Samples) | Theory Used | Novelty/Contribution | Future Studies | DOI/Penerbit & Scopus Quartile |
+| No | Authors/Title | Purpose | Method (Variables/Samples) | Theory Used | Novelty/Contribution | Future Studies | DOI/Publisher & Scopus Quartile |
 |----|---------------|---------|---------------------------|-------------|----------------------|----------------|--------------------------------|
-| 1  | [Penulis (Tahun)] — "[Judul]" | [Tujuan 1 kalimat] | Desain; IV; DV; n=; instrumen; analisis | [Teori] | [klaim kontribusi] | [saran lanjutan] | DOI: ... \| [Jurnal] \| Q[1-4] |
+| 1  | [Author(s) (Year)] — "[Title]" | [1-sentence purpose] | Design; IV; DV; n=; instrument; analysis | [Theory] | [contribution claim] | [suggestions for further study] | DOI: ... \| [Journal] \| Q[1-4] |
 | 2  | | | | | | | |
 | ... | | | | | | | |
 
-## Catatan Triase Pencarian
+## Search Triage Notes
 
-Dari [X] kandidat:
-- Lolos relevansi ≥ 7/10 : [Y] paper
+Out of [X] candidates:
+- Passed relevance ≥ 7/10: [Y] papers
 - Scopus Q1: [a] | Q2: [b] | Q3: [c] | Q4: [d]
 - Non-Scopus: [e]
-- Dibuang (relevansi < 7): [f]
+- Excluded (relevance < 7): [f]
 
-## Legenda
+## Legend
 
-- `—` : data tidak tersedia / tidak ada di paper
-- `(diringkas)` : field disimpulkan dari inferensi (bukan eksplisit)
-- `(tidak eksplisit)` : tidak dinyatakan secara eksplisit di paper
-- `UNVERIFIED` : pertanyaan keberadaan paper/DOI belum diverifikasi — cek manual
+- `—` : data not available / not present in the paper
+- `(summarized)` : field inferred from inference (not explicit)
+- `(not explicit)` : not explicitly stated in the paper
+- `UNVERIFIED` : the existence of the paper/DOI has not yet been verified — check manually

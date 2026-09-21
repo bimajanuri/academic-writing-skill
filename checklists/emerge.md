@@ -1,65 +1,66 @@
-# Checklist — eMERGe (Meta-Etnografi, 19 Kriteria)
+# Checklist — eMERGe (Meta-Ethnography, 19 Criteria)
 
-Auto-validation wajib untuk Mode Meta-Etnografi. Sumber: France EF, et al. (2019). *The eMERGe reporting guidance for meta-ethnography*. 19 kriteria, 7 phase. Verifikasi detail resmi via EQUATOR Network.
+Mandatory auto-validation for Meta-Ethnography Mode. Source: France EF, et al. (2019). *The eMERGe reporting guidance for meta-ethnography*. 19 criteria, 7 phases. Verify official details via the EQUATOR Network.
 
 ## Checklist per Phase
 
 ### Phase 1 — Selecting meta-ethnography & getting started
-| # | Kriteria | Ya | Tidak | T.A. |
-|---|----------|----|-------|------|
-| 1 | Rationale & konteks sintesis dijelaskan | | | |
-| 2 | Aims/focus sintesis pada pengalaman/fenomena | | | |
-| 3 | Rationale penggunaan meta-ethnography dibenarkan | | | |
+| # | Criterion | Yes | No | N.A. |
+|---|-----------|-----|----|------|
+| 1 | Rationale & context of the synthesis explained | | | |
+| 2 | Aims/focus of the synthesis on experience/phenomena | | | |
+| 3 | Rationale for using meta-ethnography justified | | | |
 
 ### Phase 2 — Deciding what is relevant
-| # | Kriteria | Ya | Tidak | T.A. |
-|---|----------|----|-------|------|
-| 4 | Strategi pencarian & kriteria eligibilitas dijelaskan | | | |
-| 5 | Proses seleksi studi dijelaskan | | | |
-| 6 | Outcome seleksi (jumlah) dilaporkan | | | |
+| # | Criterion | Yes | No | N.A. |
+|---|-----------|-----|----|------|
+| 4 | Search strategy & eligibility criteria explained | | | |
+| 5 | Study selection process explained | | | |
+| 6 | Selection outcomes (counts) reported | | | |
 
 ### Phase 3 — Reading included studies
-| # | Kriteria | Ya | Tidak | T.A. |
-|---|----------|----|-------|------|
-| 7 | Proses membaca & mengekstrak concepts/constructs dijelaskan | | | |
+| # | Criterion | Yes | No | N.A. |
+|---|-----------|-----|----|------|
+| 7 | Process of reading & extracting concepts/constructs explained | | | |
 
 ### Phase 4 — Determining how studies are related
-| # | Kriteria | Ya | Tidak | T.A. |
-|---|----------|----|-------|------|
-| 8 | Proses menentukan "how studies are related" dijelaskan | | | |
-| 9 | Karakteristik/konteks studi dilaporkan (matriks) | | | |
+| # | Criterion | Yes | No | N.A. |
+|---|-----------|-----|----|------|
+| 8 | Process for determining "how studies are related" explained | | | |
+| 9 | Study characteristics/context reported (matrix) | | | |
 
 ### Phase 5 — Translating studies into one another
-| # | Kriteria | Ya | Tidak | T.A. |
-|---|----------|----|-------|------|
-| 10 | Proses reciprocal translation dijelaskan | | | |
-| 11 | Hasil translation dilaporkan (reciprocal/refutational) | | | |
+| # | Criterion | Yes | No | N.A. |
+|---|-----------|-----|----|------|
+| 10 | Reciprocal translation process explained | | | |
+| 11 | Translation results reported (reciprocal/refutational) | | | |
 
 ### Phase 6 — Synthesising translations
-| # | Kriteria | Ya | Tidak | T.A. |
-|---|----------|----|-------|------|
-| 12 | Proses sintesis translations dijelaskan | | | |
-| 13 | 3rd order constructs / line-of-argument dilaporkan | | | |
+| # | Criterion | Yes | No | N.A. |
+|---|-----------|-----|----|------|
+| 12 | Translation synthesis process explained | | | |
+| 13 | Third-order constructs / line-of-argument reported | | | |
 
 ### Phase 7 — Expressing the synthesis
-| # | Kriteria | Ya | Tidak | T.A. |
-|---|----------|----|-------|------|
-| 14 | Narasi sintesis diekspresikan untuk audiens | | | |
-| 15 | Dukungan kutipan/evidence untuk setiap claim sintesis | | | |
+| # | Criterion | Yes | No | N.A. |
+|---|-----------|-----|----|------|
+| 14 | Synthesis narrative expressed for the audience | | | |
+| 15 | Quotation/evidence support for each synthesis claim | | | |
 
 ### Phase 8 — Reflecting
-| # | Kriteria | Ya | Tidak | T.A. |
-|---|----------|----|-------|------|
-| 16 | Keterbatasan & refleksivitas dilaporkan | | | |
-| 17 | Perubahan selama proses sintesis didokumentasikan | | | |
+| # | Criterion | Yes | No | N.A. |
+|---|-----------|-----|----|------|
+| 16 | Limitations & reflexivity reported | | | |
+| 17 | Changes during the synthesis process documented | | | |
 
 ## Auto-Validation Rule
 
-- Semua kriteria wajib **Ya** (atau "T.A." bila benar-benar tidak berlaku).
-- Pastikan seluruh proses (7 langkah Noblit & Hare + translation) terdokumentasi di `synthesis_translation.md`.
-- Item "Tidak" → rencana perbaikan; status: `complete` / `needs_fix`.
+- All criteria must be **Yes** (or "N.A." when genuinely not applicable).
+- Ensure the entire process (7 Noblit & Hare steps + translation) is documented in `synthesis_translation.md`.
+- Items marked "No" → remediation plan; status: `complete` / `needs_fix`.
 
 ## Output
 
 ```text
-reporting_checklist_result.md  — hasil mapping eMERGe
+reporting_checklist_result.md  — eMERGe mapping results
+```

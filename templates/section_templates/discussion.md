@@ -1,42 +1,42 @@
-# Template Discussion
+# Discussion Template
 
-Salin dan isi. Interpretasi → bandingkan literatur → implikasi → keterbatasan. TIDAK memperkenalkan hasil baru.
+Copy and fill in. Interpretation → compare with literature → implications → limitations. Does NOT introduce new results.
 
 ---
 
-## Pembahasan
+## Discussion
 
-### 6.1 Interpretasi Hasil terhadap Research Question
-- **RQ1**: [temuan] menjelaskan bahwa ... Karena [mekanisme/kerangka teori].
-- **RQ2**: [temuan] menunjukkan ... dibanding RQ1, karena ...
-- Pola yang tidak terduga: [hasil yang mengejutkan beserta kemungkinan penjelasan]
+### 6.1 Interpretation of Results relative to the Research Question
+- **RQ1**: [finding] shows that ... Because [mechanism/theoretical framework].
+- **RQ2**: [finding] indicates ... compared to RQ1, because ...
+- Unexpected patterns: [surprising results along with possible explanations]
 
-### 6.2 Perbandingan dengan Studi Terdahulu
-- **Konfirmasi**: Temuan ini memperkuat [Paper X, tahun] yang menemukan ... (sitasi)
-- **Kontradiksi**: Berbeda dengan [Paper Y], temuan ini menunjukkan ...; kemungkinan disebabkan [perbedaan konteks/sampel/pengukuran] (sitasi)
-- **Perluasan**: Di luar studi sebelumnya, penelitian ini menambahkan [moderator/konteks] yang menjelaskan ...
+### 6.2 Comparison with Previous Studies
+- **Confirmation**: These findings strengthen [Paper X, year], which found ... (citation)
+- **Contradiction**: Contrary to [Paper Y], these findings show ...; possibly due to [differences in context/sample/measurement] (citation)
+- **Extension**: Beyond previous studies, this research adds [moderator/context] that explains ...
 
-### 6.3 Implikasi Teoretis
-- Kontribusi terhadap [Theory Used]: [bagaimana hasil memperkuat/menuntut/koreksi teori]
-- Proposisi baru (jika ada): [...]
+### 6.3 Theoretical Implications
+- Contribution to [Theory Used]: [how the results strengthen/challenge/correct the theory]
+- New propositions (if any): [...]
 
-### 6.4 Implikasi Praktis
-- Bagi [praktisi/pembuat kebijakan/instansi]: [rekomendasi spesifik]
-- Bagi [pendidik/industry]: [...]
+### 6.4 Practical Implications
+- For [practitioners/policymakers/institutions]: [specific recommendations]
+- For [educators/industry]: [...]
 
-### 6.5 Keterbatasan
-- [Keterbatasan metodologis: desain, sampel, instrumen]
-- [Batas generalisasi]
-- [Catatan kausalitas bila desain non-eksperimental]
-- Bukan pengakuan berlebihan yang melemahkan; tetap jujur dan terukur.
+### 6.5 Limitations
+- [Methodological limitations: design, sample, instruments]
+- [Boundaries of generalizability]
+- [Causality caveat for non-experimental designs]
+- Not excessive self-disqualification that weakens the paper; stay honest and measured.
 
 ---
 
 ## Checklist
-- [ ] Semua RQ dijawab (satu-satu)
-- [ ] Setiap pembandingan dengan studi terdahulu bersitasi (dari matrix)
-- [ ] Tidak ada hasil/angka baru yang tidak muncul di Results
-- [ ] Implikasi praktis konkret, bukan generik
-- [ ] Keterbatasan disebutkan dengan jujur
-- [ ] Tidak overclaim (kausalitas hanya jika desainnya memungkinkan)
-- [ ] Tidak mengulang seluruh hasil — fokus interpretasi
+- [ ] All RQs answered (one by one)
+- [ ] Every comparison with previous studies has a citation (from the matrix)
+- [ ] No new results/numbers that did not appear in Results
+- [ ] Practical implications concrete, not generic
+- [ ] Limitations stated honestly
+- [ ] No overclaiming (causality only if the design allows)
+- [ ] Does not repeat all results — focus on interpretation

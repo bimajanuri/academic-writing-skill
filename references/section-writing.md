@@ -1,135 +1,135 @@
-# Section Writing — Panduan Penulisan per Section (Tahap 3)
+# Section Writing — Per-Section Writing Guide (Stage 3)
 
-Panduan menulis section-by-section dengan urutan wajib, prinsip paragraf, dan claim-evidence mapping. Diadaptasi dari metodologi Prof. Peng Sida dan SNL-UCSB.
+Guide to writing section-by-section with a mandatory order, paragraph principles, and claim-evidence mapping. Adapted from the methodology of Prof. Peng Sida and SNL-UCSB.
 
-## 1. Urutan Wajib Menulis
+## 1. Mandatory Writing Order
 
 ```
-1.  Draft 0 Introduction   → kerangka disposable (guardrails)
-2.  Literature Review       → feed dari Literature Matrix
-3.  Methodology            → desain, variabel, sampel, analisis
-4.  Results & Discussion   → bukti nyata
-5.  Conclusion             → jawaban RQ
-6.  Final Introduction     → DITULIS ULANG dari nol
-7.  Abstract               → terakhir
+1.  Draft 0 Introduction   → disposable framework (guardrails)
+2.  Literature Review       → fed from the Literature Matrix
+3.  Methodology            → design, variables, sample, analysis
+4.  Results & Discussion   → real evidence
+5.  Conclusion             → answers to the RQ
+6.  Final Introduction     → REWRITTEN from scratch
+7.  Abstract               → last
 ```
 
-**Kenapa Introduction dua kali?** Draft 0 memaksa klarifikasi klaim sebelum eksperimen/penulisan. Final Introduction dijamin hanya menjanjikan apa yang benar-benar didukung bukti. Jangan "copy-edit" Draft 0 menjadi Final — tulis ulang.
+**Why write the Introduction twice?** Draft 0 forces clarity on the claims before experimentation/writing. The Final Introduction is guaranteed to promise only what the evidence actually supports. Do not "copy-edit" Draft 0 into the Final — rewrite it.
 
-## 2. Prinsip Paragraf (Global)
+## 2. Paragraph Principles (Global)
 
-1. **Satu paragraf = satu pesan.** Kalimat pertama menyatakan pesan.
-2. **Topic sentence = klaim**, bukan konteks/latar.
-3. **Flow eksplisit**: setiap kalimat terhubung ke kalimat sebelumnya (sebab, kontras, konsekuensi, elaborasi, contoh).
-4. **Define-before-use**: istilah baru didefinisikan sebelum dipakai.
-5. **Panjang paragraf**: 4–6 kalimat.
-6. **Reverse outlining** setiap selesai satu bagian:
-   - Tulis klaim utama section
-   - Tulis topic sentence tiap paragraf
-   - Tulis poin evidence tiap paragraf
-   - Pastikan mapping topic→klaim dan evidence→topic
-7. Jika flow lemah → tambah heading sementara + transisi eksplisit, lalu hapus heading yang tak perlu.
+1. **One paragraph = one message.** The first sentence states the message.
+2. **Topic sentence = claim**, not context/background.
+3. **Explicit flow**: every sentence connects to the previous one (cause, contrast, consequence, elaboration, example).
+4. **Define-before-use**: new terms are defined before they are used.
+5. **Paragraph length**: 4–6 sentences.
+6. **Reverse outlining** after finishing each section:
+   - Write the section's main claim
+   - Write each paragraph's topic sentence
+   - Write each paragraph's evidence point
+   - Ensure topic→claim and evidence→topic mapping
+7. If the flow is weak → add temporary headings + explicit transitions, then remove the unnecessary headings.
 
-## 3. Panduan per Section
+## 3. Per-Section Guide
 
 ### 3.1 Abstract
-- Tulis **terakhir**.
-- Struktur (berurutan): Latar masalah → Metode (ringkas) → Temuan utama (angka!) → Kontribusi/implikasi.
-- 150–250 kata, satu paragraf (sesuai gaya jurnal).
-- Tanpa sitasi, tanpa jargon yang tidak didefinisikan.
-- Setiap klaim di abstract HARUS muncul di dalam paper (claim-evidence).
+- Write it **last**.
+- Structure (in order): Problem background → Method (concise) → Main findings (with numbers!) → Contribution/implications.
+- 150–250 words, one paragraph (per journal style).
+- No citations, no undefined jargon.
+- Every claim in the abstract MUST appear in the paper (claim-evidence).
 
 ### 3.2 Introduction (Final)
-Urutan move (dari SNL-UCSB & Prof. Peng):
-1. **Stakes**: siapa yang dirugikan, mengapa domain penting
-2. **Problem gap**: keterbatasan struktural pendekatan existing (bukan "belum akurat", tapi "asumsi X gagal saat Y")
-3. **Key abstraction**: konsep bernama yang menangkap insight Anda
-4. **Design intuition**: mengapa pendekatan Anda masuk akal
-5. **Contributions**: numbered, claim-first, bisa-dibuktikan (feed list dari `contribution_statement.md` — Modul A; jangan dikurangi/dilebihkan tanpa alasan)
-6. **Results preview**: angka terbaik di akhir
-- Kalimat terakhir paragraf awal = kalimat klaim (bukan basi).
-- Heading bernama: klaim bukan topik.
-- Outline paragraph opsional di akhir (& sesuai gaya jurnal).
+Move order (from SNL-UCSB & Prof. Peng):
+1. **Stakes**: who is affected, why the domain matters
+2. **Problem gap**: structural limitations of existing approaches (not "not yet accurate", but "assumption X fails when Y")
+3. **Key abstraction**: a named concept capturing your insight
+4. **Design intuition**: why your approach makes sense
+5. **Contributions**: numbered, claim-first, provable (feed the list from `contribution_statement.md` — Module A; do not reduce or add without reason)
+6. **Results preview**: your best numbers at the end
+- The last sentence of the opening paragraph is a claim sentence (not filler).
+- Use named headings: claims, not topics.
+- An outline paragraph at the end is optional (& per journal style).
 
 ### 3.3 Literature Review
-- Kelompokkan paper dari matrix **berdasarkan tema** (mis. pengaruh durasi, pengaruh tipe konten, tinjauan meta-analisis).
-- Untuk setiap kelompok: sintesis → apa yang sudah diketahui → kelemahannya → mengarah ke gap.
-- Jangan "dictionary of studies" (paper per paper); fokus temuannya.
-- Jelaskan **Theory Used** sebagai kerangka.
-- Akhiri dengan sub-bagian "Research Gap & Posisi Paper Ini".
-- Sitasi lengkap (dari matrix, format final via citation-formatter).
+- Group matrix papers **by theme** (e.g., effects of duration, effects of content type, meta-analytic reviews).
+- For each group: synthesis → what is known → its weaknesses → leads to the gap.
+- Do not produce a "dictionary of studies" (paper by paper); focus on findings.
+- Explain **Theory Used** as the framework.
+- End with a "Research Gap & Position of This Paper" subsection.
+- Complete citations (from the matrix, final format via citation-formatter).
 
 ### 3.4 Methodology
-- Deskriptif & reproducible: siapa yang bisa mengulang berdasarkan teks?
-- Komponen: desain, populasi/sampel (n, teknik sampling), instrumen (validitas/reliaibilitas), variabel (IV/DV/definisi operasional), prosedur, analisis data (statistik/software).
-- Urutan: Participant → Measures → Procedure → Analysis (untuk empiris).
-- Setiap pilihan didesain: "kita pakai X karena Y" (bukan sekadar "kami menggunakan X").
-- Untuk review: PRISMA flow, kriteria inklusi/eksklusi, strategi pencarian, quality assessment.
+- Descriptive & reproducible: could someone repeat the study from the text?
+- Components: design, population/sample (n, sampling technique), instruments (validity/reliability), variables (IV/DV/operational definitions), procedure, data analysis (statistics/software).
+- Order: Participant → Measures → Procedure → Analysis (for empirical work).
+- Every choice is designed: "we use X because Y" (not merely "we used X").
+- For reviews: PRISMA flow, inclusion/exclusion criteria, search strategy, quality assessment.
 
 ### 3.5 Results
-- Deskriptif dulu, baru inferensial.
-- Tabel/gambar = alat argumen, bukan dekorasi. Setiap float dirujuk dalam teks.
-- **Interpretasi di dalam teks**: "Tabel 2 menunjukkan IPK turun 0.4 poin (p < .01) untuk durasi > 4 jam, mengonfirmasi H1."
-- Akhiri kluster eksperimen dengan **Takeaway paragraph** (sintesis).
-- Jangan mengulang angka tabel di teks — sorot hanya yang penting.
-- Jangan membahas/membandingkan dengan literatur di sini (itu bagian Pembahasan).
+- Descriptive first, then inferential.
+- Tables/figures are argument tools, not decoration. Every float is referenced in the text.
+- **Interpretation in the text**: "Table 2 shows GPA dropping 0.4 points (p < .01) for duration > 4 hours, confirming H1."
+- End each experimental cluster with a **takeaway paragraph** (synthesis).
+- Do not repeat the table numbers in the text — highlight only what matters.
+- Do not discuss or compare with the literature here (that is the Discussion's job).
 
 ### 3.6 Discussion
-- Kembalikan ke RQ: temuan menjawab apa?
-- Bandingkan dengan literatur di matrix (konfirmasi/kontradiksi/diperluas).
-- Implikasi teoretis (kontribusi ke Theory Used) & praktis.
-- Keterbatasan (jujur; jangan overclaim).
-- Saran penelitian lanjut di sini.
-- Jangan memperkenalkan hasil baru.
+- Return to the RQ: what do the findings answer?
+- Compare with the literature in the matrix (confirmation/contradiction/extension).
+- Theoretical implications (contribution to Theory Used) & practical ones.
+- Limitations (honest; no overclaiming).
+- Future research suggestions go here.
+- Do not introduce new results.
 
 ### 3.7 Conclusion
-- Ringkas temuan kunci (angka utama).
-- Jawab RQ satu-satu.
-- Kontribusi (ringkas dari intro, kini didukung bukti).
-- Saran praktis & penelitian lanjut.
-- Tanpa padding, tanpa klaim baru.
+- Summarize the key findings (main numbers).
+- Answer the RQs one by one.
+- Contributions (concise from the intro, now supported by evidence).
+- Practical suggestions & future research.
+- No padding, no new claims.
 
-## 4. Gaya Kalimat — Quick Rules
+## 4. Sentence Style — Quick Rules
 
-- Rata-rata ~21 kata/kalimat; maks 40 kata.
-- Aktif voice selalu; tanpa "It is believed that".
-- Zero hedging: "Hasil menunjukkan" bukan "Hasil mungkin menunjukkan".
-- Tanpa filler adjective: "novel", "significant" (tanpa statistik), "robust", "state-of-the-art", "comprehensive". Ganti angka spesifik.
-- Named over vague: "an event-centric decomposition" bukan "a decomposition method".
-- "We show X" vs "X is shown" → selalu aktif.
-- Interpretasi figur: "Gambar 1 mengungkap ...", bukan "Lihat Gambar 1".
-- Kalimat pertama section = pernyataan kesimpulan section (skim-reader friendly), bukan "Pada bagian ini ...".
+- Average ~21 words/sentence; max 40.
+- Always active voice; no "It is believed that".
+- Zero hedging: "The results show" not "The results may show".
+- No filler adjectives: "novel", "significant" (without statistics), "robust", "state-of-the-art", "comprehensive". Replace them with specific numbers.
+- Named over vague: "an event-centric decomposition" not "a decomposition method".
+- "We show X" vs. "X is shown" → always active.
+- Figure interpretation: "Figure 1 reveals ...", not "See Figure 1".
+- The first sentence of a section is the section's conclusion statement (skim-reader friendly), not "In this section ...".
 
 ## 5. Claim-Evidence Map
 
-Ada saat menulis paragraf klaim atau setelah section selesai. Format:
+Created when writing a claim paragraph or after a section is finished. Format:
 
-| # | Claim | Evidence (lokasi) | Status |
+| # | Claim | Evidence (location) | Status |
 |---|-------|-------------------|--------|
-| 1 | Durasi medsos menurunkan IPK | Hasil regresi, Tabel 3 | supported |
-| 2 | Frekuensi tidak signifikan | Hasil regresi, Tabel 3 | supported |
-| 3 | Temuan berlaku lintas gender | Tidak ada subgroup analysis | needs evidence |
+| 1 | Social media duration lowers GPA | Regression results, Table 3 | supported |
+| 2 | Frequency is not significant | Regression results, Table 3 | supported |
+| 3 | Findings hold across genders | No subgroup analysis | needs evidence |
 
-**Aturan**: klaim "needs evidence" atau "unsupported" harus dikoreksi (lemahkan klaim, cari bukti, atau hapus) sebelum quality gate.
+**Rule**: claims rated "needs evidence" or "unsupported" must be corrected (weaken the claim, find evidence, or delete) before the quality gate.
 
-## 6. Checklist per Section
+## 6. Per-Section Checklist
 
-Setelah menulis section, jalankan checklist yang relevan:
-- Umum: `checklists/post_draft.md`
-- Sebelum submit: `checklists/pre_submission.md`
+After writing a section, run the relevant checklist:
+- General: `checklists/post_draft.md`
+- Before submission: `checklists/pre_submission.md`
 
-## 7. Output Tahap 3
+## 7. Stage 3 Output
 
 ```
-draft_<section>.md      — draft per section (mis. draft_introduction.md)
-claim_evidence_map.md   — peta klaim-evidence seluruh paper
+draft_<section>.md      — per-section draft (e.g., draft_introduction.md)
+claim_evidence_map.md   — claim-evidence map for the whole paper
 ```
 
-## Anti-Patterns (Jangan Lakukan)
+## Anti-Patterns (Do Not Do)
 
-- **Incremental patching**: menulis seolah-olah menambal baseline naif. Posisikan sebagai solusi struktural.
-- **Dictionary of studies** di lit review.
-- **Overclaim**: klaim yang melebihi bukti.
-- **So-what syndrome**: hasil tanpa implikasi.
-- **Keterbatasan disembunyikan**.
-- **Terminologi berganti-ganti** untuk konsep yang sama.
+- **Incremental patching**: writing as if patching a naive baseline. Position the work as a structural solution.
+- **Dictionary of studies** in the literature review.
+- **Overclaiming**: claims that exceed the evidence.
+- **So-what syndrome**: results without implications.
+- **Hidden limitations**.
+- **Switching terminology** for the same concept.

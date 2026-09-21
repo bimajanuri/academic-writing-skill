@@ -1,45 +1,46 @@
-# Template Literature Review
+# Literature Review Template
 
-Salin dan isi. Kelompokkan temuan **tematik** (bukan per-paper), sintesis → kelemahan → gap. Feed dari Literature Matrix.
+Copy and fill in. Group findings **thematically** (not paper-by-paper), synthesis → weaknesses → gap. Feed from the Literature Matrix.
 
 ---
 
-## Tinjauan Literatur
+## Literature Review
 
-### 3.1 Kerangka Teoritis
-- Teori utama: [nama teori] (sitasi)
-- Konsep kunci: [definisi dan asumsi]
-- Kaitan antar-konsep: [bagaimana teori menjelaskan fenomena penelitian Anda]
+### 3.1 Theoretical Framework
+- Main theory: [theory name] (citation)
+- Key concepts: [definition and assumptions]
+- Relationships among concepts: [how the theory explains your research phenomenon]
 
-### 3.2 Sintesis Temuan Terdahulu
-Organisasi berdasarkan tema dari matrix:
+### 3.2 Synthesis of Previous Findings
+Organized by themes from the matrix:
 
-#### 3.2.1 [Tema 1 — mis. Pengaruh Durasi Penggunaan]
-- Ringkasan temuan lintas paper: [sintesis 3–5 paper]
-- Konsistensi/inkonsistensi: [...]
-- Keterbatasan: [...]
+#### 3.2.1 [Theme 1 — e.g., Effect of Use Duration]
+- Summary of findings across papers: [synthesis of 3–5 papers]
+- Consistency/inconsistency: [...]
+- Limitations: [...]
 
-#### 3.2.2 [Tema 2]
+#### 3.2.2 [Theme 2]
 - [...]
 - [...]
 - [...]
 
-#### 3.2.3 [Tema 3]
+#### 3.2.3 [Theme 3]
+- [...]
 - [...]
 - [...]
 
-### 3.3 Research Gap dan Posisi Paper Ini
-- Gap yang belum terjawab: [dari Gap Analysis, dengan penanda sitasi]
-- Mengapa gap ini penting: [signifikansi]
-- Posisi paper ini: [bagaimana menjawab gap — mengemuka kontribusi]
+### 3.3 Research Gap and Position of This Paper
+- Unanswered gap: [from Gap Analysis, with citation markers]
+- Why this gap matters: [significance]
+- Position of this paper: [how it answers the gap — surfacing the contribution]
 
 ---
 
 ## Checklist
-- [ ] Temuan dikelompokkan tematik (bukan "paper A menemukan ..., paper B menemukan ...")
-- [ ] Setiap paragraf = satu pesan
-- [ ] Semua klaim ada sitasi (dari matrix yang terverifikasi)
-- [ ] Teori dijelaskan dan dipakai sebagai kerangka (bukan hanya disebut)
-- [ ] Akhir section menegaskan gap dan posisi paper
-- [ ] Tidak ada quote panjang tanpa analisis
-- [ ] Jumlah sitasi memadai untuk standar jurnal (≥ 20–30 agak bervariasi)
+- [ ] Findings grouped thematically (not "paper A found ..., paper B found ...")
+- [ ] One message per paragraph
+- [ ] Every claim has a citation (from the verified matrix)
+- [ ] Theory explained and used as a framework (not merely mentioned)
+- [ ] Section ends by asserting the gap and the paper's position
+- [ ] No long quotes without analysis
+- [ ] Sufficient number of citations for the journal standard (≈ 20–30, varies somewhat)

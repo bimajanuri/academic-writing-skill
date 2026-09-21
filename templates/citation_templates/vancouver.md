@@ -1,58 +1,58 @@
-# Template Sitasi — Vancouver
+# Citation Template — Vancouver
 
-Umum dipakai: Kedokteran, Biomedis, Farmasi, Kesehatan masyarakat. Sistem angka (superscript `n` atau `[n]`) sesuai urutan kemunculan.
+Commonly used in: Medicine, Biomedicine, Pharmacy, Public health. Numbering system (superscript `n` or `[n]`) according to order of appearance.
 
 ## In-Text Citation
 
-| Situasi | Format | Contoh |
-|---------|--------|--------|
-| Naratif | `...penelitian³` / `... tambahan [4]` | penelitian terdahulu³ menunjukkan |
-| Kurung | ` (4)` / superscript | hasil (4) |
+| Situation | Format | Example |
+|-----------|--------|---------|
+| Narrative | `...research³` / `... additional [4]` | earlier research³ shows |
+| Parenthetical | `(4)` / superscript | the result (4) |
 | Multiple | `1,3,5` / `1-3` | 5,8,9 |
 
-- Penomoran sekuensial berdasarkan kemunculan pertama di teks, konsisten sampai akhir.
+- Numbering is sequential based on first appearance in the text, kept consistent to the end.
 
 ## Reference List
 
 ```
-[n] Penulis A, Penulis B. Judul artikel. Nama Jurnal. Tahun;Vol(No):halaman-halaman. doi:xxx
+[n] Author A, Author B. Article title. Journal Name. Year;Vol(No):pages-pages. doi:xxx
 ```
 
-### Contoh — Jurnal:
+### Example — Journal:
 ```
-1. Rahman A, Sari D. Pengaruh media sosial terhadap prestasi akademik mahasiswa. Jurnal Psikologi Indonesia. 2023;12(3):210-225. doi:10.xxxx/xxx
-```
-
-### Buku:
-```
-2. Sarlito W. Psikologi Remaja. Jakarta: Rajagrafindo Persada; 2008.
+1. Rahman A, Sari D. The influence of social media on students' academic performance. Indonesian Journal of Psychology. 2023;12(3):210-225. doi:10.xxxx/xxx
 ```
 
-### Bab dalam buku:
+### Book:
 ```
-3. Rahman A. Bab 5: Media digital. In: Sari D, editor. Buku Psikologi Digital. Jakarta: Penerbit X; 2022. p. 100-120.
+2. Sarlito W. Adolescent Psychology. Jakarta: Rajagrafindo Persada; 2008.
 ```
 
-### Konferensi:
+### Chapter in book:
 ```
-4. Rahman A, Sari D. Judul paper. In: Proceedings of the International Conference on ...; 2023 Jan 10-12; Kota, Negara. Publisher; 2023. p. xx-xx.
+3. Rahman A. Chapter 5: Digital media. In: Sari D, editor. Digital Psychology Book. Jakarta: Publisher X; 2022. p. 100-120.
+```
+
+### Conference:
+```
+4. Rahman A, Sari D. Paper title. In: Proceedings of the International Conference on ...; 2023 Jan 10-12; City, Country. Publisher; 2023. p. xx-xx.
 ```
 
 ### Web:
 ```
-5. Rahman A. Judul halaman. Nama Situs. 2023. Diunduh [tanggal], dari https://url
+5. Rahman A. Page title. Site Name. 2023. Retrieved [date], from https://url
 ```
 
-## Aturan Tambahan
-- Penamaan: `Nama Belakang` diikuti inisial (tanpa titik): `Rahman A, Sari D`.
-- 6 penulis maks; 7+: `dan` pertama 6 nama lalu `et al`.
-- Italic untuk judul **jurnal** (bukan artikel).
-- `doi:10.xxxx/xxx` atau `https://doi.org/...` sesuai kebijakan jurnal.
-- Gunakan angka APA-style tanpa kurung di beberapa jurnal; konsistenkan.
+## Additional Rules
+- Naming: `Last Name` followed by initials (no periods): `Rahman A, Sari D`.
+- Max 6 authors; 7+: list the first 6 names then `et al`.
+- Italicize the **journal** title (not the article).
+- `doi:10.xxxx/xxx` or `https://doi.org/...` according to journal policy.
+- Some journals use APA-style numbers without brackets; keep it consistent.
 
 ## Checklist
-- [ ] Penomoran sekuensial [1]..; konsisten
-- [ ] Inisial tanpa titik; 6 penulis max
-- [ ] Jerk: judul jurnal italic
-- [ ] `2023;12(3):210-225` format Tahun;Vol(No):hal-hal
-- [ ] Style superscript/bracket konsisten
+- [ ] Sequential numbering [1]..; consistent
+- [ ] Initials without periods; max 6 authors
+- [ ] Journal: journal title italic
+- [ ] `2023;12(3):210-225` Year;Vol(No):page-page format
+- [ ] Consistent superscript/bracket style

@@ -1,24 +1,24 @@
 # Extraction Module — Narrative Review (Position Mapping)
 
-Panduan ekstraksi untuk Mode Narrative Review. Berfokus pada **posisi/argumentasi penulis** dan perkembangan gagasan.
+Extraction guide for the Narrative Review Mode. Focuses on **the authors' position/argumentation** and the development of ideas.
 
-## Kolom Ekstraksi
+## Extraction Columns
 
-| No | Authors/Year/Jurnal/Q | Klaim/Posisi utama penulis | Pendukung (bukti/ref) | Penentang/kontra (jika ada) | Konteks/domain | Kekuatan argumentasi |
+| No | Authors/Year/Journal/Q | Main claim/position of the author | Supporting (evidence/ref) | Opposing/counter (if any) | Context/domain | Strength of argumentation |
 |----|------------------------|----------------------------|------------------------|------------------------------|----------------|----------------------|
 
-## Aturan Ekstraksi
+## Extraction Rules
 
-1. Posisi diambil dari klaim eksplisit penulis (abstract/conclusion/argument header).
-2. Kolom kontra: diisi bila penulis secara eksplisit menolak/melemahkan posisi lain.
-3. Kekuatan argumentasi: strong / moderate / weak, berdasar kejelasan bukti dalam teks.
-4. Timeline: catat tahun terbit sebagai basis `debate_timeline.md`.
+1. Position is taken from the author's explicit claims (abstract/conclusion/argument header).
+2. Counter column: filled only when the author explicitly rejects/undermines another position.
+3. Strength of argumentation: strong / moderate / weak, based on the clarity of evidence in the text.
+4. Timeline: record the year of publication as the basis for `debate_timeline.md`.
 
 ## Anti-Hallucination
 
-- Jangan mengubah posisi penulis agar cocok dengan klaster yang Anda inginkan.
-- Posisi bersyarat ("dalam kondisi X, Y berlaku") harus tetap dicatat sebagai kompleks, bukan pro/kontra paksa.
+- Do not alter the author's position to fit the cluster you want.
+- Conditional positions ("under condition X, Y holds") must still be recorded as complex, not forced into pro/con.
 
 ## Template
 
-Gunakan `templates/extraction_narrative.md` untuk output matrix.
+Use `templates/extraction_narrative.md` for the output matrix.

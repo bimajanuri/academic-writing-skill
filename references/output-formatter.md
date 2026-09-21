@@ -1,39 +1,39 @@
-# Output Formatter — Konversi Format (Tahap 6)
+# Output Formatter — Format Conversion (Stage 6)
 
-Panduan memformat final dan mengonversi naskah ke **Markdown**, **LaTeX**, atau **DOCX**.
+Guide to final formatting and converting the manuscript to **Markdown**, **LaTeX**, or **DOCX**.
 
-## 1. Format Output
+## 1. Output Formats
 
-| Format | Kapan dipakai | Cara |
+| Format | When used | How |
 |--------|---------------|------|
-| **Markdown** (.md) | Default; mudah dibaca & dibagikan | Langsung |
-| **LaTeX** (.tex) | Submission jurnal/konferensi; paper ilmiah | Konversi + template |
-| **DOCX** (.docx) | Draft untuk dosen/rekan; kolaborasi Word | Pandoc atau library |
+| **Markdown** (.md) | Default; easy to read & share | Direct |
+| **LaTeX** (.tex) | Journal/conference submission; scientific papers | Conversion + template |
+| **DOCX** (.docx) | Drafts for supervisors/colleagues; Word collaboration | Pandoc or library |
 
-Tanyakan pengguna format targetnya. Jika tidak disebut → Markdown.
+Ask the user for the target format. If not specified → Markdown.
 
-## 2. Struktur Final Naskah (IMRaD / standar akademik)
+## 2. Final Manuscript Structure (IMRaD / academic standard)
 
-Pastikan file final berisi (sesuai template):
+Ensure the final file contains (per the template):
 ```
-1. Judul
-2. Abstract (150–250 kata)
-3. Kata kunci (3–6)
-4. Pendahuluan
-5. Tinjauan Literatur
-6. Metodologi
-7. Hasil
-8. Pembahasan
-9. Kesimpulan
-10. Referensi (sesuai gaya sitasi)
-11. Lampiran (jika ada)
+1. Title
+2. Abstract (150–250 words)
+3. Keywords (3–6)
+4. Introduction
+5. Literature Review
+6. Methodology
+7. Results
+8. Discussion
+9. Conclusion
+10. References (per citation style)
+11. Appendices (if any)
 ```
 
-Heading konsisten (sentence case bila Inggris; judul-style sesuai aturan masing-masing). Nomor section opsional sesuai target.
+Keeping headings consistent (sentence case in English; title style per each set of rules). Section numbering optional per target.
 
-## 3. Konversi Markdown → LaTeX
+## 3. Markdown → LaTeX Conversion
 
-### Output LaTeX standar (article class) — contoh kerangka:
+### Standard LaTeX output (article class) — example skeleton:
 ```latex
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
@@ -43,109 +43,109 @@ Heading konsisten (sentence case bila Inggris; judul-style sesuai aturan masing-
 \usepackage{booktabs}
 \usepackage[hidelinks]{hyperref}
 
-\title{Judul Paper}
-\author{Nama Penulis}
+\title{Paper Title}
+\author{Author Name}
 \date{}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-...abstract dot file...
+...abstract text...
 \end{abstract}
 
-\noindent\textbf{Kata kunci}: kata1, kata2, kata3
+\noindent\textbf{Keywords}: keyword1, keyword2, keyword3
 
-\section{Pendahuluan}
+\section{Introduction}
 ...
 \begin{thebibliography}{99}
 \bibitem{rahman2023} Ahmad Rahman and Dewi Sari.
-``Pengaruh media sosial terhadap prestasi akademik.'' ...
+``The influence of social media on academic performance.'' ...
 \end{thebibliography}
 \end{document}
 ```
 
-### Mapping Markdown → LaTeX
+### Markdown → LaTeX mapping
 | Markdown | LaTeX |
 |----------|-------|
 | `#` `##` `###` | `\section{}` `\subsection{}` `\subsubsection{}` |
-| `**teks**` | `\textbf{teks}` |
-| `*teks*` | `\textit{teks}` |
-| Tabel pipa | `tabular` / `booktabs` |
-| Gambar `![alt](file)` | `\begin{figure}...\includegraphics...` |
-| Formula `$...$` / `$$...$$` | tetap sama |
-| Tautan `[x](url)` | `\href{url}{x}` |
-| Daftar `- ` | `itemize` |
+| `**text**` | `\textbf{text}` |
+| `*text*` | `\textit{text}` |
+| Pipe tables | `tabular` / `booktabs` |
+| Images `![alt](file)` | `\begin{figure}...\includegraphics...` |
+| Formulas `$...$` / `$$...$$` | unchanged |
+| Links `[x](url)` | `\href{url}{x}` |
+| Lists `- ` | `itemize` |
 
-**Konversi otomatis**: gunakan script `scripts/convert.sh` jika pandoc tersedia:
+**Automatic conversion**: use the script `scripts/convert.sh` if pandoc is available:
 ```bash
 pandoc draft.md -o paper.tex --bibliography=refs.bib
 ```
-Tanpa pandoc → konversi manual sesuai tabel di atas.
+Without pandoc → convert manually per the table above.
 
-### Untuk jurnal/konferensi (IEEE/ACM/NeurIPS/Elsevier):
-- Gunakan template official: `\documentclass[conference]{IEEEtran}`, `\usepackage{acmart}`, `\documentclass{article}` + elsarticle, dsb.
-- Petunjuk: unduh template dari situs penulis, salin kerangkanya, masukkan konten Anda. Jangan mengarang class file.
+### For journals/conferences (IEEE/ACM/NeurIPS/Elsevier):
+- Use the official templates: `\documentclass[conference]{IEEEtran}`, `\usepackage{acmart}`, `\documentclass{article}` + elsarticle, etc.
+- Instructions: download the template from the publisher's site, copy its skeleton, and insert your content. Do not invent class files.
 
-## 4. Konversi Markdown → DOCX
+## 4. Markdown → DOCX Conversion
 
-### Via pandoc (paling mudah):
+### Via pandoc (easiest):
 ```bash
 pandoc draft.md -o paper.docx
 ```
-- Dengan referensi: `pandoc draft.md -o paper.docx --bibliography=refs.bib --citeproc`
-- Gaya sitasi: `--csl=apa.csl` / `ieee.csl` / dsb. (unduh dari Zotero style repository).
+- With references: `pandoc draft.md -o paper.docx --bibliography=refs.bib --citeproc`
+- Citation styles: `--csl=apa.csl` / `ieee.csl` / etc. (download from the Zotero style repository).
 
-### Tanpa pandoc:
-- Buat file .docx dasar menggunakan library yang tersedia di env (python-docx, pandoc, libreoffice), ATAU
-- Muat ke Word/Google Docs dari Markdown dan sesuaikan manual format (Times New Roman 12, spasi 1.5, margin 4/4/3/3 cm, heading bold).
+### Without pandoc:
+- Create a basic .docx file using a library available in the environment (python-docx, pandoc, libreoffice), OR
+- Load into Word/Google Docs from Markdown and adjust the formatting manually (Times New Roman 12, 1.5 spacing, margins 4/4/3/3 cm, bold headings).
 
-### Format Word yang umum (jurnal Indonesia):
+### Common Word format (Indonesian journals):
 - Font: Times New Roman 12 pt
-- Spasi: 1.5 (abstract 1 spasi)
-- Margin: kiri 4, atas 4, kanan 3, bawah 3 cm
-- Heading: bold, sesuai aturan
-- Kutipan: `....` (nama, tahun)
+- Spacing: 1.5 (abstract single-spaced)
+- Margins: left 4, top 4, right 3, bottom 3 cm
+- Headings: bold, per the rules
+- Citations: `....` (name, year)
 
 ## 5. Pre-Submission Mechanical Checks
 
-Setelah final naskah, jalankan otomatis:
+After the final manuscript, run the following automatically:
 
-1. **Word/page count** vs target (wajib dibandingkan dengan alokasi di outline).
+1. **Word/page count** vs. target (must be compared with the outline allocation).
 2. **Broken references**:
-   - LaTeX: cek `.log` → "Undefined references" / `[?]` / `??`
+   - LaTeX: check the `.log` → "Undefined references" / `[?]` / `??`
    - `grep -n "LaTeX Warning.*undefined" paper.log`
-3. **Font embedded** (LaTeX PDF): `pdffonts paper.pdf | grep -v yes` → semua harus `yes`.
-4. **Gambar**: semua `\includegraphics` merujuk file yang ada; preferensi vektor (PDF/PDFs); flag PNG/JPG foto.
-5. **Anonimisasi** (double-blind): cari nama/kampus/grant/acknowledgment yang membocorkan identitas:
-   - `grep -rni 'nama\|institusi\|\thanks' *.tex`
-6. **Label figur/tabel**: setiap float dirujuk di teks (`Gambar X`, `Tabel Y`).
-7. **Sitasi konsisten**: cek 1:1 in-text ↔ bibliography (dari Tahap 4).
-8. **Column balancing** (LaTeX 2-kolom): pakai `\usepackage{balance}`.
+3. **Embedded fonts** (LaTeX PDF): `pdffonts paper.pdf | grep -v yes` → all must be `yes`.
+4. **Figures**: every `\includegraphics` references an existing file; prefer vector (PDF); flag PNG/JPG photos.
+5. **Anonymization** (double-blind): search for names/institutions/grants/acknowledgments that leak identity:
+   - `grep -rni 'name\|institution\|\thanks' *.tex`
+6. **Figure/table labels**: every float is referenced in the text (`Figure X`, `Table Y`).
+7. **Citation consistency**: check 1:1 in-text ↔ bibliography (from Stage 4).
+8. **Column balancing** (2-column LaTeX): use `\usepackage{balance}`.
 
-**Laporan**:
+**Report**:
 
 | Check | Status | Detail |
 |-------|--------|--------|
-| Word count | ✓/✗ | 7.520 / target 7.500 |
+| Word count | ✓/✗ | 7,520 / target 7,500 |
 | Broken refs | ✓/✗ | 0 |
-| Fonts embedded | ✓/✗ | semua yes |
+| Fonts embedded | ✓/✗ | all yes |
 | Figures referenced | ✓/✗ | 5/5 |
-| Anonymization | ✓/✗ | 0 leak |
-| Column balance | ✓/✗ | package ada |
+| Anonymization | ✓/✗ | 0 leaks |
+| Column balance | ✓/✗ | package present |
 
-## 6. Output Tahap 6
+## 6. Stage 6 Output
 
 ```
-<paper_title>.md              — naskah final Markdown (always)
-<paper_title>.tex             — LaTeX (jika diminta/ada pandoc/template)
-<paper_title>.docx            — Word (jika diminta/eventual)
-pre_submission_checklist.md   — hasil pre-submission checks
-revision_summary.md           — ringkasan seluruh proses (perubahan, gate, dsb.)
+<paper_title>.md              — final Markdown manuscript (always)
+<paper_title>.tex             — LaTeX (if requested/pandoc/template available)
+<paper_title>.docx            — Word (if requested/eventual)
+pre_submission_checklist.md   — pre-submission check results
+revision_summary.md           — summary of the whole process (changes, gates, etc.)
 ```
 
-## Catatan Teknis
+## Technical Notes
 
-- Pandoc mungkin belum terpasang; cek `command -v pandoc` sebelum menggunakannya. Jika tidak ada, tawarkan instalasi atau beri file Markdown + instruksi konversi.
-- Jangan pernah mengirim file tanpa melewati Tahap 5 (revisi) — tinjau selalu sebelum output.
-- Simpan semua versi file dengan penamaan jelas (`draft_v1.md`, `final.md`).
+- Pandoc may not be installed; check `command -v pandoc` before using it. If absent, offer installation or provide the Markdown file + conversion instructions.
+- Never send a file without passing Stage 5 (revision) — always review before output.
+- Keep all file versions with clear naming (`draft_v1.md`, `final.md`).

@@ -1,30 +1,30 @@
-# Template Extraction — Scoping Review (PCC)
+# Extraction Template — Scoping Review (PCC)
 
-Salin tabel ini untuk Mode Scoping Review. Fokus: pemetaan konsep, lingkup geografis, metodologi, dan research gaps. Isi `—` bila tidak tersedia.
+Copy this table for the Scoping Review Mode. Focus: mapping of concepts, geographic scope, methodology, and research gaps. Fill in `—` when not available.
 
-## Metadata Pencarian
+## Search Metadata
 
-- **Pertanyaan PCC**: P: [Population] | C: [Concept] | C: [Context]
-- **Filter Scopus Quartile**: [Q1–Q4 / tanpa filter]
-- **Rentang tahun**: [YYYY–YYYY]
-- **Sumber**: [OpenAlex / Semantic Scholar / kombinasi]
+- **PCC question**: P: [Population] | C: [Concept] | C: [Context]
+- **Scopus Quartile filter**: [Q1–Q4 / no filter]
+- **Year range**: [YYYY–YYYY]
+- **Sources**: [OpenAlex / Semantic Scholar / combination]
 
-## Tabel Matrix Scoping
+## Scoping Matrix Table
 
-| No | Authors/Year/Jurnal/Q | Population (P) | Concept (C) yang dikaji | Context (C): setting & geografi | Desain/Metodologi | Temuan utama (1–2 kalimat) | Research Gaps / pertanyaan terbuka | DOI/Publisher |
+| No | Authors/Year/Journal/Q | Population (P) | Concept (C) studied | Context (C): setting & geography | Design/Methodology | Key findings (1–2 sentences) | Research Gaps / open questions | DOI/Publisher |
 |----|------------------------|----------------|------------------------|---------------------------------|-------------------|----------------------------|------------------------------------|---------------|
-| 1  | [Penulis (Tahun)] — "[Judul]" | [P] | [konsep] | [setting, negara, tahun] | [kual/kuant/mixed/review] | [temuan] | [gap] | DOI: ... |
+| 1  | [Author (Year)] — "[Title]" | [P] | [concept] | [setting, country, year] | [qual/quant/mixed/review] | [finding] | [gap] | DOI: ... |
 | 2  | | | | | | | | |
 
-## Ringkasan Distribusi (dihitung dari tabel — panduan `engines/conceptual-mapping.md`)
+## Distribution Summary (computed from the table — see `engines/conceptual-mapping.md`)
 
-- Total studi: [n]
-- Distribusi geografis: [negara A: x, B: y]
-- Timeline publikasi: [YYYY–YYYY; puncak di ...]
-- Keragaman desain: [desain A: x, B: y]
+- Total studies: [n]
+- Geographic distribution: [country A: x, B: y]
+- Publication timeline: [YYYY–YYYY; peak in ...]
+- Design diversity: [design A: x, B: y]
 
-## Legenda
+## Legend
 
-- `—` : data tidak tersedia
-- `(diringkas)` : disimpulkan dari inferensi
-- `UNVERIFIED` : keberadaan paper/DOI belum diverifikasi — cek manual
+- `—` : data not available
+- `(condensed)` : inferred from inference
+- `UNVERIFIED` : paper/DOI existence not yet verified — check manually

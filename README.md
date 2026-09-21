@@ -29,6 +29,7 @@ This skill is a **Modular Multi-Method Engine**: a 6-stage pipeline with a quali
 
 ## Language Policy
 
+- **Skill instructions: written in English** so any Gen AI can use the skill directly.
 - **Output paper: ALWAYS English (US), academic register** — not optional, not bilingual. US spelling (`analyze`, `color`, `center`, `modeling`) everywhere.
 - **Input research: accepts Bahasa Indonesia OR English** depending on the Gen AI's capability — input content is understood/translated faithfully without changing meaning.
 - Grammar check, humanizer, and plagiarism check all run on the **English-US** manuscript.

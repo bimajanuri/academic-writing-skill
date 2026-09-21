@@ -1,74 +1,74 @@
-# Template Sitasi — Chicago
+# Citation Template — Chicago
 
-Dua sistem: **Author-Date** (umum: sosial & natural sciences) dan **Notes & Bibliography** (umum: humaniora, sejarah). Pastikan memakai SATU sistem secara konsisten.
+Two systems: **Author-Date** (common: social & natural sciences) and **Notes & Bibliography** (common: humanities, history). Be sure to use ONE system consistently.
 
 ---
 
-## Opsi A — Author-Date
+## Option A — Author-Date
 
 ### In-Text Citation
-| Situasi | Format | Contoh |
-|---------|--------|--------|
-| Naratif | `Nama (Tahun)` | Rahman (2023) |
-| Kurung | `(Nama Tahun, halaman)` | (Rahman 2023, 45). |
-| Dua penulis | `Nama dan Nama` | (Rahman dan Sari 2023). |
-| Detil: 3+ penulis | `Nama dkk.` (in-text) | (Rahman dkk. 2023). |
+| Situation | Format | Example |
+|-----------|--------|---------|
+| Narrative | `Name (Year)` | Rahman (2023) |
+| Parenthetical | `(Name Year, page)` | (Rahman 2023, 45). |
+| Two authors | `Name and Name` | (Rahman and Sari 2023). |
+| Details: 3+ authors | `Name et al.` (in-text) | (Rahman et al. 2023). |
 
-### Daftar Pustaka (Reference List)
+### Reference List
 ```
-Penulis Belakang, Nama Depan, dan Nama Depan Penulis2. Tahun. "Judul Artikel." Nama Jurnal 12, no. 3: 210–225.
-```
-
-Contoh:
-```
-Rahman, Ahmad, and Dewi Sari. 2023. "Pengaruh Media Sosial terhadap Prestasi Akademik Mahasiswa." Jurnal Psikologi Indonesia 12, no. 3: 210–225.
+Last Name, First Name, and First Name Author2. Year. "Article Title." Journal Name 12, no. 3: 210–225.
 ```
 
-Buku:
+Example:
 ```
-Rahman, Ahmad. 2008. Psikologi Remaja. Jakarta: Rajagrafindo Persada.
-```
-
----
-
-## Opsi B — Notes & Bibliography
-
-### Catatan Kaki (Footnote)
-```
-1. Nama Depan Nama Belakang, "Judul Artikel," Nama Jurnal 12, no. 3 (2023): 210–225.
+Rahman, Ahmad, and Dewi Sari. 2023. "The Influence of Social Media on Students' Academic Performance." Indonesian Journal of Psychology 12, no. 3: 210–225.
 ```
 
-Contoh:
+Book:
 ```
-1. Ahmad Rahman dan Dewi Sari, "Pengaruh Media Sosial terhadap Prestasi Akademik Mahasiswa," Jurnal Psikologi Indonesia 12, no. 3 (2023): 210–225.
-```
-
-Kutipan ulang:
-- Closing short: `2. Rahman dan Sari, "Pengaruh Media Sosial," 212.`
-- Ibid. (jika mendekati): `3. Ibid., 213.`
-
-### Bibliografi
-```
-Rahman, Ahmad, dan Dewi Sari. "Pengaruh Media Sosial terhadap Prestasi Akademik Mahasiswa." Jurnal Psikologi Indonesia 12, no. 3 (2023): 210–225.
-```
-
-Buku:
-```
-Rahman, Ahmad. Psikologi Remaja. Jakarta: Rajagrafindo Persada, 2008.
+Rahman, Ahmad. 2008. Adolescent Psychology. Jakarta: Rajagrafindo Persada.
 ```
 
 ---
 
-## Aturan Tambahan (kedua sistem)
-- `no.` untuk nomor issue; `vol.` untuk volume; format halaman `210–225` pada catatan, tanpa `pp.` di Chicago (langsung angka).
-- Dokumen web: sertakan tanggal akses bila perlu; `https://url`.
-- DOI: ditulis `https://doi.org/...` bila dicantumkan.
-- Nama format `Nama Belakang, Nama Depan`.
-- Bibliografi disusun alfabetis; notes disusun kemunculan.
+## Option B — Notes & Bibliography
+
+### Footnote
+```
+1. First Name Last Name, "Article Title," Journal Name 12, no. 3 (2023): 210–225.
+```
+
+Example:
+```
+1. Ahmad Rahman and Dewi Sari, "The Influence of Social Media on Students' Academic Performance," Indonesian Journal of Psychology 12, no. 3 (2023): 210–225.
+```
+
+Repeated citation:
+- Shortened: `2. Rahman and Sari, "The Influence of Social Media," 212.`
+- Ibid. (if immediately following): `3. Ibid., 213.`
+
+### Bibliography
+```
+Rahman, Ahmad, and Dewi Sari. "The Influence of Social Media on Students' Academic Performance." Indonesian Journal of Psychology 12, no. 3 (2023): 210–225.
+```
+
+Book:
+```
+Rahman, Ahmad. Adolescent Psychology. Jakarta: Rajagrafindo Persada, 2008.
+```
+
+---
+
+## Additional Rules (both systems)
+- `no.` for issue number; `vol.` for volume; page format `210–225` in notes, no `pp.` in Chicago (direct numerals).
+- Web documents: include access date when necessary; `https://url`.
+- DOI: write `https://doi.org/...` if included.
+- Name format `Last Name, First Name`.
+- Bibliography is arranged alphabetically; notes arranged by order of appearance.
 
 ## Checklist
-- [ ] Pakai konsisten SATU sistem (Author-Date ATAU Notes)
-- [ ] In-text (Author-Date) menyertakan tahun; notes bernomor
-- [ ] Halaman pada kutipan langsung
-- [ ] Italic judul jurnal/buku; kutip judul artikel
-- [ ] Alfabetis pada bibliography
+- [ ] Use ONE system consistently (Author-Date OR Notes)
+- [ ] In-text (Author-Date) includes the year; notes are numbered
+- [ ] Page numbers on direct quotations
+- [ ] Italicize journal/book titles; quotation marks around article titles
+- [ ] Alphabetical in the bibliography

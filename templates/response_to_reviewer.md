@@ -1,64 +1,64 @@
-# Response to Reviewer — Template Surat Editor + Point-by-Point
+# Response to Reviewer — Editor Letter + Point-by-Point Template
 
-Gunakan saat menerima keputusan `minor revision` / `major revision`. Panduan lengkap di `references/reviewer-response.md` (Modul C). Satu file per putaran revisi.
+Use upon receiving a `minor revision` / `major revision` decision. Full guidance in `references/reviewer-response.md` (Module C). One file per revision round.
 
-## Bagian A — Surat Balasan ke Editor (maks 1 halaman)
+## Part A — Reply Letter to the Editor (max 1 page)
 
 ```
-<Lokasi & tanggal>
+<Location & date>
 
-Kepada Editor in Chief,
-<jurnal>
+To the Editor-in-Chief,
+<journal>
 
-Re: Revisi naskah <ID/Nomor Manuskrip> '<Judul>'
+Re: Revision of manuscript <ID/Manuscript Number> '<Title>'
 
-Yth. Bapak/Ibu,
+Dear Editor,
 
-Terima kasih atas keputusan <minor/major> revision beserta catatan reviewer.
-Kami telah menyusun revisi sesuai seluruh komentar dan merangkum perubahannya
-di bawah ini.
+Thank you for the <minor/major> revision decision along with the reviewers' comments.
+We have prepared the revision addressing all comments and summarize the changes
+below.
 
-Perubahan inti pada iterasi ini:
-1. <perubahan yang paling signifikan 1>
-2. <perubahan yang paling signifikan 2>
-3. <perubahan yang paling signifikan 3>
+Key changes in this round:
+1. <most significant change 1>
+2. <most significant change 2>
+3. <most significant change 3>
 
-Seluruh komentar dari Reviewer 1 dan Reviewer 2 telah kami jawab satu per satu
-pada dokumen lampiran "Response to Reviewers" (point-by-point).
-Perubahan pada naskah ditandai dengan <metode penandaan yang diminta jurnal,
-mis. track changes / teks berwarna>, dan kami juga melampirkan naskah bersih.
+All comments from Reviewer 1 and Reviewer 2 have been answered point by point in the
+attached "Response to Reviewers" document.
+Changes to the manuscript are marked using <marking method required by the journal,
+e.g., track changes / colored text>, and we have also attached a clean manuscript.
 
-Hormat kami,
-<Penulis korespondensi>
+Sincerely,
+<Corresponding author>
 ```
 
-## Bagian B — Point-by-Point Response
+## Part B — Point-by-Point Response
 
-Ringkas komentar (sesuai format/jurnal) lalu respons. Ulangi blok per reviewer.
+Summarize the comment (per the journal's format) then respond. Repeat the block for each reviewer.
 
-### Reviewer <N>, Komentar <no>
+### Reviewer <N>, Comment <no>
 
-> **Komentar reviewer** (salin/ringkas verbatim sesuai kebijakan jurnal)
+> **Reviewer comment** (copy/summarize verbatim per journal policy)
 
-**Respons:** 
-- Acknowledgment: <satu kalimat: terima kasih / pengakuan validitas>
-- Perubahan yang dilakukan: <apa dan di mana — section, halaman, paragraf, tabel/gambar baru>
-- Kutip/bukti: <kalimat baru di naskah, atau klaim angka, atau lokasi persis>
-- Bila menolak sebagian: <alasan berbasis bukti + kompensasi (klarifikasi di teks)>
+**Response:**
+- Acknowledgment: <one sentence: thanks / acknowledgment of validity>
+- Changes made: <what and where — section, page, paragraph, new table/figure>
+- Quote/evidence: <new sentence in the manuscript, or numeric claim, or exact location>
+- If partially rejected: <evidence-based reason + compensation (clarification in the text)>
 
-## Bagian C — Tabel Ringkasan (untuk editor)
+## Part C — Summary Table (for the editor)
 
-| # | Komentar (ringkas) | Reviewer | Aksi | Status perubahan |
+| # | Comment (abbreviated) | Reviewer | Action | Change status |
 |---|--------------------|----------|------|------------------|
-| 1 | | R1 | Diubah | Section 3.2 + Tabel 4 |
-| 2 | | R2 | Ditolak sebagian | Ditambah klarifikasi §1 |
+| 1 | | R1 | Changed | Section 3.2 + Table 4 |
+| 2 | | R2 | Partially rejected | Added clarification §1 |
 
-## Checklist Sebelum Kirim Revisi
+## Checklist Before Submitting the Revision
 
-- [ ] Semua komentar terjawab (0 komentar tanpa respons — termasuk yang ditolak)
-- [ ] Setiap respons menyebut lokasi perubahan (dokumen + section + baris)
-- [ ] Nada netral, orang pertama jamak, tanpa kata defensif/sarkastik
-- [ ] Naskah revisi sudah diganti sesuai yang dijanjikan (JANGAN janji tanpa implementasi)
-- [ ] Kontribusi statement (jika klaim berubah) disesuaikan & konsisten
-- [ ] Lampiran benar: response file + naskah annotated + naskah bersih (sesuai kebijakan jurnal)
-- [ ] Grammar/plagiarism check dijalankan ulang pada naskah revisi (`checklists/grammar_check.md` & `checklists/plagiarism_check.md`)
+- [ ] All comments answered (0 comments without a response — including those rejected)
+- [ ] Each response cites the location of the change (document + section + line)
+- [ ] Neutral tone, first-person plural, no defensive/sarcastic wording
+- [ ] Revised manuscript matches what was promised (DO NOT promise without implementing)
+- [ ] Contribution statement (if claims changed) adjusted & consistent
+- [ ] Attachments correct: response file + annotated manuscript + clean manuscript (per journal policy)
+- [ ] Grammar/plagiarism check re-run on the revised manuscript (`checklists/grammar_check.md` & `checklists/plagiarism_check.md`)

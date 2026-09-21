@@ -1,105 +1,105 @@
-# Template Outline Paper (Jurnal / Artikel Ilmiah)
+# Paper Outline Template (Journal / Academic Article)
 
-Salin dan isi template ini dari Tahap 2 (Perencanaan). Ganti semua `[..]` sesuai proyek.
+Copy and fill in this template during Stage 2 (Planning). Replace all `[..]` according to the project.
 
 ---
 
-# [Judul Paper yang Spesifik dan Informatif]
+# [Specific and informative paper title]
 
 ## Metadata
-- **Jenis paper**: [research paper / literature review / systematic review / konseptual]
-- **Target jurnal / venue**: [nama, atau "—"]
-- **Total target kata**: [mis. 7.500]
-- **Gaya sitasi**: [APA / IEEE / MLA / Chicago / Vancouver / gaya jurnal]
-- **Bahasa**: English (US) — output wajib; input boleh Indonesia/English
+- **Paper type**: [research paper / literature review / systematic review / conceptual]
+- **Target journal / venue**: [name, or "—"]
+- **Total target word count**: [e.g., 7,500]
+- **Citation style**: [APA / IEEE / MLA / Chicago / Vancouver / journal style]
+- **Language**: English (US) — output mandatory; input may be Indonesian/English
 
 ---
 
-## 1. Abstract (150–250 kata)
+## 1. Abstract (150–250 words)
 
-- **[1 kalimat] Latar & urgensi masalah**
-- **[1–2 kalimat] Tujuan / research question**
-- **[1–2 kalimat] Metode ringkas (desain, sampel)**
-- **[2–3 kalimat] Temuan utama (dengan angka)**
-- **[1 kalimat] Kontribusi/implikasi**
+- **[1 sentence] Background & problem urgency**
+- **[1–2 sentences] Objective / research question**
+- **[1–2 sentences] Concise method (design, sample)**
+- **[2–3 sentences] Key findings (with numbers)**
+- **[1 sentence] Contribution/implications**
 
-*Ditulis paling akhir.*
+*Written last.*
 
-## 2. Pendahuluan ([16–20%] kata)
+## 2. Introduction ([16–20%] words)
 
-- **2.1 Latar belakang & masalah** (stakes, siapa yang dirugikan, mengapa penting)
-- **2.2 Gap dan urgensi** (dari Gap Analysis, perkuat dengan sitasi)
-- **2.3 Research question & tujuan** (1–3 RQ)
-- **2.4 Kontribusi** (numbered, claim-first, bisa dibuktikan)
-- **2.5 Struktur paper** (outline paragraph, opsional)
+- **2.1 Background & problem** (stakes, who is affected, why it matters)
+- **2.2 Gap and urgency** (from Gap Analysis, supported with citations)
+- **2.3 Research question & objective** (1–3 RQs)
+- **2.4 Contributions** (numbered, claim-first, verifiable)
+- **2.5 Paper structure** (outline paragraph, optional)
 
-## 3. Tinjauan Literatur / Literature Review ([20–25%] kata)
+## 3. Literature Review ([20–25%] words)
 
-- **3.1 Kerangka Teoritis** (Theory Used dari matrix — dijelaskan dan dikembangkan)
-- **3.2 Sintesis Temuan Terdahulu** (kelompokkan thematic, bukan per-paper)
-  - 3.2.1 [Tema 1 — mis. pengaruh durasi penggunaan]
-  - 3.2.2 [Tema 2 — mis. perbedaan tipe konten]
-  - 3.2.3 [Tema 3 — mis. moderator/moderasi]
-- **3.3 Research Gap dan Posisi Paper Ini** (mengarah ke RQ)
+- **3.1 Theoretical Framework** (Theory Used from the matrix — explained and developed)
+- **3.2 Synthesis of Previous Findings** (grouped thematically, not paper-by-paper)
+  - 3.2.1 [Theme 1 — e.g., effect of use duration]
+  - 3.2.2 [Theme 2 — e.g., differences by content type]
+  - 3.2.3 [Theme 3 — e.g., moderator/moderating effects]
+- **3.3 Research Gap and Position of This Paper** (leading to the RQ)
 
-## 4. Metodologi ([15–18%] kata)
+## 4. Methodology ([15–18%] words)
 
-- **4.1 Desain Penelitian** [kuantitatif/kualitatif/mixed/etc.]
-- **4.2 Variabel dan Pengukuran** (IV, DV, definisi operasional)
-- **4.3 Populasi dan Sampel** (n, karakteristik, teknik sampling)
-- **4.4 Instrumen** (kuesioner, wawancara; validitas & reliabilitas)
-- **4.5 Prosedur**
-- **4.6 Analisis Data** (statistik, software/versi)
+- **4.1 Research Design** [quantitative/qualitative/mixed/etc.]
+- **4.2 Variables and Measurement** (IV, DV, operational definitions)
+- **4.3 Population and Sample** (n, characteristics, sampling technique)
+- **4.4 Instruments** (questionnaire, interview; validity & reliability)
+- **4.5 Procedure**
+- **4.6 Data Analysis** (statistics, software/version)
 
-> *Untuk systematic review: tambahkan PRISMA flow, kriteria inklusi/eksklusi, strategi pencarian, quality assessment.*
+> *For systematic reviews: add PRISMA flow, inclusion/exclusion criteria, search strategy, quality assessment.*
 
-## 5. Hasil ([15–18%] kata)
+## 5. Results ([15–18%] words)
 
-- **5.1 Statistik deskriptif** [karakteristik sampel, tabel 1]
-- **5.2 Uji asumsi / uji hipotesis** (tabel 2, 3; gambar 1, 2)
-- **5.3 Pendukung/robustness** (opsional)
+- **5.1 Descriptive statistics** [sample characteristics, Table 1]
+- **5.2 Assumption tests / hypothesis tests** (Tables 2, 3; Figures 1, 2)
+- **5.3 Supporting/robustness analyses** (optional)
 
-Setiap paragraf: interpretasi; akhiri kluster dengan **takeaway paragraph**.
+Each paragraph: interpretation; end each cluster with a **takeaway paragraph**.
 
-## 6. Pembahasan ([15–18%] kata)
+## 6. Discussion ([15–18%] words)
 
-- **6.1 Interpretasi Hasil terhadap RQ** (satu per satu)
-- **6.2 Perbandingan dengan Studi Terdahulu** (konfirmasi/kontradiksi/perluasan; sitasi dari matrix)
-- **6.3 Implikasi Teoretis** (kontribusi ke Theory Used)
-- **6.4 Implikasi Praktis**
-- **6.5 Keterbatasan**
+- **6.1 Interpretation of Results relative to the RQs** (one by one)
+- **6.2 Comparison with Previous Studies** (confirmation/contradiction/extension; citations from the matrix)
+- **6.3 Theoretical Implications** (contribution to Theory Used)
+- **6.4 Practical Implications**
+- **6.5 Limitations**
 
-## 7. Kesimpulan ([5–8%] kata)
+## 7. Conclusion ([5–8%] words)
 
-- **7.1 Ringkasan Temuan Kunci** (angka terpenting)
-- **7.2 Jawaban RQ** (satu-satu)
-- **7.3 Kontribusi** (ringkas dari intro — kini didukung bukti)
-- **7.4 Saran Penelitian Lanjut** (dari Future Studies matrix yang belum dijawab)
+- **7.1 Summary of Key Findings** (most important numbers)
+- **7.2 RQ answers** (one by one)
+- **7.3 Contributions** (condensed from the introduction — now supported by evidence)
+- **7.4 Suggestions for Further Research** (from unanswered Future Studies in the matrix)
 
-## Daftar Pustaka
+## References
 
-- Format sesuai gaya sitasi yang dipilih (lihat citation-formatter.md).
+- Format according to the chosen citation style (see citation-formatter.md).
 
-## Lampiran (opsional)
+## Appendix (optional)
 
-- Kuesioner, uji asumsi detail, kode, dsb.
+- Questionnaire, detailed assumption tests, code, etc.
 
 ---
 
-## Lampiran Outline — Topic Sentences (kontrak paragraf)
+## Outline Appendix — Topic Sentences (paragraph contract)
 
-Tulis satu kalimat-tesis per paragraf SEBELUM menulis prosa; baca berurutan; pastikan koheren:
+Write one thesis sentence per paragraph BEFORE writing the prose; read in sequence; ensure coherence:
 
-| Section | Paragraf | Topic sentence |
+| Section | Paragraph | Topic sentence |
 |---------|----------|----------------|
-| Pendahuluan | 1 | [klaim] |
-| Pendahuluan | 2 | [klaim] |
+| Introduction | 1 | [claim] |
+| Introduction | 2 | [claim] |
 | ... | ... | ... |
 
-## Lampiran Outline — Alokasi Figur & Tabel
+## Outline Appendix — Figure & Table Allocation
 
-| # | Jenis | Konten | Menjawab | Lokasi |
+| # | Type | Content | Answers | Location |
 |---|-------|--------|----------|--------|
-| Gambar 1 | Diagram/kerangka | ... | ... | 4.x / 2.x |
-| Tabel 1 | Deskriptif | ... | ... | 5.1 |
+| Figure 1 | Diagram/framework | ... | ... | 4.x / 2.x |
+| Table 1 | Descriptive | ... | ... | 5.1 |
 | ... | | | | |

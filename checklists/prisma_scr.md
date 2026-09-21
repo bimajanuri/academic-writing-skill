@@ -1,41 +1,42 @@
-# Checklist — PRISMA-ScR (Scoping Review, 22 item)
+# Checklist — PRISMA-ScR (Scoping Review, 22 items)
 
-Auto-validation wajib untuk Mode Scoping Review. Sumber resmi: Tricco et al. (2018), *Ann Intern Med* — checklist PRISMA-ScR 22 item (termaasuk 2 item opsional). Verifikasi item resmi di prisma-statement.org / EQUATOR.
+Mandatory auto-validation for Scoping Review Mode. Official source: Tricco et al. (2018), *Ann Intern Med* — 22-item PRISMA-ScR checklist (including 2 optional items). Verify official items at prisma-statement.org / EQUATOR.
 
 ## Checklist
 
-| # | Item | Ya | Tidak | T.A. | Catatan / lokasi naskah |
-|---|------|----|-------|------|--------------------------|
-| 1 | Judul mengidentifikasi sebagai scoping review | | | | |
-| 2 | Abstract terstruktur (background, objectives, eligibilty, sources, charting, results, conclusions) | | | | |
-| 3 | Rationale — alasan scoping review vs review lain | | | | |
-| 4 | Objectives — pertanyaan PCC eksplisit | | | | |
+| # | Item | Yes | No | N.A. | Notes / manuscript location |
+|---|------|-----|----|------|------------------------------|
+| 1 | Title identifies the report as a scoping review | | | | |
+| 2 | Structured abstract (background, objectives, eligibility, sources, charting, results, conclusions) | | | | |
+| 3 | Rationale — justification for a scoping review vs. other review types | | | | |
+| 4 | Objectives — explicit PCC question | | | | |
 | 5 | Protocol & registration (indicators of protocol) | | | | |
-| 6 | Eligibility criteria (fituangkan dari PCC) | | | | |
-| 7 | Information sources (database/register, tanggal pencarian) | | | | |
-| 8 | Search — strategi penuh untuk ≥1 database (PRISMA-S bila perlu) | | | | |
-| 9 | Selection of sources — proses seleksi | | | | |
-| 10 | Data charting process — proses ekstraksi | | | | |
-| 11 | Data items — variabel yang di-chart | | | | |
-| 12 | Critical appraisal of individual sources (opsional) | | | | |
-| 13 | Synthesis of results — bagaimana hasil dikelompokkan/disajikan | | | | |
-| 14 | Selection results — jumlah studi per fase (flow) | | | | |
-| 15 | Characteristics of sources — tabel karakteristik | | | | |
-| 16 | Critical appraisal within sources (opsional) | | | | |
+| 6 | Eligibility criteria (derived from PCC) | | | | |
+| 7 | Information sources (database/register, search dates) | | | | |
+| 8 | Search — full strategy for ≥1 database (PRISMA-S if needed) | | | | |
+| 9 | Selection of sources — selection process | | | | |
+| 10 | Data charting process — extraction process | | | | |
+| 11 | Data items — variables charted | | | | |
+| 12 | Critical appraisal of individual sources (optional) | | | | |
+| 13 | Synthesis of results — how results were grouped/presented | | | | |
+| 14 | Selection results — number of studies per phase (flow) | | | | |
+| 15 | Characteristics of sources — characteristics table | | | | |
+| 16 | Critical appraisal within sources (optional) | | | | |
 | 17 | Results of individual sources | | | | |
 | 18 | Summary of evidence | | | | |
-| 19 | Limitations — batasan desain & proses | | | | |
-| 20 | Conclusions — implikasi & pertanyaan lanjut | | | | |
+| 19 | Limitations — design & process limitations | | | | |
+| 20 | Conclusions — implications & further questions | | | | |
 | 21 | Funding | | | | |
 
 ## Auto-Validation Rule
 
-- Item wajib (1–11, 13–15, 17–21) harus **Ya** (atau "T.A." bila jelas tidak berlaku).
-- Item opsional (12, 16): bila dilakukan aparisal, wajib dilaporkan konsisten.
-- Item "Tidak" → buat rencana perbaikan sebelum complete.
-- Status akhir: `complete` / `needs_fix`.
+- Mandatory items (1–11, 13–15, 17–21) must be **Yes** (or "N.A." when clearly not applicable).
+- Optional items (12, 16): if appraisal was performed, it must be reported consistently.
+- Items marked "No" → create a remediation plan before marking complete.
+- Final status: `complete` / `needs_fix`.
 
 ## Output
 
 ```text
-reporting_checklist_result.md  — hasil mapping PRISMA-ScR
+reporting_checklist_result.md  — PRISMA-ScR mapping results
+```

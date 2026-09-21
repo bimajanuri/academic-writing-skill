@@ -1,54 +1,55 @@
-# Checklist — Whittemore & Knafl (Integrative Review, 5 Tahap)
+# Checklist — Whittemore & Knafl (Integrative Review, 5 Stages)
 
-Auto-validation wajib untuk Mode Integrative Review. Sumber: Whittemore & Knafl (2005). *The integrative review: updated methodology*. J Adv Nurs, 52(5):546–553.
+Mandatory auto-validation for Integrative Review Mode. Source: Whittemore & Knafl (2005). *The integrative review: updated methodology*. J Adv Nurs, 52(5):546–553.
 
-## Checklist per Tahap
+## Checklist per Stage
 
-### Tahap 1 — Problem Identification
-| # | Kriteria | Ya | Tidak | T.A. |
-|---|----------|----|-------|------|
-| 1 | Pertanyaan review dirumuskan secara jelas dan terdefinisi | | | |
-| 2 | Signifikansi/urgensi masalah dijustifikasi | | | |
-| 3 | Tujuan review eksplisit | | | |
+### Stage 1 — Problem Identification
+| # | Criterion | Yes | No | N.A. |
+|---|-----------|-----|----|------|
+| 1 | Review question clearly and explicitly formulated | | | |
+| 2 | Significance/urgency of the problem justified | | | |
+| 3 | Review purpose explicit | | | |
 
-### Tahap 2 — Literature Search
-| # | Kriteria | Ya | Tidak | T.A. |
-|---|----------|----|-------|------|
-| 4 | ≥ 3 database dicantumkan | | | |
-| 5 | Strategi pencarian (terminologi, boolean, rentang tahun) terdokumentasi | | | |
-| 6 | Kriteria inklusi/eksklusi dijelaskan | | | |
-| 7 | Manajemen duplikat & jumlah hasil dilaporkan | | | |
+### Stage 2 — Literature Search
+| # | Criterion | Yes | No | N.A. |
+|---|-----------|-----|----|------|
+| 4 | ≥ 3 databases listed | | | |
+| 5 | Search strategy (terminology, boolean, year range) documented | | | |
+| 6 | Inclusion/exclusion criteria explained | | | |
+| 7 | Duplicate management & number of results reported | | | |
 
-### Tahap 3 — Data Evaluation
-| # | Kriteria | Ya | Tidak | T.A. |
-|---|----------|----|-------|------|
-| 8 | Kriteria kualitas studi ditetapkan | | | |
-| 9 | Skor kualitas per studi terdokumentasi (data berkualitas rendah eliminasi/berlabel) | | | |
-| 10 | Keputusan inklusi berdasar kualitas dijelaskan | | | |
+### Stage 3 — Data Evaluation
+| # | Criterion | Yes | No | N.A. |
+|---|-----------|-----|----|------|
+| 8 | Study quality criteria established | | | |
+| 9 | Quality score per study documented (low-quality data eliminated/labeled) | | | |
+| 10 | Inclusion decisions based on quality explained | | | |
 
-### Tahap 4 — Data Analysis
-| # | Kriteria | Ya | Tidak | T.A. |
-|---|----------|----|-------|------|
-| 11 | Data reduction — ekstraksi ke kode/tema | | | |
-| 12 | Data display — matriks studi × tema tersedia | | | |
-| 13 | Data comparison — pola/hubungan antar studi | | | |
-| 14 | Conclusion drawing & verification — simpulan diuji balik data | | | |
+### Stage 4 — Data Analysis
+| # | Criterion | Yes | No | N.A. |
+|---|-----------|-----|----|------|
+| 11 | Data reduction — extraction into codes/themes | | | |
+| 12 | Data display — studies × themes matrix available | | | |
+| 13 | Data comparison — patterns/relationships across studies | | | |
+| 14 | Conclusion drawing & verification — conclusions tested against the data | | | |
 
-### Tahap 5 — Presentation
-| # | Kriteria | Ya | Tidak | T.A. |
-|---|----------|----|-------|------|
-| 15 | Temuan disajikan terintegrasi (qual + quant), bukan daftar abstract | | | |
-| 16 | Tabel/diagram pendukung digunakan | | | |
-| 17 | Keterbatasan implikasi dibahas | | | |
+### Stage 5 — Presentation
+| # | Criterion | Yes | No | N.A. |
+|---|-----------|-----|----|------|
+| 15 | Findings presented in an integrated manner (qual + quant), not a list of abstracts | | | |
+| 16 | Supporting tables/diagrams used | | | |
+| 17 | Limitations & implications discussed | | | |
 
 ## Auto-Validation Rule
 
-- Semua 17 kriteria: **Ya** (atau "T.A." bila benar-benar tidak berlaku).
-- Tahap 4 tidak boleh kosong — data analysis adalah inti metode ini.
-- Item "Tidak" → rencana perbaikan; status: `complete` / `needs_fix`.
+- All 17 criteria: **Yes** (or "N.A." when genuinely not applicable).
+- Stage 4 must not be empty — data analysis is the core of this method.
+- Items marked "No" → remediation plan; status: `complete` / `needs_fix`.
 
 ## Output
 
 ```text
-data_display_matrix.md       — matriks reduksi/display (bukti tahap 4)
-reporting_checklist_result.md — hasil mapping Whittemore & Knafl
+data_display_matrix.md       — reduction/display matrix (Stage 4 evidence)
+reporting_checklist_result.md — Whittemore & Knafl mapping results
+```

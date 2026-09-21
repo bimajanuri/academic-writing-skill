@@ -1,26 +1,26 @@
 # Extraction Module — Integrative Review (Mixed Data)
 
-Panduan ekstraksi untuk Mode Integrative Review. Menangkap data **kualitatif DAN kuantitatif** agar bisa diproses dengan metode analisis Whittemore & Knafl.
+Extraction guide for the Integrative Review Mode. Captures **qualitative AND quantitative** data so they can be processed with the Whittemore & Knafl analysis method.
 
-## Kolom Ekstraksi
+## Extraction Columns
 
-| No | Authors/Year/Jurnal/Q | Jenis data (Kual/Kuant/Mixed) | Desain & Sample | Temuan QUAL (tema/kategori) | Temuan QUANT (efek/statistik) | Konteks | Skor kualitas (appraisal) |
+| No | Authors/Year/Journal/Q | Data type (QUAL/QUANT/Mixed) | Design & Sample | QUAL findings (themes/categories) | QUANT findings (effects/statistics) | Context | Quality score (appraisal) |
 |----|------------------------|-------------------------------|-----------------|------------------------------|-------------------------------|---------|---------------------------|
 
-## Aturan Ekstraksi
+## Extraction Rules
 
-1. Pisahkan kolom temuan kualitatif & kuantitatif — jangan digabung.
-2. Temuan kuantitatif: angka statistik kunci (efek, CI, p) direkam bila tersedia.
-3. Temuan kualitatif: tema/kategori ringkas + contoh kutipan bila perlu.
-4. Skor kualitas (mis. 0–3) per studi agar tahap **data evaluation** bisa mengeliminasi/berlabel data berkualitas rendah.
-5. Konteks (setting, populasi, waktu) selalu direkam — penting saat data comparison.
+1. Keep qualitative and quantitative finding columns separate — do not merge them.
+2. Quantitative findings: record key statistics (effect, CI, p) when available.
+3. Qualitative findings: concise themes/categories + example quotes when necessary.
+4. Quality score (e.g. 0–3) per study so the **data evaluation** stage can eliminate/label low-quality data.
+5. Context (setting, population, time) is always recorded — essential during data comparison.
 
 ## Anti-Hallucination
 
-- Jangan meringkas temuan kuantitatif sebagai narasi tanpa angka bila angka ada.
-- Jangan mengubah tema kualitatif agar cocok dengan klaster Anda.
-- Skor kualitas harus bisa dipertanggungjawabkan (simpan alasan per skor).
+- Do not summarize quantitative findings as narrative without numbers when numbers exist.
+- Do not alter qualitative themes to fit your cluster.
+- Quality scores must be justifiable (keep the reason for each score).
 
 ## Template
 
-Gunakan `templates/extraction_integrative.md` untuk output matrix.
+Use `templates/extraction_integrative.md` for the output matrix.

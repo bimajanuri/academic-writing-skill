@@ -1,77 +1,77 @@
-# Reviewer Response & Rejection Handling — Pascasubmisi (Tahap 5.5 / Post-Submission)
+# Reviewer Response & Rejection Handling — Post-Submission (Stage 5.5 / Post-Submission)
 
-Panduan menyikapi keputusan editor dan komentar reviewer setelah paper disubmit. Terhubung dengan red-team (Tahap 5 Layer 5) yang mengantisipasi reviewer: setelah surat editor tiba, gunakan panduan ini untuk menyusun revisi & tanggapan.
+Guide to responding to editor decisions and reviewer comments after the paper is submitted. Connected to the red-team (Stage 5, Layer 5) that anticipates reviewers: once the editor's letter arrives, use this guide to prepare the revision & responses.
 
-Keputusan email pertama editor adalah **keputusan eksekutif** (desk reject / out of scope). Jika naskah lolos ke juri, keputusan akhir umumnya `accepted / minor revision / major revision / reject`.
+The editor's first letter decision is usually an **executive decision** (desk reject / out of scope). If the manuscript passes to reviewers, the final decision is typically `accepted / minor revision / major revision / reject`.
 
-## 1. Tipe Komentar Reviewer & Respons yang Tepat
+## 1. Reviewer Comment Types & Appropriate Responses
 
-| Tipe Komentar | Contoh | Respons |
+| Comment Type | Example | Response |
 |---------------|--------|---------|
-| **Salah paham** (misread) | "Paper tidak kontrol X" padahal sudah | Sangat umum. Jawab dengan bukti di teks, tanpa menyalahkan; tunjukkan lokasi baris/section. Tambahkan klarifikasi di teks agar pembaca lain tidak salah baca juga. |
-| **Kurang bukti/detail** | "Tambahkan analisis sensitivitas" | Akui nilai komentar; beri apa yang bisa diberi (lampiran, robustness). Kalau tidak feasible, jelaskan sedang dan alternatif; tidak boleh menolak dengan alasan teknis dangkal. |
-| **Perlu literatur tambahan** | "Bandingkan dengan studi X" | Tambah sitasi & diskusi. Hati-hati: jangan asal menambah literatur tanpa relevansi — tambahkan hanya yang benar-benar memperkuat. |
-| **Perlu eksperimen/tugas baru** | "Tambah studi pengguna" | Kalau memungkinkan → tambahkan sebagai supplementary (tidak menunda iterasi utama). Kalau tidak → jadwalkan sebagai future work DENGAN alasan yang logis; jelaskan dampak pada klaim jika studi ditunda. |
-| **Kritik konsep keseluruhan** | "Fundamentalnya flawed; posisi salah" | Kasus paling serius. Pertimbangkan apakah reviewer benar (bisa jadi benar). Jika tidak → respons terstruktur mempertahankan di atas bukti, bukan emosi. Pertimbangkan appeal jika jelas-jelas salah paham scope. |
-| **Komentar minor** (bahasa, format, numbering) | "Fix typo; rapikan tabel" | Patuhi semua; dilakukan cepat; tandai tiap poin. |
+| **Misunderstanding (misread)** | "The paper does not control for X" when it does | Very common. Answer with evidence in the text, without blaming; point to the line/section location. Add clarification to the text so other readers are not misled either. |
+| **Lack of evidence/detail** | "Add a sensitivity analysis" | Acknowledge the value of the comment; provide what can be provided (appendix, robustness). If infeasible, explain the rationale and alternatives; do not refuse on shallow technical grounds. |
+| **Needs additional literature** | "Compare with study X" | Add the citation & discussion. Be careful: do not add literature arbitrarily without relevance — add only what genuinely strengthens the paper. |
+| **Needs a new experiment/task** | "Add a user study" | If possible → add it as supplementary (without delaying the main iteration). If not → schedule it as future work WITH a logical rationale; explain the impact on the claims if the study is postponed. |
+| **Overall conceptual critique** | "Fundamentally flawed; wrong positioning" | The most serious case. Consider whether the reviewer is right (they might be). If not → respond structurally, defending on evidence, not emotion. Consider an appeal if the scope is clearly misunderstood. |
+| **Minor comments** (language, format, numbering) | "Fix typo; tidy up the table" | Comply with all of them; do them quickly; check off each point. |
 
-## 2. Strategi Minor vs Major Revision
+## 2. Minor vs Major Revision Strategy
 
-**Minor revision** (replikasi min 1–2 putaran):
-- Kerjakan semua poin; jangan "argue back" untuk poin minor — lebih murah mematuhi.
-- Actual risiko: rejection masih mungkin. Pastikan juga memperbaiki isu mayor yang reviewer singgung.
+**Minor revision** (typically 1–2 rounds):
+- Do all the points; do not "argue back" on minor points — it is cheaper to comply.
+- Real risk: rejection is still possible. Make sure to also fix the major issues the reviewer touches on.
 
-**Major revision** (revisi substansial; putaran bisa panjang):
-- Pisahkan komentar menjadi: (a) yang saya setujui; (b) yang bisa saya patuhi sebagian; (c) yang saya tolak dengan alasan kuat.
-- Prioritaskan komentar yang menyentuh **klaim inti** — jika klaim berubah, kontribusi statement (Modul A) harus disesuaikan dan hasilnya dijelaskan kepada editor.
-- Kerja nyata > janji: reviewer menilai revisi, bukan retorika.
+**Major revision** (substantial revision; rounds can be long):
+- Separate the comments into: (a) those I agree with; (b) those I can partially comply with; (c) those I reject with strong reasons.
+- Prioritize comments that touch the **core claim** — if the claim changes, the contribution statement (Module A) must be adjusted and the outcome explained to the editor.
+- Real work > promises: reviewers judge the revision, not the rhetoric.
 
-## 3. Struktur Response to Reviewer
+## 3. Structure of the Response to Reviewers
 
-Gunakan template `templates/response_to_reviewer.md`:
+Use the template `templates/response_to_reviewer.md`:
 
-1. **Surat balasan ke editor** (1 halaman): ringkasan perubahan per kategori + apresiasi + konfirmasi semua komentar dijawab
-2. **Point-by-point per reviewer**: daftar komentar (verbatim atau ringkas sesuai kebijakan jurnal) → respons per komentar
-3. Setiap respons mengandung 3 unsur:
-   - **Acknowledgment** singkat ("Terima kasih, poin valid")
-   - **Resolusi**: apa yang DIUBAH di naskah (section, halaman, gambar/tabel baru)
-   - **Bukti**: kutip kalimat baru / klaim hasil baru / lokasi persis
-4. Jika menolak komentar: jelaskan "kami tidak mengubah X karena <alasan berbasis bukti>", dan beri kompensasi (mis. klarifikasi di teks).
+1. **Letter to the editor** (1 page): summary of changes per category + appreciation + confirmation that all comments are answered
+2. **Point-by-point per reviewer**: list of comments (verbatim or summarized per journal policy) → response to each comment
+3. Each response contains 3 elements:
+   - A short **Acknowledgment** ("Thank you, valid point")
+   - **Resolution**: what was CHANGED in the manuscript (section, page, new figure/table)
+   - **Evidence**: quote the new sentence / new result claim / precise location
+4. If rejecting a comment: explain "we did not change X because <evidence-based reason>" and offer compensation (e.g., clarification in the text).
 
-**Aturan nada**:
-- Gunakan orang pertama jamak ("kami"), netral, tanpa kata sarkastik/defensif ("seperti yang telah kami jelaskan", "dengan hormat kami berbeda pendapat").
-- Tulis tanggapan untuk **editor** sebagai pembaca utama, bukan hanya untuk reviewer.
-- Setiap poin Wajib menyebut DI MANA perubahan terjadi (dokumen + section + baris), agar mudah diverifikasi.
+**Tone rules**:
+- Use first person plural ("we"), neutral, without sarcastic/defensive wording ("as we have already explained", "respectfully, we disagree").
+- Write the response for the **editor** as the primary reader, not only for the reviewer.
+- Every point MUST state WHERE the change occurred (document + section + line) so it is easy to verify.
 
 ## 4. Rejection Handling Decision Path
 
-Setelah keputusan `reject`, tanyakan **timing & alasan** sebelum menyerah:
+After a `reject` decision, weigh the **timing & reasons** before giving up:
 
 ```
 Rejection? 
-├─ Desk reject (belum review) 
-│    → periksa scope/format → kirim jurnal lain lebih cocok (Modul B) — naskah di banyak jurnal bukan self-plagiarism
-├─ Reject setelah review 
-│    ├─ Reviewer salah paham fundamental? → pertimbangkan appeal ke editor (jarang berhasil; hanya jika jelas)
-│    ├─ Alasan umum (novelty kurang eksplisit, metode, analisis)? → perbaiki naskah berbekal komentar, kirim ke jurnal lain
-│    └─ Jurnal minta transfer internal? → pertimbangkan (rebut oleh editorial, review bisa dipakai ulang)
-└─ Reject di end-stage (editor paten)
-     → Waktu terbaik ditentukan: apakah biaya perbaikan (waktu/tenaga) menaikkan peluang nyata, atau invest ke proyek baru?
+├─ Desk reject (not reviewed) 
+│    → check scope/format → send to a more suitable journal (Module B) — the same manuscript at multiple journals is not self-plagiarism
+├─ Reject after review 
+│    ├─ Fundamental reviewer misunderstanding? → consider appealing to the editor (rarely succeeds; only when clear)
+│    ├─ Common reasons (novelty not explicit, method, analysis)? → improve the manuscript with the comments, send to another journal
+│    └─ Journal offers internal transfer? → consider it (advocated by the editorial team; reviews can be reused)
+└─ Reject at end-stage (editor firm)
+     → Decide the best timing: does the cost of fixing (time/effort) raise the real odds, or should you invest in a new project?
 ```
 
-- **Jangan** menyusun ulang naskah yang sama tanpa mengubah substansi (risiko jadi "recycled paper").
-- Update `journal_comparison.md` dan `cover_letter.md` (Modul B) saat pindah jurnal: target baru → cover letter baru.
-- Evaluasi putusan yang dibuat tim ("post-mortem" singkat) untuk proyek berikutnya.
+- **Do not** rework the same manuscript without changing the substance (risk of becoming a "recycled paper").
+- Update `journal_comparison.md` and `cover_letter.md` (Module B) when switching journals: new target → new cover letter.
+- Evaluate the decisions the team made (a short "post-mortem") for the next project.
 
-## 5. Koneksi ke Red-Team (Tahap 5 Layer 5)
+## 5. Connection to the Red-Team (Stage 5, Layer 5)
 
-- Red-team di Tahap 5 mensimulasikan reviewer; temuan CRITICAL/IMPORTANT-nya adalah "komentar" yang harus diselesaikan sebelum submit.
-- Setelah surat editor tiba: klasifikasikan setiap komentar dengan kategori §1 dan susun respons dengan §3 — ini yang menghemat waktu mayor revision.
+- The Stage 5 red-team simulates reviewers; its CRITICAL/IMPORTANT findings are "comments" that must be resolved before submission.
+- Once the editor's letter arrives: classify every comment with the §1 categories and build responses with §3 — this is what saves time on a major revision.
 
 ## Output
 
 ```
-response_to_reviewer.md   — surat editor + point-by-point (template templates/response_to_reviewer.md)
-revision_log.md           — log perubahan yang dijanjikan & statusnya
-decision_log.md           — catatan keputusan (untuk module ini & proyek berikutnya)
+response_to_reviewer.md   — editor letter + point-by-point (template templates/response_to_reviewer.md)
+revision_log.md           — log of promised changes & their status
+decision_log.md           — decision records (for this module & the next project)
 ```

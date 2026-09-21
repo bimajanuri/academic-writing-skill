@@ -1,84 +1,84 @@
-# Protocol — Mode Narrative Review
+# Protocol — Narrative Review Mode
 
-Mode untuk *narrative / traditional review*: ulasan naratif literatur yang menekankan pengorganisasian gagasan dan perkembangan argumen akademik.
+Mode for *narrative / traditional review*: a narrative literature review emphasizing the organization of ideas and the development of academic argumentation.
 
-## Kapan Mode Ini Aktif
+## When This Mode Is Active
 
-Pengguna meminta: *narrative review*, *literature review naratif*, *review kualitatif naratif*, ulasan non-sistematis, kata kunci "SANRA", atau memilih **Mode Narrative** pada Method Selection Router.
+The user requests: *narrative review*, *narrative literature review*, *qualitative narrative review*, a non-systematic review, the keyword "SANRA", or selects **Narrative Mode** on the Method Selection Router.
 
-## Urutan Wajib
+## Mandatory Sequence
 
 ```text
-1. Mode + standar pelaporan (SANRA) + framework RQ (5W+1H/CIMO) dikunci (GATE 0) → framework_selection.md
-2. Parameter inisialisasi (topik, bahasa, quartile, tahun)
-3. Kata kunci diturunkan dari topik inti + wilayah debat
-4. PENCARIAN literatur (HANYA setelah 1–3 selesai) + seleksi sumber rasional
-5. Ekstraksi posisi argumen + sintesis Academic Debate
+1. Mode + reporting standard (SANRA) + RQ framework (5W+1H/CIMO) locked (GATE 0) → framework_selection.md
+2. Initialization parameters (topic, language, quartile, years)
+3. Keywords derived from the core topic + debate areas
+4. LITERATURE SEARCH (ONLY after 1–3 are complete) + rational source selection
+5. Extraction of argument positions + Academic Debate synthesis
 ```
 
-> Hasil pencarian narrative harus mencakup paper yang **menyatakan posisi/klaim/debat** (bukan hanya hasil empiris) agar engine Academic Debate bisa mengkelasterkan pro/kontra.
+> Narrative search results must include papers that **state positions/claims/debates** (not only empirical results) so that the Academic Debate engine can cluster pro/con.
 
-## Framework Wajib (Bound)
+## Mandatory Framework (Bound)
 
-| Aspek | Framework |
+| Aspect | Framework |
 |-------|-----------|
-| RQ | **5W+1H / CIMO** (atau ECLIPSe untuk kebijakan/layanan) |
-| Reporting checklist | **SANRA** (*Scale for the Assessment of Narrative Review Articles*, 6 item) |
-| Prosedur | Penelusuran eksplisit + seleksi rasional (bukan alur PRISMA penuh) |
+| RQ | **5W+1H / CIMO** (or ECLIPSe for policy/services) |
+| Reporting checklist | **SANRA** (*Scale for the Assessment of Narrative Review Articles*, 6 items) |
+| Procedure | Explicit searching + rational selection (not the full PRISMA workflow) |
 
-> SANRA menuntut **kejujuran metode**: jelaskan pencarian dan kriteria pemilihan studi meskipun bukan SLR. Jangan berpura-pura sistematis.
+> SANRA demands **methodological honesty**: explain the search and study selection criteria even though it is not an SLR. Do not pretend to be systematic.
 
-## Extraction Matrix — Posisi Argumen
+## Extraction Matrix — Argument Positions
 
-Fokus ekstraksi adalah **posisi penulis**, bukan metadata variabel:
+The extraction focus is **author position**, not variable metadata:
 
-| No | Authors/Year/Jurnal/Q | Klaim/Posisi penulis | Pendukung (bukti/ref) | Penentang/kontra | Konteks/domain | Kekuatan klaim |
+| No | Authors/Year/Journal/Q | Author's Claim/Position | Supporters (evidence/ref) | Opponents/against | Context/domain | Claim strength |
 |----|----------------------|----------------------|----------------------|------------------|----------------|----------------|
 
-Detail: `references/extraction-narrative.md` + template `templates/extraction_narrative.md`.
+Details: `references/extraction-narrative.md` + template `templates/extraction_narrative.md`.
 
-## Sintesis — Academic Debate Engine
+## Synthesis — Academic Debate Engine
 
-Gunakan **`engines/academic-debate.md`** secara wajib:
+Use **`engines/academic-debate.md`** mandatorily:
 
-1. Kelompokkan paper ke **posisi pro/kontra/netral** terhadap pertanyaan inti.
-2. Susun **timeline perkembangan gagasan** (siapa meletakkan dasar, siapa memperluas, siapa menantang).
-3. Identifikasi debat terbuka, konsensus, dan inkonsistensi antar kelompok.
-4. Narasi mengikuti alur: asal-usul gagasan → perkembangan → kontestasi → sintesis debat.
+1. Group papers into **pro/con/neutral positions** relative to the core question.
+2. Build a **timeline of idea development** (who laid the foundation, who expanded it, who challenged it).
+3. Identify open debates, consensus, and inconsistencies across groups.
+4. The narrative follows the flow: origin of the idea → development → contestation → debate synthesis.
 
-## Auto-Validation Checklist — SANRA (Wajib di Akhir)
+## Auto-Validation Checklist — SANRA (Mandatory at the End)
 
-Gunakan `checklists/sanra.md` (6 item UTS dengan skor 0–2) via `templates/reporting_checklist.md`:
+Use `checklists/sanra.md` (6 items scored 0–2) via `templates/reporting_checklist.md`:
 
-1. Penjelasan pentingnya pertanyaan/klaim.
-2. Penyataan pertanyaan/tujuan & definisi lingkup (perluasan dari SANRA).
-3. Penjelasan strategi pencarian (wajib eksplisit walau non-sistematis).
-4. Referencing & sebutan literatur relevan.
-5. Scientific reasoning & argumentasi.
-6. Presentasi data yang layak (tabel/figur) + limitasi.
+1. Justification of the importance of the question/claim.
+2. Statement of the question/objective & definition of scope (an extension of SANRA).
+3. Description of the search strategy (must be explicit even if non-systematic).
+4. Referencing & mention of relevant literature.
+5. Scientific reasoning & argumentation.
+6. Appropriate data presentation (tables/figures) + limitations.
 
-Simpan skor ke `reporting_checklist_result.md`.
+Save the score to `reporting_checklist_result.md`.
 
-## Quality Gate Khusus Mode
+## Mode-Specific Quality Gate
 
-- [ ] Strategi penelusuran dijelaskan (walau non-sistematis) — tidak disembunyikan
-- [ ] Posisi pro/kontra dianalisis, bukan hanya diringkas per-paper
-- [ ] Timeline/evolusi gagasan terbentuk
-- [ ] Skor SANRA ≥ threshold yang disepakati (default: ≥ 60% skor maksimum)
-- [ ] Tidak mengklaim "sistematis" / "komprehensif" bila pencarian terbatas
+- [ ] Search strategy explained (even if non-systematic) — not hidden
+- [ ] Pro/con positions analyzed, not merely summarized per paper
+- [ ] Timeline/evolution of ideas constructed
+- [ ] SANRA score ≥ agreed threshold (default: ≥ 60% of the maximum score)
+- [ ] Does not claim "systematic" / "comprehensive" when the search was limited
 
-## Output Mode
+## Mode Output
 
 ```text
-literature_matrix.md            — matrix posisi argumen
-debate_map.md                   — klaster pro/kontra + timeline
-narrative_review_draft.md       — draft narasi (bila diminta)
-framework_selection.md          — kontrak framework + SANRA
-reporting_checklist_result.md   — validasi SANRA
+literature_matrix.md            — argument position matrix
+debate_map.md                   — pro/con clusters + timeline
+narrative_review_draft.md       — narrative draft (if requested)
+framework_selection.md          — framework + SANRA contract
+reporting_checklist_result.md   — SANRA validation
 ```
 
-## Referensi Terkait
+## Related References
 
-- `engines/academic-debate.md` — engine sintesis debat
-- `references/literature-search.md` — pencarian & filter Scopus Quartile
-- `checklists/sanra.md` — skala SANRA 6 item
+- `engines/academic-debate.md` — debate synthesis engine
+- `references/literature-search.md` — search & Scopus Quartile filtering
+- `checklists/sanra.md` — 6-item SANRA scale

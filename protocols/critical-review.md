@@ -1,75 +1,75 @@
-# Protocol — Mode Critical Review
+# Protocol — Critical Review Mode
 
-Mode untuk *critical review / critical appraisal synthesis*: menilai dan mengkritisi studi dari sisi epistemologi, metodologi, dan bias perspektif — bukan sekadar merangkum.
+Mode for *critical review / critical appraisal synthesis*: assessing and critiquing studies from epistemological, methodological, and perspective-bias standpoints — not merely summarizing.
 
-## Kapan Mode Ini Aktif
+## When This Mode Is Active
 
-Pengguna meminta: *critical review*, *critical appraisal*, *critique* atas literatur, kata kunci "epistemologi", "asumsi teoretis", "bias perspektif", atau memilih **Mode Critical** pada Method Selection Router.
+The user requests: *critical review*, *critical appraisal*, a *critique* of the literature, the keywords "epistemology", "theoretical assumptions", "perspective bias", or selects **Critical Mode** on the Method Selection Router.
 
-> Catatan: Mode ini lintas-prosedur — dapat berdiri sendiri ATAU melengkapi mode lain sebagai lapisan appraisal.
+> Note: This mode is cross-procedural — it can stand alone OR complement another mode as an appraisal layer.
 
-## Urutan Wajib
+## Mandatory Sequence
 
 ```text
-1. Mode + standar pelaporan (appraisal checklist) + RQ kritis dikunci (GATE 0) → framework_selection.md
-2. Parameter inisialisasi (topik, bahasa, quartile, tahun, jenis paper yang diappraisal)
-3. Kata kunci diturunkan dari topik + jenis studi target
-4. PENCARIAN literatur (HANYA setelah 1–3 selesai)
-5. Appraisal per studi (epistemologis/metodologis/bias) + sintesis ranking
+1. Mode + reporting standard (appraisal checklist) + critical RQ locked (GATE 0) → framework_selection.md
+2. Initialization parameters (topic, language, quartile, years, type of paper to be appraised)
+3. Keywords derived from the topic + target study type
+4. LITERATURE SEARCH (ONLY after 1–3 are complete)
+5. Per-study appraisal (epistemological/methodological/bias) + ranking synthesis
 ```
 
-> Target pencarian critical = paper yang **menyatakan metode & asumsi secara eksplisit** (dapat diappraisal). Prioritaskan ketersediaan full-text & transparansi metodologis.
+> Critical search target = papers that **state methods & assumptions explicitly** (appraisable). Prioritize full-text availability & methodological transparency.
 
-## Framework Wajib (Bound)
+## Mandatory Framework (Bound)
 
-| Aspek | Framework |
+| Aspect | Framework |
 |-------|-----------|
-| RQ | Disusun eksplisit (5W+1H / pertanyaan kritis) — fokus pada "dengan asumsi apa", "apa kekuatan", "apa yang tertutup" |
-| Prosedur | Critical appraisal (CASP / JBI CA) + peer critique stance |
-| Reporting checklist | Diadaptasi: checklist appraisal (tidak ada checklist EQUATOR tunggal, pakai SRQR/COREQ untuk kualitatif & STROBE untuk kuantitatif) |
+| RQ | Constructed explicitly (5W+1H / critical questions) — focused on "with what assumptions", "what are the strengths", "what is occluded" |
+| Procedure | Critical appraisal (CASP / JBI CA) + peer critique stance |
+| Reporting checklist | Adapted: appraisal checklist (no single EQUATOR checklist; use SRQR/COREQ for qualitative and STROBE for quantitative) |
 
-## Extraction Matrix — Appraisal Kritis
+## Extraction Matrix — Critical Appraisal
 
-Fokus ekstraksi adalah **asumsi, batasan, dan bias** (bukan metadata):
+The extraction focus is **assumptions, limitations, and biases** (not metadata):
 
-| No | Authors/Year/Jurnal/Q | Asumsi epistemologis (paradigma) | Kekuatan desain | Batasan metodologis | Bias perspektif / posisi | Temuan yang bisa dipercaya (confidence) |
+| No | Authors/Year/Journal/Q | Epistemological assumptions (paradigm) | Design strengths | Methodological limitations | Perspective bias / position | Trustworthy findings (confidence) |
 |----|------------------------|----------------------------------|------------------|---------------------|--------------------------|-----------------------------------------|
 
-Detail: `references/extraction-critical.md` + template `templates/extraction_critical.md`.
+Details: `references/extraction-critical.md` + template `templates/extraction_critical.md`.
 
-## Analisis (Engine Utama)
+## Analysis (Primary Engine)
 
-Tidak di-synthesize sebagai agregat; dilakukan **appraisal per studi** yang kemudian dibandingkan:
+Not synthesized as an aggregate; a **per-study appraisal** is performed and then compared:
 
-1. **Asumsi epistemologis:** paradigma (positivis / interpretif / kritis); asumsi ontologis & epistemologis yang terlihat dalam teks.
-2. **Batasan metodologis:** sampling, validitas/reliabilitas (quant) dan trustworthiness (qual), transferabilitas.
-3. **Bias perspektif:** posisi penulis, konflik kepentingan, lensa teoretis yang memengaruhi interpretasi.
-4. **Sintesis appraisal:** ranking kepercayaan (high/medium/low) + temuan konsisten vs kontradiktif.
+1. **Epistemological assumptions:** paradigm (positivist / interpretivist / critical); the ontological & epistemological assumptions visible in the text.
+2. **Methodological limitations:** sampling, validity/reliability (quant) and trustworthiness (qual), transferability.
+3. **Perspective bias:** author position, conflicts of interest, theoretical lenses influencing interpretation.
+4. **Appraisal synthesis:** confidence ranking (high/medium/low) + consistent vs contradictory findings.
 
-## Auto-Validation Checklist (Wajib di Akhir)
+## Auto-Validation Checklist (Mandatory at the End)
 
-Gunakan `checklists/critical_review.md` (ALUR CLEAR — Critique Lenses for Evaluating And Rating) via `templates/reporting_checklist.md`:
+Use `checklists/critical_review.md` (CLEAR FLOW — Critique Lenses for Evaluating And Rating) via `templates/reporting_checklist.md`:
 
-Simpan ke `reporting_checklist_result.md`.
+Save to `reporting_checklist_result.md`.
 
-## Quality Gate Khusus Mode
+## Mode-Specific Quality Gate
 
-- [ ] Setiap studi diappraisal dengan lensa epistemologis, metodologis, dan bias
-- [ ] Tingkat kepercayaan temuan (conf) dirating, bukan asumsi
-- [ ] Kritik bersifat konstruktif & berdasar bukti teks (bukan ad hominem)
-- [ ] Checklist mode lolos (0 item "Tidak" tanpa rencana)
+- [ ] Every study appraised through epistemological, methodological, and bias lenses
+- [ ] Confidence level of findings (conf) rated, not assumed
+- [ ] Criticism is constructive & grounded in textual evidence (not ad hominem)
+- [ ] Mode checklist passed (0 "No" items without a plan)
 
-## Output Mode
+## Mode Output
 
 ```text
-literature_matrix.md            — matrix appraisal kritis
-appraisal_summary.md            — ranking kepercayaan per studi
-critical_synthesis.md           — narasi kritik + temuan terpercaya
-framework_selection.md          — kontrak framework
-reporting_checklist_result.md   — validasi critical review
+literature_matrix.md            — critical appraisal matrix
+appraisal_summary.md            — per-study confidence ranking
+critical_synthesis.md           — critique narrative + trustworthy findings
+framework_selection.md          — framework contract
+reporting_checklist_result.md   — critical review validation
 ```
 
-## Referensi Terkait
+## Related References
 
-- `references/literature-search.md` — pencarian & filter Scopus Quartile
-- `references/quality-gates.md` — gate mekanis + semantik + red-team
+- `references/literature-search.md` — search & Scopus Quartile filtering
+- `references/quality-gates.md` — mechanical + semantic gates + red-team

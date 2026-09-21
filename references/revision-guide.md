@@ -1,177 +1,177 @@
-# Revision Guide — Humanizer & Revisi Draft (Tahap 5, Layer 1)
+# Revision Guide — Humanizer & Draft Revision (Stage 5, Layer 1)
 
-Panduan mendeteksi dan memperbaiki 25 pola tulisan khas-AI lalu merevisi draft akademik. Diadaptasi dari [blader/humanizer](https://github.com/blader/humanizer) (27 pola) dan WikiProject AI Cleanup untuk bahasa Indonesia + Inggris.
+Guide to detecting and fixing 25 patterns typical of AI writing, then revising the academic draft. Adapted from [blader/humanizer](https://github.com/blader/humanizer) (27 patterns) and the WikiProject AI Cleanup for Indonesian and English.
 
-Untuk revisi yang dipicu **komentar editor/reviewer** (bukan self-revision), gunakan Modul C: `references/reviewer-response.md` + `templates/response_to_reviewer.md`.
+For revisions triggered by **editor/reviewer comments** (not self-revision), use Module C: `references/reviewer-response.md` + `templates/response_to_reviewer.md`.
 
-## Filosofi
+## Philosophy
 
-Tulisan AI cenderung memilih frasa dengan probabilitas tertinggi yang cocok untuk SEMUA pembaca, sehingga berbunyi generik dan berlapis. Manusia menulis untuk SATU pembaca dan topik spesifik. Setiap pola di bawah adalah satu bentuk pilihan-generik itu.
+AI writing tends to choose the highest-probability phrasing that fits ALL readers, so it sounds generic and layered. Humans write for ONE reader and a specific topic. Each pattern below is one form of that generic choice.
 
-**Dua aturan:**
-1. Setiap kalimat yang dipertahankan harus menambah sesuatu yang belum dimiliki pembaca.
-2. Pola bernomor §1–§5 cukup SATU temuan untuk diedit; pola bertanda *lemah sendiri* butuh beberapa temuan sekaligus sebelum bertindak.
+**Two rules:**
+1. Every sentence that is kept must add something the reader does not yet have.
+2. For the numbered patterns §1–§5, ONE finding is enough to edit; patterns marked *weak on their own* need several findings together before acting.
 
-**Aturan keamanan**: jangan berubah makna, jangan menambah fakta/angka/sitasi yang tidak bersumber. Nama, angka, tanggal, kutipan, sitasi harus berasal dari naskah pengguna.
-
----
-
-## Workflow Revisi
-
-1. **Tandai pola.** Baca seluruh teks sekali, tandai semua pola, paling kuat dulu. Perhatikan bentuk paragraf, tidak hanya kalimat.
-2. **Draf ulang.** Pertahankan SEMUA klaim yang didukung. Boleh memendekkan, menggabung/memisah paragraf. Jangan menambah fakta; bila butuh detail yang tidak ada → tanyakan.
-3. **Periksa draf.** Baca keras; tanya: apa yang masih berbunyi AI? Apakah ada klaim/fakta yang tertambah atau hilang? Cari lima pola yang paling sering lolos: not-X-but-Y, one-line closer, dash, triad, bold label.
-4. **Tulis versi final.** Sampaikan poin alami; jangan menambal frasa satu per satu. Varian panjang-pendek kalimat (tulisan manusia bergantian).
-
-### Mode output
-
-- **Pasted text (default)**: kembalikan draf + daftar singkat pola tersisa + versi final.
-- **File mode**: tulis hanya teks final ke file; jangan mengubah kode, data, frontmatter, link target.
-- **Embedded**: hanya teks final.
+**Safety rule**: do not change meaning, do not add unsourced facts/numbers/citations. Names, numbers, dates, quotations, and citations must come from the user's manuscript.
 
 ---
 
-## A. Staging instead of stating (§1–5) — AKTIF PADA 1 TEMUAN
+## Revision Workflow
+
+1. **Mark patterns.** Read the entire text once, marking all patterns, strongest first. Pay attention to paragraph form, not only sentences.
+2. **Redraft.** Keep ALL supported claims. You may shorten, merge, or split paragraphs. Do not add facts; if a needed detail is missing → ask.
+3. **Check the draft.** Read it aloud; ask: what still sounds like AI? Were any claims/facts added or lost? Look for the five most often-missed patterns: not-X-but-Y, one-line closer, dash, triad, bold label.
+4. **Write the final version.** Convey points naturally; do not patch phrases one by one. Vary the short-long sentence rhythm (human writing alternates).
+
+### Output modes
+
+- **Pasted text (default)**: return the draft + a short list of remaining patterns + the final version.
+- **File mode**: write only the final text to the file; do not change code, data, frontmatter, or link targets.
+- **Embedded**: final text only.
+
+---
+
+## A. Staging instead of stating (§1–5) — ACTIVE ON 1 FINDING
 
 ### §1 Not X but Y
-- Pola: "bukan hanya X, tetapi juga Y"; "bukan berarti X, melainkan Y"; versi terbalik "X, bukan Y"; split lintas kalimat "Ini tidak berarti X. Ini berarti Y."
-- **Masalah**: paruh negatif menyebut hal yang tak diklaim siapa pun → paruh positif terdengar lebih besar tanpa tambahan fakta.
-- **Perbaiki**: nyatakan langsung; pertahankan kontras hanya bila paruh negatif mengoreksi keyakinan pembaca yang benar-benar ada.
-- Contoh: "Penelitian ini bukan hanya memberikan kontribusi teoritis." → "Penelitian ini memperluas teori X dengan menambah moderator M."
+- Pattern: "not only X, but also Y"; "this does not mean X, but rather Y"; the reversed version "X, not Y"; split across sentences "This does not mean X. It means Y."
+- **Problem**: the negative half mentions something nobody claimed → the positive half sounds bigger without any added fact.
+- **Fix**: state it directly; keep the contrast only when the negative half corrects a belief readers genuinely hold.
+- Example: "This research is not merely a theoretical contribution." → "This research extends theory X by adding moderator M."
 
 ### §2 One-line closers & dramatic fragments
-- Pola: paragraf satu kalimat yang mengulang poin sebelumnya; "Itulah inti dari temuan ini."; "Tidak ada baseline sebelumnya."; kata ALL CAPS.
-- **Perbaiki**: hapus closer yang mengulang; gabung fragmen menjadi kalimat berisi klaim spesifik.
+- Pattern: one-sentence paragraphs that repeat an earlier point; "That is the core of these findings."; "There was no prior baseline."; ALL CAPS words.
+- **Fix**: delete closers that merely repeat; merge fragments into sentences carrying a concrete claim.
 
 ### §3 Sayings that sound deep
-- Pola: "Pada hakikatnya, yang terpenting adalah..."; "X adalah bahasa dari Y"; "kunci dari segalanya".
-- **Perbaiki**: ganti petuah dengan klaim spesifik (dengan data).
+- Pattern: "At its core, the most important thing is..."; "X is the language of Y"; "the key to everything".
+- **Fix**: replace the aphorism with a concrete claim (with data).
 
 ### §4 Staged run-up
-- Pola: "Mari kita telaah...", "Perlu dicatat bahwa", "Di bagian ini, kami akan".
-- **Perbaiki**: langsung ke poin. Kecuali petunjuk struktur yang sah.
+- Pattern: "Let us examine...", "Note that", "In this section, we will".
+- **Fix**: get straight to the point. Except for legitimate structural signposts.
 
 ### §5 Arguing with no one
-- Pola: "Ini bukan tentang X", "Saya tidak menyatakan...", "Tentu sebagian akan berkeberatan, tetapi...", "Terlihat menggoda untuk menggunakan Y, namun...".
-- **Perbaiki**: hapus pembelaan; bila berisi klaim nyata, nyatakan langsung. Pertahankan objection yang dibahas penuh di dalam teks.
+- Pattern: "This is not about X", "I am not claiming...", "Some will surely object, but...", "It may be tempting to use Y, however...".
+- **Fix**: remove the defensiveness; if it contains a real claim, state it directly. Keep objections that are fully discussed in the text.
 
 ---
 
-## B. Rhythm by rule (§6–§11) — lemah sendiri
+## B. Rhythm by rule (§6–§11) — weak on their own
 
 ### §6 Forced triads
-- Pola: "inovasi, inspirasi, dan wawasan"; tiga contoh paralel lalu kesimpulan.
-- Periksa apakah benar-benar butuh tiga item. Jika tidak → gabung/pertahankan item yang kuat.
+- Pattern: "innovation, inspiration, and insight"; three parallel examples followed by a conclusion.
+- Check whether three items are really needed. If not → merge/keep the strong items.
 
 ### §7 Repeated sentence openings
-- Pola: beberapa kalimat berurutan dibuka dengan subjek/konjungsi sama ("Hasil menunjukkan... Hasil menunjukkan...").
-- Gabung atau ubah subjek. (Pengulangan sadar untuk ritme diperbolehkan.)
+- Pattern: several consecutive sentences opening with the same subject/conjunction ("The results show... The results show...").
+- Merge or change the subject. (Deliberate repetition for rhythm is allowed.)
 
 ### §8 Dashes as universal connector
-- **Aturan**: versi final tidak boleh berisi em dash (—) / en dash (–) kecuali meniru sampel penulis aktif. Ganti dengan titik/koma/kolon/tanda kurung.
-- Pengecualian: dash di dalam kode, path, URL, kutipan langsung.
+- **Rule**: the final version must not contain em dashes (—) / en dashes (–) unless imitating an active author's sample. Replace with periods/commas/colons/parentheses.
+- Exception: dashes inside code, paths, URLs, and direct quotations.
 
 ### §9 Stacked qualifiers
-- Pola: "mungkin dapat diduga bisa saja", "secara potensial".
-- Pertahankan hanya qualifier yang didukung sumber. *Lemah sendiri*. (kebiasaan manusia seperti "mungkin", "cenderung" bukan pola.)
+- Pattern: "may possibly be expected to", "potentially".
+- Keep only qualifiers supported by sources. *Weak on its own.* (Human habits like "maybe", "tend to" are not patterns.)
 
 ### §10 Hyphenated pairs everywhere
-- Pola: "lintas-fungsional", "berbasis-data", "real-time" di setiap posisi.
-- Pertahankan hyphen hanya saat dibutuhkan tata bahasa (sebelum kata benda): "melaporkan ber-kualitas-tinggi" vs "kualitas laporan tinggi". *Lemah sendiri.*
+- Pattern: "cross-functional", "data-driven", "real-time" in every position.
+- Keep a hyphen only when grammar requires it (before a noun): "a high-quality report" vs. "the quality of the report is high". *Weak on its own.*
 
 ### §11 Passive voice & missing subject
-- "Tidak diperlukan file konfigurasi" → "Anda tidak perlu file konfigurasi". Sebutkan aktor bila membantu. *Lemah sendiri.* (Baca gate mekanis untuk aturan akademik yang lebih ketat.)
+- "No configuration file is required" → "You do not need a configuration file." Name the actor when it helps. *Weak on its own.* (Read the mechanical gate for stricter academic rules.)
 
 ---
 
 ## C. Inflation & borrowed authority (§12–§18)
 
 ### §12 Overused AI words
-Daftar kata model sering pakai (dalam akademik): *menyoroti, menggali, multidimensi, transformatif, memperkuat (bolstered), memperkaya, menavigasi, landscape/lanskap (abstrak), krusial, pivotal, teladan, merepresentasikan, menandai, menegaskan, secara fundamental, meaningful.* Awasi frasa: "hal yang mendalam", "bukan sekadar".
-- Ini SATU-SATUNYA daftar kosakata dalam skill ini. Ganti dengan kata sehari-hari spesifik.
+The list of words models often use (in academic writing): *highlight, delve, multidimensional, transformative, bolster, enrich, navigate, landscape (abstract), crucial, pivotal, exemplary, underscore, mark, affirm, fundamentally, meaningful.* Watch for the phrases: "profound", "not merely".
+- This is the ONLY vocabulary list in this skill. Replace with everyday, specific words.
 
 ### §13 Inflated significance
-- Pola: "menandai momen penting", "berperan kunci", "menjadi fondasi bagi", "masa depan yang cerah"; bagian "Kontribusi dan Tantangan" stok.
-- Pertahankan fakta, buang penegasan; akhiri pada fakta konkret terakhir.
+- Pattern: "marks a pivotal moment", "plays a key role", "lays the foundation for", "a bright future"; stock "Contribution and Challenges" sections.
+- Keep the facts, discard the assertions; end on the last concrete fact.
 
 ### §14 Vague connection or association
-- Pola: "berkaitan dengan", "berhubungan dengan", "terkait dengan" tanpa cara hubungan.
-- Tuliskan hubungan yang diberikan sumber; bila tidak ada → biarkan samar, jangan diciptakan.
+- Pattern: "related to", "associated with", "linked to" without specifying the nature of the relationship.
+- Write the relationship the source gives; if none exists → leave it vague, do not invent one.
 
 ### §15 Shallow -ing riders
-- Pola: "merefleksikan", "menyoroti", "menjamin", "melambangkan" yang menempel di fakta sederhana.
-- Pertahankan fakta; pertahankan rider hanya bila klaim didukung sumber.
+- Pattern: "reflecting", "highlighting", "ensuring", "symbolizing" attached to simple facts.
+- Keep the fact; keep the rider only when the claim is source-backed.
 
 ### §16 Sales language
-- Pola: "menakjubkan", "sangat kaya", "mendalam", "komprehensif (tanpa angka)".
-- Nyatakan apa adanya.
+- Pattern: "amazing", "extremely rich", "profound", "comprehensive (without numbers)".
+- State it as it is.
 
 ### §17 Borrowed authority
-- Pola: "para ahli meyakini", "dikutip di Nature, Science, dan NYT" (daftar prestise), "media sosial aktif dengan N pengikut" (di CV/personal blurb).
-- Tulis sumber konkret dan apa yang dikatakan; jika tidak → hapus.
+- Pattern: "experts believe", "cited in Nature, Science, and the NYT" (prestige lists), "active on social media with N followers" (in CVs/personal blurbs).
+- Write the concrete source and what it says; if not → delete.
 
 ### §18 Avoiding is/are/has
-- Pola: "berfungsi sebagai", "menyajikan", "memiliki fitur", "menawarkan" → "adalah", "memiliki".
-- "Tabel 3 berfungsi sebagai ringkasan hasil." → "Tabel 3 meringkas hasil."
+- Pattern: "serves as", "presents", "features", "offers" → "is", "has".
+- "Table 3 serves as a summary of the results." → "Table 3 summarizes the results."
 
 ---
 
 ## D. Formatting by rule (§19–§21)
 
 ### §19 Bold as decoration
-- Pola: label tebal + kolon; istilah ditebali tanpa alasan.
-- Buang tebal dekoratif; ubah labeled-list menjadi prosa bila label tidak membawa info.
+- Pattern: bold label + colon; terms bolded without reason.
+- Remove decorative bold; turn labeled lists into prose when the labels carry no information.
 
 ### §20 Decorative headings & emoji
-- Pola: judul Title Case dekoratif; emoji (🚀), panah (→) di heading; horizontal rule antar section.
-- Pakai sentence case; hapus emoji/panah; satu H1.
+- Pattern: decorative Title Case headings; emoji (🚀), arrows (→) in headings; horizontal rules between sections.
+- Use sentence case; remove emoji/arrows; one H1.
 
-### §21 Curly quotes (lemah sendiri)
-- Ganti "..." menjadi "..." sesuai gaya target bila konsisten (atau biarkan mengikuti konvensi jurnal).
+### §21 Curly quotes (weak on its own)
+- Convert curly quotes to the target style when consistent (or leave them to follow the journal's convention).
 
 ---
 
 ## E. Leftovers from chat & draft (§22–§25)
 
-Hapus total, tidak perlu rewrite.
+Delete entirely; no rewrite needed.
 
 ### §22 Chatbot residue
-- "Semoga membantu!", "Tentu!", "Pertanyaan bagus!", "Apakah Anda ingin...?", "Berikut adalah...".
-- Buang wrapper, pertahankan isi.
+- "Hope this helps!", "Sure!", "Great question!", "Would you like...?", "Here is...".
+- Drop the wrapper, keep the content.
 
 ### §23 Knowledge-limit disclaimers & guesses
-- "Berikut ini berdasarkan informasi yang tersedia", "nampaknya didirikan pada 1990-an", "informasi tentang kehidupannya tidak dipublikasikan... mungkin saja".
-- Nyatakan apa yang sumbernya tidak tunjukkan, atau buang kalimat. Jangan pernah menyajikan tebakan sebagai fakta.
+- "The following is based on the information available", "appears to have been founded in the 1990s", "information about his life is not published... possibly".
+- State what the sources do not show, or delete the sentence. Never present a guess as a fact.
 
 ### §24 Heading repeated in first sentence
-- "## Hasil\n\nHasil penelitian menunjukkan..." → hapus kalimat pengulang.
+- "## Results\n\nThe research results show..." → delete the repeating sentence.
 
-### §25 Writing about previous version
-- "Perbaikan ini menggantikan pendekatan lama yang lebih lambat..." → deskripsikan apa yang dilakukan SEKARANG, bukan versi lama (kecuali di changelog).
-
----
-
-## Kapan TIDAK Diedit
-
-- Kutipan langsung, judul, nama proper — biarkan.
-- Pola *lemah sendiri* hanya bertindak bila beberapa temuan berkumpul dalam satu petikan.
-- Teks sebelum 30 Nov 2022 tidak "AI-written" hanya karena gayanya.
-- Salutation/sign-off resmi.
-
-## Detail yang dipertahankan (aspek suara/voice)
-- Detail spesifik & tidak biasa (lokasi, kutipan aneh)
-- Ketegangan tak terselesaikan, perasaan campur aduk
-- Bahasa era-bound (slang, in-jokes tahun tertentu)
-- Pilihan first-person yang bisa dijelaskan penulis
-- Aside/self-correction tulus
-
-## Checklist penggunaannya
-
-Gunakan `checklists/humanizer_checklist.md` untuk laporan pola terdeteksi vs diperbaiki.
-
-## Sumber
-
-Pola bersumber dari [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (WikiProject AI Cleanup) dan adaptasi [blader/humanizer](https://github.com/blader/humanizer).
+### §25 Writing about the previous version
+- "This fix replaces the older, slower approach..." → describe what it does NOW, not the old version (except in a changelog).
 
 ---
-Lanjut ke `quality-gates.md` untuk Layer 2–4 revisi.
+
+## When NOT to Edit
+
+- Direct quotations, titles, proper names — leave them alone.
+- Patterns *weak on their own* act only when several findings cluster in one passage.
+- Text written before Nov 30, 2022 is not "AI-written" merely because of its style.
+- Official salutations/sign-offs.
+
+## Details to Preserve (aspects of voice)
+- Specific & unusual details (locations, odd quotations)
+- Unresolved tension, mixed feelings
+- Era-bound language (slang, year-specific in-jokes)
+- First-person choices the author can explain
+- Genuine asides/self-corrections
+
+## Usage checklist
+
+Use `checklists/humanizer_checklist.md` for the report of patterns detected vs. fixed.
+
+## Sources
+
+The patterns come from [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (WikiProject AI Cleanup) and adaptations of [blader/humanizer](https://github.com/blader/humanizer).
+
+---
+Proceed to `quality-gates.md` for revision Layers 2–4.

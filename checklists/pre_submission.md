@@ -1,71 +1,71 @@
-# Checklist — Pra-Submission (Tahap 6)
+# Checklist — Pre-Submission (Stage 6)
 
-Untuk mengirim naskah ke jurnal/venue. Jalankan sebagai langkah terakhir.
+For submitting the manuscript to a journal/venue. Run as the final step.
 
-## Fisik / Format
+## Physical / Format
 
-- [ ] Format final sesuai target (MD / LaTeX / DOCX)
-- [ ] Panjang akhir sesuai target jurnal (±10%)
-- [ ] Font, spasi, margin sesuai template (Word untuk DOCX)
-- [ ] Satu file master + versi format lain sinkron
+- [ ] Final format matches target (MD / LaTeX / DOCX)
+- [ ] Final length matches journal target (±10%)
+- [ ] Font, spacing, margins follow template (Word for DOCX)
+- [ ] One master file + other format versions kept in sync
 
-## Isi
+## Content
 
-- [ ] Abstract ≤ 250 kata, sesuai struktur
-- [ ] Judul sesuai (spesifik, informatif)
-- [ ] Kata kunci (3–6)
-- [ ] Author/affiliation sesuai template (dan anonim untuk double-blind)
-- [ ] Acknowledgments & funding disebutkan (jika diminta)
+- [ ] Abstract ≤ 250 words, per structure
+- [ ] Title appropriate (specific, informative)
+- [ ] Keywords (3–6)
+- [ ] Author/affiliation per template (and anonymized for double-blind)
+- [ ] Acknowledgments & funding mentioned (if requested)
 
-## Sitasi & Referensi
+## Citations & References
 
-- [ ] Semua referensi ada di teks (tidak ada orphan)
-- [ ] Semua in-text punya entri (tidak ada yang hilang)
-- [ ] Gaya konsisten; et al., tanda baca, DOI valid
-- [ ] Tidak ada referensi yang belum diverifikasi
+- [ ] All references cited in text (no orphans)
+- [ ] All in-text references have an entry (none missing)
+- [ ] Style consistent; et al., punctuation, DOI valid
+- [ ] No unverified references
 
-## Figur & Tabel
+## Figures & Tables
 
-- [ ] Semua figur/tabel dirujuk dalam teks dengan nomor benar
-- [ ] Caption self-sufficient (bisa dibaca sendiri)
-- [ ] Resolusi/format sesuai panduan jurnal
-- [ ] Izin penggunaan ulang gambar ( jika bukan milik sendiri)
+- [ ] All figures/tables referenced in text with correct numbers
+- [ ] Captions self-sufficient (readable on their own)
+- [ ] Resolution/format per journal guidelines
+- [ ] Permission for reused images (when not one's own)
 
-## Kualitas
+## Quality
 
-- [ ] Lolos quality gate mekanis (M1–M12)
-- [ ] Lolos quality gate semantik (S1–S12)
+- [ ] Passes mechanical quality gates (M1–M12)
+- [ ] Passes semantic quality gates (S1–S12)
 - [ ] Red-team: 0 CRITICAL/IMPORTANT
-- [ ] Reviewer 7-dimensi ≥ 28/35
-- [ ] Reporting checklist terpilih dijalankan (via templates/reporting_checklist.md) — 0 item "Tidak" tanpa rencana perbaikan (jika framework dipilih)
-- [ ] Check format LaTeX: tidak ada undefined references, font embedded
-- [ ] Trial submission (jika ada: cek semua file terkirim benar)
+- [ ] 7-dimension reviewer ≥ 28/35
+- [ ] Selected reporting checklist run (via templates/reporting_checklist.md) — 0 "No" items without a remediation plan (if a framework is chosen)
+- [ ] LaTeX format check: no undefined references, fonts embedded
+- [ ] Trial submission (if applicable: verify all files sent correctly)
 
-## Jurnal Target (Modul B)
+## Target Journal (Module B)
 
-- [ ] Jurnal final diputuskan (via `templates/journal_comparison.md` jika ada alternatif)
-- [ ] Quartile & indeks re-verified hari ini (bukan bulan lalu)
-- [ ] Tidak terindikasi jurnal predator (cek `references/journal-targeting.md` §3)
-- [ ] Fit dengan scope statement jurnal dikonfirmasi ulang (posisi paper vs scope)
-- [ ] Self-assessment acceptance ≥ 28/35 untuk reviewer jurnal target
-- [ ] Cover letter siap (`templates/cover_letter.md`), kontribusi identik dgn `contribution_statement.md`
-- [ ] Persyaratan submit terpenuhi: ORCID, data availability, reporting checklist
+- [ ] Final journal decided (via `templates/journal_comparison.md` if there are alternatives)
+- [ ] Quartile & indexing re-verified today (not last month)
+- [ ] No predatory journal indications (check `references/journal-targeting.md` §3)
+- [ ] Fit with the journal's scope statement reconfirmed (paper position vs. scope)
+- [ ] Self-assessed acceptance ≥ 28/35 for the target journal's reviewers
+- [ ] Cover letter ready (`templates/cover_letter.md`), contributions identical to `contribution_statement.md`
+- [ ] Submission requirements met: ORCID, data availability, reporting checklist
 
 ## Grammar (English-US)
 
-- [ ] `checklists/grammar_check.md` dijalankan pada versi final
-- [ ] Register English-US konsisten (US/UK dipilih US; tidak tercampur varian British)
-- [ ] 0 kesalahan tata bahasa yang mengubah makna; sisa item ditandai untuk pengguna
-- [ ] `grammar_report.md` tersimpan
+- [ ] `checklists/grammar_check.md` run on the final version
+- [ ] English-US register consistent (US/UK; US chosen; no mixed British variants)
+- [ ] 0 grammar errors that change meaning; remaining items flagged for the user
+- [ ] `grammar_report.md` saved
 
-## Plagiarisme & Similarity
+## Plagiarism & Similarity
 
-- [ ] `checklists/plagiarism_check.md` dijalankan pada versi final
-- [ ] Tidak ada overlap verbatim tanpa kutip + sitasi (≥ 7 kata EN)
-- [ ] Kutipan & parafrase disitasi dengan benar (termasuk halaman bila gaya mensyaratkan)
-- [ ] `plagiarism_report.md` tersimpan; temuan overlap yang signifikan sudah direvisi
+- [ ] `checklists/plagiarism_check.md` run on the final version
+- [ ] No verbatim overlap without quotation + citation (≥ 7 words EN)
+- [ ] Quotations & paraphrases cited correctly (including page numbers when style requires)
+- [ ] `plagiarism_report.md` saved; significant overlap findings already revised
 
-## Versi
+## Versioning
 
-- [ ] File final disimpan dengan nama final (v_final / final.md)
-- [ ] Revision log selesai dicatat
+- [ ] Final file saved with a final name (v_final / final.md)
+- [ ] Revision log fully recorded

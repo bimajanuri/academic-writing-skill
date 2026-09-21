@@ -1,25 +1,25 @@
-# Template Abstract
+# Abstract Template
 
-Salin dan isi. Struktur berurutan: Masalah → Metode → Temuan → Kontribusi.
+Copy and fill in. Sequential structure: Problem → Method → Findings → Contribution.
 
 ---
 
-# [Judul Paper]
+# [Paper Title]
 
-[1–2 kalimat] Latar dan urgensi masalah.
-[1 kalimat] Penelitian ini bertujuan untuk [tujuan] melalui [desain/metode singkat].
-[2–3 kalimat] Data diperoleh dari [sampel + instrumen]; hasil menunjukkan [temuan utama dengan angka dan signifikansi].
-[1 kalimat] Temuan ini memberikan [kontribusi/implikasi] terhadap [bidang/praktik].
+[1–2 sentences] Background and problem urgency.
+[1 sentence] This study aims to [objective] through [brief design/method].
+[2–3 sentences] Data were obtained from [sample + instrument]; results show [key findings with numbers and significance].
+[1 sentence] These findings provide [contribution/implications] to [field/practice].
 
-**Kata kunci (3–6)**: [kata1]; [kata2]; [kata3]
+**Keywords (3–6)**: [keyword1]; [keyword2]; [keyword3]
 
 ---
 
 ## Checklist
 
-- [ ] 150–250 kata (ikuti target jurnal)
-- [ ] Tidak ada sitasi di dalam abstract
-- [ ] Hanya fakta yang didukung di dalam paper
-- [ ] Jargon didefinisikan atau dihindari
-- [ ] Temuan memuat angka penting
-- [ ] Ditulis TERAKHIR (setelah semua section final)
+- [ ] 150–250 words (follow the journal's target)
+- [ ] No citations in the abstract
+- [ ] Only facts supported in the paper
+- [ ] Jargon defined or avoided
+- [ ] Findings include key numbers
+- [ ] Written LAST (after all sections are final)

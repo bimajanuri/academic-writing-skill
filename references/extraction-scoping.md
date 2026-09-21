@@ -1,31 +1,31 @@
 # Extraction Module — Scoping Review (PCC Mapping)
 
-Panduan ekstraksi untuk Mode Scoping Review. Menekankan **pemetaan konsep, ruang lingkup, dan metodologi** — bukan penggabungan efek.
+Extraction guide for the Scoping Review Mode. Emphasizes **mapping of concepts, scope, and methodology** — not the aggregation of effects.
 
-## Konsep Kunci
+## Key Concepts
 
-Scoping menjawab *"apa yang sudah dipelajari, di mana, dengan metode apa"*. Extraction menangkap **luas bukti**, bukan kekuatan bukti.
+A scoping review answers *"what has been studied, where, and with what methods"*. Extraction captures the **breadth of evidence**, not the strength of evidence.
 
-## Kolom Ekstraksi (PCC-based)
+## Extraction Columns (PCC-based)
 
-| No | Authors/Year/Jurnal/Q | Population (P) | Concept (C) yang dikaji | Context (C): setting & geografi | Desain/Metodologi | Temuan utama (1-2 kalimat) | Research Gaps / pertanyaan terbuka | DOI/Publisher |
+| No | Authors/Year/Journal/Q | Population (P) | Concept (C) studied | Context (C): setting & geography | Design/Methodology | Key findings (1-2 sentences) | Research Gaps / open questions | DOI/Publisher |
 |----|------------------------|----------------|------------------------|--------------------------------|-------------------|---------------------------|------------------------------------|---------------|
 
-## Aturan Ekstraksi
+## Extraction Rules
 
-1. **Population** — siapa/apa subjek konsep (bisa populasi manusia, organisasi, teknologi).
-2. **Concept** — konsep/topik inti yang dilaporkan studi; boleh lebih dari satu.
-3. **Context** — setting (rumah sakit, sekolah, pasar, dll.) + lokasi geografis + kurun waktu.
-4. **Desain/Metodologi** — kategorikan: kualitatif, kuantitatif (survei/eksperimen/etc.), mixed, review, conceptual.
-5. **Research gaps** — catat pertanyaan yang belum terjawab per studi; akan dikonsolidasi oleh Conceptual Mapping Engine.
-6. Jika field kosong → tulis *"—"*, jangan mengarang.
+1. **Population** — who/what are the subjects of the concept (can be a human population, organization, or technology).
+2. **Concept** — the core concept/topic reported by the study; more than one is allowed.
+3. **Context** — setting (hospital, school, market, etc.) + geographic location + time frame.
+4. **Design/Methodology** — categorize: qualitative, quantitative (survey/experiment/etc.), mixed, review, conceptual.
+5. **Research gaps** — record per-study unanswered questions; these will be consolidated by the Conceptual Mapping Engine.
+6. If a field is empty → write *"—"*, do not fabricate.
 
 ## Anti-Hallucination
 
-- Jangan menambah temuan yang tidak dinyatakan.
-- Gap harus bisa ditelusuri ke isi paper, bukan asumsi Anda.
-- Label desain konsisten dengan istilah penulis (jangan re-labelling taksonomi diam-diam).
+- Do not add findings that are not stated.
+- Gaps must be traceable to the paper's content, not your assumptions.
+- Design labels must be consistent with the authors' terms (no covert taxonomic re-labeling).
 
 ## Template
 
-Gunakan `templates/extraction_scoping.md` untuk output matrix.
+Use `templates/extraction_scoping.md` for the output matrix.

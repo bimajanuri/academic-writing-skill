@@ -1,66 +1,66 @@
-# Template Sitasi — APA 7th Edition
+# Citation Template — APA 7th Edition
 
-Umum dipakai: Psikologi, Pendidikan, Sosial, Bisnis, Kesehatan.
+Commonly used in: Psychology, Education, Social Sciences, Business, Health.
 
 ## In-Text Citation
 
-| Situasi | Format | Contoh |
-|---------|--------|--------|
-| Naratif, 1 penulis | `Nama (Tahun)` | Rahman (2023) |
-| Kurung, 1 penulis | `(Nama, Tahun)` | (Rahman, 2023) |
-| 2 penulis | `Nama & Nama` | Rahman & Sari (2023) |
-| 3+ penulis | `Nama et al.` | (Rahman et al., 2023) |
-| Tanpa penulis | `("Judul Pendek", Tahun)` / `(Judul, Tahun)` | ("Pengaruh Media", 2023) |
-| Situsasi sekunder | `(Sari, 2023, sebagaimana dikutip dalam Rahman, 2025)` | |
+| Situation | Format | Example |
+|-----------|--------|---------|
+| Narrative, 1 author | `Name (Year)` | Rahman (2023) |
+| Parenthetical, 1 author | `(Name, Year)` | (Rahman, 2023) |
+| 2 authors | `Name & Name` | Rahman & Sari (2023) |
+| 3+ authors | `Name et al.` | (Rahman et al., 2023) |
+| No author | `("Short Title", Year)` / `(Title, Year)` | ("Media Influence", 2023) |
+| Secondary source | `(Sari, 2023, as cited in Rahman, 2025)` | |
 
-- Dalam sebuah kalimat Indonesia yang dimulai di dalam teks: "dan" ditulis; dalam kurung: "&".
+- Within a running sentence, write "and"; in parentheses, use "&".
 
-## Bibliography (Daftar Pustaka)
+## Bibliography (Reference List)
 
 ```
-Penulis A., & Penulis B. (Tahun). Judul artikel. Nama Jurnal, Volume(Nomor), halaman–halaman. https://doi.org/DOI
-```
-
-### Contoh — Jurnal:
-```
-Rahman, A., & Sari, D. (2023). Pengaruh media sosial terhadap prestasi akademik mahasiswa. Jurnal Psikologi Indonesia, 12(3), 210–225. https://doi.org/10.xxxx/xxx
+Author A., & Author B. (Year). Article title. Journal Name, Volume(Issue), pages–pages. https://doi.org/DOI
 ```
 
-### Buku:
+### Example — Journal:
 ```
-Sarlito, W. (2008). Psikologi remaja. Jakarta, Indonesia: PT Rajagrafindo Persada.
-```
-
-### Bab dalam Buku (Edited Book):
-```
-Nama, A. (Tahun). Judul bab. Dalam E. Editor (Ed.), Judul buku (hlm. xx–xx). Penerbit.
+Rahman, A., & Sari, D. (2023). The influence of social media on students' academic performance. Indonesian Journal of Psychology, 12(3), 210–225. https://doi.org/10.xxxx/xxx
 ```
 
-### Artikel Konferensi:
+### Book:
 ```
-Nama, A. (Tahun). Judul paper. Dalam Proceedings of the Nama Konferensi (hlm. xx–xx). https://doi.org/DOI
+Sarlito, W. (2008). Adolescent psychology. Jakarta, Indonesia: PT Rajagrafindo Persada.
+```
+
+### Chapter in an Edited Book:
+```
+Name, A. (Year). Chapter title. In E. Editor (Ed.), Book title (pp. xx–xx). Publisher.
+```
+
+### Conference Article:
+```
+Name, A. (Year). Paper title. In Proceedings of the Conference Name (pp. xx–xx). https://doi.org/DOI
 ```
 
 ### Web:
 ```
-Nama, A. (Tahun, Bulan Tanggal). Judul halaman. Nama Situs. Diunduh [tanggal] dari https://url
+Name, A. (Year, Month Day). Page title. Site Name. Retrieved [date] from https://url
 ```
 
-### Abstrak dari database / Preprint:
+### Abstract from database / Preprint:
 ```
-Nama, A. (Tahun). Judul [Preprint]. arXiv. https://doi.org/DOI
+Name, A. (Year). Title [Preprint]. arXiv. https://doi.org/DOI
 ```
 
-## Aturan Tambahan
-- Et al.: 3+ penulis → in-text `et al.` sejak pemakaian pertama; daftar pustaka tulis semua penulis.
-- DOI lebih baik dicantumkan sebagai `https://doi.org/...` — jangan gaya lama `doi:...`.
-- Huruf miring: judul jurnal dan volume jurnal (bukan judul artikel); judul buku; judul film.
-- Tahun dalam kurung setelah `Nama (Tahun)` naratif.
-- Sertakan halaman akhir untuk buku/chapter.
+## Additional Rules
+- Et al.: 3+ authors → in-text `et al.` from the first citation onward; list all authors in the reference list.
+- DOI is better given as `https://doi.org/...` — not the old `doi:...` style.
+- Italicize: journal titles and volume numbers (not article titles); book titles; film titles.
+- Year in parentheses after `Name (Year)` in narrative citations.
+- Include the final page number for books/chapters.
 
 ## Checklist
-- [ ] Urutan penulis: `NamaAkhir, A. A.` 
-- [ ] Italic untuk jurnal + volume; article title normal
-- [ ] DOI dalam bentuk URL penuh
-- [ ] & vs dan sesuai konteks
-- [ ] Semua entri punya pasangan in-text, dan sebaliknya
+- [ ] Author order: `LastName, A. A.` 
+- [ ] Italic for journal + volume; article title normal
+- [ ] DOI in full URL form
+- [ ] & vs. and according to context
+- [ ] Every entry has an in-text pair, and vice versa

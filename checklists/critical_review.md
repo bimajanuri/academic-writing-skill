@@ -1,31 +1,32 @@
 # Checklist — Critical Review (Appraisal Lenses)
 
-Auto-validation untuk Mode Critical Review. Tidak ada checklist EQUATOR tunggal — checklist ini internal, dibangun dari kaidah critical appraisal (CASP/JBI CA) + lensa epistemologis/metodologis/bias.
+Auto-validation for Critical Review Mode. There is no single EQUATOR checklist — this checklist is internal, built from critical appraisal principles (CASP/JBI CA) + epistemological/methodological/bias lenses.
 
 ## Checklist
 
-| # | Kriteria | Ya | Tidak | T.A. |
-|---|----------|----|-------|------|
-| 1 | Pertanyaan kritis review eksplisit | | | |
-| 2 | Setiap studi diappraisal dengan minimal 1 penilaian kualitas (CASP/JBI/others) | | | |
-| 3 | Lensa epistemologis diterapkan (paradigma/asumsi diidentifikasi) | | | |
-| 4 | Lensa metodologis diterapkan (sampling, desain, instrumen, trustworthiness) | | | |
-| 5 | Lensa bias/perspektif diterapkan (posisi penulis, CoI, lensa teoretis) | | | |
-| 6 | Rating confidence per studi (High/Med/Low) diberi alasan | | | |
-| 7 | Kritik berdasar bukti teks, bukan ad hominem | | | |
-| 8 | Rating confidence dikonsolidasi (pola temuan konsisten vs kontradiktif) | | | |
-| 9 | Sintesis memisahkan temuan terpercaya vs temuan ragu | | | |
-| 10 | Batasan meta-review sendiri dilaporkan | | | |
+| # | Criterion | Yes | No | N.A. |
+|---|-----------|-----|----|------|
+| 1 | Critical review question explicit | | | |
+| 2 | Each study appraised with at least 1 quality assessment (CASP/JBI/others) | | | |
+| 3 | Epistemological lens applied (paradigm/assumptions identified) | | | |
+| 4 | Methodological lens applied (sampling, design, instruments, trustworthiness) | | | |
+| 5 | Bias/perspective lens applied (author position, CoI, theoretical lens) | | | |
+| 6 | Confidence rating per study (High/Med/Low) justified | | | |
+| 7 | Criticism grounded in textual evidence, not ad hominem | | | |
+| 8 | Confidence ratings consolidated (consistent vs. contradictory finding patterns) | | | |
+| 9 | Synthesis separates trustworthy findings from questionable ones | | | |
+| 10 | Limitations of the meta-review itself reported | | | |
 
 ## Auto-Validation Rule
 
-- Semua kriteria wajib **Ya** (atau "T.A." bila jelas tidak berlaku).
-- Kritik tanpa alasan skor → dianggap Tidak.
-- Item "Tidak" → rencana perbaikan; status: `complete` / `needs_fix`.
+- All criteria must be **Yes** (or "N.A." when clearly not applicable).
+- Criticism without a scored justification is treated as No.
+- Items marked "No" → remediation plan; status: `complete` / `needs_fix`.
 
 ## Output
 
 ```text
-appraisal_summary.md         — ranking kepercayaan per studi
-critical_synthesis.md        — narasi kritik + temuan terpercaya
-reporting_checklist_result.md — hasil validation critical review
+appraisal_summary.md         — confidence ranking per study
+critical_synthesis.md        — critique narrative + trustworthy findings
+reporting_checklist_result.md — critical review validation results
+```

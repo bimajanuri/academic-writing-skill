@@ -1,26 +1,26 @@
-# Framework Selection — Kontrak Substantif Paper
+# Framework Selection — Substantive Contract of the Paper
 
-Isi form ini di **Langkah 1.1–1.2** (klarifikasi), lalu disimpan sebagai `framework_selection.md`. Agent mengusulkan default sesuai jenis paper (lihat `references/research-frameworks.md` §4); pengguna memutuskan.
+Fill out this form at **Step 1.1–1.2** (clarification), then save it as `framework_selection.md`. The agent proposes defaults based on paper type (see `references/research-frameworks.md` §4); the user decides.
 
 ```yaml
 # Metadata
 paper_title: ""
-jenis_paper: ""          # research paper / systematic review / scoping review / literature review / studi kasus / ...
-bahasa: "English (US)"   # output wajib English-US; input boleh Indonesia / English
-target_jurnal: ""        # opsional (cek Instructions for Authors utk kewajiban checklist)
-gaya_sitasi: ""          # APA 7 / MLA 9 / Turabian / Vancouver / Harvard / Chicago / IEEE (Langkah 2.6)
+paper_type: ""            # research paper / systematic review / scoping review / literature review / case study / ...
+language: "English (US)"  # output mandatory English-US; input may be Indonesian / English
+target_journal: ""        # optional (check Instructions for Authors for mandatory checklists)
+citation_style: ""        # APA 7 / MLA 9 / Turabian / Vancouver / Harvard / Chicago / IEEE (Step 2.6)
 ```
 
-## 1. Framework Pertanyaan Penelitian (RQ Framework)
+## 1. Research Question Framework (RQ Framework)
 
 ```yaml
-framework_rq: ""         # contoh: PICO, PICo, PEO, PCC, SPIDER, SPICE, ECLIPSe, CIMO, CoCoPop, 5W+1H
-alasan_pilih: ""         # singkat: mengapa framework ini
+framework_rq: ""         # examples: PICO, PICo, PEO, PCC, SPIDER, SPICE, ECLIPSe, CIMO, CoCoPop, 5W+1H
+reason_choice: ""        # brief: why this framework
 ```
 
-Isi elemen sesuai framework (contoh PICO):
+Fill in the elements according to the framework (PICO example):
 
-| Elemen | Isi | Kata kunci pencarian |
+| Element | Content | Search keywords |
 |--------|-----|----------------------|
 | P (Population) | | |
 | I (Intervention / Interest) | | |
@@ -28,42 +28,42 @@ Isi elemen sesuai framework (contoh PICO):
 | O (Outcome) | | |
 | (T / extras) | | |
 
-> Untuk framework berbeda, ganti baris elemen sesuai komponennya. Elemen RQ = sumber kombinasi keyword Round 1.
+> For a different framework, replace the element rows with its components. RQ elements = the source of Round 1 keyword combinations.
 
-## 2. Framework Prosedur & Tahapan Riset
+## 2. Research Procedure & Stages Framework
 
 ```yaml
-framework_prosedur: ""   # Research Onion / Empirical Cycle / Research Process Stages / PRISMA-P / Systematic Review Conduct / 4-Phase PRISMA Flow
-rencana_tahapan: |
+procedure_framework: ""  # Research Onion / Empirical Cycle / Research Process Stages / PRISMA-P / Systematic Review Conduct / 4-Phase PRISMA Flow
+planned_stages: |
    1. ...
    2. ...
    3. ...
-screening:              # hanya utk evidence synthesis
-  review_by: 2          # jumlah reviewer independen (contoh: 2)
-  dedup_tool: ""        # contoh: reference manager / script
-  appraisal: ""         # contoh: Cochrane RoB 2, NOS, QUADAS-2, JBI
+screening:              # only for evidence synthesis
+  review_by: 2          # number of independent reviewers (example: 2)
+  dedup_tool: ""        # example: reference manager / script
+  appraisal: ""         # example: Cochrane RoB 2, NOS, QUADAS-2, JBI
 ```
 
-## 3. Framework Pelaporan & Screening (Reporting Checklist)
+## 3. Reporting & Screening Framework (Reporting Checklist)
 
 ```yaml
-reporting_checklist: ""  # contoh: PRISMA 2020, CONSORT, STROBE, COREQ, ENTREQ, ...
-reporting_ekstensi: ""   # contoh: PRISMA-S, PRISMA-ScR, PRISMA-Abstracts
-appraisal_tool: ""       # contoh: AMSTAR 2, GRADE
-sumber_item: |           # URL resmi tempat item checklist diambil (EQUATOR/prisma-statement.org/dll)
+reporting_checklist: ""  # examples: PRISMA 2020, CONSORT, STROBE, COREQ, ENTREQ, ...
+reporting_extension: ""  # examples: PRISMA-S, PRISMA-ScR, PRISMA-Abstracts
+appraisal_tool: ""       # examples: AMSTAR 2, GRADE
+item_source: |          # official URL where checklist items are taken (EQUATOR/prisma-statement.org/etc.)
   https://...
 ```
 
-## 4. Kewajiban vs. Opsional
+## 4. Mandatory vs. Optional
 
-- [ ] Jurnal target **mewajibkan** checklist tertentu? → cantumkan nama & versi persisnya (periksa Instructions for Authors).
-- [ ] Protokol diregistrasi? → contoh: PROSPERO, Open Science Framework (untuk systematic review).
-- [ ] Pengguna menyetujui kerangka ini? (human-in-the-loop gate)
+- [ ] Does the target journal **require** a specific checklist? → state its exact name & version (check Instructions for Authors).
+- [ ] Is the protocol registered? → examples: PROSPERO, Open Science Framework (for systematic reviews).
+- [ ] Does the user approve this framework? (human-in-the-loop gate)
 
 ## Output Binding
 
-Setelah form disetujui, kerangka ini **mengikat** tahap berikutnya:
-1. RQ diformulasikan dengan framework §1 → `research_question.md`
-2. Metodologi ditulis mengikuti framework §2 → bagian Methodology
-3. Screening/appraisal mengikuti §2 & §3B → tabel RoB + PRISMA flow
-4. Pre-submission dijalankan dengan checklist §3 → `templates/reporting_checklist.md`
+Once the form is approved, this framework **binds** the subsequent stages:
+1. The RQ is formulated using the §1 framework → `research_question.md`
+2. Methodology is written following the §2 framework → Methodology section
+3. Screening/appraisal follows §2 & §3B → RoB table + PRISMA flow
+4. Pre-submission is run with the §3 checklist → `templates/reporting_checklist.md`

@@ -1,85 +1,85 @@
-# Protocol — Mode Integrative Review
+# Protocol — Integrative Review Mode
 
-Mode untuk *integrative review*: mencakup studi kualitatif DAN kuantitatif (survei, eksperimental, dll.) dalam satu review untuk menghasilkan pemahaman komprehensif.
+Mode for *integrative review*: includes qualitative AND quantitative studies (surveys, experimental, etc.) in a single review to produce a comprehensive understanding.
 
-## Kapan Mode Ini Aktif
+## When This Mode Is Active
 
-Pengguna meminta: *integrative review*, review campuran (multi-metode) pada topik yang sama, kata kunci "Whittemore", "Knafl", atau memilih **Mode Integrative** pada Method Selection Router.
+The user requests: *integrative review*, a mixed (multi-method) review on the same topic, the keywords "Whittemore", "Knafl", or selects **Integrative Mode** on the Method Selection Router.
 
-## Urutan Wajib
+## Mandatory Sequence
 
 ```text
-1. Mode + standar pelaporan (Whittemore & Knafl) + framework RQ dikunci (GATE 0) → framework_selection.md
-2. Parameter inisialisasi (topik, bahasa, quartile, tahun, eligibility criteria meliputi qual + quant)
-3. Kata kunci dirancang untuk menjaring studi KUALITATIF DAN KUANTITATIF pada isu sama
-4. PENCARIAN literatur (HANYA setelah 1–3 selesai; ≥ 3 database)
-5. Data evaluation + ekstraksi matrix mixed (QUAL & QUANT terpisah) + sintesis 5-tahap W&K
+1. Mode + reporting standard (Whittemore & Knafl) + RQ framework locked (GATE 0) → framework_selection.md
+2. Initialization parameters (topic, language, quartile, years, eligibility criteria covering qual + quant)
+3. Keywords designed to capture QUALITATIVE AND QUANTITATIVE studies on the same issue
+4. LITERATURE SEARCH (ONLY after 1–3 are complete; ≥ 3 databases)
+5. Data evaluation + extraction of mixed matrix (QUAL & QUANT separate) + W&K 5-stage synthesis
 ```
 
-> Kriteria inklusi integrative TIDAK boleh hanya kualitatif atau hanya kuantitatif — mode ini butuh kedua jenis data agar integrasi convergent sah.
+> Integrative inclusion criteria must NOT be only qualitative or only quantitative — this mode needs both types of data for a valid convergent integration.
 
-## Framework Wajib (Bound)
+## Mandatory Framework (Bound)
 
-| Aspek | Framework |
+| Aspect | Framework |
 |-------|-----------|
-| RQ | Pertanyaan luas; kembangkan dari **PICO/PICo/CCD** tergantung inti pertanyaan (campuran boleh) |
-| Metodologi analisis | **Whittemore & Knafl (2005) — 5 tahap: Problem Identification → Literature Search → Data Evaluation → Data Analysis → Presentation** |
-| Reporting checklist | Laporan mengikuti kaidah kualitas review campuran (gabungan PRISMA/SWiM untuk penerapan) |
+| RQ | Broad question; develop from **PICO/PICo/CCD** depending on the core question (mixing is allowed) |
+| Analysis methodology | **Whittemore & Knafl (2005) — 5 stages: Problem Identification → Literature Search → Data Evaluation → Data Analysis → Presentation** |
+| Reporting checklist | Report follows mixed-review quality standards (combined PRISMA/SWiM for applicability) |
 
-## Extraction Matrix — Data Campuran (Qual + Quant)
+## Extraction Matrix — Mixed Data (Qual + Quant)
 
-Ekstraksi memisahkan **τipe data** agar bisa di-synthesize dengan analisis deduktif/induktif:
+Extraction separates **data types** so they can be synthesized with deductive/inductive analysis:
 
-| No | Authors/Year/Jurnal/Q | Jenis data (Kual/Kuant/Mixed) | Desain & Sample | Temuan (qual: tema; quant: efek) | Konteks | Kualitas appraisal |
+| No | Authors/Year/Journal/Q | Data type (Qual/Quant/Mixed) | Design & Sample | Findings (qual: themes; quant: effects) | Context | Appraisal quality |
 |----|------------------------|-------------------------------|-----------------|----------------------------------|---------|-------------------|
 
-Detail: `references/extraction-integrative.md` + template `templates/extraction_integrative.md`.
+Details: `references/extraction-integrative.md` + template `templates/extraction_integrative.md`.
 
-## Sintesis — Metode Whittemore & Knafl (5 Tahap)
+## Synthesis — Whittemore & Knafl Method (5 Stages)
 
-1. **Problem identification** — rumuskan pertanyaan jelas & berikan justifikasi pentingnya.
-2. **Literature search** — pencarian eksplisit di ≥ 3 database + manajemen duplikat.
-3. **Data evaluation** — kategorisasi studi berdasarkan kualitas (bukan seragam; data berkualitas rendah dieliminasi/berlabel).
-4. **Data analysis** — 4 langkah inti:
-   - **Data reduction** — ekstraksi data dari tiap studi ke kode/tema.
-   - **Data display** — susun kode/tema dalam matriks (per studi × per tema).
-   - **Data comparison** — pola, hubungan, perbedaan antar studi.
-   - **Conclusion drawing & verification** — simpulan diuji balik data.
-5. **Presentation** — narasikan temuan dengan tabel/diagram pendukung.
+1. **Problem identification** — formulate a clear question & justify its importance.
+2. **Literature search** — explicit search in ≥ 3 databases + duplicate management.
+3. **Data evaluation** — categorize studies by quality (not uniformly; low-quality data is eliminated/labeled).
+4. **Data analysis** — 4 core steps:
+   - **Data reduction** — extract data from each study into codes/themes.
+   - **Data display** — arrange codes/themes in a matrix (study × theme).
+   - **Data comparison** — patterns, relationships, differences across studies.
+   - **Conclusion drawing & verification** — conclusions tested back against the data.
+5. **Presentation** — narrate the findings with supporting tables/diagrams.
 
-> Metode ini tidak menuntut jenis sintesis tunggal: gunakan **tematik induktif** untuk temuan kualitatif, dan integrasikan dengan hasil kuantitatif melalui pembahasan konvergen (convergent synthesis).
+> This method does not require a single synthesis type: use **inductive thematic** synthesis for qualitative findings, and integrate them with quantitative results through convergent discussion (convergent synthesis).
 
-## Auto-Validation Checklist (Wajib di Akhir)
+## Auto-Validation Checklist (Mandatory at the End)
 
-Gunakan `checklists/whittemore_knafl.md` (CHECK per tahap) via `templates/reporting_checklist.md`:
+Use `checklists/whittemore_knafl.md` (CHECK per stage) via `templates/reporting_checklist.md`:
 
-- Problem identification jelas (RQ, signifikansi).
-- Literature search lengkap: database, terminologi, rentang tahun, kriteria.
-- Data evaluation: kriteria kualitas & keputusan inklusi.
-- Data analysis: bukti reduksi, display, comparison, verification.
-- Presentation: temuan terintegrasi bukan sekadar daftar abstract.
-- Simpan ke `reporting_checklist_result.md`.
+- Problem identification clear (RQ, significance).
+- Literature search complete: databases, terminology, year range, criteria.
+- Data evaluation: quality criteria & inclusion decisions.
+- Data analysis: evidence of reduction, display, comparison, verification.
+- Presentation: findings integrated, not merely a list of abstracts.
+- Save to `reporting_checklist_result.md`.
 
-## Quality Gate Khusus Mode
+## Mode-Specific Quality Gate
 
-- [ ] 5 tahap Whittemore & Knafl terdokumentasi
-- [ ] Data kualitatif di-reduksi ke tema, data kuantitatif di-ringkas efek/temuan
-- [ ] Matriks display (per studi × per tema) tersedia
-- [ ] Integrasi konvergen: diskusi menjelaskan hubungan data qual & quant
-- [ ] Checklist mode lolos (0 item "Tidak" tanpa rencana)
+- [ ] The 5 Whittemore & Knafl stages documented
+- [ ] Qualitative data reduced to themes, quantitative data summarized as effects/findings
+- [ ] Display matrix (study × theme) available
+- [ ] Convergent integration: the discussion explains the relationship between qual & quant data
+- [ ] Mode checklist passed (0 "No" items without a plan)
 
-## Output Mode
+## Mode Output
 
 ```text
-literature_matrix.md            — matrix data campuran
-data_display_matrix.md          — matriks reduksi/display
-integrative_synthesis.md        — narasi integratif
-framework_selection.md          — kontrak framework
-reporting_checklist_result.md   — validasi Whittemore & Knafl
+literature_matrix.md            — mixed data matrix
+data_display_matrix.md          — reduction/display matrix
+integrative_synthesis.md        — integrative narrative
+framework_selection.md          — framework contract
+reporting_checklist_result.md   — Whittemore & Knafl validation
 ```
 
-## Referensi Terkait
+## Related References
 
-- `references/literature-search.md` — pencarian & filter Scopus Quartile
-- `references/quality-gates.md` — gate mekanis + semantik + red-team
-- `checklists/whittemore_knafl.md` — checklist 5 tahap
+- `references/literature-search.md` — search & Scopus Quartile filtering
+- `references/quality-gates.md` — mechanical + semantic gates + red-team
+- `checklists/whittemore_knafl.md` — 5-stage checklist

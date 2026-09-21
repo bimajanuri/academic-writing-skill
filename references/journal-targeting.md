@@ -1,89 +1,89 @@
-# Journal Targeting & Submission Strategy (Tahap 2 & 6)
+# Journal Targeting & Submission Strategy (Stages 2 & 6)
 
-Strategi memilih jurnal (arena) yang tepat dan memaksimalkan peluang diterima — dipakai saat Perencanaan (Langkah 2.2) dan dikunci ulang saat Pre-Submission (Tahap 6). Terhubung dengan Research Positioning Map (Modul E) dan contribution statement (Modul A).
+Strategy for choosing the right journal (arena) and maximizing acceptance odds — used during Planning (Step 2.2) and re-locked at Pre-Submission (Stage 6). Connected to the Research Positioning Map (Module E) and the contribution statement (Module A).
 
-## 1. Pemilihan "Arena" Jurnal
+## 1. Choosing the Journal "Arena"
 
-Pilih jurnal berdasarkan **kesesuaian posisi riset**, bukan sekadar prestige:
+Choose a journal based on **fit with the research position**, not merely prestige:
 
-1. Posisi topik pada Research Map (dari `research_map.md`) → tentukan warna/tipe kontribusi (teoretis, terapan, sintesis, dll.)
-2. Cari jurnal yang perimeter publikasinya memuat posisi itu (jurnal "rumah" vs jurnal "tamu"):
-   - **Rumah**: sering memuat paper dengan posisi serupa → peluang besar, kontribusi harus eksplisit cocok dengan wacana mereka
-   - **Tamu**: sesekali memuat paper serupa → lebih bergengsi tapi risiko rejection lebih tinggi
-3. Target realistis: skor acceptance lebih tinggi pada jurnal "rumah" dengan posisi paper yang jelas.
+1. Position the topic on the Research Map (from `research_map.md`) → determine the color/type of contribution (theoretical, applied, synthesis, etc.)
+2. Find journals whose publication perimeter includes that position ("home" vs. "guest" journal):
+   - **Home**: frequently publishes papers with a similar position → high odds; the contribution must explicitly fit their discourse
+   - **Guest**: occasionally publishes similar papers → more prestigious but higher rejection risk
+3. Set a realistic target: acceptance is higher at "home" journals with a clearly positioned paper.
 
 ## 2. Journal Positioning Blueprint
 
-Sebelum menulis, telusuri 5–8 paper terbaru dari jurnal target (corpus, lihat journal-adapt di `references/outline-builder.md` §2):
-- Jenis kontribusi yang mereka rajin muat (empiris/teoretis/review; konteks geografis/metodologis apa)
-- Format & panjang (IMRaD vs essay; batas kata, jumlah tabel/figur)
-- Istilah kunci yang dipakai komunitas jurnal (gunakan di title/abstract)
-- Penulis/afiliasi yang mendominasi (kandidat referensi & citasi)
-- Scope statement: kutip kalimat scope persis dari website jurnal, bandingkan dengan kontribusi paper
+Before writing, examine 5–8 recent papers from the target journal (corpus, see journal-adapt in `references/outline-builder.md` §2):
+- The types of contributions they frequently publish (empirical/theoretical/review; which geographic/methodological contexts)
+- Format & length (IMRaD vs. essay; word limits, number of tables/figures)
+- Key terms used by the journal community (use them in the title/abstract)
+- Dominant authors/affiliations (reference & citation candidates)
+- Scope statement: quote the scope wording exactly from the journal website, then compare it with the paper's contribution
 
-Simpan hasil sebagai `style_profile.md`.
+Save the result as `style_profile.md`.
 
-## 3. Memilah Jurnal yang Layak (Anti Predator & Kebenaran Indeks)
+## 3. Filtering Legitimate Journals (Anti-Predator & Index Truth)
 
-Hanya lanjutkan ke jurnal yang memenuhi semua:
+Only proceed with a journal that meets all of the following:
 
-| Cek | Tanda Bahaya (predator/buruk) |
+| Check | Red Flag (predatory/poor) |
 |-----|-------------------------------|
-| Terindeks di Scopus/Web of Science/DOAJ (bukan hanya klaim) | Mengaku "Scopus indexed" tanpa bukti; quartile tak terverifikasi |
-| Publisher anggota COPE/ICMJE | Publisher tak dikenal, email doeloe@penyedia-gratis |
-| Biaya & kebijakan APC transparan di laman resmi | Biaya dananya dipungut saat submit (bukan setelah accepted) |
-| Proses review dijelaskan (double-blind/terbuka, jangka waktu) | Janji publish "1–2 minggu" dengan review wajib OP (open access) |
-| Lokasi penerbit & tim editorial jelas | Alamat fiktif, editorial "global" tanpa jejak riset |
-| Tidak ada klaim email spam/invitasi berulang | Undangan "call for papers" massal yang mengaku jurnal ternama |
-| Jurnal nyata punya jejak terbitan ≥ 1–2 tahun | Terbitan baru tanpa DOI/OJS, sitasi nol-menyolok |
+| Indexed in Scopus/Web of Science/DOAJ (not just claimed) | Claims "Scopus indexed" without evidence; unverified quartile |
+| Publisher is a COPE/ICMJE member | Unknown publisher, free-mail email address |
+| APC costs & policies transparent on the official page | Fees charged at submission (not after acceptance) |
+| Review process described (double-blind/open, timeline) | Promises publication in "1–2 weeks" with mandatory review OP (open access) |
+| Publisher location & editorial team clear | Fictional address, "global" editorial board without a research trail |
+| No spam/repeated-invitation claims | Mass "call for papers" invitations claiming a famous journal |
+| A real journal with a publication track record of ≥ 1–2 years | New journal without DOI/OJS, conspicuously zero citations |
 
-Gunakan referensi daftar predatori hanya sebagai petunjuk awal; **verifikasi langsung** ke situs jurnal dan database indeks (Crossref/Scopus preview). Jangan pernah membayar untuk menerima jaminan publikasi.
+Use predatory-list references only as an initial hint; **verify directly** on the journal website and index databases (Crossref/Scopus preview). Never pay for a guarantee of publication.
 
-## 4. Menilai Kesesuaian Paper dengan Jurnal
+## 4. Assessing Paper–Journal Fit
 
-Kriteria "fit" (5 cek):
+"Fit" criteria (5 checks):
 
-1. **Topik**: scope statement jurnal mencakup topik (kalimat demi kalimat)
-2. **Metode**: jurnal memuat desain/metode yang sama
-3. **Format**: panjang & struktur paper sesuai misalnya
-4. **Literatur**: jurnal sering muncul di daftar pustaka (kandidat sitasi besar)
-5. **Kontribusi**: bentuk novelty cocok dengan wacana jurnal
+1. **Topic**: the journal's scope statement covers the topic (sentence by sentence)
+2. **Method**: the journal publishes the same design/method
+3. **Format**: paper length & structure fit the journal's examples
+4. **Literature**: the journal frequently appears in reference lists (a major citation candidate)
+5. **Contribution**: the novelty form matches the journal's discourse
 
-Untuk 2+ jurnal kandidat: isi `templates/journal_comparison.md`.
+For 2+ candidate journals: fill in `templates/journal_comparison.md`.
 
-## 5. Self-Assessment Probabilitas Acceptance
+## 5. Self-Assessment of Acceptance Probability
 
-Sebelum submit, jujur nilai 7 dimensi terhadap **reviewer jurnal itu** (bukan umum). Variabel yang menaikkan peluang:
-- Posisi kontribusi jelas di Research Map (bukan "gap kosong" tapi "gap dengan bukti + arah")
-- Paper terasa "berbicara" pada kekhawatiran komunitas jurnal (fit pada isu yang sedang ramai dibahas)
-- RQ dan kontribusi statement sinkron (tidak geser)
-- Namun jangan self-reject: jika di bawah ambang, **perbaiki posisi/ekspresi**, bukan ganti jurnal (dulu) — kecuali memang salah arena.
+Before submitting, honestly score 7 dimensions against **that journal's reviewers** (not in general). Variables that raise the odds:
+- A clear contribution position on the Research Map (not an "empty gap" but a "gap with evidence + direction")
+- The paper feels like it "speaks" to the journal community's concerns (fits the issues currently being discussed)
+- The RQ and contribution statement are in sync (no drift)
+- Yet do not self-reject: if below the threshold, **improve the position/expression**, not switch journals (first) — unless it is truly the wrong arena.
 
-Skor 1–5/dimensi, rekomendasi:
-- ≥ 28/35 → submit ke target utama
-- 21–27 → perbaiki yang lemah dulu (Modul C red-team), lalu submit
-- < 21 → pertimbangkan turun satu tingkatan arena atau desk target
+Score 1–5/dimension; recommendations:
+- ≥ 28/35 → submit to the main target
+- 21–27 → fix the weak points first (Module C red-team), then submit
+- < 21 → consider dropping one arena tier or desk-targeting
 
 ## 6. Cover Letter
 
-Prinsip cover letter (template `templates/cover_letter.md`):
-- 1 halaman; paragraf ringkas; 3–4 paragraf (identitas + paper; kesesuaian jurnal; tonggak kontribusi; deklarasi)
-- Paragraf inti = **kontribusi statement** (feed Modul A) + pasangan jurnal (scope statement + pernah memuat paper terkait)
-- Klaim kesesuaian: sebutkan bahwa paper ada dalam ruang lingkup jurnal dengan dukungan 1–2 sitasi dari jurnal itu sendiri (jika ada)
-- Honest, tanpa jargon "highly novel/groundbreaking"
+Cover letter principles (template `templates/cover_letter.md`):
+- 1 page; concise paragraphs; 3–4 paragraphs (identity + paper; journal fit; contribution milestones; declarations)
+- The core paragraph = **contribution statement** (Module A feed) + journal pairing (scope statement + previously published related papers)
+- Fit claim: state that the paper falls within the journal's scope, supported by 1–2 citations from that journal itself (if any)
+- Honest, without jargon such as "highly novel/groundbreaking"
 
-## 7. Kunci Ulang di Tahap 6 (Pre-Submission)
+## 7. Re-locking at Stage 6 (Pre-Submission)
 
-Setelah paper jadi, validasi ulang sebelum submit:
-1. Ulangi cek fit §4 (posisi paper mungkin bergeser selama penulisan)
-2. Re-verifikasi indeks & status quartile saat ini (bisa berubah antar tahun)
-3. Jawab semua persyaratan submit: ORCID, cover letter, data availability, checklist reporting (dari `framework_selection.md` §3)
-4. Simpan `journal_comparison.md` sebagai dokumen keputusan jika ada alternatif
+Once the paper is complete, re-validate before submitting:
+1. Re-run the §4 fit check (the paper's position may have shifted during writing)
+2. Re-verify the current index & quartile status (can change across years)
+3. Meet all submission requirements: ORCID, cover letter, data availability, reporting checklists (from `framework_selection.md` §3)
+4. Save `journal_comparison.md` as a decision document if alternatives exist
 
 ## Output
 
 ```
-style_profile.md          — profil & blueprint jurnal target (Tahap 2)
-journal_comparison.md     — perbandingan jurnal kandidat (Tahap 2/6)
-cover_letter.md           — cover letter final (Tahap 6)
+style_profile.md          — target journal profile & blueprint (Stage 2)
+journal_comparison.md     — comparison of candidate journals (Stages 2/6)
+cover_letter.md           — final cover letter (Stage 6)
 ```

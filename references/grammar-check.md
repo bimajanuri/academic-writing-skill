@@ -1,30 +1,31 @@
-# Grammar Check — English (US) untuk Naskah Output Akademik
+# Grammar Check — English (US) for Academic Output Manuscripts
 
-Panduan memeriksa tata bahasa, ejaan, tanda baca, dan konsistensi **English-US** pada naskah akademik output. Dipakai di **Tahap 5 (Layer Grammar)** dan sebelum submission (Tahap 6).
+Guide to checking grammar, spelling, punctuation, and consistency in **English-US** on the academic output manuscript. Used in **Stage 5 (Grammar Layer)** and before submission (Stage 6).
 
-> Bedakan dari Humanizer (Layer 1): humanizer menangani *gaya khas-AI*; grammar check menangani *kebenaran linguistik* sesuai kaidah bahasa. Keduanya bisa saling terkait, tetapi ceknya berbeda.
+> Differentiate from the Humanizer (Layer 1): the humanizer handles *AI-typical style*; the grammar check handles *linguistic correctness* per language rules. The two can be related, but the checks differ.
 >
-> **Kebijakan bahasa**: output paper WAJIB English-US. Input penelitian boleh Bahasa Indonesia/English (dipahami tanpa mengubah makna). Bagian Bahasa Indonesia di bawah hanya untuk membantu *menafsirkan* maksud input ID saat menerjemah — bukan untuk menulis naskah.
+> **Language policy**: the output paper MUST be in English-US. Research input may be in Bahasa Indonesia/English (understood without changing meaning). The Bahasa Indonesia section below exists only to help *interpret* the intent of ID input when translating — not for writing the manuscript.
 
-## 1. Workflow Grammar Check (English-US)
+## 1. Grammar Check Workflow (English-US)
 
-1. **Pastikan register English-US** pada seluruh naskah (spelling US; jangan campur US/UK).
-2. **Cek mekanis dulu** (pola yang bisa diburu otomatis, §3).
-3. **Cek tata bahasa** (agreement, tense, struktur kalimat, preposisi).
-4. **Cek ejaan & kata** (spelling US).
-5. **Cek tanda baca & format** (kapitalisasi, serial comma, apostrophe, tanda kutip).
-6. **Cek konsistensi** (istilah, bentuk istilah dari Tahap 5 gate mekanis, register US).
-7. Jika tersedia, jalankan **LanguageTool** (gratis, `en-US`) sebagai pelengkap, lalu verifikasi sarannya secara manual — jangan terima mentah-mentah.
-8. Saat konten input berbahasa Indonesia, pastikan hasil terjemahan tidak meninggalkan jejak struktur kalimat Indonesia yang terdengar aneh dalam English (periksa hasil terjemahan sebagai English asli, bukan "English terjemahan").
+1. **Ensure the English-US register** across the entire manuscript (US spelling; do not mix US/UK).
+2. **Run mechanical checks first** (patterns that can be hunted automatically, §3).
+3. **Check grammar** (agreement, tense, sentence structure, prepositions).
+4. **Check spelling & word choice** (US spelling).
+5. **Check punctuation & format** (capitalization, serial comma, apostrophe, quotation marks).
+6. **Check consistency** (terms, term forms from the Stage 5 mechanical gate, US register).
+7. If available, run **LanguageTool** (free, `en-US`) as a complement, then verify its suggestions manually — do not accept them blindly.
+8. When the input content is in Bahasa Indonesia, make sure the translation result leaves no trace of Indonesian sentence structures that sound awkward in English (check the translation as native English, not "translated English").
 
-## 2. (Referensi Input) Bahasa Indonesia — untuk memahami input, bukan menulis
+## 2. (Input Reference) Bahasa Indonesia — for Understanding Input, Not Writing
 
-Input penelitian dapat diberikan dalam Bahasa Indonesia. Untuk menafsirkan dengan benar:
-- Acuan kaidah ID: EYD (Permendikbudristek No. 18 Tahun 2022) & KBBI — hanya untuk memahami/tidak salah tafsir input.
-- Jangan menyalin kalimat ID ke naskah; terjemahkan ke English-US yang natural.
+Research input may be given in Bahasa Indonesia. To interpret it correctly:
+- ID rule references: EYD (Permendikbudristek No. 18 Tahun 2022) & KBBI — only to correctly understand/not misinterpret the input.
+- Do not copy ID sentences into the manuscript; translate them into natural English-US.
 
-### 2.1 Kata baku vs tidak baku (contoh umum, untuk memahami input ID)
-| Kata baku | Variasi tak baku |
+### 2.1 Standard vs. non-standard words (common examples, for understanding ID input)
+
+| Standard form (baku) | Non-standard variant |
 |------|-----------|
 | analisis | analisa |
 | apotek | apotik |
@@ -33,63 +34,63 @@ Input penelitian dapat diberikan dalam Bahasa Indonesia. Untuk menafsirkan denga
 | karier | karir |
 | izin | ijin |
 
-> Informasi: verifikasi keraguan ke KBBI (kbbi.kemdikbud.go.id) bila input ambigu.
+> Note: verify doubts against KBBI (kbbi.kemdikbud.go.id) when the input is ambiguous.
 
-## 3. English (US) — Kaidah Penting (Output Wajib)
+## 3. English (US) — Important Rules (Mandatory Output)
 
-Acuan: MLA/CMOS/APA house style sesuai jurnal; **wajib konsisten dalam register US** (`analyze`, `color`, `center`, `modeling` — bukan UK).
+Reference: MLA/CMOS/APA house style per the journal; **must be consistent in the US register** (`analyze`, `color`, `center`, `modeling` — not UK).
 
 ### 3.1 Subject–verb agreement
-- Singular/plural subjek harus cocok dengan verba: `The results show ...` (bukan `shows`).
-- Kesalahan umum: `Each of the studies is ...`; `The number of participants was ...` vs `A number of participants were ...`.
-- Subjek majemuk dengan `and` → plural; `or/nor` → ikut elemen terdekat.
+- Singular/plural subjects must match the verb: `The results show ...` (not `shows`).
+- Common errors: `Each of the studies is ...`; `The number of participants was ...` vs. `A number of participants were ...`.
+- Compound subjects with `and` → plural; with `or/nor` → follows the nearest element.
 
 ### 3.2 Article usage (a/an/the)
-- `a` sebelum bunyi konsonan (`a university`), `an` sebelum bunyi vokal (`an hour`).
-- `the` untuk spesifik/known; tanpa artikel untuk general plural.
+- `a` before consonant sounds (`a university`), `an` before vowel sounds (`an hour`).
+- `the` for specific/known references; no article for general plurals.
 
 ### 3.3 Tense consistency
-- Manuscript convention: present tense untuk yang tetap berlaku (`we argue`, `Table 1 shows`), past tense untuk pelaporan hasil/aksi penelitian (`we collected`, `the results indicated`).
-- Pilih satu tense per fungsi dan jaga konsisten antar bagian; jangan berpindah tanpa alasan.
+- Manuscript convention: present tense for what remains true (`we argue`, `Table 1 shows`), past tense for reporting results/research actions (`we collected`, `the results indicated`).
+- Choose one tense per function and keep it consistent across sections; do not shift without reason.
 
 ### 3.4 Prepositions
-- Kesalahan umum: `different from` (bukan `than`), `similar to`, `consistent with`, `based on`, `in contrast to` (bukan `with`).
-- `compared with` (membandingkan kesamaan/perbedaan) vs `compared to` (analogi).
+- Common errors: `different from` (not `than`), `similar to`, `consistent with`, `based on`, `in contrast to` (not `with`).
+- `compared with` (comparing similarities/differences) vs. `compared to` (analogy).
 
 ### 3.5 Punctuation (US)
-- **Serial comma** (Oxford comma) wajib di MLA/Chicago: `X, Y, and Z`.
-- Comma splice: dua independent clauses dipisah koma tanpa konjungsi → ganti dengan titik/`;`/`and`/`but`.
-- Semicolon untuk memisah klausa padat atau daftar yang mengandung koma.
-- Apostrophe possessive: `the study's aim` (bukan `studies`); `its` tanpa apostrof (posesif), `it's` = it is.
-- Quote: US memakai double quotes `"..."`.
+- **Serial comma** (Oxford comma) required in MLA/Chicago: `X, Y, and Z`.
+- Comma splice: two independent clauses separated by a comma without a conjunction → replace with a period/`;`/`and`/`but`.
+- Semicolon for separating dense clauses or lists that contain commas.
+- Possessive apostrophe: `the study's aim` (not `studies`); `its` has no apostrophe (possessive), `it's` = it is.
+- Quotes: US uses double quotes `"..."`.
 
-### 3.6 Spelling register (WAJIB US)
+### 3.6 Spelling register (MANDATORY US)
 - US: `analyze, color, center, modeling, behavior, organization`.
-- Coret varian UK (`analyse, colour, centre, modelling, behaviour, organisation`) dari naskah.
-- Periksa kemiringan ke British pada kata dasar yang sama; pilih SATU register dan konsisten.
+- Remove UK variants (`analyse, colour, centre, modelling, behaviour, organisation`) from the manuscript.
+- Check for a British lean on the same root words; choose ONE register and be consistent.
 
-## 4. Pola Error Umum (best practice untuk English-US)
+## 4. Common Error Patterns (best practice for English-US)
 
-| Kategori | English (US) |
+| Category | English (US) |
 |----------|--------------|
 | Agreement | subject–verb agreement |
-| Kata | spelling US/UK (harus US) |
-| Preposisi | prepositions |
+| Word | spelling US/UK (must be US) |
+| Preposition | prepositions |
 | Tense | tense consistency |
-| Tanda baca | serial comma WAJIB (MLA/Chicago) |
-| Kepemilikan | `its` vs `it's`, apostrophe |
+| Punctuation | serial comma REQUIRED (MLA/Chicago) |
+| Possession | `its` vs. `it's`, apostrophe |
 
-## 5. Tools (Opsional)
+## 5. Tools (Optional)
 
-- **LanguageTool** — gratis, API: `https://api.languagetool.org/v2/check`; parameter `language=en-US`. Saran harus **diverifikasi manual**.
-- **Hunspell** — dictionary spell checker (via CLI) untuk cek cepat.
+- **LanguageTool** — free, API: `https://api.languagetool.org/v2/check`; parameter `language=en-US`. Suggestions must be **verified manually**.
+- **Hunspell** — dictionary spell checker (via CLI) for quick checks.
 
-> Aturan utama: sarana otomatis membantu menemukan, manusia/AI memutuskan. Jangan ubah makna hanya karena "dipangkas tools".
+> Main rule: automated tools help find issues, but humans/AI decide. Do not change meaning just because "the tools trimmed it".
 
 ## 6. Output
 
 ```
-grammar_report.md   — daftar temuan (kategori, lokasi, saran, perbaikan) + status per item
+grammar_report.md   — list of findings (category, location, suggestion, fix) + status per item
 ```
 
-Gunakan `checklists/grammar_check.md` sebagai pelacak per bagian naskah.
+Use `checklists/grammar_check.md` as a per-section tracker of the manuscript.

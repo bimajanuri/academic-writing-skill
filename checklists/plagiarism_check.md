@@ -1,36 +1,36 @@
-# Checklist — Plagiarism Check (English-US, output wajib)
+# Checklist — Plagiarism Check (English-US, mandatory output)
 
-Gunakan di **Tahap 6 (pre-submission)**. Satu checklist per area naskah yang berisiko tinggi (Introduction/Lit Review, Discussion). Naskah output adalah English-US; area overlap deteksi berlaku untuk teks English.
+Use at **Stage 6 (pre-submission)**. One checklist per high-risk area of the manuscript (Introduction/Lit Review, Discussion). Manuscript output is English-US; areas for overlap detection apply to English text.
 
-## Overlap & Kutipan
-- [ ] Tidak ada frasa verbatim ≥ 7 kata (EN) dari sumber tanpa tanda kutip + sitasi
-- [ ] Setiap kutipan langsung dalam tanda kutip (atau blok kutipan sesuai gaya) + halaman bila gaya mensyaratkan
-- [ ] Isi kutipan terverifikasi benar-benar ada di sumber asli (bukan karangan)
-- [ ] Kutipan panjang (≥ 40 kata EN) memakai format blok sesuai gaya
+## Overlap & Quotations
+- [ ] No verbatim phrase of ≥ 7 words (EN) taken from a source without quotation marks + citation
+- [ ] Every direct quotation in quotation marks (or block format per style) + page number when style requires it
+- [ ] Quotation content verified to actually exist in the original source (not fabricated)
+- [ ] Long quotations (≥ 40 words EN) formatted as blocks per style
 
-## Parafrase
-- [ ] Setiap parafrase disertai sitasi ke sumber asli
-- [ ] Parafrase mengubah struktur kalimat (bukan sekadar ganti sinonim)
-- [ ] Makna parafrase akurat terhadap sumber (tidak mengubah klaim)
-- [ ] Tidak ada "mosaic" (kalimat campur kata-kata sumber tanpa sitasi)
+## Paraphrase
+- [ ] Every paraphrase accompanied by a citation to the original source
+- [ ] Paraphrase changes sentence structure (not merely synonym substitution)
+- [ ] Paraphrase meaning accurate to the source (claims not altered)
+- [ ] No "mosaic" writing (sentences mixing source words without citation)
 
-## Sitasi & Sumber
-- [ ] Semua klaim spesifik (data, angka, teori) didukung sitasi dari Literature Matrix
-- [ ] Tidak ada sitasi sekunder yang disajikan seolah dibaca langsung
-- [ ] Tidak ada referensi "hiasan" tanpa kesesuaian dengan klaim
-- [ ] Daftar pustaka ↔ in-text konsisten 1:1 (lihat Tahap 4)
+## Citations & Sources
+- [ ] All specific claims (data, numbers, theory) supported by citations from the Literature Matrix
+- [ ] No secondary citations presented as if read directly
+- [ ] No decorative references that do not match the claims
+- [ ] Bibliography ↔ in-text references consistent 1:1 (see Stage 4)
 
 ## Self-Plagiarism
-- [ ] Tidak ada kalimat identik dari publikasi/tugas penulis sebelumnya tanpa atribusi/izin
-- [ ] Batas penggunaan kembali teks sendiri dijelaskan kepada pengguna bila ada
+- [ ] No identical sentences from the author's previous publications/assignments without attribution/permission
+- [ ] Limits of reusing one's own text explained to the user when applicable
 
 ## Similarity & Reporting
-- [ ] Estimasi/utilisasi similarity tool: interpretasi sesuai band (lihat `references/plagiarism-check.md` §3)
-- [ ] Area overlap yang signifikan DIREVISI (kutip/parafrase/sitasi) — bukan sekadar dicatat
-- [ ] `plagiarism_report.md` dibuat (lokasi, sumber, jenis plagiat, keputusan)
-- [ ] Temuan diinformasikan ke pengguna sebelum submit (human-in-the-loop)
+- [ ] Similarity tool estimate/usage: interpreted according to the band (see `references/plagiarism-check.md` §3)
+- [ ] Significant overlap areas REVISED (quote/paraphrase/cite) — not merely noted
+- [ ] `plagiarism_report.md` created (location, source, type of plagiarism, decision)
+- [ ] Findings reported to the user before submission (human-in-the-loop)
 
-## Aturan Anti-Plagiat
-- [ ] Naskah final tidak mengandung blok yang disalin verbatim (kecuali kutipan sah)
-- [ ] Tidak ada data/fakta tanpa sumber
-- [ ] Tidak ada teks "hasil AI" yang menyalin sumber tanpa atribusi
+## Anti-Plagiarism Rules
+- [ ] Final manuscript contains no verbatim-copied blocks (except legitimate quotations)
+- [ ] No data/facts without a source
+- [ ] No "AI output" text that copies a source without attribution

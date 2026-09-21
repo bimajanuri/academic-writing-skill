@@ -1,84 +1,84 @@
-# Protocol — Mode SLR (Systematic Literature Review)
+# Protocol — SLR Mode (Systematic Literature Review)
 
-Mode default untuk *systematic review* kuantitatif dan kualitatif yang mengikuti alur PRISMA standar.
+Default mode for quantitative and qualitative *systematic review* following the standard PRISMA workflow.
 
-## Kapan Mode Ini Aktif
+## When This Mode Is Active
 
-Pengguna meminta: *systematic review*, *meta-analisis*, *SLR*, kata kunci "PRISMA", *quantitative synthesis*, *evidence synthesis* kuantitatif, atau memilih **Mode SLR** pada Method Selection Router.
+The user requests: *systematic review*, *meta-analysis*, *SLR*, the keyword "PRISMA", *quantitative synthesis*, quantitative *evidence synthesis*, or selects **SLR Mode** on the Method Selection Router.
 
-## Urutan Wajib
+## Mandatory Sequence
 
 ```text
-1. Mode + standar pelaporan + framework RQ dikunci (GATE 0)   → framework_selection.md
-2. Parameter inisialisasi (topik, bahasa, quartile, tahun, eligibility criteria)
-3. Kata kunci pencarian diturunkan dari PICO/PICOS
-4. PENCARIAN literatur (HANYA setelah 1–3 selesai)
-5. Screening 2 reviewer + PRISMA flow + ekstraksi matrix 7-field
+1. Mode + reporting standard + RQ framework locked (GATE 0)   → framework_selection.md
+2. Initialization parameters (topic, language, quartile, years, eligibility criteria)
+3. Search keywords derived from PICO/PICOS
+4. LITERATURE SEARCH (ONLY after 1–3 are complete)
+5. 2-reviewer screening + PRISMA flow + 7-field extraction matrix
 ```
 
-> Hasil pencarian SLR harus berfokus pada studi dengan ukuran efek/evidence yang bisa disintesis (kuantitatif) atau temuan kualitatif tematik — sesuaikan eligibility criteria di langkah 2.
+> SLR search results must focus on studies with synthesizable effect sizes/evidence (quantitative) or thematic qualitative findings — adjust the eligibility criteria in Step 2 accordingly.
 
-## Framework Wajib (Bound)
+## Mandatory Framework (Bound)
 
-| Aspek | Framework |
+| Aspect | Framework |
 |-------|-----------|
-| RQ | **PICO / PICOS** (kuantitatif); **PICo / SPIDER** (kualitatif/mixed) |
-| Prosedur pencarian | Systematic Review Conduct (Cochrane/JBI-aligned) + PRISMA-P + 4-Phase PRISMA Flow |
+| RQ | **PICO / PICOS** (quantitative); **PICo / SPIDER** (qualitative/mixed) |
+| Search procedure | Systematic Review Conduct (Cochrane/JBI-aligned) + PRISMA-P + 4-Phase PRISMA Flow |
 | Reporting checklist | **PRISMA 2020** (+ PRISMA-S, + PRISMA-Abstracts) |
-| Appraisal tools | RoB 2 / ROBINS-I / NOS / JBI CA — sesuai desain; AMSTAR 2; GRADE |
+| Appraisal tools | RoB 2 / ROBINS-I / NOS / JBI CA — depending on design; AMSTAR 2; GRADE |
 
-> Rujukan framework lengkap ada di `references/research-frameworks.md`.
+> Full framework references are in `references/research-frameworks.md`.
 
-## Extraction Matrix (7 Field Standar)
+## Extraction Matrix (Standard 7 Field)
 
-Gunakan matrix standar 7-field — detail di `references/literature-matrix.md` + template `templates/literature_matrix_template.md`:
+Use the standard 7-field matrix — details in `references/literature-matrix.md` + template `templates/literature_matrix_template.md`:
 
-| No | Authors/Title | Purpose | Method (Variables/Samples) | Theory Used | Novelty/Contribution | Future Studies | DOI/Penerbit & Scopus Quartile |
+| No | Authors/Title | Purpose | Method (Variables/Samples) | Theory Used | Novelty/Contribution | Future Studies | DOI/Publisher & Scopus Quartile |
 
-- Pisahkan ekstraksi **kuantitatif** (efek size/statistik → feed meta-analisis) dan **kualitatif** (tema → JBI/ENTREQ) bila studi campuran.
-- Setiap baris wajib membawa status kutipan & DOI terverifikasi.
+- Separate **quantitative** extraction (effect sizes/statistics → feeding meta-analysis) and **qualitative** extraction (themes → JBI/ENTREQ) for mixed studies.
+- Every row must carry a verified citation status and DOI.
 
-## Proses Screening (Wajib Dilaporkan)
+## Screening Process (Mandatory to Report)
 
-1. Deduplikasi → catat jumlah unik.
-2. Screening **title/abstract** oleh 2 reviewer independen + adjudikasi.
-3. Screening **full-text** dengan alasan eksklusi.
-4. Dokumentasikan jumlah tiap fase ke **PRISMA Flow** (Identification → Screening → Eligibility → Included).
+1. Deduplication → record the number of unique records.
+2. **Title/abstract** screening by 2 independent reviewers + adjudication.
+3. **Full-text** screening with reasons for exclusion.
+4. Document the counts for each phase in the **PRISMA Flow** (Identification → Screening → Eligibility → Included).
 
-## Sintesis
+## Synthesis
 
-- Kuantitatif: meta-analisis (pooled effect, heterogeneity, subgroup, sensitivity), atau *narrative synthesis* bila tidak layak meta-analisis (SWiM).
-- Kualitatif: sintesis tematik/deskriptif — **bukan** reciprocal translation (itu ke Mode Meta-Etnografi).
+- Quantitative: meta-analysis (pooled effect, heterogeneity, subgroup, sensitivity), or *narrative synthesis* when meta-analysis is not feasible (SWiM).
+- Qualitative: thematic/descriptive synthesis — **not** reciprocal translation (that belongs to Meta-Ethnography Mode).
 
-## Auto-Validation Checklist (Wajib di Akhir)
+## Auto-Validation Checklist (Mandatory at the End)
 
-Jalankan checklist **PRISMA 2020 (27 item)** — item di `references/research-frameworks.md` §3A dan EQUATOR/prisma-statement.org — via `templates/reporting_checklist.md`:
+Run the **PRISMA 2020 (27 items)** checklist — items in `references/research-frameworks.md` §3A and EQUATOR/prisma-statement.org — via `templates/reporting_checklist.md`:
 
-- Setiap klaim yang membutuhkan rujukan bersitasi.
-- Item checklist dijawab Ya / Tidak berlaku; item "Tidak" → rencana perbaikan.
-- PRISMA flow terisi (+ PRISMA-S bila jurnal minta detail pencarian).
-- Simpan hasil ke `reporting_checklist_result.md`.
+- Every claim that requires a reference is cited.
+- Each checklist item is answered Yes / Not applicable; any "No" item → remediation plan.
+- PRISMA flow is completed (+ PRISMA-S if the journal requires detailed search reporting).
+- Save the results to `reporting_checklist_result.md`.
 
-## Quality Gate Khusus Mode
+## Mode-Specific Quality Gate
 
-- [ ] Framework PICO/PICOS dipakai dan tercatat di `framework_selection.md`
-- [ ] Matrix 7-field lengkap (atau "—" bila tidak tersedia)
-- [ ] 2 reviewer screening + adjudikasi terdokumentasi
-- [ ] PRISMA flow lengkap 4 fase dengan angka konsisten
-- [ ] Check PRISMA 2020 lolos (0 item "Tidak" tanpa rencana)
+- [ ] PICO/PICOS framework used and recorded in `framework_selection.md`
+- [ ] 7-field matrix complete (or "—" when not available)
+- [ ] 2-reviewer screening + adjudication documented
+- [ ] PRISMA flow with all 4 phases and consistent numbers
+- [ ] PRISMA 2020 check passed (0 "No" items without a plan)
 
-## Output Mode
+## Mode Output
 
 ```text
-literature_matrix.md            — matrix 7-field
-prisma_flow.md                  — diagram/alur jumlah artikel
-risk_of_bias_table.md           — hasil appraisal
-framework_selection.md          — kontrak framework mode
-reporting_checklist_result.md   — validasi PRISMA 2020
+literature_matrix.md            — 7-field matrix
+prisma_flow.md                  — diagram/flow of article counts
+risk_of_bias_table.md           — appraisal results
+framework_selection.md          — mode framework contract
+reporting_checklist_result.md   — PRISMA 2020 validation
 ```
 
-## Referensi Terkait
+## Related References
 
-- `references/literature-search.md` — pencarian & filter Scopus Quartile
-- `references/quality-gates.md` — gate mekanis + semantik + red-team
-- `checklists/prisma_2020.md` — item PRISMA 2020 (fallback resmi: prisma-statement.org)
+- `references/literature-search.md` — search & Scopus Quartile filtering
+- `references/quality-gates.md` — mechanical + semantic gates + red-team
+- `checklists/prisma_2020.md` — PRISMA 2020 items (official fallback: prisma-statement.org)

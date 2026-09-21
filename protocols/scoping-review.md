@@ -1,82 +1,82 @@
-# Protocol — Mode Scoping Review
+# Protocol — Scoping Review Mode
 
-Mode untuk *scoping review*: memetakan luas literatur, konsep, dan jenis bukti di suatu bidang — menilai ruang lingkup, bukan kualitas efek.
+Mode for *scoping review*: mapping the breadth of literature, concepts, and types of evidence in a field — assessing scope, not effect quality.
 
-## Kapan Mode Ini Aktif
+## When This Mode Is Active
 
-Pengguna meminta: *scoping review*, *scope the evidence*, *pemetaan literatur*, kata kunci "PRISMA-ScR", "PCC", "JBI", atau memilih **Mode Scoping** pada Method Selection Router.
+The user requests: *scoping review*, *scope the evidence*, *literature mapping*, the keywords "PRISMA-ScR", "PCC", "JBI", or selects **Scoping Mode** on the Method Selection Router.
 
-## Urutan Wajib
+## Mandatory Sequence
 
 ```text
-1. Mode + standar pelaporan (PRISMA-ScR) + framework PCC dikunci (GATE 0) → framework_selection.md
-2. Parameter inisialisasi (topik, bahasa, quartile, tahun, eligibility criteria Lebar untuk scopING)
-3. Kata kunci diturunkan dari elemen PCC (Population, Concept, Context)
-4. PENCARIAN literatur (HANYA setelah 1–3 selesai)
-5. Screening + dedup + PRISMA flow + ekstraksi matrix PCC
+1. Mode + reporting standard (PRISMA-ScR) + PCC framework locked (GATE 0) → framework_selection.md
+2. Initialization parameters (topic, language, quartile, years, BROAD eligibility criteria for scopING)
+3. Keywords derived from PCC elements (Population, Concept, Context)
+4. LITERATURE SEARCH (ONLY after 1–3 are complete)
+5. Screening + dedup + PRISMA flow + PCC extraction matrix
 ```
 
-> Target pencarian scoping = studi yang **memetakan konsep/konteks/metodologi secara luas**; volume boleh lebih besar. Jangan membatasi ke studi efek (contoh: jangan filter hanya RCT untuk scoping jika pertanyaan pemetaan konsep membutuhkan semua desain).
+> The scoping search target = studies that **map concepts/contexts/methodologies broadly**; the volume may be larger. Do not restrict to effect studies (e.g., do not filter for RCTs only in a scoping review if the concept-mapping question requires all designs).
 
-## Framework Wajib (Bound)
+## Mandatory Framework (Bound)
 
-| Aspek | Framework |
+| Aspect | Framework |
 |-------|-----------|
 | RQ | **PCC — Population, Concept, Context** |
-| Prosedur | JBI Manual for Evidence Synthesis (scoping review chapter) + 4-Phase Flow |
-| Reporting checklist | **PRISMA-ScR** (22 item, Tricco et al. 2018) |
-| Appraisal | Tidak wajib (banyak scoping tidak menilai kualitas); bila dilakukan, catat sebagai item opsional PRISMA-ScR |
+| Procedure | JBI Manual for Evidence Synthesis (scoping review chapter) + 4-Phase Flow |
+| Reporting checklist | **PRISMA-ScR** (22 items, Tricco et al. 2018) |
+| Appraisal | Not mandatory (many scoping reviews do not assess quality); if done, record it as an optional PRISMA-ScR item |
 
-## Extraction Matrix Khusus Scoping
+## Scoping-Specific Extraction Matrix
 
-Berbeda dari 7-field SLR. Fokus ekstraksi adalah **pemetaan**, bukan evaluasi efek:
+Differs from the 7-field SLR. The extraction focus is **mapping**, not effect evaluation:
 
-| No | Authors/Year | Populasi (P) | Konsep (C) yang dikaji | Konteks (C): geografis/lokasi | Jenis Metodologi/Desain | Temuan utama (summary) | Gap/arah riset | DOI/Penerbit & Quartile |
+| No | Authors/Year | Population (P) | Concept (C) examined | Context (C): geographic/location | Type of Methodology/Design | Main findings (summary) | Gap/research direction | DOI/Publisher & Quartile |
 
-Detail ekstraksi: `references/extraction-scoping.md` + template `templates/extraction_scoping.md`.
+Extraction details: `references/extraction-scoping.md` + template `templates/extraction_scoping.md`.
 
-## Proses Screening
+## Screening Process
 
-1. Deduplikasi; catat jumlah.
-2. Screening title/abstract (2 reviewer, adjudikasi bila perlu).
-3. Full-text review — catat karakteristik tiap studi.
-4. PRISMA flow dokumentasi (mitha scoping: fase included di joint, appraisal optional).
+1. Deduplication; record the number.
+2. Title/abstract screening (2 reviewers, adjudication when needed).
+3. Full-text review — record the characteristics of each study.
+4. PRISMA flow documentation (scoping variant: the included phase is joint, appraisal optional).
 
-## Sintesis — Conceptual Mapping Engine
+## Synthesis — Conceptual Mapping Engine
 
-**Konsep disintesis dengan pemetaan, BUKAN meta-analisis.** Gunakan `engines/conceptual-mapping.md`:
+**Concepts are synthesized through mapping, NOT meta-analysis.** Use `engines/conceptual-mapping.md`:
 
-- Kelompokkan studi ke **taksonomi konsep** (klaster variabel/tema).
-- Petakan distribusi geografis + garis waktu publikasi.
-- Tabel ringkas "characteristics of included studies".
-- Visualisasi konsep/co-occurrence bila diminta pengguna.
+- Group studies into a **concept taxonomy** (variable/theme clusters).
+- Map the geographic distribution + publication timeline.
+- Summary table of "characteristics of included studies".
+- Concept/co-occurrence visualization if requested by the user.
 
-## Auto-Validation Checklist (Wajib di Akhir)
+## Auto-Validation Checklist (Mandatory at the End)
 
-Jalankan checklist **PRISMA-ScR (22 item)** — gunakan `checklists/prisma_scr.md` + `templates/reporting_checklist.md`:
+Run the **PRISMA-ScR (22 items)** checklist — use `checklists/prisma_scr.md` + `templates/reporting_checklist.md`:
 
-- Semua item wajib dijawab (Ya / Tidak berlaku); item "Tidak" → rencana perbaikan.
-- Pastikan RQ ditulis dalam elemen PCC.
-- Simpan ke `reporting_checklist_result.md`.
+- All items must be answered (Yes / Not applicable); any "No" item → remediation plan.
+- Ensure the RQ is written in PCC elements.
+- Save to `reporting_checklist_result.md`.
 
-## Kualitas Mode (Penghindaran Jebakan)
+## Mode Quality (Avoiding Pitfalls)
 
-- JANGAN mengklaim kualitas/efektivitas intervensi (itu domain SLR).
-- JANGAN mengklaim exhaustiveness bila search strategi terbatas (laporkan trade-off).
-- JANGAN menulis "scoping review sistematis" sebagai verba.
+- Do NOT claim intervention quality/effectiveness (that is the SLR domain).
+- Do NOT claim exhaustiveness when the search strategy is limited (report the trade-off).
+- Do NOT write "systematic scoping review" as a phrase.
 
-## Output Mode
+## Mode Output
 
 ```text
-literature_matrix.md            — matrix PCC
-scoping_map.md                  — taksonomi konsep/geografis/timeline
-characteristics_table.md        — karakteristik studi
-framework_selection.md          — kontrak framework PCC
-reporting_checklist_result.md   — validasi PRISMA-ScR
+literature_matrix.md            — PCC matrix
+scoping_map.md                  — concept/geographic/timeline taxonomy
+characteristics_table.md        — study characteristics
+framework_selection.md          — PCC framework contract
+reporting_checklist_result.md   — PRISMA-ScR validation
 ```
 
-## Referensi Terkait
+## Related References
 
-- `references/literature-search.md` — pencarian & filter Scopus Quartile
-- `engines/conceptual-mapping.md` — engine sintesis pemetaan konsep
-- `checklists/prisma_scr.md` — item PRISMA-ScR 22
+- `references/literature-search.md` — search & Scopus Quartile filtering
+- `engines/conceptual-mapping.md` — concept-mapping synthesis engine
+- `checklists/prisma_scr.md` — 22 PRISMA-ScR items

@@ -1,33 +1,33 @@
-# Template Extraction — Integrative Review (Mixed Data)
+# Extraction Template — Integrative Review (Mixed Data)
 
-Salin tabel ini untuk Mode Integrative Review. Menangkap data kualitatif & kuantitatif terpisah untuk analisis Whittemore & Knafl. Isi `—` bila tidak tersedia.
+Copy this table for the Integrative Review Mode. Captures qualitative & quantitative data separately for the Whittemore & Knafl analysis. Fill in `—` when not available.
 
-## Metadata Pencarian
+## Search Metadata
 
-- **Pertanyaan review**: [RQ]
-- **Filter Scopus Quartile**: [Q1–Q4 / tanpa filter]
-- **Rentang tahun**: [YYYY–YYYY]
-- **Sumber**: [≥3 database dicantumkan]
+- **Review question**: [RQ]
+- **Scopus Quartile filter**: [Q1–Q4 / no filter]
+- **Year range**: [YYYY–YYYY]
+- **Sources**: [≥3 databases listed]
 
-## Tabel Matrix Campuran
+## Mixed Matrix Table
 
-| No | Authors/Year/Jurnal/Q | Jenis data (Kual/Kuant/Mixed) | Desain & Sample | Temuan QUAL (tema/kategori) | Temuan QUANT (efek/statistik) | Konteks | Skor kualitas (0–3) + alasan |
+| No | Authors/Year/Journal/Q | Data type (QUAL/QUANT/Mixed) | Design & Sample | QUAL findings (themes/categories) | QUANT findings (effects/statistics) | Context | Quality score (0–3) + reason |
 |----|------------------------|-------------------------------|-----------------|-----------------------------|-------------------------------|---------|------------------------------|
-| 1  | [Penulis (Tahun)] — "[Judul]" | [Kual] | [desain; n=] | [tema] | [—] | [setting/populasi] | [3 — representatif & valid] |
-| 2  | | [Kuant] | | [—] | [β=..., p<.05, CI] | | |
+| 1  | [Author (Year)] — "[Title]" | [QUAL] | [design; n=] | [theme] | [—] | [setting/population] | [3 — representative & valid] |
+| 2  | | [QUANT] | | [—] | [β=..., p<.05, CI] | | |
 
-## Ringkasan `data_display_matrix.md`
+## `data_display_matrix.md` Summary
 
-Matriks per studi × per tema (untuk tahap data comparison):
+Matrix of study × theme (for the data comparison stage):
 
-| Tema 1 | Tema 2 | ... | (quant outcomes) |
+| Theme 1 | Theme 2 | ... | (quant outcomes) |
 |--------|--------|-----|------------------|
-| S1: ✓ / kutipan | S1: — | | S1: β=... |
+| S1: ✓ / quote | S1: — | | S1: β=... |
 
-## Legenda
+## Legend
 
-- `Kual/Kuant/Mixed` : jenis data utama studi
-- Skor kualitas: 0 = lemah, 1 = sedang, 2 = baik, 3 = sangat baik — simpan alasan
-- `—` : data tidak tersedia / tidak berlaku
-- `(diringkas)` : disimpulkan dari inferensi
-- `UNVERIFIED` : keberadaan paper/DOI belum diverifikasi — cek manual
+- `QUAL/QUANT/Mixed` : main data type of the study
+- Quality score: 0 = weak, 1 = moderate, 2 = good, 3 = very good — keep the reason
+- `—` : data not available / not applicable
+- `(condensed)` : inferred from inference
+- `UNVERIFIED` : paper/DOI existence not yet verified — check manually

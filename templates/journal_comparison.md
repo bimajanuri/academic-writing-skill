@@ -1,48 +1,48 @@
-# Journal Comparison — Template Perbandingan Jurnal Kandidat
+# Journal Comparison — Candidate Journal Comparison Template
 
-Isi satu baris per jurnal. Sumber data harus diverifikasi langsung ke situs resmi jurnal dan database indeks (Scopus preview / DOI / Crossref), bukan hanya klaim jurnal. Detail metode di `references/journal-targeting.md`.
+Fill in one row per journal. Data sources must be verified directly against the journal's official website and index databases (Scopus preview / DOI / Crossref), not just the journal's own claims. Detailed method in `references/journal-targeting.md`.
 
-## Ringkasan Kandidat
+## Candidate Summary
 
-| Field | Jurnal A | Jurnal B |
+| Field | Journal A | Journal B |
 |-------|----------|----------|
-| Nama & penerbit | | |
-| Link resmi (laman jurnal) | | |
-| Scope statement (kutip 1 kalimat) | | |
-| Indeks & quartile saat ini | | |
-| Terindeks di (Scopus/WoS/DOAJ) | | |
-| Status quartile terverifikasi (tanggal cek) | | |
-| Publikasi relevan yang mirip paper ini (2–3 judul + tahun) | | |
-| Tipe artikel yang diterima | | |
-| Panjang/format (batas kata, seksi) | | |
-| Biaya APC / tanpa biaya | | |
-| Proses review (blind, durasi khas) | | |
-| Frekuensi terbit & tenggat | | |
+| Name & publisher | | |
+| Official link (journal website) | | |
+| Scope statement (quote 1 sentence) | | |
+| Current index & quartile | | |
+| Indexed in (Scopus/WoS/DOAJ) | | |
+| Quartile status verified (check date) | | |
+| Relevant publications similar to this paper (2–3 titles + years) | | |
+| Article types accepted | | |
+| Length/format (word limit, sections) | | |
+| APC cost / no cost | | |
+| Review process (blind, typical duration) | | |
+| Publication frequency & deadlines | | |
 
-## Cek Fit (5 Kriteria — §4 journal-targeting)
+## Fit Check (5 Criteria — §4 of journal-targeting)
 
-| Kriteria | A | B |
+| Criterion | A | B |
 |----------|----|----|
-| 1. Topik masuk scope | ✔/✘ | ✔/✘ |
-| 2. Metode/desain lazim di sana | | |
-| 3. Format & panjang sesuai | | |
-| 4. Sitasi dari jurnal ada di paper | | |
-| 5. Bentuk novelty cocok wacana jurnal | | |
+| 1. Topic falls within scope | ✔/✘ | ✔/✘ |
+| 2. Method/design common there | | |
+| 3. Format & length appropriate | | |
+| 4. Citations from the journal present in the paper | | |
+| 5. Form of novelty matches the journal's discourse | | |
 
-## Skor & Keputusan
+## Scoring & Decision
 
-| Dimensi | A (1–5) | B (1–5) |
+| Dimension | A (1–5) | B (1–5) |
 |---------|---------|---------|
-| Fit topik | | |
-| Fit metode | | |
-| Potensi acceptance | | |
-| Prestise/impact | | |
-| Ongkos (APC/waktu) | | |
+| Topic fit | | |
+| Method fit | | |
+| Acceptance potential | | |
+| Prestige/impact | | |
+| Cost (APC/time) | | |
 | **Total** | | |
 
-**Keputusan**: submit pertama ke `<Jurnal X>` karena <alasan singkat>. Cadangan: `<Jurnal Y>`.
+**Decision**: submit first to `<Journal X>` because <brief reason>. Backup: `<Journal Y>`.
 
-## Catatan Perubahan Status
+## Status Change Notes
 
-- [ ] Quartile & indeks dicek ulang saat akan submit (Tahap 6)
-- [ ] Ada risiko jurnal berubah (anak perusahaan predator, penghapusan indeks) → tanggal cek tercatat di atas
+- [ ] Quartile & index re-checked at the time of submission (Stage 6)
+- [ ] Risk of journal changes (predatory subsidiary, index removal) → check date recorded above

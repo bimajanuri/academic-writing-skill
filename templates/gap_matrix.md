@@ -1,10 +1,10 @@
 # Template — Gap Matrix
 
-Isi minimal **10–20 artikel utama** dari `literature_matrix.md`. Satu baris per paper. Tujuan: melihat pola berulang dan celah yang benar-benar substansial.
+Fill in at least **10–20 key articles** from `literature_matrix.md`. One row per paper. Purpose: to identify recurring patterns and genuinely substantial gaps.
 
-## Tabel Gap Matrix
+## Gap Matrix Table
 
-| No | Penulis & Tahun | Teori yang Digunakan | Variabel/Fokus Utama | Metode | Konteks/Sampel | Temuan Kunci | Jenis Gap yang Teridentifikasi |
+| No | Authors & Year | Theory Used | Main Variable/Focus | Method | Context/Sample | Key Findings | Type of Gap Identified |
 |----|-----------------|----------------------|----------------------|--------|----------------|--------------|--------------------------------|
 | 1  |                 |                      |                      |        |                |              |                                |
 | 2  |                 |                      |                      |        |                |              |                                |
@@ -13,24 +13,24 @@ Isi minimal **10–20 artikel utama** dari `literature_matrix.md`. Satu baris pe
 | 5  |                 |                      |                      |        |                |              |                                |
 | …  |                 |                      |                      |        |                |              |                                |
 
-> Jenis Gap: **Theoretical** / **Methodological** / **Contextual** / **Inconsistency** (lihat `references/research-gap-mapping.md` §2). Satu paper dapat menunjukkan lebih dari satu jenis gap — tuliskan yang paling relevan.
+> Gap types: **Theoretical** / **Methodological** / **Contextual** / **Inconsistency** (see `references/research-gap-mapping.md` §2). A single paper may exhibit more than one gap type — record the most relevant one.
 
-## Cara Menggunakan
+## How to Use
 
-1. Isi minimal 10–20 artikel utama.
-2. Kelompokkan berdasarkan pola teori, metode, dan hasil.
-3. Identifikasi jenis gap yang muncul berulang (theoretical/methodological/contextual/inconsistency).
-4. Pindahkan gap terkuat ke `gap_analysis.md` dengan status complete/partial/controversy + evidence + significance + feasibility.
-5. Uji dengan **Checklist Validasi Gap** (`references/research-gap-mapping.md` §4) sebelum diklaim di manuskrip.
+1. Fill in at least 10–20 key articles.
+2. Group them by patterns of theory, method, and results.
+3. Identify the gap types that recur (theoretical/methodological/contextual/inconsistency).
+4. Move the strongest gaps to `gap_analysis.md` with status (complete/partial/controversy) + evidence + significance + feasibility.
+5. Test against the **Gap Validation Checklist** (`references/research-gap-mapping.md` §4) before claiming the gap in the manuscript.
 
-## Ringkasan Pola (opsional)
+## Pattern Summary (optional)
 
-| Pola | Frekuensi | Implikasi |
+| Pattern | Frequency | Implication |
 |------|-----------|-----------|
-| Teori dominan | | |
-| Metode dominan | | |
-| Hasil konsisten | | |
-| Hasil kontradiktif | | |
-| Area jenuh | | |
-| Area berkembang | | |
-| Area belum dieksplorasi | | |
+| Dominant theory | | |
+| Dominant method | | |
+| Consistent results | | |
+| Contradictory results | | |
+| Saturated area | | |
+| Emerging area | | |
+| Unexplored area | | |

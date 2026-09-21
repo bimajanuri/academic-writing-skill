@@ -1,58 +1,58 @@
-# Template Sitasi — IEEE
+# Citation Template — IEEE
 
-Umum dipakai: Teknik, Komputer, Informatika. Sistem angka berurutan [1], [2], ... sesuai urutan kemunculan.
+Commonly used in: Engineering, Computer Science, Informatics. Sequential numbering system [1], [2], ... according to order of appearance.
 
 ## In-Text Citation
 
-| Situasi | Format | Contoh |
-|---------|--------|--------|
-| Standar | `[n]` | sebagai disebutkan dalam [3] |
-| Naratif | `penulis [n]` | Rahman [1] menunjukkan ... |
-| Multiple | `[1], [3]` atau `[1]–[3]` / `[1], [2], [5]` | hasil pada [4], [6] |
-| Situsasi dalam kalimat akhir | `...[5].` | |
+| Situation | Format | Example |
+|-----------|--------|---------|
+| Standard | `[n]` | as stated in [3] |
+| Narrative | `author [n]` | Rahman [1] shows ... |
+| Multiple | `[1], [3]` or `[1]–[3]` / `[1], [2], [5]` | results in [4], [6] |
+| Citation at the end of a sentence | `...[5].` | |
 
-- Nomor diberi secara sekuensial menurut kemunculan PERTAMA di teks.
+- Numbers are assigned sequentially according to FIRST appearance in the text.
 
-## Bibliography (Referensi)
+## Bibliography (References)
 
 ```
-[n] A. Penulis and A. B. Penulis, "Judul artikel," Jurnal, vol. 12, no. 3, pp. 210–225, 2023, doi: 10.xxxx/xxx.
-```
-
-### Contoh — Jurnal:
-```
-[1] A. Rahman and D. Sari, "Pengaruh media sosial terhadap prestasi akademik mahasiswa," Jurnal Psikologi Indonesia, vol. 12, no. 3, pp. 210–225, 2023, doi: 10.xxxx/xxx.
+[n] A. Author and A. B. Author, "Article title," Journal, vol. 12, no. 3, pp. 210–225, 2023, doi: 10.xxxx/xxx.
 ```
 
-### Buku:
+### Example — Journal:
 ```
-[2] W. Sarlito, Psikologi Remaja. Jakarta, Indonesia: Rajagrafindo Persada, 2008.
+[1] A. Rahman and D. Sari, "The influence of social media on students' academic performance," Indonesian Journal of Psychology, vol. 12, no. 3, pp. 210–225, 2023, doi: 10.xxxx/xxx.
 ```
 
-### Konferensi:
+### Book:
 ```
-[3] A. Rahman, "Judul paper," in Proc. IEEE Int. Conf. ... , City, Country, 2023, pp. xx–xx, doi: 10.xxxx/xxx.
+[2] W. Sarlito, Adolescent Psychology. Jakarta, Indonesia: Rajagrafindo Persada, 2008.
+```
+
+### Conference:
+```
+[3] A. Rahman, "Paper title," in Proc. IEEE Int. Conf. ... , City, Country, 2023, pp. xx–xx, doi: 10.xxxx/xxx.
 ```
 
 ### Web:
 ```
-[4] A. Rahman, "Judul halaman," Situs. Diunduh: [Tanggal]. [Online]. Available: https://url
+[4] A. Rahman, "Page title," Site. Accessed: [Date]. [Online]. Available: https://url
 ```
 
 ### Preprint:
 ```
-[5] A. Rahman, and D. Sari, "Judul," arXiv, 2023, doi: 10.xxxx/xxx.
+[5] A. Rahman, and D. Sari, "Title," arXiv, 2023, doi: 10.xxxx/xxx.
 ```
 
-## Aturan Tambahan
-- Penamaan: inisial di depan `A. Rahman`; di daftar pustaka 6 penulis maks, lebih → `A. Rahman et al.`
-- Garis bawah/italic pada judul JURNAL (bukan judul artikel).
-- `vol.`, `no.`, `pp.` (untuk rentang halaman); halaman tunggal diikutkan dengan `p.`.
-- kutipan dalam teks nomor [n]; superscript biasanya tidak dipakai di IEEE, hanya bracket.
+## Additional Rules
+- Naming: initials first `A. Rahman`; in the reference list max 6 authors, more → `A. Rahman et al.`
+- Italicize/underline the JOURNAL title (not the article title).
+- `vol.`, `no.`, `pp.` (for page ranges); a single page uses `p.`.
+- Citations in text use numbers in brackets [n]; superscript is usually not used in IEEE, only brackets.
 
 ## Checklist
-- [ ] Penomoran mengikuti urutan kemunculan
-- [ ] Inisial di depan (A. Rahman)
-- [ ] Italic untuk judul jurnal & volume
-- [ ] DOI unified `doi: 10.xxxx/xxx` / `https://doi.org/...` (ikut jurnal)
-- [ ] Tidak ada in-text di bib, dan setiap [n] punya pasangan
+- [ ] Numbering follows order of appearance
+- [ ] Initials first (A. Rahman)
+- [ ] Italic for journal title & volume
+- [ ] Unified DOI `doi: 10.xxxx/xxx` / `https://doi.org/...` (follow the journal)
+- [ ] No in-text citations in the bibliography, and every [n] has a pair

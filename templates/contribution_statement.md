@@ -1,64 +1,64 @@
-# Contribution Statement — Template Perencanaan Kontribusi Paper
+# Contribution Statement — Paper Contribution Planning Template
 
-Diproduksi saat Tahap 2 (Langkah 2.7), divalidasi ulang di Tahap 3 & 5. Satu file per paper.
+Produced during Stage 2 (Step 2.7), re-validated in Stages 3 & 5. One file per paper.
 
-## 1. Sumber Gap
+## 1. Gap Source
 
-| Field | Isi |
+| Field | Content |
 |-------|-----|
-| Gap terpilih (ID) | Gap Analysis #... |
-| Jenis gap | [ ] Teoretis [ ] Metodologis [ ] Kontekstual [ ] Inkonsistensi |
-| Evidence gap (min. 3 sitasi) | (Author, Tahun) × 3 |
-| Posisi pada Research Map | Kuadran ... (dari `research_map.md`) |
+| Selected gap (ID) | Gap Analysis #... |
+| Gap type | [ ] Theoretical [ ] Methodological [ ] Contextual [ ] Inconsistency |
+| Evidence for gap (min. 3 citations) | (Author, Year) × 3 |
+| Position on the Research Map | Quadrant ... (from `research_map.md`) |
 
-## 2. Bentuk Novelty
+## 2. Form of Novelty
 
-Pilih (boleh lebih dari satu, beri bobot pada yang utama):
-- [ ] Kombinasi baru (dua domain/teori/metode disatukan)
-- [ ] Konteks/objek baru
-- [ ] Metode/pendekatan baru
-- [ ] Temuan baru
+Select (may select more than one; weight the primary one):
+- [ ] New combination (two domains/theories/methods brought together)
+- [ ] New context/object
+- [ ] New method/approach
+- [ ] New finding
 - [ ] Reframing
 
 ## 3. Contribution Statement
 
-Kalimat backbone:
+Backbone sentence:
 
 ```
-Paper ini berkontribusi pada <domain> dengan menunjukkan bahwa <klaim utama>
-lewat <cara/bukti inti>.
+This paper contributes to <domain> by showing that <main claim>
+through <core approach/evidence>.
 ```
 
-Bullet kontribusi (numbered, claim-first, satu klaim per bullet):
+Contribution bullets (numbered, claim-first, one claim per bullet):
 
 ```
-1. <klaim kontribusi 1>
-2. <klaim kontribusi 2>
-3. <klaim kontribusi 3>
+1. <contribution claim 1>
+2. <contribution claim 2>
+3. <contribution claim 3>
 ```
 
-## 4. Peta Bukti (Claim → Evidence yang Direncanakan)
+## 4. Evidence Map (Claim → Planned Evidence)
 
-| # | Claim | Evidence direncanakan (section/file/tabel) | Status |
+| # | Claim | Planned evidence (section/file/table) | Status |
 |---|-------|---------------------------------------------|--------|
 | 1 |       |                                             | planned |
 | 2 |       |                                             | planned |
 | 3 |       |                                             | planned |
 
-## 5. Validasi
+## 5. Validation
 
-| Cek | Ya/Tidak | Catatan |
+| Check | Yes/No | Notes |
 |-----|----------|---------|
-| Berbeda dari existing (sumber di matrix) | | |
-| Semua bullet punya evidence | | |
-| Bukan incremental patching | | |
-| Label bentuk novelty jujur | | |
-| Tidak overclaim ("first" hanya jika literatur kosong) | | |
-| Sesuai scope & arena jurnal target (Modul B) | | |
+| Distinct from existing work (source in the matrix) | | |
+| Every bullet has evidence | | |
+| Not incremental patching | | |
+| Novelty-form label is honest | | |
+| No overclaim ("first" only if the literature is empty) | | |
+| Fits the scope & arena of the target journal (Module B) | | |
 
-Semua "Tidak" → perbaiki dulu sebelum kontribusi dipakai di outline/intro.
+Any "No" → fix before the contribution is used in the outline/introduction.
 
-## 6. Timestamp Validasi Ulang
+## 6. Re-validation Timestamp
 
-- [ ] Tahap 3 (setelah bukti nyata tersedia) — revisi bila perlu
-- [ ] Tahap 5 (red-team) — kontribusi didukung oleh draft final?
+- [ ] Stage 3 (once actual evidence is available) — revise if needed
+- [ ] Stage 5 (red-team) — is the contribution supported by the final draft?
