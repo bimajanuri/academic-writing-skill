@@ -1,7 +1,8 @@
 ---
 name: academic-writing
 description: |
-  Produces journal-quality, **English (US)** academic papers/articles via a Modular Multi-Method Engine. Research input may be provided in Bahasa Indonesia or English. Use this skill when the user asks to: write an academic paper or article, build a literature review, search and extract academic references, create a paper outline/framework, choose and run a literature synthesis framework/mode (Systematic Review/PRISMA, Scoping Review/PRISMA-ScR/PCC, Meta-Ethnography/eMERGe/Noblit & Hare/Reciprocal Translation, Narrative Review/SANRA, Integrative Review/Whittemore & Knafl, Critical Review), format citations (APA/IEEE/MLA/Turabian/Chicago/Vancouver/Harvard), revise and polish a draft, remove AI traces (humanizer), grammar-check English (US), run a plagiarism/similarity check before submission, or assess manuscript quality. Trigger phrases: "write paper", "help research", "find references", "litang", "Scopus journal", "gap analysis", "paper outline", "writing framework", "pick framework", "synthesis mode", "PCC", "PRISMA", "PRISMA-ScR", "scoping review", "meta-ethnography", "meta-synthesis", "eMERGe", "reciprocal translation", "narrative review", "SANRA", "integrative review", "critical review", "PICO", "CONSORT", "STROBE", "reporting checklist", "citation format", "revise draft", "polish", "anti AI", "grammar check", "plagiarism check", "similarity", "journal submission", "thesis", "dissertation", "systematic review". 6-stage pipeline: Explore → Plan → Write → Cite → Revise → Output, routed to the selected mode protocol & qualitative synthesis engines.
+  Write and revise English-US academic papers, including literature reviews, reference searches, outlines, synthesis-method selection, citation formatting, grammar, anti-AI revision, plagiarism checks, and manuscript quality evaluation. Supports systematic, scoping, narrative, integrative, critical, and meta-ethnographic reviews. Pipeline: Explore → Plan → Write → Cite → Revise → Validate → Output.
+compatibility: Agent Skills-compatible AI assistants
 ---
 
 # Academic Writing
@@ -13,7 +14,8 @@ This skill is a **Modular Multi-Method Engine**: an end-to-end pipeline that pro
 This pipeline adapts and combines the following open methodologies:
 - **Prof. Peng Sida's open research notes** — section-writing politics — via [Master-cai/Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills)
 - **SNL-UCSB paper-writing-skill** — 5-stage pipeline, dual audit style (mechanical + semantic), editing principles [SNL-UCSB/paper-writing-skill](https://github.com/SNL-UCSB/paper-writing-skill)
-- **Humanizer 25 patterns** — detecting & removing AI traces [blader/humanizer](https://github.com/blader/humanizer)
+- **Humanizer 26 patterns** — detecting & removing AI traces [blader/humanizer](https://github.com/blader/humanizer)
+- **Humanize Writing output protocols** — claim guardrails, evaluation rubrics, composable revision patterns, and LanguageTool review
 - **journal-adapt** — corpus adaptation from the target journal [WantongC/journal-adapt-writing-skill](https://github.com/WantongC/journal-adapt-writing-skill)
 - **Strategist quality gates** — 7-dimension reviewer assessment [lishix520/academic-paper-skills](https://github.com/lishix520/academic-paper-skills)
 - **Literature triage matrix** — structured metadata extraction per paper (17-skill catalog: literature review, research design) [WenyuChiou/ai-research-skills](https://github.com/WenyuChiou/ai-research-skills)
@@ -21,7 +23,7 @@ This pipeline adapts and combines the following open methodologies:
 
 Use the above as a framework; do not copy text from the target journal corpus verbatim.
 
-> **Mandatory invocation order**: after reading SKILL.md, you **MUST** load `core/system-prompt.md` (universal instructions), then `protocols/<mode>.md` (selected mode), then `engines/<engine>.md` (if assigned), then use `references/*`, `templates/*`, `checklists/*` as appropriate per stage.
+> **Mandatory invocation order**: after reading SKILL.md, you **MUST** load `core/system-prompt.md` (universal instructions), then `protocols/<mode>.md` (selected mode), then `engines/<engine>.md` (if assigned), then `protocols/patterns.md` and `protocols/output-guardrails.md` for revision/validation, then `protocols/evaluation.md` and `references/output-rubric.md` for substantial drafts/final output, then use `references/*`, `templates/*`, `checklists/*` as appropriate per stage.
 
 ---
 
@@ -81,15 +83,16 @@ Parameters confirmed *before* the search (not only before paper upload):
 
 ---
 
-## 6-STAGE PIPELINE (applies to all modes, linked to the protocol)
+## 7-STAGE PIPELINE (applies to all modes, linked to the protocol)
 
 ```text
 STAGE 1: EXPLORE        → Literature search + Quartile filter + [MODEl-specific matrix extraction] + Gap Analysis + Research Map
 STAGE 2: PLAN           → Research question (mode framework) + outline + word allocation + reviewer self-assessment
 STAGE 3: WRITE          → Section-by-section in the mandatory order + claim-evidence map (+ MODE SYNTHESIS ENGINE outputs)
 STAGE 4: CITE           → Citation formatting + bibliography + claim-citation validation + DOI check
-STAGE 5: REVISE         → Humanizer (25 patterns) + English-US grammar check + mechanical gate + semantic gate + red-team review
-STAGE 6: OUTPUT         → MD/LaTeX/DOCX conversion + final grammar + plagiarism check + [MODE AUTO-VALIDATION checklist] + pre-submission
+STAGE 5: REVISE         → Humanizer + composable revision patterns + English-US grammar + mechanical/semantic/red-team review
+STAGE 6: VALIDATE       → Output guardrails + quality rubric + claim/evidence/citation regression checks
+STAGE 7: OUTPUT         → MD/LaTeX/DOCX conversion + plagiarism check + [MODE AUTO-VALIDATION checklist] + pre-submission
 ```
 
 Each stage has a **quality gate** — cannot proceed before passing. Per-mode protocol details are in `protocols/<mode>.md`; general stage details are in `references/*`.
@@ -231,7 +234,7 @@ paper_outline.md, research_question.md, framework_selection.md, framework_compli
 3. Run `checklists/post_draft.md`.
 4. Map every major claim to evidence (claim-evidence map).
 
-### Style Principles — see `core/system-prompt.md` (Non-Negotiable; applies to all modes): ~21-word sentences, active voice, zero hedging, no filler adjectives, named over vague, headings as claims.
+### Style Principles — see `core/system-prompt.md` (Non-Negotiable; applies to all modes): ~21-word sentences, active voice, evidence-calibrated modality, no filler adjectives, named over vague, headings as claims.
 
 ### Claim-Evidence Map
 For qualitative modes, ensure the evidence chain: 1st order → 2nd order → 3rd order (meta-ethnography); cluster → evidence (scoping/narrative).
@@ -307,14 +310,20 @@ draft_revised.md, humanizer_report.md, grammar_report.md, red_team_findings.md, 
 
 ---
 
-## STAGE 6: OUTPUT & MODE AUTO-VALIDATION
+## STAGE 6: VALIDATE OUTPUT
+
+Load `protocols/output-guardrails.md`, `protocols/evaluation.md`, and `references/output-rubric.md`.
+
+Before formatting or displaying a manuscript, validate claim-evidence alignment, modality, citations, DOI metadata, quotations, literal data, terminology, English-US consistency, and no-fabrication status. Record `PASS`, `PASS_WITH_FLAGS`, or `FAIL`. Fabricated citations/data, unsupported major claims, lost citations, altered quotations, and meaning-changing grammar fixes are hard failures.
+
+## STAGE 7: OUTPUT & MODE AUTO-VALIDATION
 
 > Load `references/output-formatter.md`; `checklists/<mode>.md`; `templates/reporting_checklist.md`.
 
-### Steps 6.1–6.2 — Formatting & Conversion
+### Steps 7.1–7.2 — Formatting & Conversion
 MD (default) / LaTeX / DOCX (pandoc).
 
-### Step 6.3 — MODE Auto-Validation Checklist (mandatory, not optional)
+### Step 7.3 — MODE Auto-Validation Checklist (mandatory, not optional)
 Run the final checklist for the selected mode via `templates/reporting_checklist.md`, save to `reporting_checklist_result.md`:
 
 | Mode | Final checklist |
@@ -328,18 +337,18 @@ Run the final checklist for the selected mode via `templates/reporting_checklist
 
 Every "No"/"Incomplete" item MUST have a remediation plan before being considered complete.
 
-### Step 6.3b — Pre-Submission Mechanical & Other Checks
+### Step 7.3b — Pre-Submission Mechanical & Other Checks
 Word count, broken references, terminology consistency, figure/table labels, final grammar, plagiarism (`checklists/plagiarism_check.md` → `plagiarism_report.md`), selected reporting checklist.
 
-### Step 6.4 — Final Journal Fit & Cover Letter (Module B)
+### Step 7.4 — Final Journal Fit & Cover Letter (Module B)
 Fit re-check, re-verify journal (quartile today, anti-predator), self-assessment ≥ 28/35, cover letter (`templates/cover_letter.md`), supplementary documents (ORCID, data availability).
 
-### Stage 6 Outputs
+### Stage 7 Outputs
 ```
 <paper_title>.md / .tex / .docx, reporting_checklist_result.md (mode auto-validation), plagiarism_report.md, grammar_report.md, pre_submission_checklist.md, journal_comparison.md, cover_letter.md, revision_summary.md
 ```
 
-### Quality Gate 6
+### Quality Gate 7
 - [ ] All gates 1–5 satisfied
 - [ ] **Mode auto-validation checklist clean (0 critical items)** + result saved
 - [ ] Final grammar & plagiarism clean
@@ -380,13 +389,13 @@ Users do not always need the full pipeline. Handle the request directly:
 | "Format these citations" | Stage 4 only |
 | "Polish/revise this draft" | Stage 5 only |
 | "Grammar-check this draft" | Stage 5 Layer 2 (English-US) |
-| "Check plagiarism/similarity" | Stage 6 (plagiarism check) |
-| "Pick which journal for this paper" | Stage 2.2 (Module B) → `journal_comparison.md`; finalized in Stage 6.4 |
-| "Write a cover letter" | Stage 6.4 → `templates/cover_letter.md` |
+| "Check plagiarism/similarity" | Stage 7 (plagiarism check) |
+| "Pick which journal for this paper" | Stage 2.2 (Module B) → `journal_comparison.md`; finalized in Stage 7.4 |
+| "Write a cover letter" | Stage 7.4 → `templates/cover_letter.md` |
 | "Respond to reviewer comments" | Post-submission (Module C) |
-| "Convert to LaTeX/docx" | Stage 6 only |
+| "Convert to LaTeX/docx" | Stage 7 only |
 | "Review this draft" | Red-team protocol (Stage 5 Layer 5) |
-| "Plan a paper from scratch" | Full pipeline Stages 1–6 |
+| "Plan a paper from scratch" | Full pipeline Stages 1–7 |
 
 Ask for the user's confirmation before running the full pipeline if the context is unclear.
 
@@ -434,10 +443,14 @@ Ask for the user's confirmation before running the full pipeline if the context 
 | [references/outline-builder.md](references/outline-builder.md) | Outline, word allocation, reviewer assessment |
 | [references/section-writing.md](references/section-writing.md) | Per-section writing guide |
 | [references/citation-formatter.md](references/citation-formatter.md) | APA/IEEE/MLA/Turabian/Chicago/Vancouver/Harvard formatting |
-| [references/revision-guide.md](references/revision-guide.md) | Humanizer 25 patterns + revision workflow |
+| [references/revision-guide.md](references/revision-guide.md) | Humanizer 26 patterns + revision workflow |
 | [references/grammar-check.md](references/grammar-check.md) | English-US grammar & mechanics (output) + input ID/EN support |
 | [references/plagiarism-check.md](references/plagiarism-check.md) | Plagiarism detection & citation integrity (EN primary) |
 | [references/quality-gates.md](references/quality-gates.md) | Mechanical + semantic + red-team gates |
+| [protocols/output-guardrails.md](protocols/output-guardrails.md) | Claim, citation, quotation, data, modality, and no-fabrication validators |
+| [protocols/evaluation.md](protocols/evaluation.md) | Output rubric, pairwise comparison, and regression checks |
+| [protocols/patterns.md](protocols/patterns.md) | Composable academic revision patterns |
+| [references/output-rubric.md](references/output-rubric.md) | 0–4 academic manuscript quality rubric |
 | [references/output-formatter.md](references/output-formatter.md) | MD/LaTeX/DOCX conversion |
 
 ### Templates
@@ -494,7 +507,4 @@ Ask for the user's confirmation before running the full pipeline if the context 
 
 ## Platform Note
 
-This skill uses the Agent Skills format (SKILL.md), portable to:
-- **OpenCode**: `~/.config/opencode/skills/academic-writing/`
-- **Claude Code**: `~/.claude/skills/academic-writing/`
-- Cross-platform (Codex, Cursor, Gemini, etc.): copy the `academic-writing/` directory into the respective skills folder.
+This skill uses the portable Agent Skills format. Installation, prerequisites, activation, and compatibility are documented in `README.md`; keep the complete directory because `SKILL.md` references supporting files.

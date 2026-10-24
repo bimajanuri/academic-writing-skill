@@ -2,12 +2,12 @@
 
 **End-to-end academic writing skill for AI coding agents** (Claude Code, OpenCode, and other Agent Skills–based agents). Designed to produce high-quality academic output — from literature search to final format conversion — with **paper output written in English (US) academic style**, while accepting research input in **Bahasa Indonesia or English**.
 
-This skill is a **Modular Multi-Method Engine**: a 6-stage pipeline with a quality gate at every stage (human-in-the-loop), powered by a **Method Selection Router** that activates qualitative and quantitative synthesis protocols based on the task at hand.
+This skill is a **Modular Multi-Method Engine**: a 7-stage pipeline with a quality gate at every stage (human-in-the-loop), powered by a **Method Selection Router** that activates qualitative and quantitative synthesis protocols based on the task at hand.
 
 ## Key Features
 
 - **Method Selection Router — 6 synthesis modes**: SLR (PRISMA 2020), Scoping Review (PRISMA-ScR/PCC/JBI), Meta-Ethnography (eMERGe + Noblit & Hare), Narrative Review (SANRA), Integrative Review (Whittemore & Knafl), Critical Review (appraisal lenses)
-- **6-stage pipeline with quality gates**: `Explore → Plan → Write → Cite → Revise → Output`
+- **7-stage pipeline with quality gates**: `Explore → Plan → Write → Cite → Revise → Validate → Output`
 - **Dedicated qualitative synthesis engines**:
   - **Reciprocal Translation Engine** — 1st/2nd/3rd order constructs, reciprocal vs refutational vs line-of-argument (meta-ethnography)
   - **Conceptual Mapping Engine** — concept taxonomy, geographic/timeline/methodological distribution, research gaps (scoping)
@@ -23,7 +23,10 @@ This skill is a **Modular Multi-Method Engine**: a 6-stage pipeline with a quali
 - **Optional research frameworks** — RQ frameworks, procedural frameworks, reporting & screening checklists
 - **Outline builder** + word allocation + **7-dimension reviewer self-assessment**
 - **7 citation styles**: APA 7, MLA 9, Turabian, Vancouver, Harvard, Chicago, + IEEE
-- **Humanizer (25 AI patterns)**, **grammar check (English-US)**, **plagiarism check (English-US)**, **layered quality control** (mechanical/semantic/red-team gates)
+- **Humanizer (26 AI patterns)**, **grammar check (English-US)**, **plagiarism check (English-US)**, **layered quality control** (mechanical/semantic/red-team gates)
+- **Output guardrails** for claims, evidence, citations, DOI metadata, quotations, modality, literals, terminology, and no-fabrication
+- **Evaluation and regression testing** with an 8-dimension rubric, pairwise comparison, and hard-failure precedence
+- **Composable revision patterns** and optional LanguageTool review
 - **Output conversion**: Markdown, LaTeX, DOCX (via pandoc)
 - **Anti-hallucination**: never fabricate references/data; verify DOI & quartile
 
@@ -43,12 +46,37 @@ STAGE 1: EXPLORE      → Search (keywords derived from mode framework) + Quarti
 STAGE 2: PLAN         → RQ (mode framework) + outline + reviewer self-assessment (7 dims) + contribution framing + journal targeting
 STAGE 3: WRITE        → Section-by-section + claim-evidence map + outputs of mode SYNTHESIS ENGINES (Reciprocal Translation / Conceptual Mapping / Academic Debate)
 STAGE 4: CITE         → Citation formatting + bibliography + claim-citation validation + DOI check
-STAGE 5: REVISE       → Humanizer (25 patterns) + grammar (English-US) + mechanical gate + semantic gate + red-team
-STAGE 6: OUTPUT       → MD/LaTeX/DOCX conversion + AUTO-VALIDATION checklist per mode (PRISMA 2020 / PRISMA-ScR / eMERGe / SANRA / W&K / Critical) + plagiarism + final fit & cover letter
+STAGE 5: REVISE       → Humanizer + modular patterns + grammar (English-US) + mechanical/semantic/red-team gates
+STAGE 6: VALIDATE     → Output guardrails + evaluation rubric + claim/evidence/citation regression checks
+STAGE 7: OUTPUT       → MD/LaTeX/DOCX conversion + AUTO-VALIDATION checklist per mode + plagiarism + final fit & cover letter
 POST-SUBMISSION       → Reviewer response (point-by-point) + rejection decision path + re-target journal
 ```
 
 Each stage **must not proceed until its quality gate is passed** and the user confirms. **GATE 0** must be passed before literature search — search results are calibrated to the selected mode.
+
+## Compatibility and prerequisites
+
+The skill is portable when the host supports folder-based Agent Skills discovery and reads `SKILL.md` instructions. It has no mandatory runtime dependency, API key, database, or OS-specific requirement. The complete `academic-writing/` directory is required.
+
+| Host | Project location | Global location | Activation/verification |
+|---|---|---|---|
+| Claude Code | `.claude/skills/academic-writing/` | `~/.claude/skills/academic-writing/` | Ask for a literature review; use `/skills` if available |
+| OpenCode | `.opencode/skills/academic-writing/` or `.agents/skills/academic-writing/` | `~/.config/opencode/skills/academic-writing/` | Ensure the `skill` tool is enabled; ask for `academic-writing` |
+| Gemini CLI | `.gemini/skills/academic-writing/` or `.agents/skills/academic-writing/` | `~/.gemini/skills/academic-writing/` | Run `/skills`, then request a review |
+| GitHub Copilot CLI | `.github/skills/academic-writing/` or `.agents/skills/academic-writing/` | `~/.copilot/skills/academic-writing/` | Run `/skills reload`, then `/skills info academic-writing` |
+| Antigravity | `.agents/skills/academic-writing/` | `~/.gemini/config/skills/academic-writing/` | Start a matching academic-writing task |
+| ChatGPT Skills | Upload the complete directory/ZIP where Skills are enabled | Product-managed | Upload/import the skill and invoke it by name |
+| Codex, Cursor, Windsurf, other compatible hosts | Host-specific skills directory or `.agents/skills/academic-writing/` | Host-specific | Reload/discover skills, then invoke `academic-writing` |
+
+ChatGPT Skills availability, upload permissions, and automatic activation depend on the account, workspace, and product surface. If a host does not support folder-based skills, paste the relevant `SKILL.md` instructions or use the host's documented import mechanism; do not copy only `SKILL.md` when referenced modules are needed.
+
+### Optional prerequisites
+
+- **Pandoc** — Markdown → DOCX/LaTeX conversion (`brew install pandoc`, `apt install pandoc`, or the platform equivalent).
+- **Zotero** — bibliography management and export.
+- **LanguageTool** — optional mechanical review; AI suggestions must not change claims, terminology, or citations.
+- **Web access/API credentials** — optional, for live OpenAlex, Crossref, PubMed, DOAJ, Semantic Scholar, or publisher verification.
+- **Python evaluation tools** — optional; the built-in rubric works without Ragas or DeepEval.
 
 ## Installation
 
@@ -76,9 +104,58 @@ cp -R . ~/.config/opencode/skills/academic-writing
 
 > Recommendation: keep this repo canonical at `~/.agents/skills/academic-writing`, then **symlink** it into each client's skills folder. Edit once at the source.
 
-### Other platforms (Codex, Cursor, Gemini, etc.)
+### Gemini CLI
 
-Copy the `academic-writing/` directory into the skills folder for that platform (Agent Skills standard: `SKILL.md` as the entry point).
+```bash
+mkdir -p ~/.gemini/skills
+cp -R /path/to/academic-writing ~/.gemini/skills/academic-writing
+# In Gemini CLI:
+/skills
+```
+
+### GitHub Copilot CLI
+
+```bash
+mkdir -p ~/.copilot/skills
+cp -R /path/to/academic-writing ~/.copilot/skills/academic-writing
+# In Copilot CLI:
+/skills reload
+/skills info academic-writing
+```
+
+### Antigravity
+
+```bash
+mkdir -p ~/.gemini/config/skills
+cp -R /path/to/academic-writing ~/.gemini/config/skills/academic-writing
+```
+
+Project-local installation for any host:
+
+```bash
+mkdir -p .agents/skills
+cp -R /path/to/academic-writing .agents/skills/academic-writing
+```
+
+### ChatGPT Skills
+
+When Skills are enabled for the account or workspace, upload `academic-writing/` as a directory or ZIP through the Skills interface. Keep all subdirectories (`core`, `protocols`, `engines`, `references`, `templates`, and `checklists`) in the upload. If Skills are unavailable, use the platform's custom-instructions/project-files mechanism and provide `SKILL.md` plus the referenced modules.
+
+### Other platforms (Codex, Cursor, Windsurf, etc.)
+
+Copy the complete directory into the platform's documented skills folder. If it supports `.agents/skills/`, use the project-local installation above. Reload the host and verify that `SKILL.md` is discovered.
+
+## Activation and verification
+
+Use a request that clearly selects a method:
+
+```text
+Use the academic-writing skill. First lock the synthesis mode and reporting standard,
+then build the claim-evidence map. Do not invent citations, DOI metadata, data, or findings.
+Before delivery, run output guardrails and report PASS, PASS_WITH_FLAGS, or FAIL.
+```
+
+Verify that the response locks GATE 0 before searching, preserves `[DATA]`/`[UNVERIFIED]` placeholders, and reports guardrail status. If the host does not discover the skill, reload its skills, check the path, and confirm the complete directory was installed.
 
 ## Usage
 
@@ -124,8 +201,8 @@ The skill activates automatically whenever the AI receives an academic-writing r
 | "Format these citations" | Stage 4 |
 | "Polish/rewrite this draft" | Stage 5 (humanizer) |
 | "Grammar-check this draft" | Stage 5 (grammar check English-US) |
-| "Check plagiarism" | Stage 6 (plagiarism check) |
-| "Convert to LaTeX/docx" | Stage 6 |
+| "Check plagiarism" | Stage 7 (plagiarism check) |
+| "Convert to LaTeX/docx" | Stage 7 |
 | "Review this draft" | Red-team protocol |
 | "Plan a paper from scratch" | Full pipeline |
 
@@ -163,10 +240,13 @@ academic-writing/
 │   ├── outline-builder.md            #   Outline, word allocation, reviewer
 │   ├── section-writing.md            #   Section-writing guide
 │   ├── citation-formatter.md         #   7 citation styles
-│   ├── revision-guide.md             #   Humanizer — 25 AI patterns
+│   ├── revision-guide.md             #   Humanizer — 26 AI patterns
 │   ├── grammar-check.md              #   English-US grammar (output)
 │   ├── plagiarism-check.md           #   Plagiarism detection (English-US)
 │   ├── quality-gates.md              #   Mechanical + semantic + red-team gates
+│   ├── output-guardrails.md          #   Claim, citation, data, quote, and no-fabrication validators
+│   ├── evaluation.md                 #   Rubric, pairwise comparison, and regression protocol
+│   ├── patterns.md                   #   Composable academic revision patterns
 │   └── output-formatter.md           #   MD/LaTeX/DOCX conversion
 ├── templates/                        # Output contracts
 │   ├── paper_outline.md
@@ -207,6 +287,7 @@ academic-writing/
 
 - **pandoc** — for Markdown → DOCX/LaTeX conversion (`brew install pandoc`)
 - **Zotero** (optional) — export bibliography from DOI to target style
+- **LanguageTool** (optional) — mechanical grammar review; never apply suggestions that change meaning
 
 ## Core Rules (enforced in the skill)
 
@@ -217,6 +298,8 @@ academic-writing/
 5. Human-in-the-loop at every quality gate — AI proposes, humans decide
 6. All artifacts saved as Markdown files (literature_matrix.md, gap_analysis.md, grammar_report.md, plagiarism_report.md, etc.)
 7. Synthesis mode MUST be locked before data extraction (Method Selection Router) — never mix extraction criteria across modes
+8. Output guardrails MUST run before delivery; report `PASS`, `PASS_WITH_FLAGS`, or `FAIL`
+9. A guardrail failure overrides aggregate quality scores
 
 ## Methodology (Attribution)
 

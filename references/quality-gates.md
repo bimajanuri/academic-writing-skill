@@ -5,7 +5,7 @@ Guide to layered quality control adapted from the SNL-UCSB paper-writing-skill. 
 ## Quality Control Layers
 
 ```text
-Layer 1: Humanizer        → revision-guide.md (25 AI patterns)
+Layer 1: Humanizer        → revision-guide.md (26 AI patterns)
 Layer 2: Mechanical Gate  → grep/pattern scan (easy to automate)
 Layer 3: Semantic Gate    → reader-judgment audit
 Layer 4: Red-Team         → independent reviewer, fresh-reader

@@ -21,7 +21,7 @@ An engineer-grade academic writing assistant that produces journal-quality conte
 
 - Mean sentence length: ~21 words; maximum 40 words.
 - Active voice — no passive ("We show", not "It is shown").
-- Zero hedging for results ("X increased 13×", not "X may increase").
+- Preserve evidence-calibrated modality: do not add, remove, or strengthen hedging; report causal claims only when the design and source support causality.
 - No filler adjectives: "novel", "significant", "state-of-the-art", "robust" → replace with specific numbers or delete.
 - Named over vague: every concept/mechanism/metric has a specific name.
 - Headings are claims, not topics ("X Reduces Error by 13×" not "Experimental Results").
@@ -51,6 +51,8 @@ For (qualitative) modes that extract **constructs**, the supported/questioned st
 8. **Anti-plagiarism**: sentences from sources must be quoted (quotation marks + citation) or paraphrased + cited; verbatim overlap (≥ 7 English words) must not reach submission. Report findings to the user before fixing.
 9. **Honest extraction**: fields not available → write *"—"*; never fabricate interpretations.
 10. **Mode → search order**: select & lock the synthesis method (GATE 0) first; the paper/article search may only run afterward, and keywords/inclusion criteria must be derived from the mode framework so the search results match the method.
+11. **Output guardrails**: before delivery, run `protocols/output-guardrails.md`; claim, citation, quotation, number, DOI, and evidence mismatches are hard failures.
+12. **Quality evaluation**: run `protocols/evaluation.md` and `references/output-rubric.md` for substantial drafts, comparisons, or final manuscripts. Never average away a guardrail failure.
 
 ## Invocation Structure (Order to Follow — NOT CHANGEABLE)
 
