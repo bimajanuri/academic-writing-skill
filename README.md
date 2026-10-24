@@ -12,7 +12,8 @@ This skill is a **Modular Multi-Method Engine**: a 7-stage pipeline with a quali
   - **Reciprocal Translation Engine** — 1st/2nd/3rd order constructs, reciprocal vs refutational vs line-of-argument (meta-ethnography)
   - **Conceptual Mapping Engine** — concept taxonomy, geographic/timeline/methodological distribution, research gaps (scoping)
   - **Academic Debate Engine** — pro/con clusters + timeline of idea development (narrative)
-- **Per-mode extraction matrix**: 7-field (SLR), PCC (scoping), 1st/2nd constructs (meta-ethnography), argument positions (narrative), qual+quant data (integrative), epistemological/methodological/bias lenses (critical)
+- **Shared Paper Review extraction contract**: Title & Authors, Journal, Year, Purpose, Method, Key Findings, Limitations, Gaps, Theory, Novelty, Future Studies, DOI & Publisher, and provenance; each mode adds its own fields
+- **Per-mode extraction matrix**: SLR, PCC (scoping), 1st/2nd constructs (meta-ethnography), argument positions (narrative), qual+quant data (integrative), epistemological/methodological/bias lenses (critical)
 - **Literature search** via OpenAlex / Semantic Scholar / Crossref / DOAJ / PubMed / arXiv (all free)
 - **Scopus Quartile filter** (Q1–Q4)
 - **Gap Analysis (Gap Matrix)** — 4 gap types + anti pseudo-gap + Research Positioning Map + gap-to-contribution conversion
@@ -25,6 +26,7 @@ This skill is a **Modular Multi-Method Engine**: a 7-stage pipeline with a quali
 - **7 citation styles**: APA 7, MLA 9, Turabian, Vancouver, Harvard, Chicago, + IEEE
 - **Humanizer (26 AI patterns)**, **grammar check (English-US)**, **plagiarism check (English-US)**, **layered quality control** (mechanical/semantic/red-team gates)
 - **Output guardrails** for claims, evidence, citations, DOI metadata, quotations, modality, literals, terminology, and no-fabrication
+- **Paper Review–aligned exploration** with Search/Folder/Hybrid acquisition, `papers.json`, provenance markers, deduplication, and DOI verification
 - **Evaluation and regression testing** with an 8-dimension rubric, pairwise comparison, and hard-failure precedence
 - **Composable revision patterns** and optional LanguageTool review
 - **Output conversion**: Markdown, LaTeX, DOCX (via pandoc)
@@ -42,7 +44,7 @@ This skill is a **Modular Multi-Method Engine**: a 7-stage pipeline with a quali
 
 ```text
 GATE 0 (Method Selection) → Lock synthesis mode + reporting standard + RQ framework BEFORE searching
-STAGE 1: EXPLORE      → Search (keywords derived from mode framework) + Quartile filter + matrix per MODE + Gap Matrix + Research Map
+STAGE 1: EXPLORE      → Search/Folder/Hybrid acquisition + dedup/DOI verification + papers.json + provenance matrix per MODE + Quartile filter + Gap Matrix + Research Map
 STAGE 2: PLAN         → RQ (mode framework) + outline + reviewer self-assessment (7 dims) + contribution framing + journal targeting
 STAGE 3: WRITE        → Section-by-section + claim-evidence map + outputs of mode SYNTHESIS ENGINES (Reciprocal Translation / Conceptual Mapping / Academic Debate)
 STAGE 4: CITE         → Citation formatting + bibliography + claim-citation validation + DOI check
@@ -189,7 +191,7 @@ The skill activates automatically whenever the AI receives an academic-writing r
 
 | Request | What gets done |
 |-----------|-----------------|
-| "Search references on X" | Stage 1 → matrix per mode (default 7-field) |
+| "Search references on X" | Stage 1 → Search/Folder/Hybrid acquisition → papers.json → matrix per mode |
 | "Pick a synthesis mode / do a scoping review" | Router + `protocols/scoping-review.md` + Conceptual Mapping |
 | "Run a meta-ethnography on these papers" | Router + `protocols/meta-ethnography.md` + Reciprocal Translation |
 | "Write a narrative review of the X debate" | Router + `protocols/narrative-review.md` + Academic Debate |
@@ -226,7 +228,8 @@ academic-writing/
 │   └── academic-debate.md            #   Narrative: pro/con + timeline
 ├── references/                       # Detailed stage guides + per-mode extraction modules
 │   ├── literature-search.md          #   Search + Scopus Quartile filter
-│   ├── literature-matrix.md          #   7-field matrix (SLR)
+│   ├── explore-data-contract.md      #   Search/Folder/Hybrid + papers.json + provenance contract
+│   ├── literature-matrix.md          #   Shared Paper Review fields + SLR-specific fields
 │   ├── extraction-meta-ethnography.md#   1st/2nd order constructs
 │   ├── extraction-scoping.md         #   PCC mapping
 │   ├── extraction-critical.md        #   Appraisal lenses

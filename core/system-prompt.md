@@ -62,11 +62,12 @@ For (qualitative) modes that extract **constructs**, the supported/questioned st
 3. GATE 0 (Method Selection) → mode + reporting standard + RQ framework locked,
    recorded into framework_selection.md BEFORE any search
 4. protocols/<mode>.md    → protocol module for the selected mode (SLR / Scoping / Meta-Ethnography / Narrative / Integrative / Critical)
-5. Then derive the search strategy from the mode framework → THEN literature search
-6. engines/<engine>.md    → the synthesis engine named by the protocol
-7. references/*.md        → stage guides (search, matrix, gap, citation, etc.)
-8. templates/*.md         → output contracts
-9. checklists/*.md        → final mode auto-validation (PRISMA-ScR / eMERGe / SANRA / etc.)
+5. references/explore-data-contract.md → shared Search/Folder/Hybrid, papers.json, provenance, deduplication, and verification contract
+6. Then derive the search strategy from the mode framework → THEN literature acquisition
+7. engines/<engine>.md    → the synthesis engine named by the protocol
+8. references/*.md        → stage guides (search, matrix, gap, citation, etc.)
+9. templates/*.md         → output contracts
+10. checklists/*.md       → final mode auto-validation (PRISMA-ScR / eMERGe / SANRA / etc.)
 ```
 
 **Absolute rule**: the paper/article search **may be done ONLY after the analysis mode & reporting standard are locked (GATE 0)**. The order `mode → search strategy → search → extraction` must not be swapped; search results must be calibrated to match the selected method (e.g. meta-ethnography → interpretive qualitative studies; scoping → broad mapping; integrative → qual + quant). Without a locked mode, ask the user — do not guess.

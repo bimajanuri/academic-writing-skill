@@ -103,6 +103,7 @@ Each stage has a **quality gate** — cannot proceed before passing. Per-mode pr
 
 > Load `protocols/<mode>.md` for mode-specific extraction criteria.
 > Load (per mode) `references/extraction-*.md` for the mode-specific extraction matrix.
+> Load `references/explore-data-contract.md` for the shared acquisition, provenance, and master-data contract.
 > Search details: `references/literature-search.md`; gap mapping: `references/research-gap-mapping.md`.
 
 ### Step 1.1 — Method Selection + Initialization (MANDATORY first)
@@ -111,34 +112,46 @@ Each stage has a **quality gate** — cannot proceed before passing. Per-mode pr
 3. Save the contract to `framework_selection.md`.
 4. **Only after this** execute Step 1.2.
 
-### Step 1.2 — Mode-Calibrated Literature Search (after GATE 0 passes)
-1. **Derive keywords from the mode RQ framework elements** — not a generic query:
+### Step 1.2 — Mode-Calibrated Acquisition (after GATE 0 passes)
+1. **Choose the input mode**: Search, Folder, or Hybrid. Search uses online sources; Folder reads local PDF/LaTeX files; Hybrid merges both and deduplicates.
+2. **Derive keywords from the mode RQ framework elements** — not a generic query:
    - **SLR**: P/I/C/O(S) — PICO/PICOS.
    - **Scoping**: P, C, C — Population, Concept, Context (PCC).
    - **Meta-Ethnography**: phenomenon of interest, setting, experience (PICo/SPIDER).
    - **Narrative**: main topic + debate territory.
    - **Integrative**: combination of qual & quant on the concept.
    - **Critical**: besides the topic, include appraisal/critique terms when relevant.
-2. **Calibrate the search target to the mode** (results must fit the method):
+3. **Calibrate the search target to the mode** (results must fit the method):
    - Scoping → target papers that map concepts/contexts/methodologies broadly (conceptual relevance ≥ 7/10), volume may be larger.
    - Meta-Ethnography → target **interpretive qualitative studies** (data/construct rich), NOT quantitative surveys/experiments.
    - Narrative → target position/claim/debate papers, conceptual synthesis.
    - Integrative → target qual + quant studies on the same issue.
    - Critical → target papers that can be appraised (clear method & assumptions).
-3. Search sources: OpenAlex API (free, try first), Semantic Scholar, Crossref (DOI verification), DOAJ, PubMed E-utilities (biomedical), arXiv (optional preprints).
-4. Apply the Scopus Quartile filter when requested (verify via scimagojr.com); if unfiltered, quartile tagging is mandatory.
-5. For systematic review/scoping: run 2 independent reviewers screening, dedup, record counts per PRISMA flow phase.
-6. Target volume: 15–40 relevant papers (relevance ≥ 7/10); scoping may be broader.
+4. Search sources: OpenAlex API (free, try first), Semantic Scholar, Crossref (DOI verification), DOAJ, PubMed E-utilities (biomedical), arXiv (optional preprints), and web tools.
+5. For Search/Hybrid, collect approximately 1.5× the target as candidates, score title/abstract relevance from 0–10, and retain candidates scoring at least 7/10 unless the mode protocol specifies otherwise.
+6. For Folder/Hybrid, recursively read `.pdf` and `.tex` files; prefer local full text over search metadata.
+7. Deduplicate by DOI, then normalized title. Record duplicate decisions and preserve the most complete source.
+8. Verify DOI, title, authors, year, journal, publisher, URL, and document type against Crossref, the publisher, or the local file. Mark unresolved records `UNVERIFIED`.
+9. Apply the Scopus Quartile filter when requested; if unfiltered, quartile tagging remains mandatory.
+10. For systematic review/scoping: run 2 independent reviewers screening, dedup, and record counts per PRISMA flow phase.
+11. Target volume: 15–40 relevant papers (relevance ≥ 7/10); scoping may be broader.
 
-### Step 1.3 — MODE-specific Extraction Matrix
-- **SLR**: standard 7-field — `references/literature-matrix.md` + `templates/literature_matrix_template.md`.
+### Step 1.3 — Shared Provenance + MODE-specific Extraction Matrix
+- Build `papers.json` as the master acquisition and extraction dataset before rendering Markdown.
+- Preserve bibliographic metadata separately from extracted fields; missing metadata fields remain empty in JSON and render as `—`.
+- Mark every factual extraction sentence with `[AB]` or a section/paragraph marker such as `[M-2]`, `[R-1]`, or `[F-1]`.
+- Search-only records may use `[AB]` but must not claim full-text methods, results, limitations, or future work.
+- Use the Paper Review default fields—Purpose, Method, Key Findings, Limitations, Gaps, Theory Used, Novelty/Contribution, and Future Studies—then add mode-specific fields without deleting shared fields.
+- **SLR**: shared Paper Review fields plus SLR-specific extraction — `references/literature-matrix.md` + `templates/literature_matrix_template.md`.
 - **Scoping**: PCC mapping — `references/extraction-scoping.md` + `templates/extraction_scoping.md`.
 - **Meta-Ethnography**: 1st/2nd order constructs SEPARATED — `references/extraction-meta-ethnography.md` + `templates/extraction_meta_ethnography.md`.
 - **Narrative**: argument positions — `references/extraction-narrative.md` + `templates/extraction_narrative.md`.
 - **Integrative**: QUAL & QUANT data separated — `references/extraction-integrative.md` + `templates/extraction_integrative.md`.
 - **Critical**: appraisal lenses (epistemological/methodological/bias) — `references/extraction-critical.md` + `templates/extraction_critical.md`.
 
-If a field is empty → write *"—"* (do not fabricate).
+If a field is empty → write *"—"* (do not fabricate). For substantial studies, render the same
+master data to `literature_matrix.md`; optional CSV/XLSX/BibTeX/XML/RIS exports must be generated
+from `papers.json`, not retyped from the Markdown table.
 
 ### Step 1.4 — Gap Analysis (Gap Matrix)
 Use `references/research-gap-mapping.md` + `templates/gap_matrix.md`:
@@ -154,6 +167,8 @@ Create `research_map.md` (4 quadrants) + connect to Module B (`references/journa
 
 ### Stage 1 Outputs
 ```
+papers.json                 — master metadata + extraction dataset
+candidate_papers.md         — candidates, relevance, quartile, verification, and dedup status
 literature_matrix.md        — matrix per MODE (7-field / PCC / constructs / positions / mixed / appraisal)
 gap_matrix.md               — gap matrix
 gap_analysis.md             — gap analysis + evidence
@@ -164,6 +179,10 @@ framework_selection.md      — mode + framework contract
 ### Quality Gate 1
 - [ ] **GATE 0 passed BEFORE search**: mode + reporting standard + RQ framework locked & recorded in `framework_selection.md`
 - [ ] Search strategy derived from the mode framework (not a generic query)
+- [ ] Input mode recorded (Search / Folder / Hybrid)
+- [ ] Candidate pool, relevance threshold, deduplication, and source verification recorded
+- [ ] Every factual extraction has provenance; search-only fields do not overclaim full text
+- [ ] `papers.json` is the source of truth for the rendered matrix and exports
 - [ ] Search results calibrated to the mode (study type matches; scoping broad / meta-ethnography qualitative / etc.)
 - [ ] Matrix extracted per the mode template (correct columns)
 - [ ] Scopus Quartile listed

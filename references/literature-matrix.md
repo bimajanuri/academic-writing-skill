@@ -2,28 +2,40 @@
 
 Guide to building a structured literature matrix from the papers that passed the search.
 
-> **Modular Multi-Method Engine**: the 7-field matrix in this file is the standard for **SLR Mode**. For qualitative modes, use the dedicated extraction module (see the router in SKILL.md):
+> **Modular Multi-Method Engine**: the SLR matrix in this file is the standard SLR-specific
+> extraction module. All modes also retain the shared Paper Review fields. For qualitative modes,
+> use the dedicated extraction module (see the router in SKILL.md):
 > - Scoping Review → `extraction-scoping.md` (PCC mapping)
 > - Meta-Ethnography → `extraction-meta-ethnography.md` (1st/2nd order constructs)
 > - Narrative Review → `extraction-narrative.md` (argument positioning)
 > - Integrative Review → `extraction-integrative.md` (qual + quant data)
 > - Critical Review → `extraction-critical.md` (appraisal lens)
 
-## Column Structure (7 Mandatory Fields + Number)
+## Column Structure (Shared Paper Review Fields + Mode-Specific Fields)
+
+Academic Writing retains its mode-specific extraction requirements, but every mode matrix must
+also include the shared Paper Review fields below. This keeps Stage 1 compatible with Search,
+Folder, and Hybrid acquisition and makes the matrix renderable from `papers.json`.
 
 Each paper produces **one row** with the following columns:
 
 | Column | Extracted Content | Source in Paper |
 |-------|-------------------|-----------------|
-| **Authors/Title** | Author names (citation format) + paper title | Title page |
+| **Title & Authors** | Author names (citation format) + paper title | Title page or verified metadata |
+| **Journal / Year** | Journal name and publication year | Metadata or title page |
 | **Purpose** | Research aim/objective (one concise sentence) | Abstract & Introduction |
 | **Method (Variables/Samples)** | Design, variables (IV/DV), sample size/type, instruments | Method |
+| **Key Findings** | Main findings and reported values | Results / Abstract |
+| **Limitations** | Limitations stated by the authors | Discussion / Limitations |
+| **Gaps** | Gap addressed by the paper | Introduction / Discussion |
 | **Theory Used** | Underlying theory/conceptual framework | Introduction / Literature Review |
 | **Novelty/Contribution** | Novelty claim + main contribution | Introduction / Conclusion |
 | **Future Studies** | Suggested future research | Future Work / Conclusion |
-| **DOI/Publisher & Scopus Quartile** | DOI, publisher/journal name, + quartile | Metadata / SJR |
+| **DOI & Publisher** | DOI, publisher, journal, and quartile status | Metadata / SJR |
+| **Provenance** | `[AB]`, `[M-2]`, `[R-1]`, etc. for each factual sentence | Source text |
 
-Use the template `templates/literature_matrix_template.md`.
+Use `references/explore-data-contract.md` for the master `papers.json` schema and
+`templates/literature_matrix_template.md` for the rendered matrix.
 
 ## 1. Per-Field Extraction Rules
 
@@ -70,7 +82,10 @@ Use the abstract + highlights of the paper:
 3. Read the **Method** (variables, sample, analysis)
 4. Read the **Conclusion + Future Work** (confirmed contributions, future suggestions)
 
-If the paper exists as a file (PDF/DOCX/MD), extract the text first. If only metadata (DOI) is available, use OpenAlex/Semantic Scholar to get `title`, `abstract_inverted_index`, and reconstruct the abstract; if the abstract is unavailable → mark the missing fields with *"—"*.
+If the paper exists as a file (PDF/DOCX/MD), extract the text first. If only metadata (DOI) is
+available, use OpenAlex/Semantic Scholar to get `title`, `abstract_inverted_index`, and reconstruct
+the abstract; if the abstract is unavailable, mark missing fields `—` and do not claim full-text
+methods or findings.
 
 ## 3. Relevance Score (Optional but Recommended)
 
@@ -95,6 +110,7 @@ The matrix is the main input for `templates/gap_matrix.md` and `references/resea
 3. Unstated theory → `Not explicitly stated`
 4. DOI that failed verification → mark `[date checked: ]` and inform the user
 5. Relevance scores must be based on title+abstract, not assumptions.
+6. Every factual extraction sentence must have a provenance marker.
 
 ## 5. Matrix Quality Criteria
 
@@ -108,6 +124,7 @@ The matrix is the main input for `templates/gap_matrix.md` and `references/resea
 Save as a file:
 ```
 literature_matrix.md  — final matrix table ready for Stages 2 and 3
+papers.json           — master metadata + extraction dataset used to render the matrix
 ```
 
 Use the Novelty/Contribution & Future Studies field content as the basis for Gap Analysis (Stage 1, Step 1.4 — see §3b above for the connection to the Gap Matrix).

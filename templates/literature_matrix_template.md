@@ -1,6 +1,8 @@
 # Literature Matrix Template
 
-Copy this table for the Stage 1 output. **7 mandatory fields** per row. Fill in `—` when data is not available in the paper. Quartile: Q1–Q4 (Scopus/SJR) or `non-Scopus` / `Q? [UNVERIFIED]`.
+Render this table from `papers.json` for the Stage 1 output. Every paper occupies one row.
+Fill in `—` when data is not available in the paper. Quartile: Q1–Q4 (Scopus/SJR) or
+`non-Scopus` / `Q? [UNVERIFIED]`. Every factual extraction sentence requires a provenance marker.
 
 ## Search Metadata
 
@@ -9,19 +11,25 @@ Copy this table for the Stage 1 output. **7 mandatory fields** per row. Fill in 
 - **Year range**: [YYYY–YYYY]
 - **Search date**: [date]
 - **Source**: [OpenAlex / Semantic Scholar / combination]
+- **Input mode**: [Search / Folder / Hybrid]
+- **Target / candidate count**: [target] / [candidates]
+- **Deduplication rule**: [DOI, then normalized title]
+- **Verification rule**: [Crossref / publisher / local file]
 
 ## Matrix Table
 
-| No | Authors/Title | Purpose | Method (Variables/Samples) | Theory Used | Novelty/Contribution | Future Studies | DOI/Publisher & Scopus Quartile |
-|----|---------------|---------|---------------------------|-------------|----------------------|----------------|--------------------------------|
-| 1  | [Author(s) (Year)] — "[Title]" | [1-sentence purpose] | Design; IV; DV; n=; instrument; analysis | [Theory] | [contribution claim] | [suggestions for further study] | DOI: ... \| [Journal] \| Q[1-4] |
-| 2  | | | | | | | |
-| ... | | | | | | | |
+| No | Title & Authors | Journal | Year | Purpose | Method (Variables/Samples) | Key Findings | Limitations | Gaps | Theory Used | Novelty/Contribution | Future Studies | DOI & Publisher | Provenance |
+|----|-----------------|---------|------|---------|---------------------------|---------------|-------------|-------|-------------|----------------------|----------------|----------------|------------|
+| 1  | [Author(s)] — "[Title]" | [Journal] | [Year] | [Purpose] [AB] | [Method] [M-1] | [Findings] [R-1] | [Limitations] [L-1] | [Gap] [I-2] | [Theory] [I-3] | [Contribution] [C-1] | [Future work] [F-1] | DOI: ... \| [Publisher] \| Q[1-4] | [AB] [M-1] [R-1] |
+| 2  | | | | | | | | | | | | | |
+| ... | | | | | | | | | | | | | |
 
 ## Search Triage Notes
 
 Out of [X] candidates:
 - Passed relevance ≥ 7/10: [Y] papers
+- Deduplicated: [D]
+- DOI/source verified: [V] | UNVERIFIED: [U] | Local file: [L]
 - Scopus Q1: [a] | Q2: [b] | Q3: [c] | Q4: [d]
 - Non-Scopus: [e]
 - Excluded (relevance < 7): [f]

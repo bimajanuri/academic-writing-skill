@@ -13,7 +13,7 @@ The user requests: *systematic review*, *meta-analysis*, *SLR*, the keyword "PRI
 2. Initialization parameters (topic, language, quartile, years, eligibility criteria)
 3. Search keywords derived from PICO/PICOS
 4. LITERATURE SEARCH (ONLY after 1–3 are complete)
-5. 2-reviewer screening + PRISMA flow + 7-field extraction matrix
+5. 2-reviewer screening + PRISMA flow + shared Paper Review fields + SLR-specific extraction matrix
 ```
 
 > SLR search results must focus on studies with synthesizable effect sizes/evidence (quantitative) or thematic qualitative findings — adjust the eligibility criteria in Step 2 accordingly.
@@ -29,11 +29,15 @@ The user requests: *systematic review*, *meta-analysis*, *SLR*, the keyword "PRI
 
 > Full framework references are in `references/research-frameworks.md`.
 
-## Extraction Matrix (Standard 7 Field)
+## Extraction Matrix (Shared Paper Review Contract + SLR Fields)
 
-Use the standard 7-field matrix — details in `references/literature-matrix.md` + template `templates/literature_matrix_template.md`:
+Use `papers.json` as the master dataset. Retain the shared Paper Review fields—Purpose, Method,
+Key Findings, Limitations, Gaps, Theory Used, Novelty/Contribution, Future Studies, DOI & Publisher,
+and provenance—then add the SLR-specific effect-size, appraisal, and eligibility fields. Details:
+`references/explore-data-contract.md`, `references/literature-matrix.md`, and
+`templates/literature_matrix_template.md`.
 
-| No | Authors/Title | Purpose | Method (Variables/Samples) | Theory Used | Novelty/Contribution | Future Studies | DOI/Publisher & Scopus Quartile |
+| No | Title & Authors | Journal | Year | Purpose | Method | Key Findings | Limitations | Gaps | Theory | Novelty | Future Studies | DOI & Publisher | Provenance | SLR fields |
 
 - Separate **quantitative** extraction (effect sizes/statistics → feeding meta-analysis) and **qualitative** extraction (themes → JBI/ENTREQ) for mixed studies.
 - Every row must carry a verified citation status and DOI.
@@ -62,7 +66,7 @@ Run the **PRISMA 2020 (27 items)** checklist — items in `references/research-f
 ## Mode-Specific Quality Gate
 
 - [ ] PICO/PICOS framework used and recorded in `framework_selection.md`
-- [ ] 7-field matrix complete (or "—" when not available)
+- [ ] Shared Paper Review fields and SLR-specific fields complete (or "—" when unavailable)
 - [ ] 2-reviewer screening + adjudication documented
 - [ ] PRISMA flow with all 4 phases and consistent numbers
 - [ ] PRISMA 2020 check passed (0 "No" items without a plan)
@@ -70,7 +74,8 @@ Run the **PRISMA 2020 (27 items)** checklist — items in `references/research-f
 ## Mode Output
 
 ```text
-literature_matrix.md            — 7-field matrix
+papers.json                     — master metadata, provenance, and SLR extraction dataset
+literature_matrix.md            — shared Paper Review fields + SLR matrix
 prisma_flow.md                  — diagram/flow of article counts
 risk_of_bias_table.md           — appraisal results
 framework_selection.md          — mode framework contract

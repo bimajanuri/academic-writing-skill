@@ -4,6 +4,11 @@ Guide to academic literature search with **Scopus Quartile** filter support (Q1�
 
 ## 1. Initial Clarification
 
+Before searching, select the shared acquisition mode from `references/explore-data-contract.md`:
+**Search**, **Folder**, or **Hybrid**. Search and Hybrid workflows collect approximately 1.5× the
+target as candidates; Folder workflows recursively scan local PDF/LaTeX files; Hybrid workflows
+prefer readable local full text over incomplete search metadata.
+
 Before searching, clarify the following from the user:
 
 | Parameter | Options | Default |
@@ -11,7 +16,7 @@ Before searching, clarify the following from the user:
 | Topic / keywords | mandatory | — |
 | Scopus Quartile filter | Q1 / Q2 / Q3 / Q4 / no filter | No filter (but still tag the quartile) |
 | Year range | free | Last 5 years |
-| Target number | free | 15–40 papers |
+| Target number | free | 15–40 papers; collect approximately 1.5× before screening |
 | Paper language | English (for English-US output; Indonesian-language papers only as context/additional grey lit) | English |
 | Source | OpenAlex / Semantic Scholar / Crossref / DOAJ / PubMed / arXiv / all | All (OpenAlex first) |
 | Document type | research article / review / all | Research articles + reviews |
@@ -63,8 +68,9 @@ Notes:
 1. Extract 3–5 core concepts from the user's topic
 2. Build 8–15 keyword combinations (concept + concept, concept + method, synonyms/discipline variants)
 3. Search OpenAlex / Semantic Scholar / Crossref / DOAJ / PubMed for each combination (adjust per field: PubMed prioritized for biomedicine, arXiv for CS/physics preprints)
-4. Collect 30–50 candidate papers
-5. Score relevance 0–10; keep those ≥ 7/10
+4. Collect approximately 1.5× the requested target as candidates
+5. Score relevance 0–10 from title and abstract; keep those ≥ 7/10 unless the mode protocol specifies otherwise
+6. Record candidates, verification status, and deduplication status in `candidate_papers.md` and `papers.json`
 
 ### Round 2 — Snowballing (forward & backward citation)
 1. From the papers that passed Round 1, trace the citation network:
@@ -124,6 +130,9 @@ Out of X candidates:
 2. If a reference is mentioned but has no DOI/evidence of existence → **DO NOT** add it to the matrix. Leave the citation empty and inform the user.
 3. Do not guess journal names, volumes, pages, or years.
 4. If metadata is incomplete, mark the missing field with *"—"*.
+5. Every factual extraction sentence must carry `[AB]` or a section/paragraph provenance marker
+   such as `[M-2]` or `[R-1]`.
+6. Search-only records must not claim full-text methods, findings, limitations, or future work.
 
 ## 6. Field-Specific Search (Mini Test)
 
@@ -144,4 +153,5 @@ Submit the search output as a file ready to be filled into the matrix:
 candidate_papers.md  → candidate list + relevance scores + quartile status + DOI verification status
 ```
 
-Then proceed to `literature-matrix.md` for 7-field extraction per paper.
+Then proceed to `literature-matrix.md` for the shared Paper Review fields plus the selected
+mode-specific extraction fields.
