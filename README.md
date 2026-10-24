@@ -1,8 +1,13 @@
 # Academic Writing Skill
 
-**End-to-end academic writing skill for AI coding agents** (Claude Code, OpenCode, and other Agent Skills–based agents). Designed to produce high-quality academic output — from literature search to final format conversion — with **paper output written in English (US) academic style**, while accepting research input in **Bahasa Indonesia or English**.
+**Academic writing and literature-synthesis support for AI agents**, including Claude Code, OpenCode,
+and other Agent Skills-compatible hosts. The skill covers the full path from literature discovery to
+final format conversion. Manuscripts are produced in **English (US) academic style**, while research
+input may be provided in **Bahasa Indonesia or English**.
 
-This skill is a **Modular Multi-Method Engine**: a 7-stage pipeline with a quality gate at every stage (human-in-the-loop), powered by a **Method Selection Router** that activates qualitative and quantitative synthesis protocols based on the task at hand.
+The skill uses a **modular, multi-method pipeline** with seven stages and a human review gate at
+each stage. Its **Method Selection Router** chooses the appropriate qualitative or quantitative
+synthesis protocol for the task.
 
 ## Key Features
 
@@ -12,7 +17,7 @@ This skill is a **Modular Multi-Method Engine**: a 7-stage pipeline with a quali
   - **Reciprocal Translation Engine** — 1st/2nd/3rd order constructs, reciprocal vs refutational vs line-of-argument (meta-ethnography)
   - **Conceptual Mapping Engine** — concept taxonomy, geographic/timeline/methodological distribution, research gaps (scoping)
   - **Academic Debate Engine** — pro/con clusters + timeline of idea development (narrative)
-- **Shared Paper Review extraction contract**: Title & Authors, Journal, Year, Purpose, Method, Key Findings, Limitations, Gaps, Theory, Novelty, Future Studies, DOI & Publisher, and provenance; each mode adds its own fields
+- **Shared Paper Review extraction contract**: Title & Authors, Journal, Year, Purpose, Method, Key Findings, Limitations, Gaps, Theory, Novelty, Future Studies, DOI & Publisher, and provenance. Each mode can add its own fields.
 - **Per-mode extraction matrix**: SLR, PCC (scoping), 1st/2nd constructs (meta-ethnography), argument positions (narrative), qual+quant data (integrative), epistemological/methodological/bias lenses (critical)
 - **Literature search** via OpenAlex / Semantic Scholar / Crossref / DOAJ / PubMed / arXiv (all free)
 - **Scopus Quartile filter** (Q1–Q4)
@@ -25,20 +30,20 @@ This skill is a **Modular Multi-Method Engine**: a 7-stage pipeline with a quali
 - **Outline builder** + word allocation + **7-dimension reviewer self-assessment**
 - **7 citation styles**: APA 7, MLA 9, Turabian, Vancouver, Harvard, Chicago, + IEEE
 - **Humanizer (26 AI patterns)**, **grammar check (English-US)**, **plagiarism check (English-US)**, **layered quality control** (mechanical/semantic/red-team gates)
-- **Output guardrails** for claims, evidence, citations, DOI metadata, quotations, modality, literals, terminology, and no-fabrication
+- **Output guardrails** for claims, evidence, citations, DOI metadata, quotations, modality, literal values, terminology, and no-fabrication
 - **Paper Review–aligned exploration** with Search/Folder/Hybrid acquisition, `papers.json`, provenance markers, deduplication, and DOI verification
 - **Evaluation and regression testing** with an 8-dimension rubric, pairwise comparison, and hard-failure precedence
 - **Composable revision patterns** and optional LanguageTool review
 - **Output conversion**: Markdown, LaTeX, DOCX (via pandoc)
 - **Anti-hallucination**: never fabricate references/data; verify DOI & quartile
 
-## Language Policy
+## Language policy
 
 - **Skill instructions: written in English** so any Gen AI can use the skill directly.
-- **Output paper: ALWAYS English (US), academic register** — not optional, not bilingual. US spelling (`analyze`, `color`, `center`, `modeling`) everywhere.
+- **Manuscript output: always English (US) in an academic register** — not optional and not bilingual. Use US spelling (`analyze`, `color`, `center`, `modeling`) throughout.
 - **Input research: accepts Bahasa Indonesia OR English** depending on the Gen AI's capability — input content is understood/translated faithfully without changing meaning.
 - Grammar check, humanizer, and plagiarism check all run on the **English-US** manuscript.
-- Working artifacts (matrices, outlines, logs) may be written in Indonesian for session efficiency, **except any artifact that becomes part of the final manuscript** — the final manuscript and every Part of it must be English-US.
+- Working artifacts (matrices, outlines, and logs) may be written in Indonesian for session efficiency, **except when an artifact becomes part of the final manuscript**. The manuscript and all of its components must be in English-US.
 
 ## How It Works (Modular Multi-Method Engine)
 
@@ -54,11 +59,13 @@ STAGE 7: OUTPUT       → MD/LaTeX/DOCX conversion + AUTO-VALIDATION checklist p
 POST-SUBMISSION       → Reviewer response (point-by-point) + rejection decision path + re-target journal
 ```
 
-Each stage **must not proceed until its quality gate is passed** and the user confirms. **GATE 0** must be passed before literature search — search results are calibrated to the selected mode.
+Each stage **must pass its quality gate** before the workflow continues and the user confirms the result. **GATE 0** must pass before literature search because the search is calibrated to the selected mode.
 
 ## Compatibility and prerequisites
 
-The skill is portable when the host supports folder-based Agent Skills discovery and reads `SKILL.md` instructions. It has no mandatory runtime dependency, API key, database, or OS-specific requirement. The complete `academic-writing/` directory is required.
+The skill is portable when the host supports folder-based Agent Skills discovery and can read
+`SKILL.md` instructions. It has no mandatory runtime dependency, API key, database, or
+OS-specific requirement. Install the complete `academic-writing/` directory.
 
 | Host | Project location | Global location | Activation/verification |
 |---|---|---|---|
@@ -70,7 +77,10 @@ The skill is portable when the host supports folder-based Agent Skills discovery
 | ChatGPT Skills | Upload the complete directory/ZIP where Skills are enabled | Product-managed | Upload/import the skill and invoke it by name |
 | Codex, Cursor, Windsurf, other compatible hosts | Host-specific skills directory or `.agents/skills/academic-writing/` | Host-specific | Reload/discover skills, then invoke `academic-writing` |
 
-ChatGPT Skills availability, upload permissions, and automatic activation depend on the account, workspace, and product surface. If a host does not support folder-based skills, paste the relevant `SKILL.md` instructions or use the host's documented import mechanism; do not copy only `SKILL.md` when referenced modules are needed.
+ChatGPT Skills availability, upload permissions, and automatic activation depend on the account,
+workspace, and product surface. If a host does not support folder-based skills, use its documented
+import mechanism or project-file feature. Do not copy only `SKILL.md` when the workflow needs its
+supporting modules.
 
 ### Optional prerequisites
 
@@ -147,21 +157,61 @@ When Skills are enabled for the account or workspace, upload `academic-writing/`
 
 Copy the complete directory into the platform's documented skills folder. If it supports `.agents/skills/`, use the project-local installation above. Reload the host and verify that `SKILL.md` is discovered.
 
-## Activation and verification
-
-Use a request that clearly selects a method:
-
-```text
-Use the academic-writing skill. First lock the synthesis mode and reporting standard,
-then build the claim-evidence map. Do not invent citations, DOI metadata, data, or findings.
-Before delivery, run output guardrails and report PASS, PASS_WITH_FLAGS, or FAIL.
-```
-
-Verify that the response locks GATE 0 before searching, preserves `[DATA]`/`[UNVERIFIED]` placeholders, and reports guardrail status. If the host does not discover the skill, reload its skills, check the path, and confirm the complete directory was installed.
-
 ## Usage
 
-The skill activates automatically whenever the AI receives an academic-writing request. Example triggers:
+The skill activates automatically when a request clearly asks for academic writing, literature
+search, evidence synthesis, manuscript revision, citation formatting, journal targeting, or
+reviewer-response support. Use natural language, or explicitly name `academic-writing` when you
+want to make the workflow unambiguous. Before searching, the skill locks the analysis mode,
+reporting standard, and RQ framework.
+
+### Full pipeline
+
+```text
+Use academic-writing to plan and write a paper about [topic].
+First lock the synthesis mode, reporting standard, and RQ framework before searching.
+Preserve evidence; do not invent citations, DOI metadata, data, or findings.
+Run output guardrails and report PASS, PASS_WITH_FLAGS, or FAIL before delivery.
+```
+
+### Mode-specific requests
+
+```text
+Use academic-writing for a scoping review on [topic].
+Lock PCC and PRISMA-ScR first, then search, extract the evidence matrix,
+map concepts, and run the final reporting checklist.
+```
+
+```text
+Use academic-writing for a meta-ethnography on [topic].
+Lock PICo/SPIDER and eMERGe first, then extract first- and second-order constructs
+and perform reciprocal translation without inventing evidence.
+```
+
+```text
+Use academic-writing to revise this manuscript for [journal].
+Preserve every claim, citation, number, quotation, and modality; run grammar,
+humanizer, plagiarism, and output-guardrail checks before returning the revision.
+```
+
+### Targeted requests
+
+```text
+Find and verify literature on [topic], build papers.json and the mode-specific matrix,
+then identify evidence-backed research gaps. Do not start searching until GATE 0 is locked.
+```
+
+```text
+Format these references in APA 7 and check citation-to-reference completeness.
+Flag missing or conflicting metadata instead of inventing it.
+```
+
+```text
+Review this draft as a simulated peer reviewer. Check methodology, evidence,
+claims, citations, reporting compliance, English-US style, and journal fit.
+```
+
+### Common request triggers
 
 - "Write a paper about [topic]"
 - "Find literature for my thesis/dissertation" (input may be in Indonesian or English)
