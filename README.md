@@ -29,7 +29,7 @@ synthesis protocol for the task.
 - **Optional research frameworks** — RQ frameworks, procedural frameworks, reporting & screening checklists
 - **Outline builder** + word allocation + **7-dimension reviewer self-assessment**
 - **7 citation styles**: APA 7, MLA 9, Turabian, Vancouver, Harvard, Chicago, + IEEE
-- **Humanizer (26 AI patterns)**, **grammar check (English-US)**, **plagiarism check (English-US)**, **layered quality control** (mechanical/semantic/red-team gates)
+- **Humanizer (26 prose refinement patterns)**, **grammar check (English-US)**, **plagiarism check (English-US)**, **layered quality control** (mechanical/semantic/independent peer-review audit gates)
 - **Output guardrails** for claims, evidence, citations, DOI metadata, quotations, modality, literal values, terminology, and no-fabrication
 - **Paper Review–aligned exploration** with Search/Folder/Hybrid acquisition, `papers.json`, provenance markers, deduplication, and DOI verification
 - **Evaluation and regression testing** with an 8-dimension rubric, pairwise comparison, and hard-failure precedence
@@ -53,7 +53,7 @@ STAGE 1: EXPLORE      → Search/Folder/Hybrid acquisition + dedup/DOI verificat
 STAGE 2: PLAN         → RQ (mode framework) + outline + reviewer self-assessment (7 dims) + contribution framing + journal targeting
 STAGE 3: WRITE        → Section-by-section + claim-evidence map + outputs of mode SYNTHESIS ENGINES (Reciprocal Translation / Conceptual Mapping / Academic Debate)
 STAGE 4: CITE         → Citation formatting + bibliography + claim-citation validation + DOI check
-STAGE 5: REVISE       → Humanizer + modular patterns + grammar (English-US) + mechanical/semantic/red-team gates
+STAGE 5: REVISE       → Humanizer + modular patterns + grammar (English-US) + mechanical/semantic/independent peer-review audit gates
 STAGE 6: VALIDATE     → Output guardrails + evaluation rubric + claim/evidence/citation regression checks
 STAGE 7: OUTPUT       → MD/LaTeX/DOCX conversion + AUTO-VALIDATION checklist per mode + plagiarism + final fit & cover letter
 POST-SUBMISSION       → Reviewer response (point-by-point) + rejection decision path + re-target journal
@@ -157,7 +157,7 @@ Gemini Apps (`gemini.google.com`, the Gemini Mac app, and the mobile app) suppor
 Per Google's upload requirements ([Create & manage skills for Gemini Apps](https://support.google.com/gemini/answer/17094296)):
 - `SKILL.md` must be located in the **root (main) folder** of the uploaded folder or `.zip` archive.
 - The skill `name` inside `SKILL.md` must be lowercase with hyphens (`academic-writing`).
-- All files in the package (`.md`, `.sh`) are supported plain-text formats and must total under 100 MB.
+- All 8 supporting modules are consolidated into clean Markdown files (`.md`) so the total package stays under Gemini Apps' 10-file Knowledge attachment limit and under 100 MB.
 - Exclude hidden binary/OS metadata files (such as `.DS_Store`, `.git/`, `.pyc`, or `__MACOSX`) so the upload validation does not fail.
 
 **Step 1: Create a clean `.zip` archive (with `SKILL.md` at the root)**
@@ -165,7 +165,7 @@ Per Google's upload requirements ([Create & manage skills for Gemini Apps](https
 ```bash
 cd /path/to/academic-writing
 zip -r -X academic-writing-gemini.zip \
-  SKILL.md core protocols engines references templates checklists scripts \
+  SKILL.md protocols references templates \
   -x "*.DS_Store" -x "__MACOSX/*" -x "*.git*" -x "*.pyc"
 ```
 
@@ -288,7 +288,7 @@ claims, citations, reporting compliance, English-US style, and journal fit.
 - "Pick a framework for this paper" (PICO/PRISMA/CONSORT/STROBE/etc.)
 - "Pick a citation style for this paper" (APA/MLA/Turabian/Vancouver/Harvard/Chicago)
 - "Format citations in APA/IEEE/MLA/Chicago/Vancouver/Harvard/Turabian"
-- "Revise/polish this draft" (anti-AI humanizer)
+- "Revise/polish this draft" (academic prose humanizer)
 - "Grammar-check this draft" (English-US)
 - "Check plagiarism/similarity before submission"
 - "Convert the draft to LaTeX/DOCX"
@@ -299,11 +299,11 @@ claims, citations, reporting compliance, English-US style, and journal fit.
 | Request | What gets done |
 |-----------|-----------------|
 | "Search references on X" | Stage 1 → Search/Folder/Hybrid acquisition → papers.json → matrix per mode |
-| "Pick a synthesis mode / do a scoping review" | Router + `protocols/scoping-review.md` + Conceptual Mapping |
-| "Run a meta-ethnography on these papers" | Router + `protocols/meta-ethnography.md` + Reciprocal Translation |
-| "Write a narrative review of the X debate" | Router + `protocols/narrative-review.md` + Academic Debate |
-| "Do an integrative qual/quant review" | Router + `protocols/integrative-review.md` |
-| "Critically appraise this literature" | Router + `protocols/critical-review.md` |
+| "Pick a synthesis mode / do a scoping review" | Router + `protocols/core-and-mode-protocols.md#scoping-review-mode` + Conceptual Mapping |
+| "Run a meta-ethnography on these papers" | Router + `protocols/core-and-mode-protocols.md#meta-ethnography-mode` + Reciprocal Translation |
+| "Write a narrative review of the X debate" | Router + `protocols/core-and-mode-protocols.md#narrative-review-mode` + Academic Debate |
+| "Do an integrative qual/quant review" | Router + `protocols/core-and-mode-protocols.md#integrative-review-mode` |
+| "Critically appraise this literature" | Router + `protocols/core-and-mode-protocols.md#critical-review-mode` |
 | "Pick a framework for this paper" | Load research-frameworks.md → fill framework_selection.md → apply |
 | "Build an outline for paper X" | Stage 1+2 → Matrix + Outline |
 | "Write the methodology section" | Draft that section |
@@ -312,84 +312,27 @@ claims, citations, reporting compliance, English-US style, and journal fit.
 | "Grammar-check this draft" | Stage 5 (grammar check English-US) |
 | "Check plagiarism" | Stage 7 (plagiarism check) |
 | "Convert to LaTeX/docx" | Stage 7 |
-| "Review this draft" | Red-team protocol |
+| "Review this draft" | Independent peer-review audit protocol |
 | "Plan a paper from scratch" | Full pipeline |
 
 ## Repo Structure
 
-```
+All 76 modular guides, protocols, synthesis engines, templates, and checklists are consolidated into **8 structured Markdown files** (plus `SKILL.md`) so the skill loads with minimal tool calls in CLI/IDE agents and satisfies the $\le$ 10 reference-file attachment limit in web AI platforms (such as Gemini Apps and ChatGPT Skills):
+
+```text
 academic-writing/
-├── SKILL.md                          # Entry point & orchestrator + Method Selection Router + initialization
-├── core/
-│   └── system-prompt.md              # Universal instructions for all modes (style, rules, claim-evidence, auto-validation)
-├── protocols/                        # Protocol modules per synthesis mode
-│   ├── slr.md                        #   SLR — PRISMA 2020, PICO/PICOS, 7-field
-│   ├── scoping-review.md             #   Scoping — PCC, PRISMA-ScR, JBI
-│   ├── meta-ethnography.md           #   Meta-Ethnography — eMERGe, Noblit & Hare
-│   ├── narrative-review.md           #   Narrative — SANRA
-│   ├── integrative-review.md         #   Integrative — Whittemore & Knafl
-│   └── critical-review.md            #   Critical — appraisal lenses
-├── engines/                          # Qualitative synthesis engines
-│   ├── reciprocal-translation.md     #   Meta-ethnography: 1st→2nd→3rd order
-│   ├── conceptual-mapping.md         #   Scoping: taxonomy & evidence distribution
-│   └── academic-debate.md            #   Narrative: pro/con + timeline
-├── references/                       # Detailed stage guides + per-mode extraction modules
-│   ├── literature-search.md          #   Search + Scopus Quartile filter
-│   ├── explore-data-contract.md      #   Search/Folder/Hybrid + papers.json + provenance contract
-│   ├── literature-matrix.md          #   Shared Paper Review fields + SLR-specific fields
-│   ├── extraction-meta-ethnography.md#   1st/2nd order constructs
-│   ├── extraction-scoping.md         #   PCC mapping
-│   ├── extraction-critical.md        #   Appraisal lenses
-│   ├── extraction-narrative.md       #   Argument positions
-│   ├── extraction-integrative.md     #   Qual + quant data
-│   ├── research-gap-mapping.md       #   Gap Matrix, anti pseudo-gap, research map
-│   ├── novelty-framing.md            #   5 novelty forms, contribution statement
-│   ├── journal-targeting.md          #   Journal arena, anti-predator, cover letter
-│   ├── reviewer-response.md          #   Reviewer response, rejection path
-│   ├── research-frameworks.md        #   RQ/procedure/checklist framework catalog
-│   ├── outline-builder.md            #   Outline, word allocation, reviewer
-│   ├── section-writing.md            #   Section-writing guide
-│   ├── citation-formatter.md         #   7 citation styles
-│   ├── revision-guide.md             #   Humanizer — 26 AI patterns
-│   ├── grammar-check.md              #   English-US grammar (output)
-│   ├── plagiarism-check.md           #   Plagiarism detection (English-US)
-│   ├── quality-gates.md              #   Mechanical + semantic + red-team gates
-│   ├── output-guardrails.md          #   Claim, citation, data, quote, and no-fabrication validators
-│   ├── evaluation.md                 #   Rubric, pairwise comparison, and regression protocol
-│   ├── patterns.md                   #   Composable academic revision patterns
-│   └── output-formatter.md           #   MD/LaTeX/DOCX conversion
-├── templates/                        # Output contracts
-│   ├── paper_outline.md
-│   ├── literature_matrix_template.md
-│   ├── extraction_meta_ethnography.md
-│   ├── extraction_scoping.md
-│   ├── extraction_critical.md
-│   ├── extraction_narrative.md
-│   ├── extraction_integrative.md
-│   ├── gap_matrix.md
-│   ├── contribution_statement.md
-│   ├── cover_letter.md
-│   ├── journal_comparison.md
-│   ├── response_to_reviewer.md
-│   ├── framework_selection.md
-│   ├── reporting_checklist.md
-│   ├── section_templates/            # 7 section templates
-│   └── citation_templates/           # 7 citation style templates
-├── checklists/                       # Auto-validation & quality
-│   ├── prisma_2020.md                #   SLR — 27 items
-│   ├── prisma_scr.md                 #   Scoping — 22 items
-│   ├── emerge.md                     #   Meta-Ethnography — 19 criteria
-│   ├── sanra.md                      #   Narrative — 6 scored items
-│   ├── whittemore_knafl.md           #   Integrative — 17 criteria
-│   ├── critical_review.md            #   Critical — 10 criteria
-│   ├── grammar_check.md
-│   ├── plagiarism_check.md
-│   ├── humanizer_checklist.md
-│   ├── post_draft.md
-│   ├── pre_writing.md
-│   └── pre_submission.md
-├── scripts/
-│   └── convert.sh                    # Format conversion via pandoc
+├── SKILL.md                                              # Entry point, Method Selection Router & 7-stage orchestrator
+├── protocols/
+│   ├── core-and-mode-protocols.md                        # Core universal rules + 6 mode protocols + 3 qualitative engines
+│   ├── guardrails-and-evaluation.md                      # Pre-delivery output guardrails, revision patterns, evaluation & rubric
+│   └── validation-and-reporting-checklists.md            # 6 mode reporting checklists (PRISMA 2020, PRISMA-ScR, eMERGe, SANRA, W&K, Critical) + 6 stage checklists
+├── references/
+│   ├── stage1-explore-and-extraction.md                  # Explore data contract, literature search, 6 mode matrices & gap mapping
+│   ├── stage2-to-4-plan-write-cite.md                    # Frameworks, outlining, novelty, journal targeting, writing & citations
+│   └── stage5-to-7-revise-output-post.md                 # Prose style refiner (26 patterns), grammar, overlap check, gates, Pandoc & reviewer response
+├── templates/
+│   ├── workflow-and-section-templates.md                 # 14 stage/extraction/submission templates + 7 manuscript section templates
+│   └── citation-style-templates.md                       # 7 citation style templates (APA 7, MLA 9, Turabian, Vancouver, Harvard, Chicago, IEEE)
 └── README.md
 ```
 
@@ -417,7 +360,7 @@ This pipeline is a combination & adaptation of open methodologies:
 
 - **Prof. Peng Sida's open research notes** — section-writing politics — [Master-cai/Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills)
 - **SNL-UCSB / paper-writing-skill** — 5-stage pipeline, dual mechanical+semantic audit — [SNL-UCSB/paper-writing-skill](https://github.com/SNL-UCSB/paper-writing-skill)
-- **Humanizer 25 patterns** — de-technicalizing AI traces — [blader/humanizer](https://github.com/blader/humanizer)
+- **Humanizer 25 patterns** — refining mechanical prose patterns — [blader/humanizer](https://github.com/blader/humanizer)
 - **journal-adapt** — target-journal corpus adaptation — [WantongC/journal-adapt-writing-skill](https://github.com/WantongC/journal-adapt-writing-skill)
 - **Strategist quality gates** — 7-dimension reviewer self-assessment — [lishix520/academic-paper-skills](https://github.com/lishix520/academic-paper-skills)
 - **Literature triage matrix** — structured metadata extraction — [WenyuChiou/ai-research-skills](https://github.com/WenyuChiou/ai-research-skills)

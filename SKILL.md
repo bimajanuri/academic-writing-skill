@@ -1,544 +1,106 @@
 ---
 name: academic-writing
-description: Writes, synthesizes, and revises English-US academic manuscripts across systematic (PRISMA 2020), scoping (PRISMA-ScR/PCC), meta-ethnographic (eMERGe), narrative (SANRA), integrative (Whittemore & Knafl), and critical review methodologies. Use when conducting literature reviews, searching or screening references, building extraction and gap matrices, outlining or drafting paper sections, formatting citations (APA 7, MLA 9, Turabian, Vancouver, Harvard, Chicago, IEEE), humanizing academic prose, checking plagiarism or grammar, targeting journals, or responding to peer reviewers.
+description: Plans, synthesizes, writes, and revises English-US academic manuscripts across systematic, scoping, meta-ethnographic, narrative, integrative, and critical review methodologies. Use when conducting literature reviews, building extraction and gap matrices, outlining or drafting paper sections, formatting citations, refining academic prose, targeting journals, or responding to peer reviewers.
 ---
 
 # Academic Writing
 
-This skill is a **Modular Multi-Method Engine**: an end-to-end pipeline that produces journal-quality academic papers — **output MANDATORY in English (US), academic register** — supporting multiple literature synthesis methods (qualitative & quantitative) through a **router** at the start of the instructions. Working instructions for the agent are written in **English** (so any Gen AI can use the skill); research input may be given in **Bahasa Indonesia or English** depending on the Gen AI's capability, but **the output manuscript is always English-US**.
+This skill provides a modular, multi-method pipeline for literature synthesis and academic manuscript production. All instructions in this file and its referenced modules are in English. Research input may be provided in Bahasa Indonesia or English, while the final manuscript output is always written in English (US) academic register.
 
-## Methodology Sources (Attribution)
+## Usage
 
-This pipeline adapts and combines the following open methodologies:
-- **Prof. Peng Sida's open research notes** — section-writing politics — via [Master-cai/Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills)
-- **SNL-UCSB paper-writing-skill** — 5-stage pipeline, dual audit style (mechanical + semantic), editing principles [SNL-UCSB/paper-writing-skill](https://github.com/SNL-UCSB/paper-writing-skill)
-- **Humanizer 26 patterns** — detecting & removing AI traces [blader/humanizer](https://github.com/blader/humanizer)
-- **Humanize Writing output protocols** — claim guardrails, evaluation rubrics, composable revision patterns, and LanguageTool review
-- **journal-adapt** — corpus adaptation from the target journal [WantongC/journal-adapt-writing-skill](https://github.com/WantongC/journal-adapt-writing-skill)
-- **Strategist quality gates** — 7-dimension reviewer assessment [lishix520/academic-paper-skills](https://github.com/lishix520/academic-paper-skills)
-- **Literature triage matrix** — structured metadata extraction per paper (17-skill catalog: literature review, research design) [WenyuChiou/ai-research-skills](https://github.com/WenyuChiou/ai-research-skills)
-- **Qualitative protocols** — eMERGe (France et al., 2019), Noblit & Hare (1988), PRISMA-ScR (Tricco et al., 2018), SANRA (Baethge et al., 2019), Whittemore & Knafl (2005), PCC/JBI Manual.
-
-Use the above as a framework; do not copy text from the target journal corpus verbatim.
-
-> **Mandatory invocation order**: after reading SKILL.md, you **MUST** load `core/system-prompt.md` (universal instructions), then `protocols/<mode>.md` (selected mode), then `engines/<engine>.md` (if assigned), then `protocols/patterns.md` and `protocols/output-guardrails.md` for revision/validation, then `protocols/evaluation.md` and `references/output-rubric.md` for substantial drafts/final output, then use `references/*`, `templates/*`, `checklists/*` as appropriate per stage.
-
----
-
-## METHOD SELECTION ROUTER — Choose the Analysis Mode (FIRST, BEFORE ANYTHING ELSE)
-
-This skill supports **6 literature synthesis modes**. Before searching for/uploading any paper, you **MUST** select the mode via the router below — it determines the rules, framework, extraction criteria, synthesis engine, and final checklist that are active.
-
-| Mode | When to use | RQ Framework | Reporting Checklist | Extraction Matrix | Synthesis Engine |
-|------|-------------|--------------|---------------------|-------------------|-----------------|
-| **SLR** | Quantitative/qualitative systematic review, meta-analysis, evidence of effect | PICO / PICOS / PICo / SPIDER | PRISMA 2020 (+PRISMA-S) | Standard 7-field (`references/literature-matrix.md`) | — (meta-analysis / narrative synthesis) |
-| **Scoping Review** | Broad mapping of evidence, concepts, geographic scope, methodology types | **PCC** | **PRISMA-ScR** (JBI) | PCC mapping (`references/extraction-scoping.md`) | **Conceptual Mapping** (`engines/conceptual-mapping.md`) |
-| **Meta-Ethnography** | Qualitative meta-synthesis, experience/meaning, theory development | PICo / SPIDER | **eMERGe** + Noblit & Hare 7 steps | 1st/2nd order constructs (`references/extraction-meta-ethnography.md`) | **Reciprocal Translation** (`engines/reciprocal-translation.md`) |
-| **Narrative Review** | Narrative overview, academic debate, idea development | 5W+1H / CIMO | **SANRA** | Argument positions (`references/extraction-narrative.md`) | **Academic Debate** (`engines/academic-debate.md`) |
-| **Integrative Review** | Combined qualitative + quantitative data | adapted | **Whittemore & Knafl** | Mixed data (`references/extraction-integrative.md`) | W&K 5-stage (reduction/display/comparison) |
-| **Critical Review** | Epistemological/methodological/bias critique | 5W+1H | Critical appraisal (CASP/JBI) | Appraisal lenses (`references/extraction-critical.md`) | — (per-study appraisal + ranking synthesis) |
-
-**Navigation**:
-1. See the table above + protocol details in `protocols/*.md`.
-2. **FORBIDDEN to start literature search (Step 1.2) before the mode is locked.** Mode determines the keyword strategy, inclusion criteria, and extraction matrix — search results will differ per mode.
-3. If the user has not specified a mode → **ask** (or propose one based on the question type). Do not guess, do not proceed with search before the mode is locked.
-4. SLR = default for quantitative/classical; choose another qualitative mode when the user asks for mapping/interpretive synthesis.
-5. Record the mode + framework choice into `framework_selection.md` (form: `templates/framework_selection.md`) as a contract.
-
-> **GATE 0 (Method Selection Gate) — MUST PASS BEFORE SEARCH**:
-> - [ ] Analysis mode locked (SLR / Scoping / Meta-Ethnography / Narrative / Integrative / Critical)
-> - [ ] Reporting standard selected (PRISMA 2020 / PRISMA-ScR / eMERGe / SANRA / W&K / appraisal)
-> - [ ] Mode RQ framework recorded (PCC / PICo / SPIDER / etc.)
-> - [ ] Search strategy derived from the mode framework elements
-> Paper/article search may ONLY begin once all four items are satisfied. Search results must be calibrated to the mode: e.g. scoping → target broad mapping (not effect), meta-ethnography → target qualitative studies with rich data (not quantitative surveys), narrative → target position/debate papers.
-
----
-
-## INITIALIZATION — Mandatory Parameters Before Starting
-
-**Mandatory execution order (cannot be reordered):**
+The skill activates automatically for academic writing, literature synthesis, research gap analysis, manuscript drafting, citation formatting, prose refinement, journal targeting, and reviewer-response requests. Users may also invoke it explicitly by name:
 
 ```text
-1. METHOD SELECTION (router)  → mode + reporting standard + RQ framework        [GATE 0]
-2. INITIALIZATION PARAMETERS  → topic, language, quartile, year range,
-                                mode-specific inclusion criteria                [GATE 0]
-3. SEARCH STRATEGY            → keywords derived from the mode framework
-4. LITERATURE SEARCH          → starts only after 1–3 are complete
-5. MATRIX EXTRACTION          → per the mode template
+Use academic-writing to plan and write a scoping review on [topic].
+First lock Gate 0 (Scoping mode, PCC framework, and PRISMA-ScR reporting standard) before searching.
+Preserve provenance, verify DOI metadata, build papers.json, and validate before delivery.
 ```
 
-Parameters confirmed *before* the search (not only before paper upload):
+Select one of the six synthesis modes (`SLR`, `Scoping Review`, `Meta-Ethnography`, `Narrative Review`, `Integrative Review`, or `Critical Review`) before running literature acquisition or extraction. If the synthesis mode, scope, quartile filter, or citation style is ambiguous, ask once before searching.
 
-1. **Analysis mode** (from Method Selection Router): SLR / Scoping / Meta-Ethnography / Narrative / Integrative / Critical Review — **top priority**
-2. **Reporting standard** desired (default follows mode): PRISMA 2020 / PRISMA-ScR / eMERGe / SANRA / Whittemore & Knafl / appraisal checklist
-3. **Topic / research idea** & paper type
-4. **Input language**: Bahasa Indonesia / English — **PAPER OUTPUT IS ALWAYS English-US** (not optional)
-5. **Scopus Quartile filter target**: Q1–Q4 or no filter
-6. **Year range**: default last 5 years (changeable)
-7. **RQ framework selected** (default from the mode router) + **mode-specific initial inclusion/exclusion criteria**
+## Load order
 
-> **Initialization contract**: save the result into `framework_selection.md`. **Without a locked mode, do not build search queries, do not call paper APIs, do not upload/extract. Ask the user first.** If the user uploads papers without naming a mode → ask for the mode first; do not guess extraction criteria.
+1. Load this `SKILL.md`.
+2. Load `protocols/core-and-mode-protocols.md` for universal guidelines, the selected synthesis mode protocol, and the assigned qualitative synthesis engine.
+3. Load `references/stage1-explore-and-extraction.md` for paper acquisition, `papers.json` provenance, mode extraction matrices, and research gap mapping.
+4. Load `references/stage2-to-4-plan-write-cite.md` for research frameworks, outlining, novelty framing, journal targeting, section drafting, and citation formatting.
+5. Load `references/stage5-to-7-revise-output-post.md` for prose style refinement, English-US grammar and text-overlap checks, quality gates, format conversion, and reviewer responses.
+6. Load `templates/workflow-and-section-templates.md` and `templates/citation-style-templates.md` for output contracts and citation styles.
+7. Load `protocols/guardrails-and-evaluation.md` and `protocols/validation-and-reporting-checklists.md` before final delivery.
 
----
+## Method selection router (Gate 0)
 
-## 7-STAGE PIPELINE & WORKFLOW CHECKLIST (applies to all modes, linked to the protocol)
+Choose and lock the analysis mode before searching for or extracting any paper:
 
-Copy this checklist and track progress internally across stages:
+| Mode | Use when | RQ framework | Reporting standard | Extraction matrix | Synthesis engine |
+|---|---|---|---|---|---|
+| **SLR** | Quantitative or qualitative systematic review, meta-analysis, evidence of effect | PICO, PICOS, PICo, or SPIDER | PRISMA 2020 | Standard 7-field plus shared columns | Meta-analysis or thematic synthesis |
+| **Scoping Review** | Broad mapping of evidence, concepts, geographic scope, and methodology types | PCC | PRISMA-ScR (JBI) | PCC mapping matrix | Conceptual Mapping |
+| **Meta-Ethnography** | Qualitative meta-synthesis, lived experience, and theory development | PICo or SPIDER | eMERGe and Noblit-Hare 7 steps | 1st- and 2nd-order constructs | Reciprocal Translation |
+| **Narrative Review** | Narrative overview, academic debate, and conceptual development | 5W+1H or CIMO | SANRA | Argument position matrix | Academic Debate |
+| **Integrative Review** | Combined qualitative and quantitative empirical or theoretical literature | Adapted framework | Whittemore and Knafl | Mixed qualitative and quantitative matrix | 5-stage data reduction and comparison |
+| **Critical Review** | Epistemological, methodological, or bias critique across studies | 5W+1H | CASP or JBI appraisal | Appraisal lens matrix | Per-study appraisal and ranking synthesis |
 
-- [ ] **GATE 0 — Method Selection & Initialization**: Lock synthesis mode (`SLR`, `Scoping`, `Meta-Ethnography`, `Narrative`, `Integrative`, or `Critical`), reporting standard, RQ framework, quartile filter, and year range in `framework_selection.md` before searching.
-- [ ] **STAGE 1 — EXPLORE**: Run mode-calibrated literature acquisition (`Search`, `Folder`, or `Hybrid`), quartile filtering, mode-specific matrix extraction (`papers.json`), Gap Matrix, and Research Positioning Map.
-- [ ] **STAGE 2 — PLAN**: Formulate research questions (mode framework), outline, word allocation, contribution framing, journal targeting, and 7-dimension reviewer self-assessment.
-- [ ] **STAGE 3 — WRITE**: Draft section-by-section in mandatory order with claim-evidence mapping and mode synthesis engine outputs.
-- [ ] **STAGE 4 — CITE**: Format in-text citations and bibliography, verify citation-to-claim parity, and validate DOIs.
-- [ ] **STAGE 5 — REVISE**: Apply humanizer (26 AI patterns), composable revision patterns, English-US grammar check, and mechanical/semantic/red-team review.
-- [ ] **STAGE 6 — VALIDATE**: Run `protocols/output-guardrails.md`, quality rubric (`protocols/evaluation.md` + `references/output-rubric.md`), and claim/evidence/citation regression checks.
-- [ ] **STAGE 7 — OUTPUT**: Convert to MD/LaTeX/DOCX (when requested), run plagiarism check, complete the mode auto-validation checklist, and prepare pre-submission deliverables.
+Record the locked mode, reporting standard, RQ framework, publication-year range, and Scopus Quartile target in `framework_selection.md` before building search queries.
 
-Each stage has a **quality gate** — cannot proceed before passing. Per-mode protocol details are in `protocols/<mode>.md`; general stage details are in `references/*`.
+## Pipeline & workflow checklist
 
----
+- [ ] **Gate 0 — Method selection**: Lock synthesis mode, reporting standard, RQ framework, quartile filter, and year range in `framework_selection.md` (`protocols/core-and-mode-protocols.md`).
+- [ ] **Stage 1 — Explore**: Run mode-calibrated acquisition (`Search`, `Folder`, or `Hybrid`), deduplicate and verify DOIs, build `papers.json` and `literature_matrix.md` with provenance, and generate `gap_matrix.md` and `research_map.md` (`references/stage1-explore-and-extraction.md`).
+- [ ] **Stage 2 — Plan**: Formulate FINER research questions, compare target journals, build `paper_outline.md`, score >= 28/35 on the 7-dimension reviewer rubric, and write `contribution_statement.md` (`references/stage2-to-4-plan-write-cite.md`).
+- [ ] **Stage 3 — Write**: Draft sections in sequence (Draft 0 Intro, Literature Review, Methodology, Results and Discussion from the synthesis engine, Conclusion, rewritten Final Intro, Abstract last) with `claim_evidence_map.md` (`references/stage2-to-4-plan-write-cite.md`).
+- [ ] **Stage 4 — Cite**: Format in-text citations and bibliography (`APA 7`, `MLA 9`, `Turabian`, `Vancouver`, `Harvard`, `Chicago`, or `IEEE`) and verify 1:1 parity and DOIs (`templates/citation-style-templates.md`).
+- [ ] **Stage 5 — Revise**: Run the 26 prose style refinement patterns, English-US grammar check, mechanical and semantic gates, and independent peer-review audit (`references/stage5-to-7-revise-output-post.md`).
+- [ ] **Stage 6 — Validate**: Run output guardrails, quality rubric evaluation, and claim/citation regression checks (`protocols/guardrails-and-evaluation.md`).
+- [ ] **Stage 7 — Output**: Convert to `.md`, `.tex`, or `.docx`, complete the mode reporting checklist in `reporting_checklist_result.md`, verify citation integrity, and prepare `cover_letter.md` (`protocols/validation-and-reporting-checklists.md`).
 
-## STAGE 1: EXPLORE
+## Stage 1 — Explore and extract
 
-> Load `protocols/<mode>.md` for mode-specific extraction criteria.
-> Load (per mode) `references/extraction-*.md` for the mode-specific extraction matrix.
-> Load `references/explore-data-contract.md` for the shared acquisition, provenance, and master-data contract.
-> Search details: `references/literature-search.md`; gap mapping: `references/research-gap-mapping.md`.
+1. Confirm input mode (`Search`, `Folder`, or `Hybrid`), synthesis mode, topic, Scopus Quartile target (`Q1`–`Q4` or unfiltered), and year range (default: last 5 years).
+2. Derive search queries from the mode RQ framework elements and calibrate candidate selection to the mode.
+3. Search OpenAlex first, followed by Semantic Scholar, Crossref, DOAJ, PubMed, or arXiv; for Folder or Hybrid mode, read local `.pdf` and `.tex` files and prefer full text over abstract metadata.
+4. Collect ~1.5x the target count (typical target: 15–40 papers scoring >= 7/10 relevance), deduplicate by DOI and normalized title, and verify bibliographic metadata. Mark unresolved records `UNVERIFIED — check manually`.
+5. Build `papers.json` as the single source of truth. Tag every extracted factual statement with `[AB]` (abstract-only) or full-text section markers (`[I-1]`, `[M-2]`, `[R-1]`, `[D-2]`, `[L-1]`, `[C-1]`, `[F-1]`).
+6. Populate the shared columns (`Title & Authors`, `Journal`, `Year`, `Purpose`, `Method`, `Key Findings`, `Limitations`, `Gaps`, `Theory Used`, `Novelty/Contribution`, `Future Studies`, `DOI & Publisher`) plus the mode-specific columns in `references/stage1-explore-and-extraction.md`, then render `literature_matrix.md`.
+7. Synthesize `gap_matrix.md` (>= 3 citations per gap; 0 pseudo-gaps) and `research_map.md`.
 
-### Step 1.1 — Method Selection + Initialization (MANDATORY first)
-1. Lock the **analysis mode** via the Method Selection Router (GATE 0). **The only entry point into Stage 1.**
-2. Confirm the INITIALIZATION parameters (above) — topic, language, quartile, years, RQ framework, initial inclusion criteria.
-3. Save the contract to `framework_selection.md`.
-4. **Only after this** execute Step 1.2.
+## Stage 2 to Stage 4 — Plan, write, and cite
 
-### Step 1.2 — Mode-Calibrated Acquisition (after GATE 0 passes)
-1. **Choose the input mode**: Search, Folder, or Hybrid. Search uses online sources; Folder reads local PDF/LaTeX files; Hybrid merges both and deduplicates.
-2. **Derive keywords from the mode RQ framework elements** — not a generic query:
-   - **SLR**: P/I/C/O(S) — PICO/PICOS.
-   - **Scoping**: P, C, C — Population, Concept, Context (PCC).
-   - **Meta-Ethnography**: phenomenon of interest, setting, experience (PICo/SPIDER).
-   - **Narrative**: main topic + debate territory.
-   - **Integrative**: combination of qual & quant on the concept.
-   - **Critical**: besides the topic, include appraisal/critique terms when relevant.
-3. **Calibrate the search target to the mode** (results must fit the method):
-   - Scoping → target papers that map concepts/contexts/methodologies broadly (conceptual relevance ≥ 7/10), volume may be larger.
-   - Meta-Ethnography → target **interpretive qualitative studies** (data/construct rich), NOT quantitative surveys/experiments.
-   - Narrative → target position/claim/debate papers, conceptual synthesis.
-   - Integrative → target qual + quant studies on the same issue.
-   - Critical → target papers that can be appraised (clear method & assumptions).
-4. Search sources: OpenAlex API (free, try first), Semantic Scholar, Crossref (DOI verification), DOAJ, PubMed E-utilities (biomedical), arXiv (optional preprints), and web tools.
-5. For Search/Hybrid, collect approximately 1.5× the target as candidates, score title/abstract relevance from 0–10, and retain candidates scoring at least 7/10 unless the mode protocol specifies otherwise.
-6. For Folder/Hybrid, recursively read `.pdf` and `.tex` files; prefer local full text over search metadata.
-7. Deduplicate by DOI, then normalized title. Record duplicate decisions and preserve the most complete source.
-8. Verify DOI, title, authors, year, journal, publisher, URL, and document type against Crossref, the publisher, or the local file. Mark unresolved records `UNVERIFIED`.
-9. Apply the Scopus Quartile filter when requested; if unfiltered, quartile tagging remains mandatory.
-10. For systematic review/scoping: run 2 independent reviewers screening, dedup, and record counts per PRISMA flow phase.
-11. Target volume: 15–40 relevant papers (relevance ≥ 7/10); scoping may be broader.
+1. Formulate research questions with FINER criteria (`research_question.md`), compare target journals (`journal_comparison.md`), and build `paper_outline.md` (Intro 15–20%, Body 60–70%, Conclusion 10–15%) with topic sentences first.
+2. Score the outline with the 7-dimension reviewer rubric (require >= 28/35), map reporting checklist items (`framework_compliance.md`), and lock `contribution_statement.md`.
+3. Draft in sequence: Draft 0 Intro -> Literature Review (thematic/construct synthesis) -> Methodology -> Results & Discussion (synthesis engine output) -> Conclusion -> rewritten Final Intro -> Abstract (150–250 words, 3–6 keywords).
+4. Maintain `claim_evidence_map.md` and format all citations and `bibliography.md` per `templates/citation-style-templates.md` with 1:1 parity (`citation_validation.md`).
 
-### Step 1.3 — Shared Provenance + MODE-specific Extraction Matrix
-- Build `papers.json` as the master acquisition and extraction dataset before rendering Markdown.
-- Preserve bibliographic metadata separately from extracted fields; missing metadata fields remain empty in JSON and render as `—`.
-- Mark every factual extraction sentence with `[AB]` or a section/paragraph marker such as `[M-2]`, `[R-1]`, or `[F-1]`.
-- Search-only records may use `[AB]` but must not claim full-text methods, results, limitations, or future work.
-- Use the Paper Review default fields—Purpose, Method, Key Findings, Limitations, Gaps, Theory Used, Novelty/Contribution, and Future Studies—then add mode-specific fields without deleting shared fields.
-- **SLR**: shared Paper Review fields plus SLR-specific extraction — `references/literature-matrix.md` + `templates/literature_matrix_template.md`.
-- **Scoping**: PCC mapping — `references/extraction-scoping.md` + `templates/extraction_scoping.md`.
-- **Meta-Ethnography**: 1st/2nd order constructs SEPARATED — `references/extraction-meta-ethnography.md` + `templates/extraction_meta_ethnography.md`.
-- **Narrative**: argument positions — `references/extraction-narrative.md` + `templates/extraction_narrative.md`.
-- **Integrative**: QUAL & QUANT data separated — `references/extraction-integrative.md` + `templates/extraction_integrative.md`.
-- **Critical**: appraisal lenses (epistemological/methodological/bias) — `references/extraction-critical.md` + `templates/extraction_critical.md`.
+## Stage 5 to Stage 7 — Revise, validate, and export
 
-If a field is empty → write *"—"* (do not fabricate). For substantial studies, render the same
-master data to `literature_matrix.md`; optional CSV/XLSX/BibTeX/XML/RIS exports must be generated
-from `papers.json`, not retyped from the Markdown table.
+1. Refine prose using the 26 stylistic patterns (`style_refinement_report.md`) and verify English-US grammar and spelling (`grammar_report.md`).
+2. Check the mechanical gate (~21-word mean sentence length, max 40 words, active voice, evidence-calibrated modality, no em-dashes, claims-based headings), semantic gate, and independent peer-review audit (`peer_review_audit_findings.md`).
+3. Run `protocols/guardrails-and-evaluation.md` before final output:
 
-### Step 1.4 — Gap Analysis (Gap Matrix)
-Use `references/research-gap-mapping.md` + `templates/gap_matrix.md`:
-1. Literature mapping (oldest → newest).
-2. Gap Matrix (theoretical/methodological/contextual/inconsistency; min. 3 citations per gap).
-3. Anti pseudo-gap.
-4. Save to `gap_analysis.md`.
-
-> **Qualitative mode note**: gaps for scoping/meta-ethnography are often *conceptual* (concept not yet synthesized/defined) — make sure they are supported by the evidence matrix.
-
-### Step 1.5 — Research Positioning Map
-Create `research_map.md` (4 quadrants) + connect to Module B (`references/journal-targeting.md`).
-
-### Stage 1 Outputs
-```
-papers.json                 — master metadata + extraction dataset
-candidate_papers.md         — candidates, relevance, quartile, verification, and dedup status
-literature_matrix.md        — matrix per MODE (7-field / PCC / constructs / positions / mixed / appraisal)
-gap_matrix.md               — gap matrix
-gap_analysis.md             — gap analysis + evidence
-research_map.md             — topic position map
-framework_selection.md      — mode + framework contract
-```
-
-### Quality Gate 1
-- [ ] **GATE 0 passed BEFORE search**: mode + reporting standard + RQ framework locked & recorded in `framework_selection.md`
-- [ ] Search strategy derived from the mode framework (not a generic query)
-- [ ] Input mode recorded (Search / Folder / Hybrid)
-- [ ] Candidate pool, relevance threshold, deduplication, and source verification recorded
-- [ ] Every factual extraction has provenance; search-only fields do not overclaim full text
-- [ ] `papers.json` is the source of truth for the rendered matrix and exports
-- [ ] Search results calibrated to the mode (study type matches; scoping broad / meta-ethnography qualitative / etc.)
-- [ ] Matrix extracted per the mode template (correct columns)
-- [ ] Scopus Quartile listed
-- [ ] ≥ 3 gaps with evidence; 0 pseudo-gaps
-- [ ] User agrees to continue
-
----
-
-## STAGE 2: PLAN
-
-> Load `references/outline-builder.md`, `references/journal-targeting.md`, `references/novelty-framing.md`.
-
-### Step 2.1 — Research Question & Hypotheses
-Formulate the RQ with the mode framework (`protocols/<mode>.md` — e.g. PCC for scoping, PICo/SPIDER for meta-ethnography). Validate with FINER.
-
-### Step 2.2 — Journal Targeting (Module B)
-Strategy in `references/journal-targeting.md`. Match the mode to the journal arena (methodological/scoping journals vs qualitative synthesis journals).
-
-### Step 2.3 — Outline Construction
-Template `templates/paper_outline.md`. Proportions Intro 15–20% | Body 60–70% | Conclusion 10–15%. Write topic sentences first.
-
-> **Qualitative mode**: the "Results" section contains the **synthesis results** (taxonomy/3rd order/debate), not paper-by-paper bread.
-
-### Step 2.4 — Reviewer Self-Assessment (7 dimensions, 35 points)
-Threshold ≥ 28/35. Low score → revise the outline.
-
-### Step 2.5 — Framework Compliance Plan
-Apply the mode framework to the outline: research procedure + reporting checklist → item→section map. Mandatory for evidence synthesis: PRISMA flow, risk-of-bias (or critical appraisal), complete search description.
-
-### Step 2.6 — Citation Style
-APA 7, MLA 9, Turabian, Vancouver, Harvard, Chicago, or IEEE. Record in `style_profile.md`/`framework_selection.md`.
-
-### Step 2.7 — Novelty & Contribution Framing
-`references/novelty-framing.md` + `templates/contribution_statement.md`. Contribution follows the mode type (e.g. scoping: new taxonomy map; meta-ethnography: new 3rd order construct).
-
-### Stage 2 Outputs
-```
-paper_outline.md, research_question.md, framework_selection.md, framework_compliance.md, style_profile.md, contribution_statement.md
-```
-
-### Quality Gate 2
-- [ ] RQ follows the mode framework & passes FINER
-- [ ] Reviewer score ≥ 28/35
-- [ ] Framework compliance complete
-- [ ] Citation style selected & approved
-- [ ] Contribution statement valid (0 overclaims)
-
----
-
-## STAGE 3: WRITE
-
-> Load `references/section-writing.md` + mode template.
-
-### Mandatory Writing Order
 ```text
-1. Draft 0 Introduction  (disposable framework — framing guardrails)
-2. Literature Review      (fed directly from the mode matrix)
-3. Methodology            (following the mode procedural framework)
-4. Results & Discussion   (SYNTHESIS RESULTS from the mode engine)
-5. Conclusion
-6. Final Introduction     (REWRITTEN)
-7. Abstract               (very last)
+claims_checked: N
+citation_mismatches: N
+unverified_sources: N
+guardrail_violations: N
+rubric_mean_score: X.X / 4.0
+status: PASS | PASS_WITH_FLAGS | FAIL
 ```
 
-### Per-Section Process
-1. Write topic sentences first → check argument flow → fill full paragraphs (4–6 sentences).
-2. One paragraph, one message.
-3. Run `checklists/post_draft.md`.
-4. Map every major claim to evidence (claim-evidence map).
+4. Complete the mode reporting checklist from `protocols/validation-and-reporting-checklists.md` in `reporting_checklist_result.md`, verify citation integrity (`overlap_and_citation_report.md`), convert to `.md`, `.tex`, or `.docx`, and prepare `cover_letter.md` or `response_to_reviewer.md`.
 
-### Style Principles — see `core/system-prompt.md` (Non-Negotiable; applies to all modes): ~21-word sentences, active voice, evidence-calibrated modality, no filler adjectives, named over vague, headings as claims.
+## Handling missing or ambiguous information
 
-### Claim-Evidence Map
-For qualitative modes, ensure the evidence chain: 1st order → 2nd order → 3rd order (meta-ethnography); cluster → evidence (scoping/narrative).
+- **Unspecified synthesis mode or RQ framework**: Pause before searching (Gate 0) and ask the user to select or confirm one of the 6 modes.
+- **Missing empirical statistics or study data**: Never invent numbers, p-values, or outcomes. Insert `[DATA]` and ask the user to supply the missing values.
+- **Unavailable field in a source paper**: Mark the extraction cell with `—`.
+- **Abstract-only access**: Record only claims stated in the abstract with `[AB]` and mark full-text-only columns as `—`.
+- **Unresolved DOI or metadata**: Preserve available source text and mark `UNVERIFIED — check manually`.
 
-### Stage 3 Outputs
-```
-draft_<section>.md      — per-section drafts
-claim_evidence_map.md   — claim-evidence map
-synthesis_<mode>.md     — synthesis engine artifact (if qualitative mode)
-```
+## Core guidelines
 
-### Quality Gate 3
-- [ ] All sections written in the mandatory order
-- [ ] Final Introduction rewritten
-- [ ] Abstract written last
-- [ ] Claim-evidence map complete
-- [ ] Mode synthesis artifacts (engineering outputs) integrated into Results
-
----
-
-## STAGE 4: CITATION & REFERENCES
-
-> Load `references/citation-formatter.md`.
-
-### Steps 4.1–4.3
-Confirm style → format all citations → validate (claim→citation, citation↔bibliography 1:1, DOI active).
-
-> **Qualitative mode**: direct quotes of 1st order constructs in the synthesis narrative MUST be marked with the source paper + page (if available) — not just in the reference list.
-
-### Stage 4 Outputs
-```
-draft_with_citations.md, bibliography.md, citation_validation.md
-```
-
-### Quality Gate 4
-- [ ] All major claims are cited
-- [ ] In-text ↔ bibliography 1:1
-- [ ] Style consistent
-- [ ] 1st order quotes traced correctly
-
----
-
-## STAGE 5: REVISION & QUALITY CONTROL
-
-> Load `references/revision-guide.md`, `references/grammar-check.md`, `references/quality-gates.md`.
-
-### Layer 1 — Humanizer (25 patterns)
-Summary in `references/revision-guide.md`. (Applies to the English-US output manuscript.)
-
-### Layer 2 — Grammar Check (English-US; mandatory)
-Details in `references/grammar-check.md`; checklist `checklists/grammar_check.md`. The check runs the full **English-US register** (US spelling: `analyze`, `color`, `center`; etc.) — on the paper output, not the input.
-
-### Layer 3 — Mechanical Gate
-Em-dash, sentences >40 words, passive voice, banned words, terminology drift.
-
-### Layer 4 — Semantic Gate
-Define-before-use, claim-evidence alignment, coherence & flow, honest positioning, followability.
-
-### Layer 5 — Red-Team Review
-Simulate a fresh-reader reviewer; findings ranked CRITICAL/IMPORTANT/MINOR; iterate until clean.
-
-### Stage 5 Outputs
-```
-draft_revised.md, humanizer_report.md, grammar_report.md, red_team_findings.md, revision_log.md
-```
-
-### Quality Gate 5
-- [ ] 0 remaining critical AI tells
-- [ ] Grammar: 0 meaning-changing errors
-- [ ] Mechanical gate 0 violations
-- [ ] All claims supported (mode evidence chain valid)
-- [ ] Red-team without CRITICAL/IMPORTANT
-
----
-
-## STAGE 6: VALIDATE OUTPUT
-
-Load `protocols/output-guardrails.md`, `protocols/evaluation.md`, and `references/output-rubric.md`.
-
-Before formatting or displaying a manuscript, validate claim-evidence alignment, modality, citations, DOI metadata, quotations, literal data, terminology, English-US consistency, and no-fabrication status. Record `PASS`, `PASS_WITH_FLAGS`, or `FAIL`. Fabricated citations/data, unsupported major claims, lost citations, altered quotations, and meaning-changing grammar fixes are hard failures.
-
-## STAGE 7: OUTPUT & MODE AUTO-VALIDATION
-
-> Load `references/output-formatter.md`; `checklists/<mode>.md`; `templates/reporting_checklist.md`.
-
-### Steps 7.1–7.2 — Formatting & Conversion
-MD (default) / LaTeX / DOCX (pandoc).
-
-### Step 7.3 — MODE Auto-Validation Checklist (mandatory, not optional)
-Run the final checklist for the selected mode via `templates/reporting_checklist.md`, save to `reporting_checklist_result.md`:
-
-| Mode | Final checklist |
-|------|-----------------|
-| SLR | `checklists/prisma_2020.md` (27 items) |
-| Scoping | `checklists/prisma_scr.md` (22 items) |
-| Meta-Ethnography | `checklists/emerge.md` (19 criteria) |
-| Narrative | `checklists/sanra.md` (6 scored items) |
-| Integrative | `checklists/whittemore_knafl.md` (17 criteria) |
-| Critical | `checklists/critical_review.md` (10 criteria) |
-
-Every "No"/"Incomplete" item MUST have a remediation plan before being considered complete.
-
-### Step 7.3b — Pre-Submission Mechanical & Other Checks
-Word count, broken references, terminology consistency, figure/table labels, final grammar, plagiarism (`checklists/plagiarism_check.md` → `plagiarism_report.md`), selected reporting checklist.
-
-### Step 7.4 — Final Journal Fit & Cover Letter (Module B)
-Fit re-check, re-verify journal (quartile today, anti-predator), self-assessment ≥ 28/35, cover letter (`templates/cover_letter.md`), supplementary documents (ORCID, data availability).
-
-### Stage 7 Outputs
-```
-<paper_title>.md / .tex / .docx, reporting_checklist_result.md (mode auto-validation), plagiarism_report.md, grammar_report.md, pre_submission_checklist.md, journal_comparison.md, cover_letter.md, revision_summary.md
-```
-
-### Quality Gate 7
-- [ ] All gates 1–5 satisfied
-- [ ] **Mode auto-validation checklist clean (0 critical items)** + result saved
-- [ ] Final grammar & plagiarism clean
-- [ ] Target journal re-verified
-- [ ] Acceptance self-assessment ≥ 28/35
-- [ ] User approves the final version
-
----
-
-## POST-SUBMISSION: REVIEWER RESPONSE & REJECTION HANDLING (Module C)
-
-> Load `references/reviewer-response.md`; template `templates/response_to_reviewer.md`.
-
-1. Classify the decision: desk reject / minor / major / reject.
-2. Minor: comply with all points. Major: split into agree / partially comply / reject with strong reasons.
-3. Write the response: editor letter (1 page) → point-by-point (acknowledgment + changes + evidence).
-4. Rejection: decision path — resubmit to a better-fitting journal (Module B).
-5. If the contribution changes → update `contribution_statement.md` & claims in the manuscript.
-6. Outputs: `response_to_reviewer.md`, `revision_log.md`, `decision_log.md`.
-
----
-
-## QUICK-USE FLOW (Without the Full Pipeline)
-
-Users do not always need the full pipeline. Handle the request directly:
-
-| Request | Action |
-|---------|--------|
-| "Pick/get a synthesis method" (scoping, meta-ethnography, narrative, integrative) | Method Selection Router → load `protocols/<mode>.md` → contract `framework_selection.md` |
-| "Search references on X" | Stage 1 → matrix per mode (default SLR 7-field) |
-| "Do a scoping review on X" | Scoping mode → `protocols/scoping-review.md` + `extraction_scoping.md` + Conceptual Mapping |
-| "Run a meta-ethnography on these papers" | Meta-Ethnography mode → `protocols/meta-ethnography.md` + 1st/2nd order + Reciprocal Translation |
-| "Write a narrative review of the X vs Y debate" | Narrative mode → `protocols/narrative-review.md` + Academic Debate Engine |
-| "Do an integrative review of qual & quant" | Integrative mode → `protocols/integrative-review.md` + Whittemore & Knafl |
-| "Critically appraise this literature" | Critical mode → `protocols/critical-review.md` + appraisal lenses |
-| "Build an outline for paper X" | Stage 1+2 → Matrix + Outline |
-| "Write the methodology section" | Load section-writing + mode procedural framework |
-| "Format these citations" | Stage 4 only |
-| "Polish/revise this draft" | Stage 5 only |
-| "Grammar-check this draft" | Stage 5 Layer 2 (English-US) |
-| "Check plagiarism/similarity" | Stage 7 (plagiarism check) |
-| "Pick which journal for this paper" | Stage 2.2 (Module B) → `journal_comparison.md`; finalized in Stage 7.4 |
-| "Write a cover letter" | Stage 7.4 → `templates/cover_letter.md` |
-| "Respond to reviewer comments" | Post-submission (Module C) |
-| "Convert to LaTeX/docx" | Stage 7 only |
-| "Review this draft" | Red-team protocol (Stage 5 Layer 5) |
-| "Plan a paper from scratch" | Full pipeline Stages 1–7 |
-
-Ask for the user's confirmation before running the full pipeline if the context is unclear.
-
----
-
-## Internal References
-
-### Core & Router
-| File | Use for |
-|------|---------|
-| [core/system-prompt.md](core/system-prompt.md) | Universal instructions for all modes (style, rules, claim-evidence, auto-validation) — ALWAYS LOAD |
-
-### Mode Protocols (Method Selection Router)
-| File | Use for |
-|------|---------|
-| [protocols/slr.md](protocols/slr.md) | SLR mode: PRISMA, PICO/PICOS, 7-field, screening |
-| [protocols/scoping-review.md](protocols/scoping-review.md) | Scoping mode: PCC, PRISMA-ScR, JBI |
-| [protocols/meta-ethnography.md](protocols/meta-ethnography.md) | Meta-Ethnography mode: eMERGe, Noblit & Hare 7 steps |
-| [protocols/narrative-review.md](protocols/narrative-review.md) | Narrative mode: SANRA |
-| [protocols/integrative-review.md](protocols/integrative-review.md) | Integrative mode: Whittemore & Knafl 5 stages |
-| [protocols/critical-review.md](protocols/critical-review.md) | Critical mode: appraisal lenses |
-
-### Qualitative Synthesis Engines
-| File | Use for |
-|------|---------|
-| [engines/reciprocal-translation.md](engines/reciprocal-translation.md) | Meta-ethnography: 1st→2nd→3rd order, reciprocal/refutational/line-of-argument |
-| [engines/conceptual-mapping.md](engines/conceptual-mapping.md) | Scoping: concept taxonomy, geographic/timeline/method distribution, research gaps |
-| [engines/academic-debate.md](engines/academic-debate.md) | Narrative: pro/con clusters, idea timeline, open debate |
-
-### General Stage Guides (references/)
-| File | Use for |
-|------|---------|
-| [references/literature-search.md](references/literature-search.md) | Literature search + Scopus Quartile filter |
-| [references/literature-matrix.md](references/literature-matrix.md) | 7-field matrix (SLR mode) |
-| [references/extraction-meta-ethnography.md](references/extraction-meta-ethnography.md) | 1st/2nd order constructs extraction |
-| [references/extraction-scoping.md](references/extraction-scoping.md) | PCC mapping extraction |
-| [references/extraction-critical.md](references/extraction-critical.md) | Appraisal lens extraction |
-| [references/extraction-narrative.md](references/extraction-narrative.md) | Argument position extraction |
-| [references/extraction-integrative.md](references/extraction-integrative.md) | Qual+quant data extraction |
-| [references/research-gap-mapping.md](references/research-gap-mapping.md) | Literature mapping, Gap Matrix, anti pseudo-gap |
-| [references/novelty-framing.md](references/novelty-framing.md) | Gap→novelty, contribution statement |
-| [references/journal-targeting.md](references/journal-targeting.md) | Journal arena, anti-predator, cover letter |
-| [references/reviewer-response.md](references/reviewer-response.md) | Reviewer response & rejection path |
-| [references/research-frameworks.md](references/research-frameworks.md) | RQ framework catalog (PCC, PICo, SPIDER, etc.) |
-| [references/outline-builder.md](references/outline-builder.md) | Outline, word allocation, reviewer assessment |
-| [references/section-writing.md](references/section-writing.md) | Per-section writing guide |
-| [references/citation-formatter.md](references/citation-formatter.md) | APA/IEEE/MLA/Turabian/Chicago/Vancouver/Harvard formatting |
-| [references/revision-guide.md](references/revision-guide.md) | Humanizer 26 patterns + revision workflow |
-| [references/grammar-check.md](references/grammar-check.md) | English-US grammar & mechanics (output) + input ID/EN support |
-| [references/plagiarism-check.md](references/plagiarism-check.md) | Plagiarism detection & citation integrity (EN primary) |
-| [references/quality-gates.md](references/quality-gates.md) | Mechanical + semantic + red-team gates |
-| [protocols/output-guardrails.md](protocols/output-guardrails.md) | Claim, citation, quotation, data, modality, and no-fabrication validators |
-| [protocols/evaluation.md](protocols/evaluation.md) | Output rubric, pairwise comparison, and regression checks |
-| [protocols/patterns.md](protocols/patterns.md) | Composable academic revision patterns |
-| [references/output-rubric.md](references/output-rubric.md) | 0–4 academic manuscript quality rubric |
-| [references/output-formatter.md](references/output-formatter.md) | MD/LaTeX/DOCX conversion |
-
-### Templates
-| File | Use for |
-|------|---------|
-| [templates/paper_outline.md](templates/paper_outline.md) | Paper framework |
-| [templates/literature_matrix_template.md](templates/literature_matrix_template.md) | 7-field matrix (SLR) |
-| [templates/extraction_meta_ethnography.md](templates/extraction_meta_ethnography.md) | Constructs matrix (meta-ethnography) |
-| [templates/extraction_scoping.md](templates/extraction_scoping.md) | PCC matrix (scoping) |
-| [templates/extraction_critical.md](templates/extraction_critical.md) | Appraisal matrix (critical) |
-| [templates/extraction_narrative.md](templates/extraction_narrative.md) | Position matrix (narrative) |
-| [templates/extraction_integrative.md](templates/extraction_integrative.md) | Mixed matrix (integrative) |
-| [templates/gap_matrix.md](templates/gap_matrix.md) | Gap Matrix with 4 gap types |
-| [templates/contribution_statement.md](templates/contribution_statement.md) | Novelty + contribution statement |
-| [templates/cover_letter.md](templates/cover_letter.md) | Submission cover letter |
-| [templates/journal_comparison.md](templates/journal_comparison.md) | Candidate journal comparison |
-| [templates/response_to_reviewer.md](templates/response_to_reviewer.md) | Editor letter + point-by-point |
-| [templates/framework_selection.md](templates/framework_selection.md) | Mode/framework selection form |
-| [templates/reporting_checklist.md](templates/reporting_checklist.md) | Reporting checklist item mapping |
-| [templates/section_templates/*](templates/section_templates/) | Per-section templates |
-| [templates/citation_templates/*](templates/citation_templates/) | Per-style citation templates |
-
-### Checklists (Auto-Validation)
-| File | Use for |
-|------|---------|
-| [checklists/prisma_2020.md](checklists/prisma_2020.md) | SLR — 27 items |
-| [checklists/prisma_scr.md](checklists/prisma_scr.md) | Scoping — 22 items |
-| [checklists/emerge.md](checklists/emerge.md) | Meta-Ethnography — 19 criteria |
-| [checklists/sanra.md](checklists/sanra.md) | Narrative — 6 scored items |
-| [checklists/whittemore_knafl.md](checklists/whittemore_knafl.md) | Integrative — 17 criteria |
-| [checklists/critical_review.md](checklists/critical_review.md) | Critical — 10 criteria |
-| [checklists/grammar_check.md](checklists/grammar_check.md) | English-US grammar (output) |
-| [checklists/plagiarism_check.md](checklists/plagiarism_check.md) | Anti-plagiarism (EN primary) |
-| [checklists/*](checklists/) | Other quality checklists |
-
-### Other
-| File | Use for |
-|------|---------|
-| [scripts/convert.sh](scripts/convert.sh) | Format conversion |
-
----
-
-## Core Rules (Always Apply)
-
-1. **Never fabricate references.** Verify each paper actually exists (DOI, publisher, year). If unsure → "UNVERIFIED — check manually".
-2. **Never fabricate data/facts/findings.** If not provided, ask or write the placeholder `[DATA]`.
-3. **Never copy JOURNAL corpus text verbatim.**
-4. **Language**: **paper output MUST be English-US academic register**; research input may be Bahasa Indonesia/English (translate input content faithfully without changing meaning).
-5. **Human-in-the-loop** at every quality gate.
-6. **Save all artifacts** as Markdown files in the project working folder.
-7. Use templates & checklists as output contracts.
-8. **Anti-plagiarism**: verbatim overlap (≥7 English words) must not pass.
-9. **The mode must be locked before extraction** — do not mix extraction criteria across modes.
-
-## Handling Missing or Ambiguous Information
-
-- **Unspecified synthesis mode or RQ framework**: Stop before searching or extracting (GATE 0) and ask the user to confirm or select from the 6 synthesis modes (`SLR`, `Scoping`, `Meta-Ethnography`, `Narrative`, `Integrative`, `Critical`), proposing the best fit based on their research question.
-- **Missing empirical data, statistics, or sample details**: Never invent numbers, datasets, p-values, or experimental outcomes. Insert the explicit `[DATA]` placeholder and ask the user to supply the missing values.
-- **Unverified or incomplete reference metadata**: Never fabricate DOIs, authors, page numbers, quartiles, or publication years. Mark unresolved items as `UNVERIFIED — check manually`.
-- **Abstract-only access during literature extraction**: Record only claims supported by the abstract (`[AB]`) and mark unavailable full-text columns with `—`.
-- **Unspecified citation style**: Ask once before formatting Stage 4 (default to APA 7 if the user requests automatic selection).
-
-## Common Mistakes to Avoid
-
-- **Searching or extracting before locking GATE 0**: Running generic literature searches or applying SLR extraction columns to a Scoping or Meta-Ethnographic review. Always lock the mode and RQ framework first.
-- **Fabricating citations, DOIs, or empirical findings**: Inventing plausible-sounding references or repairing incomplete metadata from model memory.
-- **Writing the final manuscript in non-US English or Indonesian**: Even when research notes or prompts are in Bahasa Indonesia, the manuscript output must strictly use English-US academic register.
-- **Claiming pseudo-gaps ("no study has ever examined X")**: Asserting an absence of literature without systematic search verification and a documented Gap Matrix (`references/research-gap-mapping.md`).
-- **Skipping output guardrails or mode checklists**: Delivering a draft without running `protocols/output-guardrails.md` and the mode's mandatory reporting checklist (`PRISMA 2020`, `PRISMA-ScR`, `eMERGe`, `SANRA`, `Whittemore & Knafl`, or `Critical`).
-
-## Platform Note
-
-This skill uses the portable Agent Skills format. Installation, prerequisites, activation, and compatibility are documented in `README.md`; keep the complete directory because `SKILL.md` references supporting files.
+1. Lock the synthesis mode, reporting standard, and RQ framework (Gate 0) before literature search or extraction.
+2. Never invent references, DOIs, quartiles, data, quotations, or study findings.
+3. Keep `papers.json` and `literature_matrix.md` as the verified evidence base with explicit provenance markers.
+4. Write all manuscript sections in English-US academic style following the required drafting sequence.
+5. Pass human-in-the-loop quality gates, output guardrails, and the mode reporting checklist before final delivery.
