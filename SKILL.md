@@ -1,8 +1,6 @@
 ---
 name: academic-writing
-description: |
-  Write and revise English-US academic papers, including literature reviews, reference searches, outlines, synthesis-method selection, citation formatting, grammar, anti-AI revision, plagiarism checks, and manuscript quality evaluation. Supports systematic, scoping, narrative, integrative, critical, and meta-ethnographic reviews. Pipeline: Explore → Plan → Write → Cite → Revise → Validate → Output.
-compatibility: Agent Skills-compatible AI assistants
+description: Writes, synthesizes, and revises English-US academic manuscripts across systematic (PRISMA 2020), scoping (PRISMA-ScR/PCC), meta-ethnographic (eMERGe), narrative (SANRA), integrative (Whittemore & Knafl), and critical review methodologies. Use when conducting literature reviews, searching or screening references, building extraction and gap matrices, outlining or drafting paper sections, formatting citations (APA 7, MLA 9, Turabian, Vancouver, Harvard, Chicago, IEEE), humanizing academic prose, checking plagiarism or grammar, targeting journals, or responding to peer reviewers.
 ---
 
 # Academic Writing
@@ -83,17 +81,18 @@ Parameters confirmed *before* the search (not only before paper upload):
 
 ---
 
-## 7-STAGE PIPELINE (applies to all modes, linked to the protocol)
+## 7-STAGE PIPELINE & WORKFLOW CHECKLIST (applies to all modes, linked to the protocol)
 
-```text
-STAGE 1: EXPLORE        → Literature search + Quartile filter + [MODEl-specific matrix extraction] + Gap Analysis + Research Map
-STAGE 2: PLAN           → Research question (mode framework) + outline + word allocation + reviewer self-assessment
-STAGE 3: WRITE          → Section-by-section in the mandatory order + claim-evidence map (+ MODE SYNTHESIS ENGINE outputs)
-STAGE 4: CITE           → Citation formatting + bibliography + claim-citation validation + DOI check
-STAGE 5: REVISE         → Humanizer + composable revision patterns + English-US grammar + mechanical/semantic/red-team review
-STAGE 6: VALIDATE       → Output guardrails + quality rubric + claim/evidence/citation regression checks
-STAGE 7: OUTPUT         → MD/LaTeX/DOCX conversion + plagiarism check + [MODE AUTO-VALIDATION checklist] + pre-submission
-```
+Copy this checklist and track progress internally across stages:
+
+- [ ] **GATE 0 — Method Selection & Initialization**: Lock synthesis mode (`SLR`, `Scoping`, `Meta-Ethnography`, `Narrative`, `Integrative`, or `Critical`), reporting standard, RQ framework, quartile filter, and year range in `framework_selection.md` before searching.
+- [ ] **STAGE 1 — EXPLORE**: Run mode-calibrated literature acquisition (`Search`, `Folder`, or `Hybrid`), quartile filtering, mode-specific matrix extraction (`papers.json`), Gap Matrix, and Research Positioning Map.
+- [ ] **STAGE 2 — PLAN**: Formulate research questions (mode framework), outline, word allocation, contribution framing, journal targeting, and 7-dimension reviewer self-assessment.
+- [ ] **STAGE 3 — WRITE**: Draft section-by-section in mandatory order with claim-evidence mapping and mode synthesis engine outputs.
+- [ ] **STAGE 4 — CITE**: Format in-text citations and bibliography, verify citation-to-claim parity, and validate DOIs.
+- [ ] **STAGE 5 — REVISE**: Apply humanizer (26 AI patterns), composable revision patterns, English-US grammar check, and mechanical/semantic/red-team review.
+- [ ] **STAGE 6 — VALIDATE**: Run `protocols/output-guardrails.md`, quality rubric (`protocols/evaluation.md` + `references/output-rubric.md`), and claim/evidence/citation regression checks.
+- [ ] **STAGE 7 — OUTPUT**: Convert to MD/LaTeX/DOCX (when requested), run plagiarism check, complete the mode auto-validation checklist, and prepare pre-submission deliverables.
 
 Each stage has a **quality gate** — cannot proceed before passing. Per-mode protocol details are in `protocols/<mode>.md`; general stage details are in `references/*`.
 
@@ -523,6 +522,22 @@ Ask for the user's confirmation before running the full pipeline if the context 
 7. Use templates & checklists as output contracts.
 8. **Anti-plagiarism**: verbatim overlap (≥7 English words) must not pass.
 9. **The mode must be locked before extraction** — do not mix extraction criteria across modes.
+
+## Handling Missing or Ambiguous Information
+
+- **Unspecified synthesis mode or RQ framework**: Stop before searching or extracting (GATE 0) and ask the user to confirm or select from the 6 synthesis modes (`SLR`, `Scoping`, `Meta-Ethnography`, `Narrative`, `Integrative`, `Critical`), proposing the best fit based on their research question.
+- **Missing empirical data, statistics, or sample details**: Never invent numbers, datasets, p-values, or experimental outcomes. Insert the explicit `[DATA]` placeholder and ask the user to supply the missing values.
+- **Unverified or incomplete reference metadata**: Never fabricate DOIs, authors, page numbers, quartiles, or publication years. Mark unresolved items as `UNVERIFIED — check manually`.
+- **Abstract-only access during literature extraction**: Record only claims supported by the abstract (`[AB]`) and mark unavailable full-text columns with `—`.
+- **Unspecified citation style**: Ask once before formatting Stage 4 (default to APA 7 if the user requests automatic selection).
+
+## Common Mistakes to Avoid
+
+- **Searching or extracting before locking GATE 0**: Running generic literature searches or applying SLR extraction columns to a Scoping or Meta-Ethnographic review. Always lock the mode and RQ framework first.
+- **Fabricating citations, DOIs, or empirical findings**: Inventing plausible-sounding references or repairing incomplete metadata from model memory.
+- **Writing the final manuscript in non-US English or Indonesian**: Even when research notes or prompts are in Bahasa Indonesia, the manuscript output must strictly use English-US academic register.
+- **Claiming pseudo-gaps ("no study has ever examined X")**: Asserting an absence of literature without systematic search verification and a documented Gap Matrix (`references/research-gap-mapping.md`).
+- **Skipping output guardrails or mode checklists**: Delivering a draft without running `protocols/output-guardrails.md` and the mode's mandatory reporting checklist (`PRISMA 2020`, `PRISMA-ScR`, `eMERGe`, `SANRA`, `Whittemore & Knafl`, or `Critical`).
 
 ## Platform Note
 

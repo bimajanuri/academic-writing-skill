@@ -74,7 +74,8 @@ OS-specific requirement. Install the complete `academic-writing/` directory.
 | Gemini CLI | `.gemini/skills/academic-writing/` or `.agents/skills/academic-writing/` | `~/.gemini/skills/academic-writing/` | Run `/skills`, then request a review |
 | GitHub Copilot CLI | `.github/skills/academic-writing/` or `.agents/skills/academic-writing/` | `~/.copilot/skills/academic-writing/` | Run `/skills reload`, then `/skills info academic-writing` |
 | Antigravity | `.agents/skills/academic-writing/` | `~/.gemini/config/skills/academic-writing/` | Start a matching academic-writing task |
-| ChatGPT Skills | Upload the complete directory/ZIP where Skills are enabled | Product-managed | Upload/import the skill and invoke it by name |
+| Gemini Apps (Web, Mac, Mobile) | `gemini.google.com` → **Customize** → **Skills** → **Create** → **Upload** | Product-managed (Personal Google Account 18+, Keep Activity on) | Upload folder or `.zip` with `SKILL.md` in root; invoke via `/` or `@` or automatic matching |
+| ChatGPT Skills | Upload the complete directory/ZIP via Skills UI | Product-managed | Upload/import the skill and invoke via `/` or natural language |
 | Codex, Cursor, Windsurf, other compatible hosts | Host-specific skills directory or `.agents/skills/academic-writing/` | Host-specific | Reload/discover skills, then invoke `academic-writing` |
 
 ChatGPT Skills availability, upload permissions, and automatic activation depend on the account,
@@ -149,9 +150,65 @@ mkdir -p .agents/skills
 cp -R /path/to/academic-writing .agents/skills/academic-writing
 ```
 
-### ChatGPT Skills
+### Gemini Apps (Web, Mac, and Mobile) — Upload ZIP Method
 
-When Skills are enabled for the account or workspace, upload `academic-writing/` as a directory or ZIP through the Skills interface. Keep all subdirectories (`core`, `protocols`, `engines`, `references`, `templates`, and `checklists`) in the upload. If Skills are unavailable, use the platform's custom-instructions/project-files mechanism and provide `SKILL.md` plus the referenced modules.
+Gemini Apps (`gemini.google.com`, the Gemini Mac app, and the mobile app) support installing custom skills by uploading a folder or `.zip` archive (requires a personal Google Account 18+ with **Keep Activity** turned on).
+
+Per Google's upload requirements ([Create & manage skills for Gemini Apps](https://support.google.com/gemini/answer/17094296)):
+- `SKILL.md` must be located in the **root (main) folder** of the uploaded folder or `.zip` archive.
+- The skill `name` inside `SKILL.md` must be lowercase with hyphens (`academic-writing`).
+- All files in the package (`.md`, `.sh`) are supported plain-text formats and must total under 100 MB.
+- Exclude hidden binary/OS metadata files (such as `.DS_Store`, `.git/`, `.pyc`, or `__MACOSX`) so the upload validation does not fail.
+
+**Step 1: Create a clean `.zip` archive (with `SKILL.md` at the root)**
+
+```bash
+cd /path/to/academic-writing
+zip -r -X academic-writing-gemini.zip \
+  SKILL.md core protocols engines references templates checklists scripts \
+  -x "*.DS_Store" -x "__MACOSX/*" -x "*.git*" -x "*.pyc"
+```
+
+*(Alternatively, you can upload the `academic-writing` folder directly as long as it contains no hidden `.DS_Store` or `.git` files.)*
+
+**Step 2: Upload to Gemini Web (`gemini.google.com`)**
+
+1. Go to [gemini.google.com](https://gemini.google.com) (or open the Gemini app on Mac).
+2. On the left sidebar, click **Customize** (if you don't see it, first click **More**) → **Skills**.
+3. At the top of the Skills page, click **Create** → **Upload**.
+4. Select `academic-writing-gemini.zip` (or the `academic-writing/` folder) and click **Open**.
+5. Review the imported skill details and click **Create** at the top.
+6. **Usage**: In any chat or task thread, type `/` (or `@`) and select `academic-writing`, or describe your academic writing/review task in natural language — Gemini automatically applies activated skills when relevant.
+
+### ChatGPT Skills — Upload ZIP Method
+
+ChatGPT Skills can be installed by uploading a `.zip` package on accounts and workspaces with the Skills feature enabled (or attached directly in chat sessions if the Skills UI is unavailable).
+
+**Step 1: Create a clean `.zip` package**
+
+You can package either the root files (`academic-writing-gemini.zip` above) or the complete `academic-writing/` directory without hidden OS/Git files:
+
+```bash
+zip -r -X academic-writing.zip academic-writing \
+  -x "*/.git/*" -x "*/.DS_Store" -x "__MACOSX/*" -x "*.pyc"
+```
+
+**Step 2: Upload to ChatGPT**
+
+1. In ChatGPT, open **Skills** from the sidebar or profile menu.
+2. Click **Create** → **Upload from your computer**, and select `academic-writing.zip`.
+3. Enable the skill for your conversation or workspace.
+4. **Usage**: Invoke the skill with `/` or natural-language prompts such as:
+
+```text
+Use the academic-writing skill to plan and write a scoping review on [topic].
+First lock GATE 0 (PCC framework and PRISMA-ScR reporting standard) before searching.
+Preserve evidence, verify DOIs, and run output guardrails before delivery.
+```
+
+If the Skills UI is not available on your plan, upload/attach the `.zip` archive (or the relevant Markdown files) directly in the chat message composer and instruct ChatGPT to read and follow `SKILL.md`.
+
+> **Note:** ChatGPT may scan an uploaded skill and mark it as **Needs Review** or **Blocked**. This is a workspace/product safety check rather than an issue with the Agent Skills format; review workspace permissions before retrying.
 
 ### Other platforms (Codex, Cursor, Windsurf, etc.)
 
