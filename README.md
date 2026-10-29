@@ -154,13 +154,19 @@ cp -R /path/to/academic-writing .agents/skills/academic-writing
 
 Gemini Apps (`gemini.google.com`, the Gemini Mac app, and the mobile app) support installing custom skills by uploading a folder or `.zip` archive (requires a personal Google Account 18+ with **Keep Activity** turned on).
 
+> **Direct Download (Ready-to-Upload `.zip`):**
+> - [**Download `academic-writing-gemini.zip` (Latest Release)**](https://github.com/bimajanuri/academic-writing-skill/releases/latest/download/academic-writing-gemini.zip)
+> - ⚠️ **Do NOT use GitHub's green `Code → Download ZIP` button** (or `Source code (zip)` under Releases). GitHub wraps repository downloads inside an `academic-writing-skill-main/` subfolder, which causes Gemini Apps and ChatGPT upload validation to fail because `SKILL.md` is not at the archive root. Always use the pre-built release `.zip` above or the packaging command below.
+
 Per Google's upload requirements ([Create & manage skills for Gemini Apps](https://support.google.com/gemini/answer/17094296)):
 - `SKILL.md` must be located in the **root (main) folder** of the uploaded folder or `.zip` archive.
 - The skill `name` inside `SKILL.md` must be lowercase with hyphens (`academic-writing`).
 - All 8 supporting modules are consolidated into clean Markdown files (`.md`) so the total package stays under Gemini Apps' 10-file Knowledge attachment limit and under 100 MB.
 - Exclude hidden binary/OS metadata files (such as `.DS_Store`, `.git/`, `.pyc`, or `__MACOSX`) so the upload validation does not fail.
 
-**Step 1: Create a clean `.zip` archive (with `SKILL.md` at the root)**
+**Step 1: Download or create a clean `.zip` archive (with `SKILL.md` at the root)**
+
+Download [`academic-writing-gemini.zip`](https://github.com/bimajanuri/academic-writing-skill/releases/latest/download/academic-writing-gemini.zip) directly from [GitHub Releases](https://github.com/bimajanuri/academic-writing-skill/releases/latest), or build it locally from a checkout:
 
 ```bash
 cd /path/to/academic-writing
@@ -184,9 +190,9 @@ zip -r -X academic-writing-gemini.zip \
 
 ChatGPT Skills can be installed by uploading a `.zip` package on accounts and workspaces with the Skills feature enabled (or attached directly in chat sessions if the Skills UI is unavailable).
 
-**Step 1: Create a clean `.zip` package**
+**Step 1: Download or create a clean `.zip` package**
 
-You can package either the root files (`academic-writing-gemini.zip` above) or the complete `academic-writing/` directory without hidden OS/Git files:
+Download [`academic-writing.zip`](https://github.com/bimajanuri/academic-writing-skill/releases/latest/download/academic-writing.zip) directly from [GitHub Releases](https://github.com/bimajanuri/academic-writing-skill/releases/latest), or package the directory locally without hidden OS/Git files:
 
 ```bash
 zip -r -X academic-writing.zip academic-writing \
